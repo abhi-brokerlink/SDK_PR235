@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_miassignedrisk/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_miassignedrisk/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd295" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_miassignedrisk/_mipreviouscarrieritem/" />
+  <xs:complexType name="MIGeneralInformation">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsAppropriateExclusionFormAttachedYesNo" type="q1:YesNoOptions" />
+      <xs:element minOccurs="0" name="PayrollOffice" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayrollOfficeAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="WerePayrollsIncludedInDeterminingEstimatedAnnualPremiumYesNo" type="q3:YesNoOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MIGeneralInformation" nillable="true" type="tns:MIGeneralInformation" />
+  <xs:complexType name="MINatureOfBusiness">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AreEmployeesLeasedYesNo" type="q4:YesNoOptions" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AreYouAnEmployeeLeasingFirmYesNo" type="q5:YesNoOptions" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DoYouSupplyEmployeesYesNo" type="q6:YesNoOptions" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="LeasingCompanyAddress" nillable="true" type="q7:Address" />
+      <xs:element minOccurs="0" name="LeasingCompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfBusinessExplanation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MINatureOfBusiness" nillable="true" type="tns:MINatureOfBusiness" />
+  <xs:complexType name="MIPremiumComputation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepositPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpenseConstant" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExperienceModification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncreasedLimitsCharge" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LessPremiumDiscount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ManualPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PercentOfEstimatedAnnualPremiumToDetermineDepositPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RatePlan" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StandardPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Surcharge" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TerrorismPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalEstimatedAnnualPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MIPremiumComputation" nillable="true" type="tns:MIPremiumComputation" />
+  <xs:complexType name="MIPremiumPaymentAgency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyContactIfOtherThanProducer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnclosedCheckNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InTheAmountOf" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsPremiumFinancedYesNo" type="q8:YesNoOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MIPremiumPaymentAgency" nillable="true" type="tns:MIPremiumPaymentAgency" />
+  <xs:complexType name="MIPreviousCarrierItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MIPreviousCarrierItem" nillable="true" type="tns:MIPreviousCarrierItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MIPreviousCarrierItems" nillable="true" type="tns:MIPreviousCarrierItems" />
+  <xs:complexType name="MIPreviousCarrierItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_miassignedrisk/_mipreviouscarrieritem/" minOccurs="0" name="Flag" type="q9:Flags" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PreviousCarrierID" type="xs:int" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MIPreviousCarrierItem" nillable="true" type="tns:MIPreviousCarrierItem" />
+</xs:schema>

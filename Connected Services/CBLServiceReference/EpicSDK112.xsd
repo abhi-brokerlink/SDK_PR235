@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_mtassignedrisk/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_mtassignedrisk/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="MTExemptedCoveragesInstallPremiumDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CasualEmployment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContractLicensedBarberOrCosmetologist" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CorporateOfficer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DependentFamilyMemberOrSpouse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DepositCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectHomeSellerOfConsumerProducts" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FreelanceCorrespondent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HouseholdOrDomesticEmployee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InstallmentPremiumPaymentsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensedRealEstateBrokerOrSalesPerson" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitedLiabilityCompanyManager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitedLiabilityCompanyMemberManager" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NewspaperCarrier" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NonResident" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OfficerOrManagerOfIrrigationDitchCompanyOrWaterUsers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrdainedCommissionedOrLicensedMinister" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Partner" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PersonWorkingInReturnForAidOrSustenanceOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PetroleumLandProfessional" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SchoolAmateurAthleticEventofficials" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SoleProprietor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VolunteerWorker" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MTExemptedCoveragesInstallPremiumDeposit" nillable="true" type="tns:MTExemptedCoveragesInstallPremiumDeposit" />
+  <xs:complexType name="MTOwnershipInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Buy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DidYouAquireThisBusinessFromAnotherOwnerYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Lease" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitedLiabilityCompanyManagerManaged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitedLiabilityCompanyMemberManaged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfFormerOwner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MTOwnershipInformation" nillable="true" type="tns:MTOwnershipInformation" />
+</xs:schema>

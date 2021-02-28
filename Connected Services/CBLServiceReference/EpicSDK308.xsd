@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd224" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/_generalinformation/" />
+  <xs:simpleType name="PremiseGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndPremiseID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="MarketedPolicyIDAndPremiseID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+      <xs:enumeration value="CarrierSubmissionIDAndPremiseID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PremiseGetType" nillable="true" type="tns:PremiseGetType" />
+  <xs:complexType name="ArrayOfGeneralInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneralInformation" nillable="true" type="tns:ArrayOfGeneralInformation" />
+  <xs:complexType name="GeneralInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/_generalinformation/" minOccurs="0" name="QuestionAnswers" nillable="true" type="q1:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+  <xs:simpleType name="PriorCarrierGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndPriorCarrierID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="MarketedPolicyIDAndCarrierID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+      <xs:enumeration value="CarrierSubmissionIDAndCarrierID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriorCarrierGetType" nillable="true" type="tns:PriorCarrierGetType" />
+  <xs:simpleType name="FormAndEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndFormAndEndorsementID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="MarketedPolicyIDAndFormAndEndorsementID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+      <xs:enumeration value="CarrierSubmissionIDAndFormAndEndorsementID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormAndEndorsementGetType" nillable="true" type="tns:FormAndEndorsementGetType" />
+  <xs:complexType name="ArrayOfFormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormAndEndorsement" nillable="true" type="tns:ArrayOfFormAndEndorsement" />
+  <xs:complexType name="FormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="CopyrightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyrightType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+  <xs:simpleType name="RemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndRemarkID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="MarketedPolicyIDAndRemarkID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+      <xs:enumeration value="CarrierSubmissionIDAndRemarkID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RemarkGetType" nillable="true" type="tns:RemarkGetType" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+  <xs:complexType name="ArrayOfAttachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachments" nillable="true" type="tns:Attachments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachments" nillable="true" type="tns:ArrayOfAttachments" />
+  <xs:complexType name="Attachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachmentOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAttachmentAdditionalInterest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentAdditionalPremises" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentApartmentBuildingSupplelement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentCondoAssnBylaws" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentContractorsSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentCoveragesSchedule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentDriverInformationSchedule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentInternationalLiabilityExposureSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentInternationalPropertyExposureSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentLossSummary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentPremiumPaymentSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentProfessionalLiabilitySupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentResaurantTavernSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentStateSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentStatementScheduleOfValues" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentVacantBuildingSupplement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAttachmentVehicleSchedule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PrivacyCopyNoticeGivenToApplicant" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AttachmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode8" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentCode9" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription8" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentOtherDescription9" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachments" nillable="true" type="tns:Attachments" />
+  <xs:simpleType name="LossHistoryGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndLossHistoryID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LossHistoryGetType" nillable="true" type="tns:LossHistoryGetType" />
+</xs:schema>

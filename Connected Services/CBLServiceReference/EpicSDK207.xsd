@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd516" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" />
+  <xs:complexType name="PaidItemsReturnCommission">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" minOccurs="0" name="ItemsPaid" nillable="true" type="q1:PaidTransactionItems" />
+      <xs:element minOccurs="0" name="TotalItemsPaid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidItemsReturnCommission" nillable="true" type="tns:PaidItemsReturnCommission" />
+  <xs:complexType name="PaidItemsAdvancePremium">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" minOccurs="0" name="ItemsPaid" nillable="true" type="q2:PaidTransactionItems" />
+      <xs:element minOccurs="0" name="TotalItemsPaid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidItemsAdvancePremium" nillable="true" type="tns:PaidItemsAdvancePremium" />
+  <xs:complexType name="PaidItemsReturnPremium">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" minOccurs="0" name="ItemsPaid" nillable="true" type="q3:PaidTransactionItems" />
+      <xs:element minOccurs="0" name="TotalItemsPaid" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidItemsReturnPremium" nillable="true" type="tns:PaidItemsReturnPremium" />
+</xs:schema>

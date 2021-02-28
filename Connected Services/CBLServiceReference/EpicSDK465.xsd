@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PolicyLineTypeGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyLineTypeID" />
+      <xs:enumeration value="PolicyLineTypeCode" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PolicyLineTypeGetType" nillable="true" type="tns:PolicyLineTypeGetType" />
+  <xs:complexType name="ArrayOfPolicyLineType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PolicyLineType" nillable="true" type="tns:PolicyLineType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPolicyLineType" nillable="true" type="tns:ArrayOfPolicyLineType" />
+  <xs:complexType name="PolicyLineType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationDetail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassificationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyCanBeLineOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TermDefault" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfBusinessCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APSection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultSystemDateAsEffectiveDate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClaimType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultIssuingLocation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludePolicyInformationSection" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LossNoticeFilterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfDaysPriorToExpirationShowInRenewalsManager" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TaxOptionCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyLineType" nillable="true" type="tns:PolicyLineType" />
+  <xs:complexType name="PolicyStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyStatus" nillable="true" type="tns:PolicyStatus" />
+</xs:schema>

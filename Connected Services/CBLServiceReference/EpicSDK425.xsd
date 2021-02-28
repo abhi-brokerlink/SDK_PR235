@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd476" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/_associatedemployeeclassitem/" />
+  <xs:complexType name="AssociatedEmployeeClassItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssociatedEmployeeClassItem" nillable="true" type="tns:AssociatedEmployeeClassItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssociatedEmployeeClassItems" nillable="true" type="tns:AssociatedEmployeeClassItems" />
+  <xs:complexType name="AssociatedEmployeeClassItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeClassID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/_associatedemployeeclassitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssociatedEmployeeClassItem" nillable="true" type="tns:AssociatedEmployeeClassItem" />
+</xs:schema>

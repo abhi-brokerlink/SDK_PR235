@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd65" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/_credititem/" />
+  <xs:complexType name="CreditItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreditItem" nillable="true" type="tns:CreditItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditItems" nillable="true" type="tns:CreditItems" />
+  <xs:complexType name="CreditItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/_credititem/" minOccurs="0" name="Payments" nillable="true" type="q1:PaymentItems" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditItem" nillable="true" type="tns:CreditItem" />
+  <xs:complexType name="DebitItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DebitItem" nillable="true" type="tns:DebitItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DebitItems" nillable="true" type="tns:DebitItems" />
+  <xs:complexType name="DebitItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DebitItem" nillable="true" type="tns:DebitItem" />
+</xs:schema>

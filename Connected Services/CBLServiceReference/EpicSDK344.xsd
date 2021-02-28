@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd475" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd477" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd479" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd482" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_tpaserviceitem/" />
+  <xs:complexType name="Comment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comment" nillable="true" type="tns:Comment" />
+  <xs:simpleType name="Flags">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Flags" nillable="true" type="tns:Flags" />
+  <xs:complexType name="Plan">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/" minOccurs="0" name="AssociatedEmployeeClassItems" nillable="true" type="q1:AssociatedEmployeeClassItems" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="GroupSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanID" type="xs:int" />
+      <xs:element minOccurs="0" name="PlanName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaysOfInsuring" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plan" nillable="true" type="tns:Plan" />
+  <xs:complexType name="RateInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualEmployeeCost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AnnualPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Beginning" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MonthlyPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RateName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/" minOccurs="0" name="RatePremiumItems" nillable="true" type="q2:RatePremiumItems" />
+      <xs:element minOccurs="0" name="WaitingPeriod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitTermination" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RateInformation" nillable="true" type="tns:RateInformation" />
+  <xs:complexType name="StopLoss">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AggregateContractType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateFactors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateMaximumBenefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateOtherDescription1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateOtherDescription2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateOtherValue1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateOtherValue2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregatePremiumPEPM" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AggregateTerminalLiability" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsExpectedClaimTotals" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsOtherDescription1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsOtherDescription2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsOtherValue1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsOtherValue2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsPaid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificAggregatingDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificContractType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificLasers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificMaximumBenefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificOtherDescription1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificOtherDescription2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificOtherValue1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificOtherValue2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecificPremiumPEPM" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SpecificTerminalLiability" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/" minOccurs="0" name="StopLossAggregateItems" nillable="true" type="q3:StopLossAggregateItems" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/" minOccurs="0" name="StopLossSpecificItems" nillable="true" type="q4:StopLossSpecificItems" />
+      <xs:element minOccurs="0" name="SummaryCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryDates" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryOtherDescription1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryOtherDescription2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryOtherValue1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryOtherValue2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryThirdPartyAdministrator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SummaryTotalEnrolled" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLoss" nillable="true" type="tns:StopLoss" />
+  <xs:complexType name="TPAServiceItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TPAServiceItem" nillable="true" type="tns:TPAServiceItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TPAServiceItems" nillable="true" type="tns:TPAServiceItems" />
+  <xs:complexType name="TPAServiceItem">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_tpaserviceitem/" minOccurs="0" name="Flag" type="q5:Flags" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TPAItemID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TPAServiceItem" nillable="true" type="tns:TPAServiceItem" />
+</xs:schema>

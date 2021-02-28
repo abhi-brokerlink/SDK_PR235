@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd36" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd38" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_changepolicyeffectiveexpirationdates/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd39" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_endorsereviseaddlinemidterm/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd41" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuenotissueendorsement/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd42" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuenotissuepolicy/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd43" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuecancellation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd44" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_reinstate/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd46" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_renew/" />
+  <xs:complexType name="Cancel">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CancelOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="CancellationEffectiveDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CancellationID" type="xs:int" />
+      <xs:element minOccurs="0" name="CancellationReasonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CancellationReasonCompany" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CancellationReasonEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CancellationReasonIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CancellationReasonPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/" minOccurs="0" name="LinesOfBusiness" nillable="true" type="q2:LineItems" />
+      <xs:element minOccurs="0" name="MethodOfCancellationFullTermPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MethodOfCancellationMethodCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodOfCancellationPremiumCancellationSubjectToAudit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MethodOfCancellationReturnPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MethodOfCancellationUnearnedFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PolicyEndTermDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyStartTermDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cancel" nillable="true" type="tns:Cancel" />
+  <xs:complexType name="ArrayOfCancel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cancel" nillable="true" type="tns:Cancel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCancel" nillable="true" type="tns:ArrayOfCancel" />
+  <xs:simpleType name="CancellationRequestReasonMethodGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CancellationID" />
+      <xs:enumeration value="ServiceSummaryID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CancellationRequestReasonMethodGetType" nillable="true" type="tns:CancellationRequestReasonMethodGetType" />
+  <xs:complexType name="ArrayOfChangePolicyEffectiveExpirationDates">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChangePolicyEffectiveExpirationDates" nillable="true" type="tns:ChangePolicyEffectiveExpirationDates" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChangePolicyEffectiveExpirationDates" nillable="true" type="tns:ArrayOfChangePolicyEffectiveExpirationDates" />
+  <xs:complexType name="ChangePolicyEffectiveExpirationDates">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeEffectiveDateTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ChangeExpirationDateTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_changepolicyeffectiveexpirationdates/" minOccurs="0" name="ServiceSummaryItems" nillable="true" type="q3:ServiceSummaryItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangePolicyEffectiveExpirationDates" nillable="true" type="tns:ChangePolicyEffectiveExpirationDates" />
+  <xs:complexType name="ChangeServiceSummaryDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeDescriptionTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeServiceSummaryDescription" nillable="true" type="tns:ChangeServiceSummaryDescription" />
+  <xs:complexType name="EndorseReviseAddLineMidterm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDateOfChange" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_endorsereviseaddlinemidterm/" minOccurs="0" name="LinesOfBusiness" nillable="true" type="q4:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EndorseReviseAddLineMidterm" nillable="true" type="tns:EndorseReviseAddLineMidterm" />
+  <xs:complexType name="EndorseReviseExistingLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDateOfChange" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EndorseReviseExistingLine" nillable="true" type="tns:EndorseReviseExistingLine" />
+  <xs:complexType name="IssueNotIssueEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IgnoreOpenActivities" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuenotissueendorsement/" minOccurs="0" name="Lines" nillable="true" type="q5:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueNotIssueEndorsement" nillable="true" type="tns:IssueNotIssueEndorsement" />
+  <xs:simpleType name="IssueNotIssueEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndServiceSummaryID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IssueNotIssueEndorsementGetType" nillable="true" type="tns:IssueNotIssueEndorsementGetType" />
+  <xs:complexType name="ArrayOfIssueNotIssueEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssueNotIssueEndorsement" nillable="true" type="tns:IssueNotIssueEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIssueNotIssueEndorsement" nillable="true" type="tns:ArrayOfIssueNotIssueEndorsement" />
+  <xs:complexType name="IssueNotIssuePolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IgnoreOpenActivities" type="xs:boolean" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuenotissuepolicy/" minOccurs="0" name="Lines" nillable="true" type="q6:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueNotIssuePolicy" nillable="true" type="tns:IssueNotIssuePolicy" />
+  <xs:simpleType name="IssueNotIssuePolicyGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndServiceSummaryID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IssueNotIssuePolicyGetType" nillable="true" type="tns:IssueNotIssuePolicyGetType" />
+  <xs:complexType name="ArrayOfIssueNotIssuePolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssueNotIssuePolicy" nillable="true" type="tns:IssueNotIssuePolicy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIssueNotIssuePolicy" nillable="true" type="tns:ArrayOfIssueNotIssuePolicy" />
+  <xs:complexType name="IssueCancellation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IgnoreOpenActivities" type="xs:boolean" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuecancellation/" minOccurs="0" name="Lines" nillable="true" type="q7:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IssueCancellation" nillable="true" type="tns:IssueCancellation" />
+  <xs:complexType name="ArrayOfIssueCancellation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IssueCancellation" nillable="true" type="tns:IssueCancellation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIssueCancellation" nillable="true" type="tns:ArrayOfIssueCancellation" />
+  <xs:complexType name="Reinstate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_reinstate/" minOccurs="0" name="LinesOfBusiness" nillable="true" type="q8:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReinstateWithLapseInCoverage" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reinstate" nillable="true" type="tns:Reinstate" />
+  <xs:complexType name="ArrayOfReinstate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reinstate" nillable="true" type="tns:Reinstate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReinstate" nillable="true" type="tns:ArrayOfReinstate" />
+  <xs:complexType name="Renew">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_renew/" minOccurs="0" name="Lines" nillable="true" type="q9:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenewAlreadyRenewedPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RenewInProcessPolicy" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Renew" nillable="true" type="tns:Renew" />
+  <xs:complexType name="ArrayOfRenew">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Renew" nillable="true" type="tns:Renew" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRenew" nillable="true" type="tns:ArrayOfRenew" />
+</xs:schema>

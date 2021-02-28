@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd67" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/_transactionitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="TransactionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionItem" nillable="true" type="tns:TransactionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionItems" nillable="true" type="tns:TransactionItems" />
+  <xs:complexType name="TransactionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FinanceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinanceFlatAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FinanceGenerateInvoice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FinancePercentage" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="FinancePercentageFlatAmountOption" nillable="true" type="q1:OptionType" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/_transactionitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="SendInvoiceToAccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="SendInvoiceToAddress" nillable="true" type="q3:Address" />
+      <xs:element minOccurs="0" name="SendInvoiceToContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendInvoiceToContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="SendInvoiceToDeliveryMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendInvoiceToEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendInvoiceToFaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendInvoiceToFaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendInvoiceToFaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendInvoiceToLoanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionItem" nillable="true" type="tns:TransactionItem" />
+</xs:schema>

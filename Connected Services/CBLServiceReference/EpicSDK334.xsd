@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_linefilter/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_linefilter/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="BillingMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Agency" />
+      <xs:enumeration value="Direct" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillingMode" nillable="true" type="tns:BillingMode" />
+</xs:schema>

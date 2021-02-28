@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd231" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/_additionalnamedinsured/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="AdditionalNamedInsureds">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalNamedInsured" nillable="true" type="tns:AdditionalNamedInsured" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalNamedInsureds" nillable="true" type="tns:AdditionalNamedInsureds" />
+  <xs:complexType name="AdditionalNamedInsured">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNamedInsuredID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/_additionalnamedinsured/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="ItemNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalNamedInsured" nillable="true" type="tns:AdditionalNamedInsured" />
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Employer" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="EmployerAddress" nillable="true" type="q2:Address" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MailingAddress" nillable="true" type="q3:Address" />
+      <xs:element minOccurs="0" name="MaritalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhoneTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryPhoneTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearsInCurrentOccupation" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearsWithCurrentEmployer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearsWithPreviousEmployer" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+  <xs:complexType name="CoApplicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressSameAsApplicant" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Employer" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="EmployerAddress" nillable="true" type="q4:Address" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MailingAddress" nillable="true" type="q5:Address" />
+      <xs:element minOccurs="0" name="MaritalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhoneTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryPhoneTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearsInCurrentOccupation" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearsWithCurrentEmployer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearsWithPreviousEmployer" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoApplicant" nillable="true" type="tns:CoApplicant" />
+  <xs:complexType name="CurrentAddress">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q6:Address" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="OwnedRentedOption" nillable="true" type="q7:OptionType" />
+      <xs:element minOccurs="0" name="SameAsMailing" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentAddress" nillable="true" type="tns:CurrentAddress" />
+  <xs:complexType name="PreviousAddress">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q8:Address" />
+      <xs:element minOccurs="0" name="YearAtPreviousAddress" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreviousAddress" nillable="true" type="tns:PreviousAddress" />
+  <xs:complexType name="ProducerStatement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsCopyOfACORD38Given" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProducerStatement" nillable="true" type="tns:ProducerStatement" />
+</xs:schema>

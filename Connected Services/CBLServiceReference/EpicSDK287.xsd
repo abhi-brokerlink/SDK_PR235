@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd314" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd315" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_physicaldamage/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="ArrayOfCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Coverage" nillable="true" type="tns:Coverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoverage" nillable="true" type="tns:ArrayOfCoverage" />
+  <xs:complexType name="Coverage">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesAK" nillable="true" type="q1:CoveragesAK" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesAL" nillable="true" type="q2:CoveragesAL" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesAR" nillable="true" type="q3:CoveragesAR" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesAZ" nillable="true" type="q4:CoveragesAZ" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesCA" nillable="true" type="q5:CoveragesCA" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesCO" nillable="true" type="q6:CoveragesCO" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesCT" nillable="true" type="q7:CoveragesCT" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesDC" nillable="true" type="q8:CoveragesDC" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesDE" nillable="true" type="q9:CoveragesDE" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesFL" nillable="true" type="q10:CoveragesFL" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesGA" nillable="true" type="q11:CoveragesGA" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesHI" nillable="true" type="q12:CoveragesHI" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesIA" nillable="true" type="q13:CoveragesIA" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesID" nillable="true" type="q14:CoveragesID" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesIL" nillable="true" type="q15:CoveragesIL" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesIN" nillable="true" type="q16:CoveragesIN" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesKS" nillable="true" type="q17:CoveragesKS" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesKY" nillable="true" type="q18:CoveragesKY" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesLA" nillable="true" type="q19:CoveragesLA" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMA" nillable="true" type="q20:CoveragesMA" />
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMD" nillable="true" type="q21:CoveragesMD" />
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesME" nillable="true" type="q22:CoveragesME" />
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMI" nillable="true" type="q23:CoveragesMI" />
+      <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMN" nillable="true" type="q24:CoveragesMN" />
+      <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMO" nillable="true" type="q25:CoveragesMO" />
+      <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMS" nillable="true" type="q26:CoveragesMS" />
+      <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesMT" nillable="true" type="q27:CoveragesMT" />
+      <xs:element xmlns:q28="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNC" nillable="true" type="q28:CoveragesNC" />
+      <xs:element xmlns:q29="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesND" nillable="true" type="q29:CoveragesND" />
+      <xs:element xmlns:q30="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNE" nillable="true" type="q30:CoveragesNE" />
+      <xs:element xmlns:q31="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNH" nillable="true" type="q31:CoveragesNH" />
+      <xs:element xmlns:q32="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNJ" nillable="true" type="q32:CoveragesNJ" />
+      <xs:element xmlns:q33="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNM" nillable="true" type="q33:CoveragesNM" />
+      <xs:element xmlns:q34="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNV" nillable="true" type="q34:CoveragesNV" />
+      <xs:element xmlns:q35="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesNY" nillable="true" type="q35:CoveragesNY" />
+      <xs:element xmlns:q36="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesOH" nillable="true" type="q36:CoveragesOH" />
+      <xs:element xmlns:q37="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesOK" nillable="true" type="q37:CoveragesOK" />
+      <xs:element xmlns:q38="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesOR" nillable="true" type="q38:CoveragesOR" />
+      <xs:element xmlns:q39="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesOther" nillable="true" type="q39:CoveragesOther" />
+      <xs:element xmlns:q40="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesPA" nillable="true" type="q40:CoveragesPA" />
+      <xs:element xmlns:q41="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesPR" nillable="true" type="q41:CoveragesPR" />
+      <xs:element xmlns:q42="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesRI" nillable="true" type="q42:CoveragesRI" />
+      <xs:element xmlns:q43="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesSC" nillable="true" type="q43:CoveragesSC" />
+      <xs:element xmlns:q44="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesSD" nillable="true" type="q44:CoveragesSD" />
+      <xs:element xmlns:q45="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesTN" nillable="true" type="q45:CoveragesTN" />
+      <xs:element xmlns:q46="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesTX" nillable="true" type="q46:CoveragesTX" />
+      <xs:element xmlns:q47="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesUT" nillable="true" type="q47:CoveragesUT" />
+      <xs:element xmlns:q48="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesVA" nillable="true" type="q48:CoveragesVA" />
+      <xs:element xmlns:q49="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesVI" nillable="true" type="q49:CoveragesVI" />
+      <xs:element xmlns:q50="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesVT" nillable="true" type="q50:CoveragesVT" />
+      <xs:element xmlns:q51="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesWA" nillable="true" type="q51:CoveragesWA" />
+      <xs:element xmlns:q52="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesWI" nillable="true" type="q52:CoveragesWI" />
+      <xs:element xmlns:q53="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesWV" nillable="true" type="q53:CoveragesWV" />
+      <xs:element xmlns:q54="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" minOccurs="0" name="CoveragesWY" nillable="true" type="q54:CoveragesWY" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coverage" nillable="true" type="tns:Coverage" />
+  <xs:simpleType name="PhysicalDamageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="PhysicalDamageID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhysicalDamageGetType" nillable="true" type="tns:PhysicalDamageGetType" />
+  <xs:complexType name="ArrayOfPhysicalDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhysicalDamage" nillable="true" type="tns:PhysicalDamage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhysicalDamage" nillable="true" type="tns:ArrayOfPhysicalDamage" />
+  <xs:complexType name="PhysicalDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Collision30" type="xs:boolean" />
+      <xs:element xmlns:q55="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_physicaldamage/" minOccurs="0" name="CollisionCoverage" nillable="true" type="q55:PhysicalDamageCoverageItem" />
+      <xs:element minOccurs="0" name="CollisionNumberAutos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CollisionSymbolOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q56="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="GarageKeeperOption" nillable="true" type="q56:OptionType" />
+      <xs:element minOccurs="0" name="GarageKeepers30" type="xs:boolean" />
+      <xs:element xmlns:q57="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_physicaldamage/" minOccurs="0" name="GarageKeepersCoverage" nillable="true" type="q57:PhysicalDamageCoverageItem" />
+      <xs:element minOccurs="0" name="GarageKeepersNumberAutos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GarageKeepersSymbolOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="PhysicalDamage22" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhysicalDamage23" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhysicalDamage24" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhysicalDamage27" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhysicalDamage28" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhysicalDamage31" type="xs:boolean" />
+      <xs:element xmlns:q58="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_physicaldamage/" minOccurs="0" name="PhysicalDamageCoverage" nillable="true" type="q58:PhysicalDamageCoverageItem" />
+      <xs:element minOccurs="0" name="PhysicalDamageID" type="xs:int" />
+      <xs:element minOccurs="0" name="PhysicalDamageSymbolOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhysicalDamage" nillable="true" type="tns:PhysicalDamage" />
+  <xs:simpleType name="AdditionalCoverageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalCoverageID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalCoverageGetType" nillable="true" type="tns:AdditionalCoverageGetType" />
+  <xs:complexType name="ArrayOfAdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalCoverage" nillable="true" type="tns:ArrayOfAdditionalCoverage" />
+  <xs:complexType name="AdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+  <xs:complexType name="ArrayOfBusinessAndDealers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessAndDealers" nillable="true" type="tns:BusinessAndDealers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessAndDealers" nillable="true" type="tns:ArrayOfBusinessAndDealers" />
+  <xs:complexType name="BusinessAndDealers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualGrossSales" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CarLinesNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CarPercent" nillable="true" type="xs:int" />
+      <xs:element xmlns:q59="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CollisionInterestOption" nillable="true" type="q59:OptionType" />
+      <xs:element minOccurs="0" name="CollisionNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CollisionUsed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CommercialTrailerDealer" type="xs:boolean" />
+      <xs:element xmlns:q60="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ComprehensiveInterestOption" nillable="true" type="q60:OptionType" />
+      <xs:element minOccurs="0" name="ComprehensiveNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ComprehensiveUsed" type="xs:boolean" />
+      <xs:element xmlns:q61="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="FranchisedOption" nillable="true" type="q61:OptionType" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MobileHome" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MotorcycleLinesNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MotorcyclePercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfGallonsPumped" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherAutoDealer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherBusiness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLinesNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherPercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RecreationalVehicleLinesNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RecreationalVehiclePercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RepairShop" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceStation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SnowmobileLinesNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SnowmobilePercent" nillable="true" type="xs:int" />
+      <xs:element xmlns:q62="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="SpecifiedPerilsInterestOption" nillable="true" type="q62:OptionType" />
+      <xs:element minOccurs="0" name="SpecifiedPerilsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SpecifiedPerilsUsed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StorageGaragePublicParking" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TruckTractorLinesNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TruckTractorPercent" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessAndDealers" nillable="true" type="tns:BusinessAndDealers" />
+  <xs:simpleType name="VehicleStorageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="VehicleStorageID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VehicleStorageGetType" nillable="true" type="tns:VehicleStorageGetType" />
+  <xs:complexType name="ArrayOfVehicleStorage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleStorage" nillable="true" type="tns:VehicleStorage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleStorage" nillable="true" type="tns:ArrayOfVehicleStorage" />
+  <xs:complexType name="VehicleStorage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingPercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ClassIIOtherEmployees" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClassIIUnderAge25" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClassIOtherEmployees" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClassIRegularEmployees" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="NonStandardOpenLotPercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherPercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherStorage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      <xs:element minOccurs="0" name="Remuneration" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StandardOpenLotPercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleStorageID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleStorage" nillable="true" type="tns:VehicleStorage" />
+  <xs:simpleType name="DriverGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="DriverID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DriverGetType" nillable="true" type="tns:DriverGetType" />
+  <xs:complexType name="ArrayOfDriver">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Driver" nillable="true" type="tns:Driver" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDriver" nillable="true" type="tns:ArrayOfDriver" />
+  <xs:complexType name="Driver">
+    <xs:sequence>
+      <xs:element xmlns:q63="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q63:Address" />
+      <xs:element minOccurs="0" name="Birthdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Broadened" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CompanyDriverNumber" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="DateHired" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriveOtherCar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DriverID" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentUse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateLicensed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearLicensed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearsExperience" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Driver" nillable="true" type="tns:Driver" />
+  <xs:simpleType name="AdditionalInterestGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalInterestID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalInterestGetType" nillable="true" type="tns:AdditionalInterestGetType" />
+  <xs:complexType name="ArrayOfAdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalInterest" nillable="true" type="tns:ArrayOfAdditionalInterest" />
+  <xs:complexType name="AdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      <xs:element xmlns:q64="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q64:Address" />
+      <xs:element minOccurs="0" name="Certificate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LienAmount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Policy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReasonForInt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceLoanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendBill" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+  <xs:simpleType name="FormAndEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="FormAndEndorsementID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormAndEndorsementGetType" nillable="true" type="tns:FormAndEndorsementGetType" />
+  <xs:complexType name="ArrayOfFormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormAndEndorsement" nillable="true" type="tns:ArrayOfFormAndEndorsement" />
+  <xs:complexType name="FormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyrightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyrightType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormsAndEndorsementID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+</xs:schema>

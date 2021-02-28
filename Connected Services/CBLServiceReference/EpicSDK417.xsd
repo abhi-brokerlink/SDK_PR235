@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_coverages/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_coverages/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="Coverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasisForCoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComputerFraudCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="ERISA" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ERISACoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="EmployeeTheftCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="EmployeeTheftGovernmentalCrimeCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="ForgeryOrAlterationCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="FundsTransferFraudCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="MoneyAndSecuritiesCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="MoneyOrdersAndCounterfeitPaperCurrencyCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="RobberyOrBurglaryOfOtherPropertyCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="TheftOfMoneyAndSecuritiesCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="CrimeClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="PlanCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coverages" nillable="true" type="tns:Coverages" />
+  <xs:complexType name="CoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Deductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumericValue1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumericValue2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeOf1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible1TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible3TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumericValue1Format" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumericValue2Format" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+  <xs:complexType name="ERISAEmploymentTheft">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="LicensedSecuritiesFirm" type="q1:YesNoOptions" />
+      <xs:element minOccurs="0" name="NameOfPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfParticipants" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfTrusteesEmployeesHandling" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PrincipleAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ERISAEmploymentTheft" nillable="true" type="tns:ERISAEmploymentTheft" />
+  <xs:complexType name="Property">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualGrossReceipts" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessHoursFinish" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BusinessHoursStart" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="ChecksStampedForDepositOnly" type="q3:YesNoOptions" />
+      <xs:element minOccurs="0" name="DepositFrequencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DoorLocks" type="q4:YesNoOptions" />
+      <xs:element minOccurs="0" name="MaximumValue" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="NightDepository" type="q5:YesNoOptions" />
+      <xs:element minOccurs="0" name="NumberOfEmployeesOnDuty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherInformation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Property" nillable="true" type="tns:Property" />
+</xs:schema>

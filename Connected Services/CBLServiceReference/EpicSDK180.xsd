@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd139" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_commoncriteria/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd141" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_lineofbusinesscriteria/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd143" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_premiumbasedtieredcommission/" />
+  <xs:complexType name="CommonCriteria">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AllSelectedOption" nillable="true" type="q1:OptionType" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_commoncriteria/" minOccurs="0" name="SelectedItemsValue" nillable="true" type="q2:SelectedItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonCriteria" nillable="true" type="tns:CommonCriteria" />
+  <xs:complexType name="Agreement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Commission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionPercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveFromDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EffectiveToDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OpenEffectiveFrom" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpenEffectiveTo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tiered" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Agreement" nillable="true" type="tns:Agreement" />
+  <xs:complexType name="LineOfBusinessCriteria">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AllSelectedOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_lineofbusinesscriteria/" minOccurs="0" name="LineOfBusinessItemsValue" nillable="true" type="q4:LineOfBusinessItems" />
+      <xs:element minOccurs="0" name="PackagePoliciesOnly" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineOfBusinessCriteria" nillable="true" type="tns:LineOfBusinessCriteria" />
+  <xs:complexType name="PremiumBasedTieredCommission">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="IndividualPolicyBookOfBusinessOption" nillable="true" type="q5:OptionType" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_premiumbasedtieredcommission/" minOccurs="0" name="PremiumBasedCommissionsValue" nillable="true" type="q6:PremiumBasedTieredCommissionItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiumBasedTieredCommission" nillable="true" type="tns:PremiumBasedTieredCommission" />
+  <xs:complexType name="AgreementTypeCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommissionPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PremiumPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Receivable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgreementTypeCriteria" nillable="true" type="tns:AgreementTypeCriteria" />
+</xs:schema>

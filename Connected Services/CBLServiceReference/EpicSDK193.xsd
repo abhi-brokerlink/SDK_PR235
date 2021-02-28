@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd18" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/_noteitem/" />
+  <xs:complexType name="NoteItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoteItem" nillable="true" type="tns:NoteItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoteItems" nillable="true" type="tns:NoteItems" />
+  <xs:complexType name="NoteItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevel" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/_noteitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="NoteID" type="xs:int" />
+      <xs:element minOccurs="0" name="NoteText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoteItem" nillable="true" type="tns:NoteItem" />
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_employee/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_employee/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd330" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_employee/_employeeitem/" />
+  <xs:complexType name="EmployeeItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeItem" nillable="true" type="tns:EmployeeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeeItems" nillable="true" type="tns:EmployeeItems" />
+  <xs:complexType name="EmployeeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Coverage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_employee/_employeeitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeeItem" nillable="true" type="tns:EmployeeItem" />
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd73" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/_transactionitem/" />
+  <xs:complexType name="TransactionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionItem" nillable="true" type="tns:TransactionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionItems" nillable="true" type="tns:TransactionItems" />
+  <xs:complexType name="TransactionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetailAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailClosePremiumPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DetailDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/_transactionitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="ParentFinanceTransactionID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentTransactionID" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element minOccurs="0" name="DetailCloseGovernmentPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DetailClosePrBrPayable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionItem" nillable="true" type="tns:TransactionItem" />
+</xs:schema>

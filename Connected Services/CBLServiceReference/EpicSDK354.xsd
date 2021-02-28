@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd565" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd254" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/_coverages/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd562" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_shared/" />
+  <xs:complexType name="ArrayOfInternationalLiabilityExposureSupplement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InternationalLiabilityExposureSupplement" nillable="true" type="tns:InternationalLiabilityExposureSupplement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInternationalLiabilityExposureSupplement" nillable="true" type="tns:ArrayOfInternationalLiabilityExposureSupplement" />
+  <xs:complexType name="InternationalLiabilityExposureSupplement">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" minOccurs="0" name="AttachmentsValue" nillable="true" type="q1:Attachments" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/_coverages/" minOccurs="0" name="CoverageItems" nillable="true" type="q2:CoverageItems" />
+      <xs:element minOccurs="0" name="DescriptionForeignOperations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoesApplicantHaveForeignSubsidiariesYesNoCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" minOccurs="0" name="EmployeesAbroadItems" nillable="true" type="q3:EmployeesAbroadItems" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" minOccurs="0" name="ForeignTripItems" nillable="true" type="q4:ForeignTripItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="ListCountriesWhereApplicantEmployeesWorkTravelSell" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" minOccurs="0" name="LossHistoryItems" nillable="true" type="q5:LossHistoryItems" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NatureOfBusiness" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" minOccurs="0" name="PriorInternationalCoverageValue" nillable="true" type="q6:PriorInternationalCoverage" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_shared/" minOccurs="0" name="RemarkItems" nillable="true" type="q7:RemarkItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InternationalLiabilityExposureSupplement" nillable="true" type="tns:InternationalLiabilityExposureSupplement" />
+</xs:schema>

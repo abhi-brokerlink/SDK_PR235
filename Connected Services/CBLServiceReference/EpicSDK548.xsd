@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd22" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd15" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd23" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_linefilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd24" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd33" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policyfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd34" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd95" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd96" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_attachment/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd518" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/reconciliation/_directbillcommission/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd519" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_reconciliation/_directbillcommission/" />
+  <xs:complexType name="ActivityFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" minOccurs="0" name="AccountNameComparisonType" type="q1:ComparisonType" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" minOccurs="0" name="ActivityStatus" type="q2:Status" />
+      <xs:element minOccurs="0" name="AssociatedToID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" minOccurs="0" name="AssociatedToType" type="q3:AssociatedToType" />
+      <xs:element minOccurs="0" name="DescendingSort" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnteredOnBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EnteredOnEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowUpStartDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowUpStartDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuingCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableAccountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" minOccurs="0" name="SortType" type="q4:SortType" />
+      <xs:element minOccurs="0" name="WhoOwnerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoOwnerName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" minOccurs="0" name="WhoOwnerNameComparisonType" type="q5:ComparisonType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivityFilter" nillable="true" type="tns:ActivityFilter" />
+  <xs:complexType name="ActivityGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" minOccurs="0" name="Activities" nillable="true" type="q6:ArrayOfActivity" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivityGetResult" nillable="true" type="tns:ActivityGetResult" />
+  <xs:complexType name="LineFilter">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_linefilter/" minOccurs="0" name="BillingMode" type="q7:BillingMode" />
+      <xs:element minOccurs="0" name="IssuingCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineFilter" nillable="true" type="tns:LineFilter" />
+  <xs:complexType name="LineGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/" minOccurs="0" name="Lines" nillable="true" type="q8:ArrayOfLine" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineGetResult" nillable="true" type="tns:LineGetResult" />
+  <xs:complexType name="PolicyFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrokerCommissionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policyfilter/" minOccurs="0" name="BrokerCommissionCodeComparisonType" type="q9:ComparisonType" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientServicingRoleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EffectiveDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policyfilter/" minOccurs="0" name="PolicyNumberComparisonType" type="q10:ComparisonType" />
+      <xs:element minOccurs="0" name="PolicyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProducerCommissionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policyfilter/" minOccurs="0" name="ProducerCommissionCodeComparisonType" type="q11:ComparisonType" />
+      <xs:element minOccurs="0" name="ServicingRoleEmployeeLookupCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policyfilter/" minOccurs="0" name="Status" type="q12:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyFilter" nillable="true" type="tns:PolicyFilter" />
+  <xs:complexType name="PolicyGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="Policies" nillable="true" type="q13:ArrayOfPolicy" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyGetResult" nillable="true" type="tns:PolicyGetResult" />
+  <xs:complexType name="TransactionGetResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="Transactions" nillable="true" type="q14:ArrayOfTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionGetResult" nillable="true" type="tns:TransactionGetResult" />
+  <xs:complexType name="AttachmentFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachedDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AttachedDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AttachmentAssociationID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" minOccurs="0" name="AttachmentAssociationType" type="q15:AttachmentAssociationType" />
+      <xs:element minOccurs="0" name="AttachmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientAccessible" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Folder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FolderEquals" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Inactive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeSubfolderAttachments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubFolder1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubFolder1Equals" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubFolder2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubFolder2Equals" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SystemGenerated" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccessibleByEmployeeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionEquals" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EditedDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EditedDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SubFolder3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubFolder3Equals" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubFolder4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubFolder4Equals" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubFolder5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubFolder5Equals" type="xs:boolean" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="AttachedWithin" type="q16:AttachedWithinType" />
+      <xs:element minOccurs="0" name="AccessedDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccessedDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WasAccessed" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachmentFilter" nillable="true" type="tns:AttachmentFilter" />
+  <xs:complexType name="AttachmentSorting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SortOrder" type="tns:SortOrder" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_attachment/" minOccurs="0" name="SortType" type="q17:AttachmentSortType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachmentSorting" nillable="true" type="tns:AttachmentSorting" />
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder" />
+  <xs:complexType name="AttachmentGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="Attachments" nillable="true" type="q18:ArrayOfAttachment" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachmentGetResult" nillable="true" type="tns:AttachmentGetResult" />
+  <xs:complexType name="DirectBillCommissionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectBillCommissionID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/reconciliation/_directbillcommission/" minOccurs="0" name="DirectBillCommissionStatus" type="q19:SearchStatus" />
+      <xs:element minOccurs="0" name="EntityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityCodeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_reconciliation/_directbillcommission/" minOccurs="0" name="EntityNameComparisonType" type="q20:ComparisonType" />
+      <xs:element minOccurs="0" name="IncludeReversed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MasterStatementNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceNumberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatementNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DirectBillCommissionFilter" nillable="true" type="tns:DirectBillCommissionFilter" />
+</xs:schema>

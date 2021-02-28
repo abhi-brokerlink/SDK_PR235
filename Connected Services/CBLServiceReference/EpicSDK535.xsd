@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/_paymentexpense/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/_paymentexpense/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd547" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/_paymentExpenseItem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="PaymentExpenseItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentExpenseItem" nillable="true" type="tns:PaymentExpenseItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExpenseItems" nillable="true" type="tns:PaymentExpenseItems" />
+  <xs:complexType name="PaymentExpenseItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/_paymentExpenseItem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayeeAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="PayeeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayeeSiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayeeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentExpenseID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExpenseItem" nillable="true" type="tns:PaymentExpenseItem" />
+</xs:schema>

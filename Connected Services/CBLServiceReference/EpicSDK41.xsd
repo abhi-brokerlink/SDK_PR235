@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd248" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/" />
+  <xs:complexType name="CoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+  <xs:complexType name="CoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppliesTo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOf" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentageOfCoinsurance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RetroactiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+  <xs:complexType name="ApartmentsAndCondominiums">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageAppliesToCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfFireDivisions" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfUnitsOwnerOccupied" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfUnitsPerFireDivision" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SmokeDetectorsCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="UnderwritingItems" nillable="true" type="q1:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApartmentsAndCondominiums" nillable="true" type="tns:ApartmentsAndCondominiums" />
+  <xs:complexType name="ConstructionFire">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasementFinishedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BasementPresentYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlanketRateYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistanceToFireStationInMiles" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceToHydrantInFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FireDistrictCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FireDistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfStories" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PercentageSprinklerProtected" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimaryPremises" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProtectionClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RateGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RateTerritory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalPayroll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YearBuilt" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConstructionFire" nillable="true" type="tns:ConstructionFire" />
+  <xs:complexType name="Crime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlarmDescriptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlarmTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlarmTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeadboltCylinderDoorLocksCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FrequencyOfDepositsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LabelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaximumCashOnPremises" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaximumCashWithMessenger" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MoneyOnPremisesOvernight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtherProtection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremisesAlarmCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafeDoorConstruction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafeVaultCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SafeVaultReceptacleManufacturerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Crime" nillable="true" type="tns:Crime" />
+  <xs:complexType name="ExposureOccupancies">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrontDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FrontExposure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeftDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LeftExposure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RearDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RearExposure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RightDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RightExposure" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExposureOccupancies" nillable="true" type="tns:ExposureOccupancies" />
+  <xs:complexType name="Glass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassInteriorGlass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassLengthInLinearFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassNumberOfPlates" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassTenantsExterior" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AboveGroundFloorGlassValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroundFloorGlassAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroundFloorGlassDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroundFloorGlassInteriorGlass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GroundFloorGlassLengthInLinearFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroundFloorGlassNumberOfPlates" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroundFloorGlassTenantsExterior" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GroundFloorGlassType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroundFloorGlassValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Glass" nillable="true" type="tns:Glass" />
+  <xs:complexType name="Improvements">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingCodeGrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingCodeInspectedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CommunitySpecifiedOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="HeatingYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RoofTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofingYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TaxCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WindClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WindClassIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WiringYear" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Improvements" nillable="true" type="tns:Improvements" />
+  <xs:complexType name="OtherAdditionalCoverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoveragesScheduleAttached" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/" minOccurs="0" name="OtherAdditionalCoverageItems" nillable="true" type="q3:CoverageItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherAdditionalCoverages" nillable="true" type="tns:OtherAdditionalCoverages" />
+  <xs:complexType name="Property">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingValue" nillable="true" type="tns:CoverageItem" />
+      <xs:element minOccurs="0" name="PersonalPropertyValue" nillable="true" type="tns:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Property" nillable="true" type="tns:Property" />
+</xs:schema>

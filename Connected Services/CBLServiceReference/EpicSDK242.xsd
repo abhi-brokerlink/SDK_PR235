@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DBA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GLCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAICS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneCountryCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+  <xs:complexType name="Deductibles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodilyInjury" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleBasisCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDeductibleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyDamage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Deductibles" nillable="true" type="tns:Deductibles" />
+  <xs:complexType name="LiabilityCoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityCoverageItem" nillable="true" type="tns:LiabilityCoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityCoverageItems" nillable="true" type="tns:LiabilityCoverageItems" />
+  <xs:complexType name="LiabilityCoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityCoverageItem" nillable="true" type="tns:LiabilityCoverageItem" />
+  <xs:complexType name="NatureOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualSalesReceipts" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessClosingTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BusinessOpeningTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateBusinessStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescriptionOfBusiness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfBusinessLossesPast3Years" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFullTimeEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPartTimeEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfVisitorsPerWeek" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerOperatorOtherThanApplicant1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerOperatorOtherThanApplicant2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SquareFeetUsed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPayroll" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeOfBusinessCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfBusinessIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NatureOfBusiness" nillable="true" type="tns:NatureOfBusiness" />
+  <xs:complexType name="PropertyCoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyCoverageItem" nillable="true" type="tns:PropertyCoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyCoverageItems" nillable="true" type="tns:PropertyCoverageItems" />
+  <xs:complexType name="PropertyCoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValuationCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyCoverageItem" nillable="true" type="tns:PropertyCoverageItem" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+</xs:schema>

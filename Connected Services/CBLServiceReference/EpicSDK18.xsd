@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd219" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_applicant/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd222" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd227" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_priorcarrier/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd228" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_losshistory/" />
+  <xs:complexType name="ArrayOfStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Status" nillable="true" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatus" nillable="true" type="tns:ArrayOfStatus" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyPolicyOrProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deposit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRenewal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionAccountReceivableAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionBoilerMachineryAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionBusinessAutoAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionBusinessOwnersAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionCrimeMiscellaneousAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionDealersAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionElectronicDataProcessingAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionEquipmentFloaterAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionGarageAndDealersAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionGeneralLiabilityAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionGlassAndSignAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionInstallationBuildersRiskAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionOpenCargoAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionPropertyAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionTransportationMotorTruckCargoAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionTruckersMotorCarrierAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionUmbrellaAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSectionYachtAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MethodOfPayment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodOfPaymentIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinimumPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentPlanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProgramCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionAccountReceivableAuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionAccountReceivableAuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionAccountsReceivablePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionBoilerMachineryPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionBusinessAutoPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionBusinessOwnersPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionCrimeMiscellaneousPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionDealersPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionElectronicDataProcessingPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionEquipmentFloaterAuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionEquipmentFloaterAuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionEquipmentFloaterPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionGarageAndDealersPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionGeneralLiabilityAuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionGeneralLiabilityAuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionGeneralLiabilityPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionGlassAndSignPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionInstallationBuildersRiskPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionOpenCargoPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionOther2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionOther2Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionOther3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionOther3Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionOtherPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionPropertyAuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionPropertyAuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionPropertyPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionTransportationMotorTruckCargoAuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionTransportationMotorTruckCargoAuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionTransportationMotorTruckCargoPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionTruckersMotorCarrierPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionUmbrellaPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SectionYachtPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfApplicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Applicant" nillable="true" type="tns:Applicant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicant" nillable="true" type="tns:ArrayOfApplicant" />
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_applicant/" minOccurs="0" name="Contacts" nillable="true" type="q1:Contacts" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="FirstNamedInsuredAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredBusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredBusinessTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredFEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredGLCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredNAICSCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredNumberMembersManagers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredPhoneNumberExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredSICCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredSocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstNamedInsuredWebsite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_applicant/" minOccurs="0" name="NatureOfBusiness" nillable="true" type="q3:NatureOfBusiness" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+  <xs:complexType name="ArrayOfPremise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Premise" nillable="true" type="tns:Premise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPremise" nillable="true" type="tns:ArrayOfPremise" />
+  <xs:complexType name="Premise">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q4:Address" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/" minOccurs="0" name="Buildings" nillable="true" type="q5:BuildingItems" />
+      <xs:element minOccurs="0" name="CityLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsBlanketLocation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CityLimitsIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Premise" nillable="true" type="tns:Premise" />
+  <xs:complexType name="ArrayOfPriorCarrier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriorCarrier" nillable="true" type="tns:PriorCarrier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriorCarrier" nillable="true" type="tns:ArrayOfPriorCarrier" />
+  <xs:complexType name="PriorCarrier">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_priorcarrier/" minOccurs="0" name="AutomobileValue" nillable="true" type="q6:Automobile" />
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpirationYear" type="xs:short" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_priorcarrier/" minOccurs="0" name="GeneralLiabilityValue" nillable="true" type="q7:GeneralLiability" />
+      <xs:element minOccurs="0" name="InceptionYear" type="xs:short" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_priorcarrier/" minOccurs="0" name="OtherValue" nillable="true" type="q8:Other" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PriorCarrierID" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_priorcarrier/" minOccurs="0" name="PropertyValue" nillable="true" type="q9:Property" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriorCarrier" nillable="true" type="tns:PriorCarrier" />
+  <xs:complexType name="ArrayOfLossHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LossHistory" nillable="true" type="tns:LossHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLossHistory" nillable="true" type="tns:ArrayOfLossHistory" />
+  <xs:complexType name="LossHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckIfNone" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastYearsRiseToClaims" nillable="true" type="xs:int" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_losshistory/" minOccurs="0" name="LossHistoryItems" nillable="true" type="q10:LossHistoryItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalLosses" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistory" nillable="true" type="tns:LossHistory" />
+  <xs:simpleType name="OtherNamedInsuredGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndOtherNamedInsuredID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="MarketedPolicyIDAndOtherNamedInsuredID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+      <xs:enumeration value="CarrierSubmissionIDAndOtherNamedInsuredID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OtherNamedInsuredGetType" nillable="true" type="tns:OtherNamedInsuredGetType" />
+  <xs:complexType name="ArrayOfOtherNamedInsured">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherNamedInsured" nillable="true" type="tns:OtherNamedInsured" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOtherNamedInsured" nillable="true" type="tns:ArrayOfOtherNamedInsured" />
+  <xs:complexType name="OtherNamedInsured">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GLCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MailingAddress" nillable="true" type="q11:Address" />
+      <xs:element minOccurs="0" name="NAICS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberMembersManagers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherNamedInsuredID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="SIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherNamedInsured" nillable="true" type="tns:OtherNamedInsured" />
+</xs:schema>

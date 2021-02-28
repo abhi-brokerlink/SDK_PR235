@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="OptionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OptionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OptionType" nillable="true" type="tns:OptionType" />
+  <xs:complexType name="ArrayOfLookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lookup" nillable="true" type="tns:Lookup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookup" nillable="true" type="tns:ArrayOfLookup" />
+  <xs:complexType name="Lookup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lookup" nillable="true" type="tns:Lookup" />
+  <xs:complexType name="ArrayOfOptionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OptionType" nillable="true" type="tns:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOptionType" nillable="true" type="tns:ArrayOfOptionType" />
+</xs:schema>

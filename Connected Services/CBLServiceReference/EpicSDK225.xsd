@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd55" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd62" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/" />
+  <xs:complexType name="ArrayOfPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Policy" nillable="true" type="tns:Policy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPolicy" nillable="true" type="tns:ArrayOfPolicy" />
+  <xs:complexType name="Policy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyCommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionPercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgreementID" type="xs:int" />
+      <xs:element minOccurs="0" name="AnnualizedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AnnualizedPremium" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BillingModeOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultCommissionAgreement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsProspectivePolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssuingCompanyLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuingLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineEstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineEstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayableContractID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrefillID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiumPayableLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MultiCarrierSchedule" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Downloaded" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TurnOffPolicyDownload" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Policy" nillable="true" type="tns:Policy" />
+  <xs:complexType name="ArrayOfTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transaction" nillable="true" type="tns:Transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransaction" nillable="true" type="tns:ArrayOfTransaction" />
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AttachToOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BillNumber" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BillNumberOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="BillingValue" nillable="true" type="q4:Billing" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="DetailValue" nillable="true" type="q5:Detail" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="InvoiceValue" nillable="true" type="q6:Invoice" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="CommissionsValue" nillable="true" type="q7:Commissions" />
+      <xs:element minOccurs="0" name="Discrepancy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IgnoreAgencyCommissionLessThanProducerBroker" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IgnoreFlatCommission" type="xs:boolean" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BasicInstallmentOption" nillable="true" type="q8:OptionType" />
+      <xs:element minOccurs="0" name="InstallmentCycles" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InstallmentDownPayment" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InstallmentNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InstallmentPlanID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallmentSequenceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InstallmentType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="InstallmentsValue" nillable="true" type="q9:InstallmentItems" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="UpdateInstallmentsOption" nillable="true" type="q10:OptionType" />
+      <xs:element minOccurs="0" name="PackagePolicyReplaceFullAnnualizedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PackagePolicyReplaceFullAnnualizedPremium" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="InvoicePaymentOption" nillable="true" type="q11:OptionType" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/" minOccurs="0" name="PaymentInstallmentItems" nillable="true" type="q12:PaymentInstallmentItems" />
+      <xs:element minOccurs="0" name="PaymentLineID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="PaymentMethodValue" nillable="true" type="q13:PaymentMethod" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" minOccurs="0" name="PaymentValue" nillable="true" type="q14:Payment" />
+      <xs:element minOccurs="0" name="ServiceID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceItemizationID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transaction" nillable="true" type="tns:Transaction" />
+  <xs:simpleType name="TransactionGetInstallmentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InstallmentSummary" />
+      <xs:enumeration value="SplitReceivable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionGetInstallmentType" nillable="true" type="tns:TransactionGetInstallmentType" />
+  <xs:simpleType name="AttachedWithinType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Last30Days" />
+      <xs:enumeration value="Last60Days" />
+      <xs:enumeration value="Last90Days" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttachedWithinType" nillable="true" type="tns:AttachedWithinType" />
+</xs:schema>

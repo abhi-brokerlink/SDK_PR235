@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd478" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/_ratepremiumitem/" />
+  <xs:complexType name="RatePremiumItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RatePremiumItem" nillable="true" type="tns:RatePremiumItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatePremiumItems" nillable="true" type="tns:RatePremiumItems" />
+  <xs:complexType name="RatePremiumItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContributionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContributionPercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Counts" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EmployerRate" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/_ratepremiumitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="MonthlyTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherContributionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtherContributionPercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RatePremiumID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatePremiumItem" nillable="true" type="tns:RatePremiumItem" />
+</xs:schema>

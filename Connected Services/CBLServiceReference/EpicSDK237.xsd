@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.appliedsystems.com/epic/sdk/2009/07/" elementFormDefault="qualified" targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2009/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd486" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/_lookup/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd40" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd487" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/_optiontype/" />
+  <xs:element name="Get_Lookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/_lookup/" minOccurs="0" name="LookupTypeObject" type="q1:LookupTypes" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SearchTerms" nillable="true" type="q2:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_LookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="Get_LookupResult" nillable="true" type="q3:ArrayOfLookup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Option">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/_optiontype/" minOccurs="0" name="OptionTypeObject" type="q4:OptionTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_OptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="Get_OptionResult" nillable="true" type="q5:ArrayOfOptionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

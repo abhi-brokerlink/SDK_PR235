@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd107" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd109" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AddressDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AllStructuresSelectedOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="StructureItems" nillable="true" type="q3:AccountStructureItems" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="Accounting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutomaticallyPostToGeneralLedger" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BatchPaymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillBrokerNet" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CommissionPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GeneralLedgerSubAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InternalAgencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="InternalAgencyExternalBrokerOption" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="PremiumPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Receivable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Receives1099Form" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Accounting" nillable="true" type="tns:Accounting" />
+  <xs:complexType name="Billing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowOnNewBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowOnRenewalBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ApplyLateChargesOnOverdueBalances" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeCommissionsDue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeRetainedCommission" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InvoiceLayout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoicePageBreak" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatementLayout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatementPageBreak" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Billing" nillable="true" type="tns:Billing" />
+  <xs:complexType name="CategoriesHistory">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="AgencyDefinedCategoryItems" nillable="true" type="q5:AgencyDefinedCodeItems" />
+      <xs:element minOccurs="0" name="DateConverted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PriorAccountID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="RelationshipItems" nillable="true" type="q6:RelationshipItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriesHistory" nillable="true" type="tns:CategoriesHistory" />
+  <xs:complexType name="ComplianceIdentificationNumbers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComplianceFATCA" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_common/" minOccurs="0" name="IdentificationNumberItems" nillable="true" type="q7:IdentificationNumberItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComplianceIdentificationNumbers" nillable="true" type="tns:ComplianceIdentificationNumbers" />
+  <xs:complexType name="Sales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsSalesManager" type="xs:boolean" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" minOccurs="0" name="SalesTargetItems" nillable="true" type="q8:SalesTargetItems" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" minOccurs="0" name="SalesTeamItems" nillable="true" type="q9:SalesTeamItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sales" nillable="true" type="tns:Sales" />
+</xs:schema>

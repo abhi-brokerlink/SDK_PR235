@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd262" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd263" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehiclecommon/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd264" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_mavehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd265" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_prvehicle/" />
+  <xs:complexType name="ArrayOfVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Vehicle" nillable="true" type="tns:Vehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicle" nillable="true" type="tns:ArrayOfVehicle" />
+  <xs:complexType name="Vehicle">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehicle/" minOccurs="0" name="Coverages" nillable="true" type="q1:CoverageItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehicle/" minOccurs="0" name="DescriptionValue" nillable="true" type="q2:Description" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehiclecommon/" minOccurs="0" name="DriverUseValue" nillable="true" type="q3:DriverUse" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vehicle" nillable="true" type="tns:Vehicle" />
+  <xs:complexType name="ArrayOfMAVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MAVehicle" nillable="true" type="tns:MAVehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMAVehicle" nillable="true" type="tns:ArrayOfMAVehicle" />
+  <xs:complexType name="MAVehicle">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehicle/" minOccurs="0" name="Coverages" nillable="true" type="q4:CoverageItems" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_mavehicle/" minOccurs="0" name="DescriptionValue" nillable="true" type="q5:Description" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehiclecommon/" minOccurs="0" name="DriverUseValue" nillable="true" type="q6:DriverUse" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MAVehicle" nillable="true" type="tns:MAVehicle" />
+  <xs:simpleType name="PRVehicleGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="VehicleID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PRVehicleGetType" nillable="true" type="tns:PRVehicleGetType" />
+  <xs:complexType name="ArrayOfPRVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PRVehicle" nillable="true" type="tns:PRVehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPRVehicle" nillable="true" type="tns:ArrayOfPRVehicle" />
+  <xs:complexType name="PRVehicle">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehicle/" minOccurs="0" name="Coverages" nillable="true" type="q7:CoverageItems" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_prvehicle/" minOccurs="0" name="DescriptionValue" nillable="true" type="q8:Description" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehiclecommon/" minOccurs="0" name="DriverUseValue" nillable="true" type="q9:DriverUse" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PRVehicle" nillable="true" type="tns:PRVehicle" />
+</xs:schema>

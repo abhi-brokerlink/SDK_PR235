@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd53" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd54" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd165" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd21" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd166" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunity/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd167" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd171" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_service/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd172" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd528" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/" />
+  <xs:complexType name="TransactionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ARDueDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Balance" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" minOccurs="0" name="BalanceComparisonType" type="q1:ComparisonType" />
+      <xs:element minOccurs="0" name="BillModeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BilledFromAccountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilledFromName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" minOccurs="0" name="BilledFromNameComparisonType" type="q2:ComparisonType" />
+      <xs:element minOccurs="0" name="BilledReservedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilledReservedName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" minOccurs="0" name="BilledReservedNameComparisonType" type="q3:ComparisonType" />
+      <xs:element minOccurs="0" name="BilledToAccountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilledToName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" minOccurs="0" name="BilledToNameComparisonType" type="q4:ComparisonType" />
+      <xs:element minOccurs="0" name="BinderStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" minOccurs="0" name="FutureItems" type="q5:FutureItems" />
+      <xs:element minOccurs="0" name="InstallmentGroup" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceCreatedBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceCreatedEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceLastGeneratedDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceLastGeneratedDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LateItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" minOccurs="0" name="PolicyNumberComparisonType" type="q6:ComparisonType" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" minOccurs="0" name="SiteIDComparisonType" type="q7:ComparisonType" />
+      <xs:element minOccurs="0" name="TaxableItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" minOccurs="0" name="TransactionStatus" type="q8:TransactionStatus" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" minOccurs="0" name="Service" type="q9:Service" />
+      <xs:element minOccurs="0" name="ServiceID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionFilter" nillable="true" type="tns:TransactionFilter" />
+  <xs:complexType name="OpportunityFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="CategoryComparisonType" type="q10:ComparisonType" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="DescriptionComparisonType" type="q11:ComparisonType" />
+      <xs:element minOccurs="0" name="EnteredBy" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="EnteredByComparisonType" type="q12:ComparisonType" />
+      <xs:element minOccurs="0" name="OpportunityID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Option" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="OptionComparisonType" type="q13:ComparisonType" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="OwnerComparisonType" type="q14:ComparisonType" />
+      <xs:element minOccurs="0" name="SalesManager" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="SalesManagerComparisonType" type="q15:ComparisonType" />
+      <xs:element minOccurs="0" name="SalesTeam" nillable="true" type="xs:string" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="SalesTeamComparisonType" type="q16:ComparisonType" />
+      <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" minOccurs="0" name="Status" type="q17:Status" />
+      <xs:element minOccurs="0" name="TargetCloseDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TargetCloseDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StageGroup" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityFilter" nillable="true" type="tns:OpportunityFilter" />
+  <xs:complexType name="OpportunitySorting">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="SortOrder" type="q18:SortOrder" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunity/" minOccurs="0" name="SortType" type="q19:OpportunitySortType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunitySorting" nillable="true" type="tns:OpportunitySorting" />
+  <xs:complexType name="OpportunityGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" minOccurs="0" name="Opportunities" nillable="true" type="q20:ArrayOfOpportunity" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityGetResult" nillable="true" type="tns:OpportunityGetResult" />
+  <xs:complexType name="ServiceFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_service/" minOccurs="0" name="Status" type="q21:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceFilter" nillable="true" type="tns:ServiceFilter" />
+  <xs:complexType name="ServiceGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/" minOccurs="0" name="Services" nillable="true" type="q22:ArrayOfService" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceGetResult" nillable="true" type="tns:ServiceGetResult" />
+  <xs:complexType name="SalesTeamGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/" minOccurs="0" name="SalesTeams" nillable="true" type="q23:ArrayOfSalesTeam" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTeamGetResult" nillable="true" type="tns:SalesTeamGetResult" />
+</xs:schema>

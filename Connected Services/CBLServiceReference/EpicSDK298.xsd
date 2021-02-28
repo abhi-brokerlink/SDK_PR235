@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd341" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/_contactnumberitem/" />
+  <xs:complexType name="ContactNumberItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactNumberItem" nillable="true" type="tns:ContactNumberItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactNumberItems" nillable="true" type="tns:ContactNumberItems" />
+  <xs:complexType name="ContactNumberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactNumberCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumberExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumberID" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactNumberNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/_contactnumberitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactNumberItem" nillable="true" type="tns:ContactNumberItem" />
+</xs:schema>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd271" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_primarylocationandsubsidiary/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd272" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd273" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd276" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" />
+  <xs:simpleType name="PrimaryLocationAndSubsidiaryGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LocationAndSubsidiaryID" />
+      <xs:enumeration value="MarketingLineID" />
+      <xs:enumeration value="MarketingLineIDAndCarrierSubmissionID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PrimaryLocationAndSubsidiaryGetType" nillable="true" type="tns:PrimaryLocationAndSubsidiaryGetType" />
+  <xs:complexType name="ArrayOfPrimaryLocationAndSubsidiary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrimaryLocationAndSubsidiary" nillable="true" type="tns:PrimaryLocationAndSubsidiary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrimaryLocationAndSubsidiary" nillable="true" type="tns:ArrayOfPrimaryLocationAndSubsidiary" />
+  <xs:complexType name="PrimaryLocationAndSubsidiary">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_primarylocationandsubsidiary/" minOccurs="0" name="CareCustodyAndControlValue" nillable="true" type="q1:CareCustodyControl" />
+      <xs:element minOccurs="0" name="CommercialAPLocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationAndSubsidiaryID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_primarylocationandsubsidiary/" minOccurs="0" name="LocationsValue" nillable="true" type="q2:Locations" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrimaryLocationAndSubsidiary" nillable="true" type="tns:PrimaryLocationAndSubsidiary" />
+  <xs:complexType name="ArrayOfUnderlyingInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnderlyingInsurance" nillable="true" type="tns:UnderlyingInsurance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnderlyingInsurance" nillable="true" type="tns:ArrayOfUnderlyingInsurance" />
+  <xs:complexType name="UnderlyingInsurance">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" minOccurs="0" name="AutomobileLiabilityValue" nillable="true" type="q3:AutomobileLiability" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" minOccurs="0" name="EmployersLiabilityValue" nillable="true" type="q4:EmployersLiability" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" minOccurs="0" name="GeneralLiabilityValue" nillable="true" type="q5:GeneralLiability" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" minOccurs="0" name="OtherLiability1" nillable="true" type="q6:Other" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" minOccurs="0" name="OtherLiability2" nillable="true" type="q7:Other" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnderlyingInsurance" nillable="true" type="tns:UnderlyingInsurance" />
+  <xs:complexType name="ArrayOfUnderlyingGeneralLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnderlyingGeneralLiability" nillable="true" type="tns:UnderlyingGeneralLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnderlyingGeneralLiability" nillable="true" type="tns:ArrayOfUnderlyingGeneralLiability" />
+  <xs:complexType name="UnderlyingGeneralLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInterestsCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdditionalInterestsExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AircraftLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AircraftLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AircraftPassengerLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AircraftPassengerLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyAuto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CGLClaimsMade" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CGLOccurrence" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CareCustodyControlCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CareCustodyControlExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmployeeBenefitLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmployeeBenefitLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ForeignLiabilityTravelCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ForeignLiabilityTravelExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GaragekeepersLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GaragekeepersLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncidentalMedicalMalpracticeCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncidentalMedicalMalpracticeExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LiquorLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LiquorLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoSuchClaims" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherCoverage1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage1Exposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherCoverage2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage2Exposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherCoverage3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage3Exposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherCoverage4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage4Exposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PollutionLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PollutionLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PreviousExperience" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfessionalLiabilityEAndOCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProfessionalLiabilityEAndOExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UnderlyingInsuranceCoverageInformation" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_common/" minOccurs="0" name="UnderwritingQuestionAnswers" nillable="true" type="q8:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="VendorsLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VendorsLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WatercraftLiabilityCoverage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WatercraftLiabilityExposure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnderlyingGeneralLiability" nillable="true" type="tns:UnderlyingGeneralLiability" />
+  <xs:complexType name="ArrayOfAdditionalExposures">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalExposures" nillable="true" type="tns:AdditionalExposures" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalExposures" nillable="true" type="tns:ArrayOfAdditionalExposures" />
+  <xs:complexType name="AdditionalExposures">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EPANumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Location1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfDivingBoards1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfDivingBoards2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfStories1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfStories2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfSwimmingPools1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfSwimmingPools2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfUnits1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfUnits2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_common/" minOccurs="0" name="UnderwritingQuestionAnswers" nillable="true" type="q9:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalExposures" nillable="true" type="tns:AdditionalExposures" />
+  <xs:complexType name="ArrayOfVehicles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Vehicles" nillable="true" type="tns:Vehicles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicles" nillable="true" type="tns:ArrayOfVehicles" />
+  <xs:complexType name="Vehicles">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="BusVehicle" nillable="true" type="q10:Vehicle" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="ExtraHeavyTruckTractorVehicle" nillable="true" type="q11:Vehicle" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="ExtraHeavyTruckVehicle" nillable="true" type="q12:Vehicle" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="HeavyTruckTractorVehicle" nillable="true" type="q13:Vehicle" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="HeavyTruckVehicle" nillable="true" type="q14:Vehicle" />
+      <xs:element minOccurs="0" name="ISReadonly" type="xs:boolean" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="LightTruckVehicle" nillable="true" type="q15:Vehicle" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="MediumTruckVehicle" nillable="true" type="q16:Vehicle" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" minOccurs="0" name="PrivatePassengerVehicle" nillable="true" type="q17:Vehicle" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vehicles" nillable="true" type="tns:Vehicles" />
+  <xs:simpleType name="AdditionalCoverageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalCoverageID" />
+      <xs:enumeration value="MarketingLineID" />
+      <xs:enumeration value="MarketingLineIDAndCarrierSubmissionID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalCoverageGetType" nillable="true" type="tns:AdditionalCoverageGetType" />
+  <xs:complexType name="ArrayOfAdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalCoverage" nillable="true" type="tns:ArrayOfAdditionalCoverage" />
+  <xs:complexType name="AdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="OptionCode1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+</xs:schema>

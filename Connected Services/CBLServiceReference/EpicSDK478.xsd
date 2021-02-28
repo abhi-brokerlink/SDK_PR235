@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd118" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd120" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_sharerevenue/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd109" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd122" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_viewotheremployeeitem/" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AddressDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AllStructuresSelectedOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="BusinessDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessJobTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenceCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenceExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="StructureItems" nillable="true" type="q3:AccountStructureItems" />
+      <xs:element minOccurs="0" name="EmailAddress2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="CategoriesHistory">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="AgencyDefinedCategoryItems" nillable="true" type="q4:AgencyDefinedCodeItems" />
+      <xs:element minOccurs="0" name="DateConverted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PriorAccountID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="RelationshipItems" nillable="true" type="q5:RelationshipItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriesHistory" nillable="true" type="tns:CategoriesHistory" />
+  <xs:complexType name="PersonalContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialInsuranceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalContacts" nillable="true" type="tns:PersonalContacts" />
+  <xs:complexType name="Personnel">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/" minOccurs="0" name="AuthorizedSignatureUserItems" nillable="true" type="q6:AuthorizedSignatureUserItems" />
+      <xs:element minOccurs="0" name="CompensationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateHired" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="FullTimePartTimeOption" nillable="true" type="q7:OptionType" />
+      <xs:element minOccurs="0" name="HourlyWage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LastRaise" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastReview" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NextReview" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumberOfHours" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Salary" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Terminated" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Personnel" nillable="true" type="tns:Personnel" />
+  <xs:complexType name="ServiceProducer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowOnNewBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowOnRenewalBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AutomaticPostToGL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BatchPaymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommissionableProducer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GLSubAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalProducerNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receives1099" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reconcile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequirePayableContracts" type="xs:boolean" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="ServicingRoles" nillable="true" type="q8:ServicingRolesItems" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProducerLicenseNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceProducer" nillable="true" type="tns:ServiceProducer" />
+  <xs:complexType name="ShareRevenue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsHouseProducer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsShareRevenue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrimaryOfficeAgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryOfficeBranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryOfficeDepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryOfficeProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_sharerevenue/" minOccurs="0" name="ShareRevenueAdditionalStructureItems" nillable="true" type="q9:ShareRevenueStructureItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShareRevenue" nillable="true" type="tns:ShareRevenue" />
+  <xs:complexType name="Sales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsExecutive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSalesManager" type="xs:boolean" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" minOccurs="0" name="SalesTargetItems" nillable="true" type="q10:SalesTargetItems" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" minOccurs="0" name="SalesTeamItems" nillable="true" type="q11:SalesTeamItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sales" nillable="true" type="tns:Sales" />
+  <xs:complexType name="ViewOtherEmployeeItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewOtherEmployeeItem" nillable="true" type="tns:ViewOtherEmployeeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewOtherEmployeeItems" nillable="true" type="tns:ViewOtherEmployeeItems" />
+  <xs:complexType name="ViewOtherEmployeeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_viewotheremployeeitem/" minOccurs="0" name="Flag" type="q12:Flags" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewActivities" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ViewTasks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ViewWorkflows" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewOtherEmployeeItem" nillable="true" type="tns:ViewOtherEmployeeItem" />
+</xs:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_primarylocationandsubsidiary/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_primarylocationandsubsidiary/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CareCustodyControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasWaiverOfSubrogation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHeldHarmlessInLease" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNamedInsuredInFirePolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OccupancyDescriptionOfPersonalProperty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SquareFeetOfBuildingOccupied" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CareCustodyControl" nillable="true" type="tns:CareCustodyControl" />
+  <xs:complexType name="Locations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualGrossSales" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AnnualPayroll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionOfOperations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ForeignGrossSales" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumberOfEmployees" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Locations" nillable="true" type="tns:Locations" />
+</xs:schema>

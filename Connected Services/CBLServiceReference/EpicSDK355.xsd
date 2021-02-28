@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd9" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_agencystructureitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd10" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_agencydefinedcodeitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd11" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_relationshipitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd106" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_accountstructureitem/" />
+  <xs:complexType name="AgencyStructureItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgencyStructureItem" nillable="true" type="tns:AgencyStructureItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgencyStructureItems" nillable="true" type="tns:AgencyStructureItems" />
+  <xs:complexType name="AgencyStructureItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_agencystructureitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgencyStructureItem" nillable="true" type="tns:AgencyStructureItem" />
+  <xs:complexType name="AgencyDefinedCodeItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgencyDefinedCodeItem" nillable="true" type="tns:AgencyDefinedCodeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgencyDefinedCodeItems" nillable="true" type="tns:AgencyDefinedCodeItems" />
+  <xs:complexType name="AgencyDefinedCodeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADCCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADCOption" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_agencydefinedcodeitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgencyDefinedCodeItem" nillable="true" type="tns:AgencyDefinedCodeItem" />
+  <xs:complexType name="RelationshipItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationshipItem" nillable="true" type="tns:RelationshipItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationshipItems" nillable="true" type="tns:RelationshipItems" />
+  <xs:complexType name="RelationshipItem">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_relationshipitem/" minOccurs="0" name="Flag" type="q3:Flags" />
+      <xs:element minOccurs="0" name="IfRelatedAccountTypeIsClientIsProspect" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RelatedAccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelatedAccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipID" type="xs:int" />
+      <xs:element minOccurs="0" name="RelationshipRole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationshipItem" nillable="true" type="tns:RelationshipItem" />
+  <xs:complexType name="ServicingRolesItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicingRoleItem" nillable="true" type="tns:ServicingRoleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServicingRolesItems" nillable="true" type="tns:ServicingRolesItems" />
+  <xs:complexType name="ServicingRoleItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServicingRoleItem" nillable="true" type="tns:ServicingRoleItem" />
+  <xs:complexType name="AccountStructureItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountStructureItem" nillable="true" type="tns:AccountStructureItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountStructureItems" nillable="true" type="tns:AccountStructureItems" />
+  <xs:complexType name="AccountStructureItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_accountstructureitem/" minOccurs="0" name="Flag" type="q4:Flags" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountStructureItem" nillable="true" type="tns:AccountStructureItem" />
+</xs:schema>

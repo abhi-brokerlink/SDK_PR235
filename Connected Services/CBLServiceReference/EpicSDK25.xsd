@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/reconciliation/_directbillcommission/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/reconciliation/_directbillcommission/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SearchStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Suspended" />
+      <xs:enumeration value="Unpaid" />
+      <xs:enumeration value="Search" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchStatus" nillable="true" type="tns:SearchStatus" />
+</xs:schema>

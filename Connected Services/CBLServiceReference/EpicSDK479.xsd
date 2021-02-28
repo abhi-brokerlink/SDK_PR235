@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_canada/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_canada/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="ArrayOfPaymentAuthorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentAuthorization" nillable="true" type="tns:PaymentAuthorization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentAuthorization" nillable="true" type="tns:ArrayOfPaymentAuthorization" />
+  <xs:complexType name="PaymentAuthorization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountHolderAccountNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AccountHolderAddress" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AccountHolderChequeReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountHolderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrokerAdditionalCharges" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BrokerAdditionalChargesPercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BrokerTypeOfChargesCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrokerTypeOfChargesIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardCompanyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DayOfMonthDue" type="xs:int" />
+      <xs:element minOccurs="0" name="DownpaymentAmount" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="FinancialInstitutionAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="FinancialInstitutionLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinancialInstitutionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinancialInstitutionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinancialInstitutionTransitNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstPaymentDueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ForDownpaymentOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FullPayAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InstallmentAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InstallmentFee" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InstallmentFeePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InsuranceAdditionalCharges" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InsuranceAdditionalChargesPercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InsuranceTypeOfChargesCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceTypeOfChargesIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="MethodOfPaymentOption" nillable="true" type="q3:OptionType" />
+      <xs:element minOccurs="0" name="NameOnCard" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="NewRequestChangeExistingInfoOption" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="NextPaymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumShownOnStatementCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvincialSalesTax" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalEstimatedCost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalEstimatedPolicyPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentAuthorization" nillable="true" type="tns:PaymentAuthorization" />
+</xs:schema>

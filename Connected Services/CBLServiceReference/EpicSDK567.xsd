@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd436" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernb/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd438" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverconvictionitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd439" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernl/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd441" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverns/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd443" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd445" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernwt/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd446" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernu/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd448" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveron/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd450" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverother/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd452" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverpe/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd454" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverqc/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd456" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveryt/" />
+  <xs:complexType name="DriverNB">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernb/" minOccurs="0" name="AccidentItems" nillable="true" type="q1:AccidentItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q2:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernb/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q3:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverNB" nillable="true" type="tns:DriverNB" />
+  <xs:complexType name="ConvictionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConvictionItem" nillable="true" type="tns:ConvictionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+  <xs:complexType name="ConvictionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConvictionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ConvictionID" type="xs:int" />
+      <xs:element minOccurs="0" name="DescriptionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverconvictionitem/" minOccurs="0" name="Flag" type="q4:Flags" />
+      <xs:element minOccurs="0" name="NumberOf" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConvictionItem" nillable="true" type="tns:ConvictionItem" />
+  <xs:complexType name="DriverUse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DriverUsePercentage1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverUsePercentage2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverUsePercentage3" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverUsePercentage4" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverUsePercentage5" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverUsePercentage6" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleID1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleID2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleID3" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleID4" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleID5" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleID6" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverUse" nillable="true" type="tns:DriverUse" />
+  <xs:complexType name="DriverNL">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernl/" minOccurs="0" name="AccidentItems" nillable="true" type="q5:AccidentItems" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q6:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernl/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q7:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverNL" nillable="true" type="tns:DriverNL" />
+  <xs:complexType name="DriverNS">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverns/" minOccurs="0" name="AccidentItems" nillable="true" type="q8:AccidentItems" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q9:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverns/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q10:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverNS" nillable="true" type="tns:DriverNS" />
+  <xs:complexType name="DriverNT">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/" minOccurs="0" name="AccidentItems" nillable="true" type="q11:AccidentItems" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q12:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernwt/" minOccurs="0" name="DriverChargesDiscountsValue" nillable="true" type="q13:DriverChargesDiscounts" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q14:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverNT" nillable="true" type="tns:DriverNT" />
+  <xs:complexType name="DriverNU">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernu/" minOccurs="0" name="AccidentItems" nillable="true" type="q15:AccidentItems" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q16:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernwt/" minOccurs="0" name="DriverChargesDiscountsValue" nillable="true" type="q17:DriverChargesDiscounts" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernu/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q18:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverNU" nillable="true" type="tns:DriverNU" />
+  <xs:complexType name="DriverON">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveron/" minOccurs="0" name="AccidentItems" nillable="true" type="q19:AccidentItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveron/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q20:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverON" nillable="true" type="tns:DriverON" />
+  <xs:complexType name="DriverOther">
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverother/" minOccurs="0" name="AccidentItems" nillable="true" type="q21:AccidentItems" />
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q22:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverother/" minOccurs="0" name="DriverChargesDiscountsValue" nillable="true" type="q23:DriverChargesDiscounts" />
+      <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverother/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q24:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverOther" nillable="true" type="tns:DriverOther" />
+  <xs:complexType name="DriverPE">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverpe/" minOccurs="0" name="AccidentItems" nillable="true" type="q25:AccidentItems" />
+      <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q26:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverpe/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q27:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverPE" nillable="true" type="tns:DriverPE" />
+  <xs:complexType name="DriverQC">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverqc/" minOccurs="0" name="AccidentItems" nillable="true" type="q28:AccidentItems" />
+      <xs:element xmlns:q29="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverqc/" minOccurs="0" name="AdditionalDriverInformationValue" nillable="true" type="q29:AdditionalDriverInformation" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q30="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverqc/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q30:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverQC" nillable="true" type="tns:DriverQC" />
+  <xs:complexType name="DriverYT">
+    <xs:sequence>
+      <xs:element xmlns:q31="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveryt/" minOccurs="0" name="AccidentItems" nillable="true" type="q31:AccidentItems" />
+      <xs:element xmlns:q32="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalDriverInformationUnderwritingItems" nillable="true" type="q32:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ConvictionItems" nillable="true" type="tns:ConvictionItems" />
+      <xs:element xmlns:q33="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernwt/" minOccurs="0" name="DriverChargesDiscountsValue" nillable="true" type="q33:DriverChargesDiscounts" />
+      <xs:element xmlns:q34="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveryt/" minOccurs="0" name="DriverResidentValue" nillable="true" type="q34:DriverResident" />
+      <xs:element minOccurs="0" name="DriverUseValue" nillable="true" type="tns:DriverUse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverYT" nillable="true" type="tns:DriverYT" />
+</xs:schema>

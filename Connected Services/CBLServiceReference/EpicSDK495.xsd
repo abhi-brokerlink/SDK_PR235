@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd157" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_updatemarketingattachment/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd158" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarrierresponse/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd160" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarriersubmission/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd161" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd163" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_remarket" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd164" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_remarket/" />
+  <xs:complexType name="ChangeLineIssuingLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IssuingLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeLineIssuingLocation" nillable="true" type="tns:ChangeLineIssuingLocation" />
+  <xs:complexType name="ArrayOfUpdateMarketingAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UpdateMarketingAttachment" nillable="true" type="tns:UpdateMarketingAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUpdateMarketingAttachment" nillable="true" type="tns:ArrayOfUpdateMarketingAttachment" />
+  <xs:complexType name="UpdateMarketingAttachment">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AttachmentTypeOption" nillable="true" type="q1:OptionType" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentValue" nillable="true" type="q2:Attachment" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_updatemarketingattachment/" minOccurs="0" name="CarrierSubmissionItems" nillable="true" type="q3:CarrierSubmissionItems" />
+      <xs:element minOccurs="0" name="ExistingAttachmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateMasterMarketingSubmission" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateMarketingAttachment" nillable="true" type="tns:UpdateMarketingAttachment" />
+  <xs:complexType name="ArrayOfCreateCarrierResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreateCarrierResponse" nillable="true" type="tns:CreateCarrierResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCreateCarrierResponse" nillable="true" type="tns:ArrayOfCreateCarrierResponse" />
+  <xs:complexType name="CreateCarrierResponse">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarrierresponse/" minOccurs="0" name="AttachmentItems" nillable="true" type="q4:AttachmentItems" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateReceived" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuingCompanyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarrierresponse/" minOccurs="0" name="LineItems" nillable="true" type="q5:LineItems" />
+      <xs:element minOccurs="0" name="PremiumPayableLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseTotalCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResponseTotalPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateCarrierResponse" nillable="true" type="tns:CreateCarrierResponse" />
+  <xs:complexType name="UpdateCarrierSubmission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateCarrierSubmission" nillable="true" type="tns:UpdateCarrierSubmission" />
+  <xs:complexType name="ArrayOfCreateCarrierSubmission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreateCarrierSubmission" nillable="true" type="tns:CreateCarrierSubmission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCreateCarrierSubmission" nillable="true" type="tns:ArrayOfCreateCarrierSubmission" />
+  <xs:complexType name="CreateCarrierSubmission">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarriersubmission/" minOccurs="0" name="AttachmentItems" nillable="true" type="q6:AttachmentItems" />
+      <xs:element minOccurs="0" name="CarrierSubmissionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuingCompanyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarriersubmission/" minOccurs="0" name="LineItems" nillable="true" type="q7:LineItems" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiumPayableCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestedTotalCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RequestedTotalPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubmissionStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="SubmitToPPEICOOption" nillable="true" type="q8:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateCarrierSubmission" nillable="true" type="tns:CreateCarrierSubmission" />
+  <xs:complexType name="ArrayOfMoveMarketedLinesToCurrentPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveMarketedLinesToCurrentPolicy" nillable="true" type="tns:MoveMarketedLinesToCurrentPolicy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoveMarketedLinesToCurrentPolicy" nillable="true" type="tns:ArrayOfMoveMarketedLinesToCurrentPolicy" />
+  <xs:complexType name="MoveMarketedLinesToCurrentPolicy">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AddRenewUpdatePolicyOption" nillable="true" type="q9:OptionType" />
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" minOccurs="0" name="AttachmentItems" nillable="true" type="q10:AttachmentItems" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="CarrierSubmissionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExistingPolicyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" minOccurs="0" name="LineItems" nillable="true" type="q11:LineItems" />
+      <xs:element minOccurs="0" name="MoveMarketingSubmissionAndAllAttachedCarrierSubmissionsToHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="UpdateStageToOption" nillable="true" type="q12:OptionType" />
+      <xs:element minOccurs="0" name="IsProspectivePolicy" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveMarketedLinesToCurrentPolicy" nillable="true" type="tns:MoveMarketedLinesToCurrentPolicy" />
+  <xs:complexType name="ArrayOfRemarket">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remarket" nillable="true" type="tns:Remarket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemarket" nillable="true" type="tns:ArrayOfRemarket" />
+  <xs:complexType name="Remarket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_remarket" minOccurs="0" name="CarrierSubmissionDetailItems" nillable="true" type="q13:CarrierSubmissionDetailItems" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_remarket/" minOccurs="0" name="LineDetailItems" nillable="true" type="q14:LineDetailItems" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmissionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToAnotherAccountLookupCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remarket" nillable="true" type="tns:Remarket" />
+</xs:schema>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd326" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_messengerprotectionitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd327" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_remarkitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd328" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_safevaultitem/" />
+  <xs:complexType name="MessengerProtectionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MessengerProtectionItem" nillable="true" type="tns:MessengerProtectionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessengerProtectionItems" nillable="true" type="tns:MessengerProtectionItems" />
+  <xs:complexType name="MessengerProtectionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChecksAccountsPayable" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ChecksDeposit" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_messengerprotectionitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="MessengerNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MessengerProtectionID" type="xs:int" />
+      <xs:element minOccurs="0" name="Money" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MoneyOvernight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumberGuardsPerMessenger" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfArmoredVehicles" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayrollChecks" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PrivateConveyance" type="q2:YesNoOptions" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="SafetySatchel" type="q3:YesNoOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessengerProtectionItem" nillable="true" type="tns:MessengerProtectionItem" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_remarkitem/" minOccurs="0" name="Flag" type="q4:Flags" />
+      <xs:element minOccurs="0" name="PrintForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+  <xs:complexType name="Protection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessibleOpeningsAndProtection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlarmDescriptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlarmInstalledBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlarmTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExtentOfProtectionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfGuards" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfWatchpersons" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherProtection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatchpersonsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlarmTypeOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Protection" nillable="true" type="tns:Protection" />
+  <xs:complexType name="SafeVaultItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SafeVaultItem" nillable="true" type="tns:SafeVaultItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SafeVaultItems" nillable="true" type="tns:SafeVaultItems" />
+  <xs:complexType name="SafeVaultItem">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="ChestCombinationLock" type="q5:YesNoOptions" />
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorThickness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_safevaultitem/" minOccurs="0" name="Flag" type="q6:Flags" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="InnerCombinationLock" type="q7:YesNoOptions" />
+      <xs:element minOccurs="0" name="LabelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="OuterCombinationLock" type="q8:YesNoOptions" />
+      <xs:element minOccurs="0" name="SafeVaultID" type="xs:int" />
+      <xs:element minOccurs="0" name="WallThickness" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SafeVaultItem" nillable="true" type="tns:SafeVaultItem" />
+</xs:schema>

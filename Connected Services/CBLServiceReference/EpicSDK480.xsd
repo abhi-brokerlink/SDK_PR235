@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/_marketedpolicyfilter/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/_marketedpolicyfilter/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SearchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Marketed" />
+      <xs:enumeration value="MarketedHistory" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchType" nillable="true" type="tns:SearchType" />
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd499" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd508" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_detail/" />
+  <xs:complexType name="Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddAsDefaultEntry" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_common/" minOccurs="0" name="DefaultEntryValue" nillable="true" type="q1:DefaultEntry" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_detail/" minOccurs="0" name="DetailItemsValue" nillable="true" type="q2:DetailItems" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Detail" nillable="true" type="tns:Detail" />
+</xs:schema>

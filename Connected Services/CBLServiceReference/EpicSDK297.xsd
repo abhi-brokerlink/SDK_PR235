@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd199" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_premise/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd201" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_subjectofinsurance/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="ArrayOfPremise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Premise" nillable="true" type="tns:Premise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPremise" nillable="true" type="tns:ArrayOfPremise" />
+  <xs:complexType name="Premise">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_premise/" minOccurs="0" name="AlarmAndFireValue" nillable="true" type="q1:AlarmAndFire" />
+      <xs:element minOccurs="0" name="BuildingID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_premise/" minOccurs="0" name="CoveragesValue" nillable="true" type="q2:Coverages" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_premise/" minOccurs="0" name="RatingValue" nillable="true" type="q3:Rating" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Premise" nillable="true" type="tns:Premise" />
+  <xs:complexType name="ArrayOfSubjectOfInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubjectOfInsurance" nillable="true" type="tns:SubjectOfInsurance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubjectOfInsurance" nillable="true" type="tns:ArrayOfSubjectOfInsurance" />
+  <xs:complexType name="SubjectOfInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BlanketNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BlanketTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_subjectofinsurance/" minOccurs="0" name="CausesOfLoss" nillable="true" type="q4:CauseOfLossItems" />
+      <xs:element minOccurs="0" name="Condition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISOTELNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InflationGuardPercentage" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="InflationGuardPercentagePerOption" nillable="true" type="q5:OptionType" />
+      <xs:element minOccurs="0" name="InflationGuardPercentagePerOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SubjectOfInsuranceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubjectOfInsuranceID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValuationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValuationIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubjectOfInsurance" nillable="true" type="tns:SubjectOfInsurance" />
+</xs:schema>

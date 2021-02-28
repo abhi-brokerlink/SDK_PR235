@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd234" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd236" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_generalinformation/" />
+  <xs:complexType name="ArrayOfPolicySections">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PolicySections" nillable="true" type="tns:PolicySections" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPolicySections" nillable="true" type="tns:ArrayOfPolicySections" />
+  <xs:complexType name="PolicySections">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPersonalAutoSectionAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPersonalInlandMarineSectionAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPersonalUmbrellaSectionAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsResidentialSectionAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWatercraftSectionAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherSection1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherSection2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherSection3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicySections" nillable="true" type="tns:PolicySections" />
+  <xs:simpleType name="LocationScheduleGaragingLocationGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LocationScheduleGaragingLocationGetType" nillable="true" type="tns:LocationScheduleGaragingLocationGetType" />
+  <xs:complexType name="ArrayOfLocationScheduleGaragingLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationScheduleGaragingLocation" nillable="true" type="tns:LocationScheduleGaragingLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationScheduleGaragingLocation" nillable="true" type="tns:ArrayOfLocationScheduleGaragingLocation" />
+  <xs:complexType name="LocationScheduleGaragingLocation">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="IsPrimaryPremise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationScheduleGaragingLocation" nillable="true" type="tns:LocationScheduleGaragingLocation" />
+  <xs:complexType name="ArrayOfPriorCoverageAndLossHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriorCoverageAndLossHistory" nillable="true" type="tns:PriorCoverageAndLossHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriorCoverageAndLossHistory" nillable="true" type="tns:ArrayOfPriorCoverageAndLossHistory" />
+  <xs:complexType name="PriorCoverageAndLossHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" minOccurs="0" name="LossHistories" nillable="true" type="q2:LossHistoryItems" />
+      <xs:element minOccurs="0" name="LossesAtAnyLocationYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" minOccurs="0" name="PriorCoverage1" nillable="true" type="q3:PriorCoverage" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" minOccurs="0" name="PriorCoverage2" nillable="true" type="q4:PriorCoverage" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" minOccurs="0" name="PriorCoverage3" nillable="true" type="q5:PriorCoverage" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" minOccurs="0" name="PriorCoverage4" nillable="true" type="q6:PriorCoverage" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="YearsLossesAtAnyLocation" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="NoPriorCoverage" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriorCoverageAndLossHistory" nillable="true" type="tns:PriorCoverageAndLossHistory" />
+  <xs:complexType name="ArrayOfGeneralInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneralInformation" nillable="true" type="tns:ArrayOfGeneralInformation" />
+  <xs:complexType name="GeneralInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_generalinformation/" minOccurs="0" name="QuestionAnswers" nillable="true" type="q7:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+  <xs:simpleType name="FormAndEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndFormAndEndorsementID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormAndEndorsementGetType" nillable="true" type="tns:FormAndEndorsementGetType" />
+  <xs:complexType name="ArrayOfFormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormAndEndorsement" nillable="true" type="tns:ArrayOfFormAndEndorsement" />
+  <xs:complexType name="FormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyrightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyrightType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+  <xs:simpleType name="RemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="PolicyAndRemarkID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RemarkGetType" nillable="true" type="tns:RemarkGetType" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+</xs:schema>

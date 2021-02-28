@@ -1,0 +1,1 @@
+SELECT * FROM dbo.SDKActivity WHERE ProcessFlag = 0

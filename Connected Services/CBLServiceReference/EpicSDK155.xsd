@@ -1,0 +1,2684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.appliedsystems.com/epic/sdk/2016/01/" elementFormDefault="qualified" targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2016/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd21" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd34" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd35" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd40" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd48" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd51" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd52" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd63" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd15" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd167" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd168" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd172" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd178" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd173" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd197" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd198" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd207" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_property/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd208" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_property/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd212" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd187" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd188" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd332" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd342" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd350" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_canada/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd472" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd489" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd488" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd496" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd502" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd520" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_reconciliation/" />
+  <xs:element name="Get_Policy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="PolicyFilterObject" nillable="true" type="q1:PolicyFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="Get_PolicyResult" nillable="true" type="q2:PolicyGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="PolicyObject" nillable="true" type="q3:Policy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_PolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_PolicyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="PolicyObject" nillable="true" type="q4:Policy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Policy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_PolicyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ActivateInactivateMultiCarrierSchedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ActivateInactivateMultiCarrierScheduleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_Cancel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="CancelObject" nillable="true" type="q5:Cancel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_CancelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Policy_CancelResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionCancel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionCancelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionCancelResult" nillable="true" type="q6:ArrayOfCancel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_CancellationRequestReasonMethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="IDType" type="q7:CancellationRequestReasonMethodGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_CancellationRequestReasonMethodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_CancellationRequestReasonMethodResult" nillable="true" type="q8:ArrayOfCancel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy_CancellationRequestReasonMethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="CancelObject" nillable="true" type="q9:Cancel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy_CancellationRequestReasonMethodResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionChangePolicyEffectiveExpirationDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionChangePolicyEffectiveExpirationDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionChangePolicyEffectiveExpirationDatesResult" nillable="true" type="q10:ArrayOfChangePolicyEffectiveExpirationDates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ChangePolicyEffectiveExpirationDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="ChangePolicyEffectiveExpirationDatesObject" nillable="true" type="q11:ChangePolicyEffectiveExpirationDates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ChangePolicyEffectiveExpirationDatesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ChangePolicyProspectiveContractedStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ChangePolicyProspectiveContractedStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ChangeServiceSummaryDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="ChangeServiceSummaryDescriptionObject" nillable="true" type="q12:ChangeServiceSummaryDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ChangeServiceSummaryDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_EndorseReviseAddLineMidterm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="EndorseReviseAddLineMidtermObject" nillable="true" type="q13:EndorseReviseAddLineMidterm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_EndorseReviseAddLineMidtermResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Action_Policy_EndorseReviseAddLineMidtermResult" nillable="true" type="q14:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_EndorseReviseExistingLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="EndorseReviseExistingLineObject" nillable="true" type="q15:EndorseReviseExistingLine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_EndorseReviseExistingLineResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_IssueNotIssueEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="IssueNotIssueEndorsementObject" nillable="true" type="q16:IssueNotIssueEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_IssueNotIssueEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionIssueNotIssueEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="SearchType" type="q17:IssueNotIssueEndorsementGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionIssueNotIssueEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionIssueNotIssueEndorsementResult" nillable="true" type="q18:ArrayOfIssueNotIssueEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_IssueNotIssuePolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="IssueNotIssuePolicyObject" nillable="true" type="q19:IssueNotIssuePolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_IssueNotIssuePolicyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionIssueNotIssuePolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+        <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="SearchType" type="q20:IssueNotIssuePolicyGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionIssueNotIssuePolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionIssueNotIssuePolicyResult" nillable="true" type="q21:ArrayOfIssueNotIssuePolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_IssueCancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="IssueCancellationObject" nillable="true" type="q22:IssueCancellation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_IssueCancellationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionIssueCancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionIssueCancellationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionIssueCancellationResult" nillable="true" type="q23:ArrayOfIssueCancellation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_Reinstate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="ReinstateObject" nillable="true" type="q24:Reinstate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_ReinstateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionReinstate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionReinstateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionReinstateResult" nillable="true" type="q25:ArrayOfReinstate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_Renew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="RenewObject" nillable="true" type="q26:Renew" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_RenewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Policy_RenewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionRenew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionRenewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionRenewResult" nillable="true" type="q27:ArrayOfRenew" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionUpdateStageToSubmitted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_DefaultActionUpdateStageToSubmittedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/" minOccurs="0" name="Get_Policy_DefaultActionUpdateStageToSubmittedResult" nillable="true" type="q28:ArrayOfUpdateStageToSubmitted" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_UpdateStageToSubmitted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/" minOccurs="0" name="oSubmissionObject" nillable="true" type="q29:UpdateStageToSubmitted" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Policy_UpdateStageToSubmittedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_CancelPolicyAdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q30="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="CancelPolicyAdditionalInterestsIDType" type="q30:CancelPolicyAdditionalInterestGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_CancelPolicyAdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="Get_Policy_CancelPolicyAdditionalInterestResult" nillable="true" type="q31:ArrayOfAdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_CancelPolicyAdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="apiAdditionalInterests" nillable="true" type="q32:AdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_CancelPolicyAdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Policy_CancelPolicyAdditionalInterestResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy_CancelPolicyAdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="apiAdditionalInterests" nillable="true" type="q33:AdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy_CancelPolicyAdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Policy_CancelPolicyAdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Policy_CancelPolicyAdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_CancelPolicyRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q34="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="CancelPolicyRemarksIDType" type="q34:CancelPolicyRemarksGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_CancelPolicyRemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="Get_Policy_CancelPolicyRemarkResult" nillable="true" type="q35:ArrayOfRemark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_CancelPolicyRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="apiRemark" nillable="true" type="q36:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_CancelPolicyRemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Policy_CancelPolicyRemarkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy_CancelPolicyRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" minOccurs="0" name="apiRemark" nillable="true" type="q37:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Policy_CancelPolicyRemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Policy_CancelPolicyRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Policy_CancelPolicyRemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="TransactionFilterObject" nillable="true" type="q38:TransactionFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_TransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="Get_TransactionResult" nillable="true" type="q39:TransactionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="TransactionObject" nillable="true" type="q40:Transaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_TransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_TransactionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="TransactionObject" nillable="true" type="q41:Transaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_TransactionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultInstallments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="TransactionObject" nillable="true" type="q42:Transaction" />
+        <xs:element xmlns:q43="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="InstallmentType" type="q43:TransactionGetInstallmentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultInstallmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="Get_Transaction_DefaultInstallmentsResult" nillable="true" type="q44:TransactionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultProducerBrokerCommissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" minOccurs="0" name="TransactionObject" nillable="true" type="q45:Transaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultProducerBrokerCommissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="Get_Transaction_DefaultProducerBrokerCommissionsResult" nillable="true" type="q46:TransactionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_AccountsReceivableWriteOff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="AccountsReceivableWriteOffObject" nillable="true" type="q47:AccountsReceivableWriteOff" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_AccountsReceivableWriteOffResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_ApplyCreditsToDebits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="ApplyCreditsToDebitsObject" nillable="true" type="q48:ApplyCreditsToDebits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_ApplyCreditsToDebitsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionApplyCreditsToDebits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+        <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionApplyCreditsToDebitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="Get_Transaction_DefaultActionApplyCreditsToDebitsResult" nillable="true" type="q49:ArrayOfApplyCreditsToDebits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_FinanceTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="FinanceTransactionObject" nillable="true" type="q50:FinanceTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_FinanceTransactionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_MoveTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="MoveTransactionObject" nillable="true" type="q51:MoveTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_MoveTransactionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionMoveTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="MoveTransactionObject" nillable="true" type="q52:MoveTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionMoveTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="Get_Transaction_DefaultActionMoveTransactionResult" nillable="true" type="q53:ArrayOfMoveTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionReverseTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionReverseTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="Get_Transaction_DefaultActionReverseTransactionResult" nillable="true" type="q54:ArrayOfReverseTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_ReverseTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="ReverseTransactionObject" nillable="true" type="q55:ReverseTransaction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_ReverseTransactionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_UnapplyCreditsToDebits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="UnapplyCreditsToDebitsObject" nillable="true" type="q56:UnapplyCreditsToDebits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_UnapplyCreditsToDebitsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionUnapplyCreditsToDebits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+        <xs:element minOccurs="0" name="TransactionDetailNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionUnapplyCreditsToDebitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="Get_Transaction_DefaultActionUnapplyCreditsToDebitsResult" nillable="true" type="q57:ArrayOfUnapplyCreditsToDebits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_VoidPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="VoidPaymentObject" nillable="true" type="q58:VoidPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_VoidPaymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionAdjustCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionAdjustCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" minOccurs="0" name="Get_Transaction_DefaultActionAdjustCommissionResult" nillable="true" type="q59:ArrayOfAdjustCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_AdjustCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" minOccurs="0" name="AdjustCommissionObject" nillable="true" type="q60:AdjustCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_AdjustCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionRevisePremium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionRevisePremiumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="Get_Transaction_DefaultActionRevisePremiumResult" nillable="true" type="q61:ArrayOfRevisePremium" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_RevisePremium">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="RevisePremiumObject" nillable="true" type="q62:RevisePremium" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_RevisePremiumResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionGenerateTaxFee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_DefaultActionGenerateTaxFeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="Get_Transaction_DefaultActionGenerateTaxFeeResult" nillable="true" type="q63:ArrayOfGenerateTaxFee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_GenerateTaxFee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" minOccurs="0" name="GenerateTaxFeeObject" nillable="true" type="q64:GenerateTaxFee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Transaction_GenerateTaxFeeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentObject" nillable="true" type="q65:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Insert_AttachmentResult" nillable="true" type="q66:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="AttachmentFilterObject" nillable="true" type="q67:AttachmentFilter" />
+        <xs:element xmlns:q68="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="AttachmentSortingObject" nillable="true" type="q68:AttachmentSorting" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="Get_AttachmentResult" nillable="true" type="q69:AttachmentGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_Details">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentObject" nillable="true" type="q70:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_DetailsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_MoveFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentObject" nillable="true" type="q71:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_MoveFolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_MoveAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentObject" nillable="true" type="q72:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_MoveAccountResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_Binary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentObject" nillable="true" type="q73:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Attachment_BinaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Update_Attachment_BinaryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AttachmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="OpportunityFilterObject" nillable="true" type="q74:OpportunityFilter" />
+        <xs:element xmlns:q75="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="OpportunitySortingObject" nillable="true" type="q75:OpportunitySorting" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_OpportunityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="Get_OpportunityResult" nillable="true" type="q76:OpportunityGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Opportunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" minOccurs="0" name="OpportunityObject" nillable="true" type="q77:Opportunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_OpportunityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_OpportunityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Opportunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" minOccurs="0" name="OpportunityObject" nillable="true" type="q78:Opportunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_OpportunityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Opportunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_OpportunityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity_OpportunityAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+        <xs:element minOccurs="0" name="OpportunityAttachmentID" type="xs:int" />
+        <xs:element xmlns:q79="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="IDType" type="q79:OpportunityAttachmentsGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity_OpportunityAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="Get_Opportunity_OpportunityAttachmentResult" nillable="true" type="q80:ArrayOfOpportunityAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Opportunity_OpportunityAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="OpportunityAttachmentObject" nillable="true" type="q81:OpportunityAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Opportunity_OpportunityAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Opportunity_OpportunityAttachmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Opportunity_OpportunityAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+        <xs:element minOccurs="0" name="OpportunityAttachmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Opportunity_OpportunityAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity_OpportunityContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity_OpportunityContactResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="Get_Opportunity_OpportunityContactResult" nillable="true" type="q82:ArrayOfOpportunityContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Opportunity_OpportunityContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="OpportunityContactObject" nillable="true" type="q83:OpportunityContact" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Opportunity_OpportunityContactResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity_AssociatedItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssociatedItemID" type="xs:int" />
+        <xs:element xmlns:q84="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="IDType" type="q84:OpportunityAssociatedItemGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Opportunity_AssociatedItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="Get_Opportunity_AssociatedItemResult" nillable="true" type="q85:ArrayOfAssociatedItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Opportunity_AssociatedItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="AssociatedItemObject" nillable="true" type="q86:AssociatedItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Opportunity_AssociatedItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Opportunity_AssociatedItemResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Opportunity_AssociatedItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssociatedItemID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Opportunity_AssociatedItemResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Opportunity_Renew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" minOccurs="0" name="OpportunityObject" nillable="true" type="q87:Opportunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Opportunity_RenewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Opportunity_RenewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Service">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="ServiceFilterObject" nillable="true" type="q88:ServiceFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_ServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="Get_ServiceResult" nillable="true" type="q89:ServiceGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Service">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/" minOccurs="0" name="ServiceObject" nillable="true" type="q90:Service" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_ServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_ServiceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Service">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/" minOccurs="0" name="ServiceObject" nillable="true" type="q91:Service" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_ServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Service">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_ServiceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Service_Renew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_action/" minOccurs="0" name="ServiceRenewObject" nillable="true" type="q92:Renew" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Service_RenewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Service_RenewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Service_DefaultActionRenew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Service_DefaultActionRenewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_action/" minOccurs="0" name="Get_Service_DefaultActionRenewResult" nillable="true" type="q93:ArrayOfRenew" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Service_ServiceAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceID" type="xs:int" />
+        <xs:element minOccurs="0" name="ServiceAttachmentID" type="xs:int" />
+        <xs:element xmlns:q94="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" minOccurs="0" name="IDType" type="q94:ServiceAttachmentsGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Service_ServiceAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" minOccurs="0" name="Get_Service_ServiceAttachmentResult" nillable="true" type="q95:ArrayOfServiceAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Service_ServiceAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" minOccurs="0" name="ServiceAttachmentObject" nillable="true" type="q96:ServiceAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Service_ServiceAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Service_ServiceAttachmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Service_ServiceAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceID" type="xs:int" />
+        <xs:element minOccurs="0" name="ServiceAttachmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Service_ServiceAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_Premise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q97="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q97:PremiseGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_PremiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" minOccurs="0" name="Get_Property_PremiseResult" nillable="true" type="q98:ArrayOfPremise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_Premise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" minOccurs="0" name="PremiseObject" nillable="true" type="q99:Premise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_PremiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_PremiseResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_Premise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" minOccurs="0" name="PremiseObject" nillable="true" type="q100:Premise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_PremiseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_Premise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_PremiseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_SubjectOfInsurance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q101="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q101:SubjectOfInsuranceGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_SubjectOfInsuranceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" minOccurs="0" name="Get_Property_SubjectOfInsuranceResult" nillable="true" type="q102:ArrayOfSubjectOfInsurance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_SubjectOfInsurance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" minOccurs="0" name="SubjectOfInsuranceObject" nillable="true" type="q103:SubjectOfInsurance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_SubjectOfInsuranceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_SubjectOfInsuranceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_SubjectOfInsurance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" minOccurs="0" name="SubjectOfInsuranceObject" nillable="true" type="q104:SubjectOfInsurance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_SubjectOfInsuranceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_SubjectOfInsurance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubjectOfInsuranceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_SubjectOfInsuranceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_BusinessIncomeExtraExpenseRentalValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q105="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q105:BusinessIncomeExtraExpenseRentalValueGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_BusinessIncomeExtraExpenseRentalValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="Get_Property_BusinessIncomeExtraExpenseRentalValueResult" nillable="true" type="q106:ArrayOfBusinessIncomeExtraExpenseRentalValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_BusinessIncomeExtraExpenseRentalValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="BusinessIncomeExtraExpenseRentalValueObject" nillable="true" type="q107:BusinessIncomeExtraExpenseRentalValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_BusinessIncomeExtraExpenseRentalValueResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_ValueReporting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q108="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q108:ValueReportingGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_ValueReportingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="Get_Property_ValueReportingResult" nillable="true" type="q109:ArrayOfValueReporting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_ValueReporting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="ValueReportingObject" nillable="true" type="q110:ValueReporting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_ValueReportingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_ValueReportingResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_ValueReporting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="ValueReportingObject" nillable="true" type="q111:ValueReporting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_ValueReportingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_ValueReporting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValueReportingID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_ValueReportingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q112="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q112:AdditionalInterestGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_property/" minOccurs="0" name="Get_Property_AdditionalInterestResult" nillable="true" type="q113:ArrayOfAdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_property/" minOccurs="0" name="AdditionalInterestObject" nillable="true" type="q114:AdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_AdditionalInterestResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_property/" minOccurs="0" name="AdditionalInterestObject" nillable="true" type="q115:AdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q116="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q116:FormAndEndorsementGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="Get_Property_FormAndEndorsementResult" nillable="true" type="q117:ArrayOfFormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q118:FormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_FormAndEndorsementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q119:FormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q120="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="IDType" type="q120:AdditionalCoverageGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="Get_Property_AdditionalCoverageResult" nillable="true" type="q121:ArrayOfAdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="AdditionalCoverageObject" nillable="true" type="q122:AdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_AdditionalCoverageResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" minOccurs="0" name="AdditionalCoverageObject" nillable="true" type="q123:AdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_StatementOfValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_StatementOfValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_property/" minOccurs="0" name="Get_Property_StatementOfValuesResult" nillable="true" type="q124:ArrayOfStatementOfValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_StatementOfValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_property/" minOccurs="0" name="StatementOfValuesObject" nillable="true" type="q125:StatementOfValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_StatementOfValuesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q126="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="IDType" type="q126:RemarkGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="Get_Property_RemarkResult" nillable="true" type="q127:ArrayOfRemark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="RemarkObject" nillable="true" type="q128:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_RemarkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="RemarkObject" nillable="true" type="q129:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+        <xs:element xmlns:q130="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="IDType" type="q130:SupplementalScreenGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="Get_Property_SupplementalScreenResult" nillable="true" type="q131:ArrayOfSupplementalScreen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_SupplementalScreen_BlankScheduledItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+        <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Property_SupplementalScreen_BlankScheduledItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" minOccurs="0" name="Get_Property_SupplementalScreen_BlankScheduledItemResult" nillable="true" type="q132:SupplementalScreenScheduledDataItemsRow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="SupplementalScreensObject" nillable="true" type="q133:SupplementalScreen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Property_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="AvailableAdditionalScreenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Property_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Property_SupplementalScreenResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Property_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_PolicyInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_PolicyInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_PolicyInformationResult" nillable="true" type="q134:ArrayOfPolicyInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_PolicyInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="PolicyInformationObject" nillable="true" type="q135:PolicyInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_PolicyInformationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_Applicant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_ApplicantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_ApplicantResult" nillable="true" type="q136:ArrayOfApplicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_Applicant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="ApplicantObject" nillable="true" type="q137:Applicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_ApplicantResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q138="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q138:LocationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_LocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_LocationResult" nillable="true" type="q139:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="LocationObject" nillable="true" type="q140:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_LocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="LocationObject" nillable="true" type="q141:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_LocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_LocationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_LocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_LossHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q142="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q142:LossHistoryGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_LossHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_LossHistoryResult" nillable="true" type="q143:ArrayOfLossHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_LossHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="LossHistoryObject" nillable="true" type="q144:LossHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_LossHistoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_LossHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" minOccurs="0" name="LossHistoryObject" nillable="true" type="q145:LossHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_LossHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_LossHistoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_LossHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LossHistoryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_LossHistoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q146="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q146:AdditionalInterestGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_AdditionalInterestResult" nillable="true" type="q147:ArrayOfAdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="AdditionalInterestObject" nillable="true" type="q148:AdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_AdditionalInterestResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="AdditionalInterestObject" nillable="true" type="q149:AdditionalInterest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_AdditionalInterest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_AdditionalInterestResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q150="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q150:FormAndEndorsementGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_FormAndEndorsementResult" nillable="true" type="q151:ArrayOfFormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q152:FormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_FormAndEndorsementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q153:FormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_PaymentAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_PaymentAuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_canada/" minOccurs="0" name="Get_CanadianHabitational_PaymentAuthorizationResult" nillable="true" type="q154:ArrayOfPaymentAuthorization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_PaymentAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_canada/" minOccurs="0" name="PaymentAuthorizationObject" nillable="true" type="q155:PaymentAuthorization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_PaymentAuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_WatercraftTrailerOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q156="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q156:WatercraftTrailerOperatorGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_WatercraftTrailerOperatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_WatercraftTrailerOperatorResult" nillable="true" type="q157:ArrayOfWatercraftTrailerOperator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_WatercraftTrailerOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="WatercraftTrailerOperatorObject" nillable="true" type="q158:WatercraftTrailerOperator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_WatercraftTrailerOperatorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_WatercraftTrailerOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="WatercraftTrailerOperatorObject" nillable="true" type="q159:WatercraftTrailerOperator" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_WatercraftTrailerOperatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_WatercraftTrailerOperatorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_WatercraftTrailerOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WatercraftOperatorID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_WatercraftTrailerOperatorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_PersonalArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_PersonalArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_PersonalArticleResult" nillable="true" type="q160:ArrayOfPersonalArticle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_PersonalArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="PersonalArticleObject" nillable="true" type="q161:PersonalArticle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_PersonalArticleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q162="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q162:AttachmentGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_AttachmentResult" nillable="true" type="q163:ArrayOfAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="AttachmentObject" nillable="true" type="q164:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="AttachmentObject" nillable="true" type="q165:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_AttachmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_Attachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AttachmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_AttachmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q166="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="IDType" type="q166:RemarkGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="Get_CanadianHabitational_RemarkResult" nillable="true" type="q167:ArrayOfRemark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="LOBRemarkObject" nillable="true" type="q168:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="LOBRemarkObject" nillable="true" type="q169:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_RemarkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+        <xs:element xmlns:q170="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="IDType" type="q170:SupplementalScreenGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="Get_CanadianHabitational_SupplementalScreenResult" nillable="true" type="q171:ArrayOfSupplementalScreen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SupplementalScreen_BlankScheduledItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+        <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SupplementalScreen_BlankScheduledItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" minOccurs="0" name="Get_CanadianHabitational_SupplementalScreen_BlankScheduledItemResult" nillable="true" type="q172:SupplementalScreenScheduledDataItemsRow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="SupplementalScreensObject" nillable="true" type="q173:SupplementalScreen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="AvailableAdditionalScreenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_SupplementalScreenResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_WatercraftTrailer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q174="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q174:WatercraftTrailerGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_WatercraftTrailerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_WatercraftTrailerResult" nillable="true" type="q175:ArrayOfWatercraftTrailer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_WatercraftTrailer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="WatercraftTrailerObject" nillable="true" type="q176:WatercraftTrailer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_WatercraftTrailerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_WatercraftTrailer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="WatercraftTrailerObject" nillable="true" type="q177:WatercraftTrailer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_WatercraftTrailerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_WatercraftTrailerResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_WatercraftTrailer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WatercraftTrailerID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_WatercraftTrailerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_BrokerAgentQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_BrokerAgentQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_BrokerAgentQuestionnaireResult" nillable="true" type="q178:ArrayOfBrokerAgentQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_BrokerAgentQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="BrokerAgentQuestionnaireObject" nillable="true" type="q179:BrokerAgentQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_BrokerAgentQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SolidFuelQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q180="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q180:SolidFuelQuestionnaireGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SolidFuelQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_SolidFuelQuestionnaireResult" nillable="true" type="q181:ArrayOfSolidFuelQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_SolidFuelQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="SolidFuelQuestionnaireObject" nillable="true" type="q182:SolidFuelQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_SolidFuelQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_SolidFuelQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="SolidFuelQuestionnaireObject" nillable="true" type="q183:SolidFuelQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CanadianHabitational_SolidFuelQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CanadianHabitational_SolidFuelQuestionnaireResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_SolidFuelQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SolidFuelQuestionnaireID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CanadianHabitational_SolidFuelQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SewerBackupQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q184="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="IDType" type="q184:SewerBackupQuestionnaireGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CanadianHabitational_SewerBackupQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="Get_CanadianHabitational_SewerBackupQuestionnaireResult" nillable="true" type="q185:ArrayOfSewerBackupQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_SewerBackupQuestionnaire">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" minOccurs="0" name="SewerBackupQuestionnaireObject" nillable="true" type="q186:SewerBackupQuestionnaire" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CanadianHabitational_SewerBackupQuestionnaireResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyInformation_PlanRateInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q187="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="IDType" type="q187:PolicyInformationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyInformation_PlanRateInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="Get_PolicyInformation_PlanRateInformationResult" nillable="true" type="q188:ArrayOfPlanRateInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyInformation_PlanRateInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="PlanRateInformationObject" nillable="true" type="q189:PlanRateInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyInformation_PlanRateInformationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyInformation_ApplicantLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q190="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="IDType" type="q190:PolicyInformationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyInformation_ApplicantLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="Get_PolicyInformation_ApplicantLocationsResult" nillable="true" type="q191:ArrayOfApplicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyInformation_ApplicantLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="ApplicantLocationsObject" nillable="true" type="q192:Applicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyInformation_ApplicantLocationsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyInformation_EmployeeClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q193="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="IDType" type="q193:PolicyInformationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_PolicyInformation_EmployeeClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="Get_PolicyInformation_EmployeeClassResult" nillable="true" type="q194:ArrayOfEmployeeClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyInformation_EmployeeClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="EmployeeClassObject" nillable="true" type="q195:EmployeeClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_PolicyInformation_EmployeeClassResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_PolicyInformation_EmployeeClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="EmployeeClassObject" nillable="true" type="q196:EmployeeClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_PolicyInformation_EmployeeClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_PolicyInformation_EmployeeClassResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_PolicyInformation_EmployeeClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iID" type="xs:int" />
+        <xs:element minOccurs="0" name="iEmployeeClassID" type="xs:int" />
+        <xs:element minOccurs="0" name="iPolicyInformationID" type="xs:int" />
+        <xs:element xmlns:q197="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" minOccurs="0" name="IDType" type="q197:PolicyInformationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_PolicyInformation_EmployeeClassResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_GeneralLedger_JournalEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/" minOccurs="0" name="JournalEntryFilterObject" nillable="true" type="q198:JournalEntryFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_GeneralLedger_JournalEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/" minOccurs="0" name="Get_GeneralLedger_JournalEntryResult" nillable="true" type="q199:JournalEntryGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_GeneralLedger_JournalEntryDefaultDefaultEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="JournalEntryDefaultEntryID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_GeneralLedger_JournalEntryDefaultDefaultEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/" minOccurs="0" name="Get_GeneralLedger_JournalEntryDefaultDefaultEntryResult" nillable="true" type="q200:JournalEntryGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_GeneralLedger_JournalEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/" minOccurs="0" name="JournalEntryObject" nillable="true" type="q201:JournalEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_GeneralLedger_JournalEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Insert_GeneralLedger_JournalEntryResult" nillable="true" type="q202:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_GeneralLedger_JournalEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/" minOccurs="0" name="JournalEntryObject" nillable="true" type="q203:JournalEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_GeneralLedger_JournalEntryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_JournalEntryTransferOfFunds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/" minOccurs="0" name="TransferOfFundsObject" nillable="true" type="q204:TransferOfFunds" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_JournalEntryTransferOfFundsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Action_GeneralLedger_JournalEntryTransferOfFundsResult" nillable="true" type="q205:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_JournalEntryVoid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q206="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/_action/" minOccurs="0" name="JournalEntryVoidObject" nillable="true" type="q206:JournalEntryVoid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_JournalEntryVoidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_GeneralLedger_JournalEntryVoidResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_GeneralLedger_ReconciliationDirectBillCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" minOccurs="0" name="DirectBillCommissionFilterObject" nillable="true" type="q207:DirectBillCommissionFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_GeneralLedger_ReconciliationDirectBillCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q208="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/" minOccurs="0" name="Get_GeneralLedger_ReconciliationDirectBillCommissionResult" nillable="true" type="q208:DirectBillCommissionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_GeneralLedger_ReconciliationDirectBillCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_reconciliation/" minOccurs="0" name="ReconciliationDirectBillCommissionObject" nillable="true" type="q209:DirectBillCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_GeneralLedger_ReconciliationDirectBillCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_GeneralLedger_ReconciliationDirectBillCommissionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_GeneralLedger_ReconciliationDirectBillCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_reconciliation/" minOccurs="0" name="ReconciliationDirectBillCommissionObject" nillable="true" type="q210:DirectBillCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_GeneralLedger_ReconciliationDirectBillCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_GeneralLedger_ReconciliationDirectBillCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReconciliationDirectBillCommissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_GeneralLedger_ReconciliationDirectBillCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_ReconciliationDirectBillCommissionCloseWithoutPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DirectBillCommissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_ReconciliationDirectBillCommissionCloseWithoutPaymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_ReconciliationDirectBillCommissionFinalizeStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DirectBillCommissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_GeneralLedger_ReconciliationDirectBillCommissionFinalizeStatementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Configure_SalesTeams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Configure_SalesTeamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" minOccurs="0" name="Get_Configure_SalesTeamsResult" nillable="true" type="q211:SalesTeamGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

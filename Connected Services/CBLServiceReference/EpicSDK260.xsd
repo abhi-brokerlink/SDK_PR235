@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd249" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/_coverageitem/" />
+  <xs:complexType name="CoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+  <xs:complexType name="CoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppliesTo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description2" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/_coverageitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOf" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherAdditionalCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="PercentageOfCoinsurance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RetroactiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+</xs:schema>

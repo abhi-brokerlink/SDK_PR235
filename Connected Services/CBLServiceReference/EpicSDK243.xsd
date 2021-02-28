@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd466" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/_remarkitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd467" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/_subjectsofinsurance/" />
+  <xs:complexType name="MediaAndData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataBackupsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DuplicateSoftwareCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="MediaAndDataUnderwritingItems" nillable="true" type="q1:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="OffPremisesStorageLocationAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="OnPremisesLocationInformationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OnPremisesLocationInformationIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaAndData" nillable="true" type="tns:MediaAndData" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/_remarkitem/" minOccurs="0" name="Flag" type="q3:Flags" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+  <xs:complexType name="SubjectsOfInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingConstructionNumberOfStories" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BuildingConstructionProtectionClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingConstructionTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingConstructionYearBuilt" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EarthquakeCoverageYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FloodCoverageYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MechanicalBreakdownYesNoCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/_subjectsofinsurance/" minOccurs="0" name="SubjectOfInsuranceItems" nillable="true" type="q4:CoverageItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubjectsOfInsurance" nillable="true" type="tns:SubjectsOfInsurance" />
+</xs:schema>

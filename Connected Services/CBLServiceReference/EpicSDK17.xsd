@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd37" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/_lineitem/" />
+  <xs:complexType name="LineItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineItem" nillable="true" type="tns:LineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineItems" nillable="true" type="tns:LineItems" />
+  <xs:complexType name="LineItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/_lineitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineItem" nillable="true" type="tns:LineItem" />
+</xs:schema>

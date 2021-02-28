@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd433" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/_remarkitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd434" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/_vehiclefilingitem/" />
+  <xs:complexType name="AutomobileUseCommoditiesTransported">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AverageCustomerLocationsVisitedInWorkDay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeliveryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MerchandiseIfOther1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MerchandiseIfOther2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MerchandiseIfOther3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MerchandisePercentageUse1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MerchandisePercentageUse2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MerchandisePercentageUse3" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MerchandiseType1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MerchandiseType2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MerchandiseType3Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentagePleasureUse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimaryBusinessUse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleFormPartOfTrailerTrainYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleUseBusinessFrequencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleUseBusinessFrequencyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleUsedForPleasureYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleUsedToHaulTrailersYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearsDrivingExperience" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutomobileUseCommoditiesTransported" nillable="true" type="tns:AutomobileUseCommoditiesTransported" />
+  <xs:complexType name="DrivingSchoolBusesAmbulance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirportPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AmbulancesNumberOfSeats" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BusesFrequencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusesFrequencyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CharterPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CityOrTownPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DualControlYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergencyOrNonEmergencyUseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaximumNumberOfAttachedSeats" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaximumNumberOfPassengersNormallyCarried" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrivateBusUsageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrivateBusUsageIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PublicOrPrivateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegularRoutesPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RegularServiceBetweenTownsPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RoadCourseTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TractorTrailerTrainingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfBusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfBusIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DrivingSchoolBusesAmbulance" nillable="true" type="tns:DrivingSchoolBusesAmbulance" />
+  <xs:complexType name="HaulingRadiusUSAExposure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualUsePercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AnyUSAExposureYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingDoneForOthersCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingDoneForOthersIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingForOthersMostCommonDestinationsCity1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingForOthersMostCommonDestinationsCity2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingForOthersMostCommonDestinationsCity3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingForOthersMostCommonDestinationsProvince1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingForOthersMostCommonDestinationsProvince2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HaulingForOthersMostCommonDestinationsProvince3Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaximumOperatingDistanceOneWayKilometers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NormalOperatingDistanceOneWayKilometers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberConsecutiveDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberKilometersFromBorder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfTripsPerMonth" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberTripsBeyondNormalDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PercentageTotalTripsMaximum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PercentageTotalTripsNormal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="USAMostCommonDestinationsCity1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USAMostCommonDestinationsCity2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USAMostCommonDestinationsCity3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USAMostCommonDestinationsState1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USAMostCommonDestinationsState2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USAMostCommonDestinationsState3Code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HaulingRadiusUSAExposure" nillable="true" type="tns:HaulingRadiusUSAExposure" />
+  <xs:complexType name="MachineryEquipmentSpecialSeasonalUse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescribeMachineryEquipmentMountedOnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescribeMachineryEquipmentMountedOnIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MachineryAndEquipmentExcludedYesNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="MachineryAndEquipmentOwnedLeasedOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="MachineryAndEquipmentValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PercenageOfAnnualUse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecialSeasonalUseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MachineryEquipmentSpecialSeasonalUse" nillable="true" type="tns:MachineryEquipmentSpecialSeasonalUse" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/_remarkitem/" minOccurs="0" name="Flag" type="q3:Flags" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+  <xs:complexType name="TaxiLimo">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q4:Address" />
+      <xs:element minOccurs="0" name="BrokerDispatcherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxiPlateLicensingAuthority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxiPlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleBrokerDispatchedByOtherThanRegisteredOwnerYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehiclePlateLeasedToOthersYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleUsedForOtherThanTaxiLimoServiceIfYesSpecifiy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleUsedForOtherThanTaxiLimoServiceYesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaxiLimo" nillable="true" type="tns:TaxiLimo" />
+  <xs:complexType name="VehicleFilingItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleFilingItem" nillable="true" type="tns:VehicleFilingItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleFilingItems" nillable="true" type="tns:VehicleFilingItems" />
+  <xs:complexType name="VehicleFilingItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocketNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/_vehiclefilingitem/" minOccurs="0" name="Flag" type="q5:Flags" />
+      <xs:element minOccurs="0" name="ListCityProvinceState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecifyExactNameRequiredOnFiling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfFilingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfFilingIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USDOTNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleFilingID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleFilingItem" nillable="true" type="tns:VehicleFilingItem" />
+</xs:schema>

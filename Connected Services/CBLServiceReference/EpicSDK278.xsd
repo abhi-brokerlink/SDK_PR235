@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd217" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/_vehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:simpleType name="VehicleGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="VehicleAndLineID" />
+      <xs:enumeration value="MarketingLineID" />
+      <xs:enumeration value="MarketingLineIDAndCarrierSubmissionID" />
+      <xs:enumeration value="VehicleAndMarketingLineID" />
+      <xs:enumeration value="VehicleAndMarketingLineIDAndCarrierSubmission" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VehicleGetType" nillable="true" type="tns:VehicleGetType" />
+  <xs:complexType name="ArrayOfVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Vehicle" nillable="true" type="tns:Vehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicle" nillable="true" type="tns:ArrayOfVehicle" />
+  <xs:complexType name="Vehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyVehicleNumber" nillable="true" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/_vehicle/" minOccurs="0" name="CoverageItems" nillable="true" type="q1:CoverageItems" />
+      <xs:element minOccurs="0" name="CoveragesNetVehicleDebitCredit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CoveragesNetVehicleDebitCreditDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoveragesTotalPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DefaultAccountAddressForGaragingAddress" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="GaragingAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="InsuredID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/_vehicle/" minOccurs="0" name="RatingValue" nillable="true" type="q3:Rating" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleID" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vehicle" nillable="true" type="tns:Vehicle" />
+</xs:schema>

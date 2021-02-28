@@ -1,0 +1,1568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.appliedsystems.com/epic/sdk/2011/12/" elementFormDefault="qualified" targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2011/12/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd124" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd125" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd126" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd136" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd116" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd137" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd525" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_activity/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd526" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd527" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" />
+  <xs:element name="Get_Certificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" minOccurs="0" name="SearchType" type="q1:CertificateGetType" />
+        <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" minOccurs="0" name="FilterType" type="q2:CertificateFilterType" />
+        <xs:element minOccurs="0" name="FilterField1" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" minOccurs="0" name="ComparisonType" type="q3:CertificateComparisonType" />
+        <xs:element minOccurs="0" name="FilterField2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_CertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" minOccurs="0" name="Get_CertificateResult" nillable="true" type="q4:ArrayOfCertificate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" minOccurs="0" name="CertificateObject" nillable="true" type="q5:Certificate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_CertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_CertificateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" minOccurs="0" name="CertificateObject" nillable="true" type="q6:Certificate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_CertificateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_CertificateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_Other1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q7:OtherGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_Other1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_Other1Result" nillable="true" type="q8:ArrayOfOther" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_Other1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q9:Other" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_Other1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_Other1Result" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_Other1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q10:Other" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_Other1Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_Other1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OtherID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_Other1Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_Other2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q11:OtherGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_Other2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_Other2Result" nillable="true" type="q12:ArrayOfOther" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_Other2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q13:Other" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_Other2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_Other2Result" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_Other2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q14:Other" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_Other2Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_Other2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OtherID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_Other2Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Certificate_LiabilityRenewCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_action/" minOccurs="0" name="LiabilityRenewCertificateObject" nillable="true" type="q15:LiabilityRenewCertificate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Certificate_LiabilityRenewCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Certificate_LiabilityRenewCertificateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Certificate_PropertyRenewCertificate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_action/" minOccurs="0" name="PropertyRenewCertificateObject" nillable="true" type="q16:PropertyRenewCertificate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Certificate_PropertyRenewCertificateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Certificate_PropertyRenewCertificateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q17:RemarkGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_RemarkResult" nillable="true" type="q18:ArrayOfRemark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="RemarkObject" nillable="true" type="q19:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_RemarkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="RemarkObject" nillable="true" type="q20:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q21:GeneralLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_LiabilityGeneralLiabilityResult" nillable="true" type="q22:ArrayOfLiabilityGeneralLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityGeneralLiabilityObject" nillable="true" type="q23:LiabilityGeneralLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_LiabilityGeneralLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityGeneralLiabilityObject" nillable="true" type="q24:LiabilityGeneralLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneralLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q25:AutomobileLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_LiabilityAutomobileLiabilityResult" nillable="true" type="q26:ArrayOfLiabilityAutomobileLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityAutomobileLiabilityObject" nillable="true" type="q27:LiabilityAutomobileLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_LiabilityAutomobileLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityAutomobileLiabilityObject" nillable="true" type="q28:LiabilityAutomobileLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AutomobileLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q29="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q29:ExcessUmbrellaLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_LiabilityExcessUmbrellaLiabilityResult" nillable="true" type="q30:ArrayOfLiabilityExcessUmbrellaLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityExcessUmbrellaLiabilityObject" nillable="true" type="q31:LiabilityExcessUmbrellaLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_LiabilityExcessUmbrellaLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityExcessUmbrellaLiabilityObject" nillable="true" type="q32:LiabilityExcessUmbrellaLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExcessUmbrellaLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q33="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q33:WorkersCompensationEmployersLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_LiabilityWorkersCompensationEmployersLiabilityResult" nillable="true" type="q34:ArrayOfLiabilityWorkersCompensationEmployersLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityWorkersCompensationEmployersLiabilityObject" nillable="true" type="q35:LiabilityWorkersCompensationEmployersLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_LiabilityWorkersCompensationEmployersLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityWorkersCompensationEmployersLiabilityObject" nillable="true" type="q36:LiabilityWorkersCompensationEmployersLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WorkersCompensationEmployersLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q37="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q37:HolderGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityHolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_LiabilityHolderResult" nillable="true" type="q38:ArrayOfLiabilityHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityHolderObject" nillable="true" type="q39:LiabilityHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_LiabilityHolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_LiabilityHolderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityHolderObject" nillable="true" type="q40:LiabilityHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityHolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LiabilityHolderID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_LiabilityHolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityDescriptionOfOperations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_LiabilityDescriptionOfOperationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_LiabilityDescriptionOfOperationsResult" nillable="true" type="q41:ArrayOfLiabilityDescriptionOfOperations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityDescriptionOfOperations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="LiabilityDescriptionOfOperationsObject" nillable="true" type="q42:LiabilityDescriptionOfOperations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_LiabilityDescriptionOfOperationsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q43="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q43:PropertyGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyPropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertyPropertyResult" nillable="true" type="q44:ArrayOfPropertyProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q45:PropertyProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyPropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_PropertyPropertyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q46:PropertyProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyPropertyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PropertyTemplateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyPropertyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyCrime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q47="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q47:PropertyCrimeGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyCrimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertyCrimeResult" nillable="true" type="q48:ArrayOfPropertyCrime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyCrime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q49:PropertyCrime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyCrimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_PropertyCrimeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyCrime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q50:PropertyCrime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyCrimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyCrime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PropertyTemplateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyCrimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyBoilerAndMachinery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q51="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q51:PropertyBoilerAndMachineryGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyBoilerAndMachineryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertyBoilerAndMachineryResult" nillable="true" type="q52:ArrayOfPropertyBoilerAndMachinery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyBoilerAndMachinery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q53:PropertyBoilerAndMachinery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyBoilerAndMachineryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_PropertyBoilerAndMachineryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyBoilerAndMachinery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q54:PropertyBoilerAndMachinery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyBoilerAndMachineryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyBoilerAndMachinery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PropertyTemplateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyBoilerAndMachineryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyInlandMarine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q55="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q55:PropertyInlandMarineGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyInlandMarineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertyInlandMarineResult" nillable="true" type="q56:ArrayOfPropertyInlandMarine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyInlandMarine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q57:PropertyInlandMarine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyInlandMarineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_PropertyInlandMarineResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyInlandMarine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="OtherObject" nillable="true" type="q58:PropertyInlandMarine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyInlandMarineResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyInlandMarine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PropertyTemplateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyInlandMarineResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyLocationOfPremisesDescriptionOfProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyLocationOfPremisesDescriptionOfPropertyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertyLocationOfPremisesDescriptionOfPropertyResult" nillable="true" type="q59:ArrayOfPropertyLocationOfPremisesDescriptionOfProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyLocationOfPremisesDescriptionOfProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="PropertyLocationOfPremisesDescriptionOfPropertyObject" nillable="true" type="q60:PropertyLocationOfPremisesDescriptionOfProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyLocationOfPremisesDescriptionOfPropertyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertySpecialCondition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertySpecialConditionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertySpecialConditionResult" nillable="true" type="q61:ArrayOfPropertySpecialCondition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertySpecialCondition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="PropertySpecialConditionObject" nillable="true" type="q62:PropertySpecialCondition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertySpecialConditionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q63="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q63:HolderGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_PropertyHolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_PropertyHolderResult" nillable="true" type="q64:ArrayOfPropertyHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="PropertyHolderObject" nillable="true" type="q65:PropertyHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_PropertyHolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_PropertyHolderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="PropertyHolderObject" nillable="true" type="q66:PropertyHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_PropertyHolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PropertyHolderID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_PropertyHolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q67="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q67:IntermodalGeneralLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalGeneralLiabilityResult" nillable="true" type="q68:ArrayOfIntermodalGeneralLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalGeneralLiabilityObject" nillable="true" type="q69:IntermodalGeneralLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_IntermodalGeneralLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalGeneralLiabilityObject" nillable="true" type="q70:IntermodalGeneralLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalGeneralLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneralLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalGeneralLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q71="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q71:IntermodalAutomobileLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalAutomobileLiabilityResult" nillable="true" type="q72:ArrayOfIntermodalAutomobileLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalAutomobileLiabilityObject" nillable="true" type="q73:IntermodalAutomobileLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_IntermodalAutomobileLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalAutomobileLiabilityObject" nillable="true" type="q74:IntermodalAutomobileLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalAutomobileLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AutomobileLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalAutomobileLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalCargo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q75="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q75:IntermodalCargoGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalCargoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalCargoResult" nillable="true" type="q76:ArrayOfIntermodalCargo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalCargo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalCargoObject" nillable="true" type="q77:IntermodalCargo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalCargoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_IntermodalCargoResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalCargo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalCargoObject" nillable="true" type="q78:IntermodalCargo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalCargoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalCargo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CargoID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalCargoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalTrailerInterchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q79="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q79:IntermodalTrailerInterchangeGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalTrailerInterchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalTrailerInterchangeResult" nillable="true" type="q80:ArrayOfIntermodalTrailerInterchange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalTrailerInterchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalTrailerInterchangeObject" nillable="true" type="q81:IntermodalTrailerInterchange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalTrailerInterchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_IntermodalTrailerInterchangeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalTrailerInterchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalTrailerInterchangeObject" nillable="true" type="q82:IntermodalTrailerInterchange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalTrailerInterchangeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalTrailerInterchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TrailerInterchangeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalTrailerInterchangeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q83="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q83:IntermodalExcessUmbrellaLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalExcessUmbrellaLiabilityResult" nillable="true" type="q84:ArrayOfIntermodalExcessUmbrellaLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalExcessUmbrellaLiabilityObject" nillable="true" type="q85:IntermodalExcessUmbrellaLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_IntermodalExcessUmbrellaLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalExcessUmbrellaLiabilityObject" nillable="true" type="q86:IntermodalExcessUmbrellaLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalExcessUmbrellaLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExcessUmbrellaLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalExcessUmbrellaLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q87="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q87:IntermodalWorkersCompensationEmployersLiabilityGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalWorkersCompensationEmployersLiabilityResult" nillable="true" type="q88:ArrayOfIntermodalWorkersCompensationEmployersLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalWorkersCompensationEmployersLiabilityObject" nillable="true" type="q89:IntermodalWorkersCompensationEmployersLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_IntermodalWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_IntermodalWorkersCompensationEmployersLiabilityResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalWorkersCompensationEmployersLiabilityObject" nillable="true" type="q90:IntermodalWorkersCompensationEmployersLiability" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalWorkersCompensationEmployersLiability">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WorkersCompensationEmployersLiabilityID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_IntermodalWorkersCompensationEmployersLiabilityResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q91="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q91:IntermodalHolderGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalHolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalHolderResult" nillable="true" type="q92:ArrayOfIntermodalHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalHolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalHolderObject" nillable="true" type="q93:IntermodalHolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalHolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalDescriptionOfOperations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_IntermodalDescriptionOfOperationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_IntermodalDescriptionOfOperationsResult" nillable="true" type="q94:ArrayOfIntermodalDescriptionOfOperations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalDescriptionOfOperations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IntermodalDescriptionOfOperationsObject" nillable="true" type="q95:IntermodalDescriptionOfOperations" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Certificate_IntermodalDescriptionOfOperationsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_Attachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q96="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/" minOccurs="0" name="IDType" type="q96:AttachmentsGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Certificate_AttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/" minOccurs="0" name="Get_Certificate_AttachmentsResult" nillable="true" type="q97:ArrayOfAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_Attachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/" minOccurs="0" name="CertificateAttachment" nillable="true" type="q98:Attachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Certificate_AttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Certificate_AttachmentsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_Attachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AttachmentID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Certificate_AttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Commission_EmployeeCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q99="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="IDType" type="q99:CommissionGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Commission_EmployeeCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" minOccurs="0" name="Get_Commission_EmployeeCommissionResult" nillable="true" type="q100:EmployeeCommissionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Commission_EmployeeCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CommissionObject" nillable="true" type="q101:EmployeeCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Commission_EmployeeCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Commission_EmployeeCommissionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Commission_EmployeeCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CommissionObject" nillable="true" type="q102:EmployeeCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Commission_EmployeeCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Commission_EmployeeCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Commission_EmployeeCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Commission_BrokerCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q103="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="IDType" type="q103:CommissionGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Commission_BrokerCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" minOccurs="0" name="Get_Commission_BrokerCommissionResult" nillable="true" type="q104:BrokerCommissionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Commission_BrokerCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CommissionObject" nillable="true" type="q105:BrokerCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Commission_BrokerCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Commission_BrokerCommissionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Commission_BrokerCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CommissionObject" nillable="true" type="q106:BrokerCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Commission_BrokerCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Commission_BrokerCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Commission_BrokerCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Commission_CompanyCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q107="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="IDType" type="q107:CommissionGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Commission_CompanyCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" minOccurs="0" name="Get_Commission_CompanyCommissionResult" nillable="true" type="q108:CompanyCommissionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Commission_CompanyCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CommissionObject" nillable="true" type="q109:CompanyCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Commission_CompanyCommissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Commission_CompanyCommissionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Commission_CompanyCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CommissionObject" nillable="true" type="q110:CompanyCommission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_Commission_CompanyCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Commission_CompanyCommission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Commission_CompanyCommissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Commission_EmployeeCopyAgreement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+        <xs:element minOccurs="0" name="OtherAccountID" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Commission_EmployeeCopyAgreementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Commission_EmployeeCopyAgreementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Commission_BrokerCopyAgreement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+        <xs:element minOccurs="0" name="OtherAccountID" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Commission_BrokerCopyAgreementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Commission_BrokerCopyAgreementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Commission_CompanyCopyAgreement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+        <xs:element minOccurs="0" name="OtherAccountID" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_Commission_CompanyCopyAgreementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_Commission_CompanyCopyAgreementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Activity_ActivityCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_activity/" minOccurs="0" name="ActivityCodeObject" nillable="true" type="q111:ActivityCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Activity_ActivityCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Activity_ActivityCodeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_PolicyLineType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryValue" nillable="true" type="xs:string" />
+        <xs:element xmlns:q112="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" minOccurs="0" name="SearchType" type="q112:PolicyLineTypeGetType" />
+        <xs:element minOccurs="0" name="IncludeInactive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Policy_PolicyLineTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" minOccurs="0" name="Get_Policy_PolicyLineTypeResult" nillable="true" type="q113:ArrayOfPolicyLineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_PolicyLineType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" minOccurs="0" name="PolicyLineTypeObject" nillable="true" type="q114:PolicyLineType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_PolicyLineTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Policy_PolicyLineTypeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_PolicyStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" minOccurs="0" name="PolicyStatusObject" nillable="true" type="q115:PolicyStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Policy_PolicyStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Policy_PolicyStatusResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_TransactionCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryValue" nillable="true" type="xs:string" />
+        <xs:element xmlns:q116="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" minOccurs="0" name="SearchType" type="q116:TransactionCodeGetType" />
+        <xs:element minOccurs="0" name="IncludeInactive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_Transaction_TransactionCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" minOccurs="0" name="Get_Transaction_TransactionCodeResult" nillable="true" type="q117:ArrayOfTransactionCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Transaction_TransactionCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" minOccurs="0" name="TransactionCodeObject" nillable="true" type="q118:TransactionCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Transaction_TransactionCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Transaction_TransactionCodeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

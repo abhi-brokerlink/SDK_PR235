@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicSDK", "EpicSDK.csproj", "{40B0C8A7-87D1-4D35-90F3-66CE1B1AAA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PR235_Conversion", "Conversion\PR235_Conversion.csproj", "{8447EDDF-61CF-445E-B6E1-8543009BCBC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40B0C8A7-87D1-4D35-90F3-66CE1B1AAA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B0C8A7-87D1-4D35-90F3-66CE1B1AAA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B0C8A7-87D1-4D35-90F3-66CE1B1AAA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B0C8A7-87D1-4D35-90F3-66CE1B1AAA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8447EDDF-61CF-445E-B6E1-8543009BCBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8447EDDF-61CF-445E-B6E1-8543009BCBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8447EDDF-61CF-445E-B6E1-8543009BCBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8447EDDF-61CF-445E-B6E1-8543009BCBC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8EDFD42-4471-4A25-9BD5-1081DC4B0F80}
+	EndGlobalSection
+EndGlobal

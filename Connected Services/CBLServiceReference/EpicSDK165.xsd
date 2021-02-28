@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd465" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:simpleType name="PremiseGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="PremiseID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PremiseGetType" nillable="true" type="tns:PremiseGetType" />
+  <xs:complexType name="ArrayOfPremise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Premise" nillable="true" type="tns:Premise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPremise" nillable="true" type="tns:ArrayOfPremise" />
+  <xs:complexType name="Premise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="ComputerRoomUnderwritingItems" nillable="true" type="q1:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="GeneralInformationUnderwritingItems" nillable="true" type="q2:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" minOccurs="0" name="MediaAndDataValue" nillable="true" type="q3:MediaAndData" />
+      <xs:element minOccurs="0" name="PremiseID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" minOccurs="0" name="RemarkItems" nillable="true" type="q4:RemarkItems" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" minOccurs="0" name="SubjectsOfInsuranceValue" nillable="true" type="q5:SubjectsOfInsurance" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Premise" nillable="true" type="tns:Premise" />
+  <xs:simpleType name="ScheduleOfEquipmentGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="ScheduleOfEquipmentID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ScheduleOfEquipmentGetType" nillable="true" type="tns:ScheduleOfEquipmentGetType" />
+  <xs:complexType name="ArrayOfScheduleOfEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleOfEquipment" nillable="true" type="tns:ScheduleOfEquipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleOfEquipment" nillable="true" type="tns:ArrayOfScheduleOfEquipment" />
+  <xs:complexType name="ScheduleOfEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfInsurance" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentFullOneHundredPercentValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingPremiseID" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="EquipmentOwnedLeasedOption" nillable="true" type="q6:OptionType" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleOfEquipmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalAmountOfInsurance" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalCurrentFullOneHundredPercentValues" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleOfEquipment" nillable="true" type="tns:ScheduleOfEquipment" />
+  <xs:simpleType name="AdditionalCoverageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalCoverageID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalCoverageGetType" nillable="true" type="tns:AdditionalCoverageGetType" />
+  <xs:complexType name="ArrayOfAdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalCoverage" nillable="true" type="tns:ArrayOfAdditionalCoverage" />
+  <xs:complexType name="AdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingPremiseID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingScheduleOfEquipmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOf1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOf2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OptionCode1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionCode2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentageOfCoinsurance" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SubjectOfInsuranceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+  <xs:simpleType name="AdditionalInterestGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalInterestID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalInterestGetType" nillable="true" type="tns:AdditionalInterestGetType" />
+  <xs:complexType name="ArrayOfAdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalInterest" nillable="true" type="tns:ArrayOfAdditionalInterest" />
+  <xs:complexType name="AdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q7:Address" />
+      <xs:element minOccurs="0" name="AvailableOtherInterestLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingPremiseID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingScheduleOfEquipmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LienAmount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Policy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ReasonForInterest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceLoanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendBill" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+  <xs:simpleType name="FormAndEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="FormAndEndorsementID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormAndEndorsementGetType" nillable="true" type="tns:FormAndEndorsementGetType" />
+  <xs:complexType name="ArrayOfFormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormAndEndorsement" nillable="true" type="tns:ArrayOfFormAndEndorsement" />
+  <xs:complexType name="FormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyrightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyrightTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingPremiseID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ElectronicDataProcessingScheduleOfEquipmentID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+</xs:schema>

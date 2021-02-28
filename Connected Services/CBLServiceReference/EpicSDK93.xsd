@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_marketedpolicy/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_marketedpolicy/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd561" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_marketedpolicy/_carrierresponse/" />
+  <xs:complexType name="ArrayOfCarrierResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarrierResponse" nillable="true" type="tns:CarrierResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarrierResponse" nillable="true" type="tns:ArrayOfCarrierResponse" />
+  <xs:complexType name="CarrierResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssuingCompany" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_marketedpolicy/_carrierresponse/" minOccurs="0" name="LineItems" nillable="true" type="q1:LineItems" />
+      <xs:element minOccurs="0" name="PPEType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestedTotalCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RequestedTotalPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResponseTotalCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResponseTotalPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierResponse" nillable="true" type="tns:CarrierResponse" />
+</xs:schema>

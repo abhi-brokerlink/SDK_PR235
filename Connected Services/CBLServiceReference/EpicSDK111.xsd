@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd105" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd114" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd117" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" />
+  <xs:simpleType name="BrokerGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BrokerID" />
+      <xs:enumeration value="LookupCode" />
+      <xs:enumeration value="BrokerName" />
+      <xs:enumeration value="LastFirstName" />
+      <xs:enumeration value="InvoiceNumber" />
+      <xs:enumeration value="PhoneNumber" />
+      <xs:enumeration value="LoanNumber" />
+      <xs:enumeration value="PriorAccountID" />
+      <xs:enumeration value="Relationship" />
+      <xs:enumeration value="StreetAddress" />
+      <xs:enumeration value="SalesTeam" />
+      <xs:enumeration value="NationalProducerNumber" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BrokerGetType" nillable="true" type="tns:BrokerGetType" />
+  <xs:complexType name="ArrayOfBroker">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Broker" nillable="true" type="tns:Broker" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBroker" nillable="true" type="tns:ArrayOfBroker" />
+  <xs:complexType name="Broker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" minOccurs="0" name="AccountValue" nillable="true" type="q1:Account" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" minOccurs="0" name="AccountingValue" nillable="true" type="q2:Accounting" />
+      <xs:element minOccurs="0" name="ActivationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivationStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" minOccurs="0" name="BillingValue" nillable="true" type="q3:Billing" />
+      <xs:element minOccurs="0" name="BrokerID" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessSuffix" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" minOccurs="0" name="CategoriesHistoryValue" nillable="true" type="q4:CategoriesHistory" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" minOccurs="0" name="ComplianceIdentificationNumbersValue" nillable="true" type="q5:ComplianceIdentificationNumbers" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactFirst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactLast" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactMiddle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactSuffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" minOccurs="0" name="SalesValue" nillable="true" type="q6:Sales" />
+      <xs:element minOccurs="0" name="DoNotPurge" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Broker" nillable="true" type="tns:Broker" />
+  <xs:simpleType name="CompanyGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AccountName" />
+      <xs:enumeration value="CompanyID" />
+      <xs:enumeration value="LastFirstName" />
+      <xs:enumeration value="LookupCode" />
+      <xs:enumeration value="PhoneNumber" />
+      <xs:enumeration value="PriorAccountID" />
+      <xs:enumeration value="Relationship" />
+      <xs:enumeration value="StreetAddress" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CompanyGetType" nillable="true" type="tns:CompanyGetType" />
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:complexType name="Company">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/" minOccurs="0" name="AccountValue" nillable="true" type="q7:Account" />
+      <xs:element minOccurs="0" name="ActivationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivationStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/" minOccurs="0" name="BillingValue" nillable="true" type="q8:Billing" />
+      <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessSuffix" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/" minOccurs="0" name="CategoriesHistoryValue" nillable="true" type="q9:CategoriesHistory" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/" minOccurs="0" name="ComplianceIdentificationNumbersValue" nillable="true" type="q10:ComplianceIdentificationNumbers" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactFirst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactLast" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactMiddle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPhoneType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactPrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContactSuffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CountryOfOperation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoNotPurge" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="ArrayOfEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="AccountValue" nillable="true" type="q11:Account" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="CategoriesHistoryValue" nillable="true" type="q12:CategoriesHistory" />
+      <xs:element minOccurs="0" name="EmployeeFirst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeLast" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeMiddle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeNamePrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeNameSuffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InactivateReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="PersonalContactsValue" nillable="true" type="q13:PersonalContacts" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="PersonnelValue" nillable="true" type="q14:Personnel" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="ServiceProducerValue" nillable="true" type="q15:ServiceProducer" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="ShareRevenueValue" nillable="true" type="q16:ShareRevenue" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="SalesValue" nillable="true" type="q17:Sales" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="ViewOtherEmployeeItems" nillable="true" type="q18:ViewOtherEmployeeItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+</xs:schema>

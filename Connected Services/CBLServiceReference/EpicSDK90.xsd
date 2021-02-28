@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd59" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/_splititem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd60" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/" />
+  <xs:complexType name="RevenueScheduleItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RevenueScheduleItem" nillable="true" type="tns:RevenueScheduleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RevenueScheduleItems" nillable="true" type="tns:RevenueScheduleItems" />
+  <xs:complexType name="RevenueScheduleItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RevenueDeferralScheduleTypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RevenueScheduleItem" nillable="true" type="tns:RevenueScheduleItem" />
+  <xs:complexType name="SplitItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SplitItem" nillable="true" type="tns:SplitItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SplitItems" nillable="true" type="tns:SplitItems" />
+  <xs:complexType name="SplitItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCommissionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionPercentage" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencySplitAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyPayableDueDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/_splititem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="IssuingCompanyLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MultiCarrierScheduleID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiumPayableContractID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiumPayableLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/" minOccurs="0" name="ProducerBrokerCommissions" nillable="true" type="q2:ProducerBrokerCommissionItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SplitItem" nillable="true" type="tns:SplitItem" />
+</xs:schema>

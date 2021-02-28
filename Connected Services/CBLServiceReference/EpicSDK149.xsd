@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_claim/_insuredcontact/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_claim/_insuredcontact/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="AuthorityContacted">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadgeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contacted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Municipality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationsCitations" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorityContacted" nillable="true" type="tns:AuthorityContacted" />
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="BusinessPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactInsured" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContactWhen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipToInsuredCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="Insured">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="BusinessPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Insured" nillable="true" type="tns:Insured" />
+  <xs:complexType name="Spouse">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q3:Address" />
+      <xs:element minOccurs="0" name="BusinessPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Spouse" nillable="true" type="tns:Spouse" />
+</xs:schema>

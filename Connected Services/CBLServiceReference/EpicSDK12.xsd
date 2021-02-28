@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd87" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_policyitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd88" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_reportinghistory/" />
+  <xs:complexType name="PolicyItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PolicyItem" nillable="true" type="tns:PolicyItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyItems" nillable="true" type="tns:PolicyItems" />
+  <xs:complexType name="PolicyItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaimSummaryPolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ClaimType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_policyitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="NoticeOfOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="RiskDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RiskID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RiskNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RiskType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubRiskDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubRiskID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SubRiskNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SubRiskType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyItem" nillable="true" type="tns:PolicyItem" />
+  <xs:complexType name="ReportingHistory">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_reportinghistory/" minOccurs="0" name="ClaimCodes" nillable="true" type="q3:ClaimCodeItems" />
+      <xs:element minOccurs="0" name="ClosedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClosedDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportingHistory" nillable="true" type="tns:ReportingHistory" />
+</xs:schema>

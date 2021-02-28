@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd16" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd20" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/01/_common/_activity/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd75" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_adjustcommission/" />
+  <xs:complexType name="Activity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityID" type="xs:int" />
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssociatedToID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedToType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" minOccurs="0" name="CloseDetailValue" nillable="true" type="q1:CloseDetail" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" minOccurs="0" name="DetailValue" nillable="true" type="q2:Detail" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="StatusOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" minOccurs="0" name="Tasks" nillable="true" type="q4:TaskItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WhoOwnerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="GeneralLedgerItemIDForAssociatedToID" type="xs:int" />
+      <xs:element minOccurs="0" name="EnteredDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AttachmentsYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUpdatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2017/01/_common/_activity/" minOccurs="0" name="ServicingContacts" nillable="true" type="q5:AccountServicingContactItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activity" nillable="true" type="tns:Activity" />
+  <xs:complexType name="ArrayOfActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivity" nillable="true" type="tns:ArrayOfActivity" />
+  <xs:complexType name="ArrayOfAdjustCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdjustCommission" nillable="true" type="tns:AdjustCommission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdjustCommission" nillable="true" type="tns:ArrayOfAdjustCommission" />
+  <xs:complexType name="AdjustCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_adjustcommission/" minOccurs="0" name="CommissionSplits" nillable="true" type="q6:CommissionSplitItems" />
+      <xs:element minOccurs="0" name="IgnoreAgencyCommissionLessThanProducerBroker" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IgnoreFlatCommission" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdjustCommission" nillable="true" type="tns:AdjustCommission" />
+</xs:schema>

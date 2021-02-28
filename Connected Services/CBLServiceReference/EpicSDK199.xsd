@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd529" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/_salesteam/" />
+  <xs:complexType name="ArrayOfSalesTeam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesTeam" nillable="true" type="tns:SalesTeam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalesTeam" nillable="true" type="tns:ArrayOfSalesTeam" />
+  <xs:complexType name="SalesTeam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedToBroker" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AssociatedToEmployee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManagerLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManagerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManagerTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/_salesteam/" minOccurs="0" name="MemberItems" nillable="true" type="q1:MemberItems" />
+      <xs:element minOccurs="0" name="SalesTeamID" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesTeamName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTeam" nillable="true" type="tns:SalesTeam" />
+</xs:schema>

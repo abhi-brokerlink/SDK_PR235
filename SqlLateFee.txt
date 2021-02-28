@@ -1,0 +1,8 @@
+SELECT TOP 10
+	cli.LookupCode,
+	NULL NumberCallPermission,
+	NULL FaxCallPermission
+FROM EpicBDE.dbo.Client cli
+WHERE cli.Flags & 4 = 0
+	AND cli.UniqEntity <> -1
+ORDER BY cli.LookupCode

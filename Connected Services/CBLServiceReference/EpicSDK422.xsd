@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_unapplycreditstodebits/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_unapplycreditstodebits/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="TransactionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionItem" nillable="true" type="tns:TransactionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionItems" nillable="true" type="tns:TransactionItems" />
+  <xs:complexType name="TransactionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionItem" nillable="true" type="tns:TransactionItem" />
+</xs:schema>

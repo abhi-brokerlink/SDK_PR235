@@ -1,0 +1,4 @@
+﻿step	|	Method				|		Input				|		Output
+_____________________________________________________________________________________________
+1.		|	GetPolicyList		| PolicyLinetypecode		|	List of all policies, with that policyLineTypeCode
+2.		| 

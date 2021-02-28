@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/01/_common/_activity/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/01/_common/_activity/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AccountServicingContactItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountServicingContactItem" nillable="true" type="tns:AccountServicingContactItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountServicingContactItems" nillable="true" type="tns:AccountServicingContactItems" />
+  <xs:complexType name="AccountServicingContactItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicingRole" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountServicingContactItem" nillable="true" type="tns:AccountServicingContactItem" />
+</xs:schema>

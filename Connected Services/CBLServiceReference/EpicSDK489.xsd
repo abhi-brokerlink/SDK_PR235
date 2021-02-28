@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd196" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/_protectivematerialfireprotection/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="SolidFuelQuestionnaireID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+  <xs:complexType name="Chimney">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeGas" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeGasAttachedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOil" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOilAttachedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOther" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOtherAttachedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOtherWood" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Question1IfYesFuelTypeOtherWoodAttachedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question1IsStoveVentedIntoSameChimneyFlueWithHeatingDeviceUsingDifferentFuelYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question2IfConstructionMasonryTitleFlueLiningExtendFromBelowStovePipeEntryToTopOfChimneyYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question3IfConstructionMasonryChimneyBuiltFromGroundUpYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question4ChimneyInstalledAfterHouseBuiltForSolidFuelDeviceYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question5ChimneyCoveredWithHiddenBehindCombustibleWallYesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chimney" nillable="true" type="tns:Chimney" />
+  <xs:complexType name="CleaningAttachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CleanedInspectedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescribeContainerUsedToStoreAshes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescribeWhereAshesAreStored" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrequencyStoveChimneySmokePipeCleanedInspectedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrequencyStoveChimneySmokePipeCleanedInspectedIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCleanedInspectedByPersonCertifiedChimneySweepYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastCleaningDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OtherAttachment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhotoOfExteriorOfChimneyAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhotoOfInteriorWithStoveInstalledIncludingFloorProtectionAttached" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CleaningAttachments" nillable="true" type="tns:CleaningAttachments" />
+  <xs:complexType name="ProtectiveMaterialFireProtection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FireProtectionQuestion1IsThereAFireExtinguisherInOperatingConditionInDwellingYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireProtectionQuestion2IsThereASmokeDetectorInDwellingYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireProtectionQuestion3IsThereAHeatSensorInDwellingYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireProtectionQuestion4IsThereACarbonMonoxideDetectorInDwellingYesNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/_protectivematerialfireprotection/" minOccurs="0" name="ProtectiveMaterialUsedForCeiling" nillable="true" type="q1:ProtectiveMaterial" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/_protectivematerialfireprotection/" minOccurs="0" name="ProtectiveMaterialUsedForFloor" nillable="true" type="q2:ProtectiveMaterial" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/_protectivematerialfireprotection/" minOccurs="0" name="ProtectiveMaterialUsedForWalls" nillable="true" type="q3:ProtectiveMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProtectiveMaterialFireProtection" nillable="true" type="tns:ProtectiveMaterialFireProtection" />
+  <xs:complexType name="SolidFuelDevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrandName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingUseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallationDoneByCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallationInspectedByCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallationInspectedByIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDeviceFreeFromLargeCracksBrokenPartsYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationOfDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationOfDeviceIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherHeatingSourceUsedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherHeatingSourceUsedIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoveTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoveTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestingLaboratoryLabelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestingLaboratoryLabelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearInstalled" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SolidFuelDevice" nillable="true" type="tns:SolidFuelDevice" />
+  <xs:complexType name="StovePipe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiameterOfPipe" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromPipeToOuterEdgesOfOpenings" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Question1DoesStovePipeFitSnugIntoChimneyOpeningYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question2StovePipeConnectionsFastenedToEachOtherWithScrewsAtEachConnectionYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question3DoesStovePipePassThroughInteriorCombustibleWallCeilingClosetConcealedAreaYesNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="Question3Option" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentStyleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentStyleIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VentilatedThimbleDiameter" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StovePipe" nillable="true" type="tns:StovePipe" />
+  <xs:complexType name="UnitPipeClearances">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DistanceFromBottomOfUnitToFloorInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromFrontOfUnitToFrontEdgeOfFloorProtectionInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromFurnitureDrapesWoodStorageOrOtherCombustiblesFromFrontOfUnitInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromTopOfPipeToCeilingInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromUnitToCeilingInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromUnitToLeftWallInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromUnitToRearWallInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceFromUnitToRightWallInches" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DoesStoveInstallationAndUseConformToAllManufacturerSpecificationAndLocalFireCodesYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromPipeToAnyWallInches" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnitPipeClearances" nillable="true" type="tns:UnitPipeClearances" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+</xs:schema>

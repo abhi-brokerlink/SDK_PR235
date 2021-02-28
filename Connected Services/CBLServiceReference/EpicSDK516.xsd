@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/_eligiblevouchers/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/_eligiblevouchers/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd505" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/_eligiblevouchers/_eligiblevoucheritem/" />
+  <xs:complexType name="EligibleVoucherItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EligibleVoucherItem" nillable="true" type="tns:EligibleVoucherItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EligibleVoucherItems" nillable="true" type="tns:EligibleVoucherItems" />
+  <xs:complexType name="EligibleVoucherItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiscountAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiscountExpiresOnDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/_eligiblevouchers/_eligiblevoucheritem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Payee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Print" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EligibleVoucherItem" nillable="true" type="tns:EligibleVoucherItem" />
+  <xs:simpleType name="SearchWhereComparisonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="Containing" />
+      <xs:enumeration value="WithinRange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchWhereComparisonType" nillable="true" type="tns:SearchWhereComparisonType" />
+  <xs:simpleType name="SearchWhereFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AccountLookup" />
+      <xs:enumeration value="AccountingMonth" />
+      <xs:enumeration value="DiscountDate" />
+      <xs:enumeration value="DueDate" />
+      <xs:enumeration value="InvoiceDate" />
+      <xs:enumeration value="Payee" />
+      <xs:enumeration value="ReferNumber" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchWhereFilterType" nillable="true" type="tns:SearchWhereFilterType" />
+</xs:schema>

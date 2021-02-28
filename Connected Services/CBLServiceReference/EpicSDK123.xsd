@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd415" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd416" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd424" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd435" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" />
+  <xs:complexType name="ArrayOfPolicyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PolicyInfo" nillable="true" type="tns:PolicyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPolicyInfo" nillable="true" type="tns:ArrayOfPolicyInfo" />
+  <xs:complexType name="PolicyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoNB" nillable="true" type="q1:PolicyInfoNB" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoNL" nillable="true" type="q2:PolicyInfoNL" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoNS" nillable="true" type="q3:PolicyInfoNS" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoON" nillable="true" type="q4:PolicyInfoON" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoOther" nillable="true" type="q5:PolicyInfoOther" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoPE" nillable="true" type="q6:PolicyInfoPE" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" minOccurs="0" name="PolicyInfoQC" nillable="true" type="q7:PolicyInfoQC" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfo" nillable="true" type="tns:PolicyInfo" />
+  <xs:simpleType name="VehicleGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="VehicleID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VehicleGetType" nillable="true" type="tns:VehicleGetType" />
+  <xs:complexType name="ArrayOfVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Vehicle" nillable="true" type="tns:Vehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicle" nillable="true" type="tns:ArrayOfVehicle" />
+  <xs:complexType name="Vehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleID" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleNBValue" nillable="true" type="q8:VehicleNB" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleNLValue" nillable="true" type="q9:VehicleNL" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleNSValue" nillable="true" type="q10:VehicleNS" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleNTValue" nillable="true" type="q11:VehicleNT" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleNUValue" nillable="true" type="q12:VehicleNU" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleONValue" nillable="true" type="q13:VehicleON" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleOtherValue" nillable="true" type="q14:VehicleOther" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehiclePEValue" nillable="true" type="q15:VehiclePE" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleQCValue" nillable="true" type="q16:VehicleQC" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="VehicleYTValue" nillable="true" type="q17:VehicleYT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Vehicle" nillable="true" type="tns:Vehicle" />
+  <xs:simpleType name="DriverGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="DriverID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DriverGetType" nillable="true" type="tns:DriverGetType" />
+  <xs:complexType name="ArrayOfDriver">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Driver" nillable="true" type="tns:Driver" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDriver" nillable="true" type="tns:ArrayOfDriver" />
+  <xs:complexType name="Driver">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DriverID" type="xs:int" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverNBValue" nillable="true" type="q18:DriverNB" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverNLValue" nillable="true" type="q19:DriverNL" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverNSValue" nillable="true" type="q20:DriverNS" />
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverNTValue" nillable="true" type="q21:DriverNT" />
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverNUValue" nillable="true" type="q22:DriverNU" />
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverONValue" nillable="true" type="q23:DriverON" />
+      <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverOtherValue" nillable="true" type="q24:DriverOther" />
+      <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverPEValue" nillable="true" type="q25:DriverPE" />
+      <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverQCValue" nillable="true" type="q26:DriverQC" />
+      <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" minOccurs="0" name="DriverYTValue" nillable="true" type="q27:DriverYT" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Driver" nillable="true" type="tns:Driver" />
+</xs:schema>

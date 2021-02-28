@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_suretyreport/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_suretyreport/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="ArrayOfLocationContractSuretyTermsBillingInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocationContractSuretyTermsBillingInformation" nillable="true" type="tns:LocationContractSuretyTermsBillingInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocationContractSuretyTermsBillingInformation" nillable="true" type="tns:ArrayOfLocationContractSuretyTermsBillingInformation" />
+  <xs:complexType name="LocationContractSuretyTermsBillingInformation">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="BondAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChargeTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionPercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContractPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CountersigningAgentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedDateOfCompletion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GrossAmountPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaintenanceTermMonths" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaintenanceTermYears" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NetAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumTransactionEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PremiumTransactionExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProjectDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfSuretyTermsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationContractSuretyTermsBillingInformation" nillable="true" type="tns:LocationContractSuretyTermsBillingInformation" />
+  <xs:complexType name="ArrayOfPremiumPaymentSupplement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PremiumPaymentSupplement" nillable="true" type="tns:PremiumPaymentSupplement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPremiumPaymentSupplement" nillable="true" type="tns:ArrayOfPremiumPaymentSupplement" />
+  <xs:complexType name="PremiumPaymentSupplement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreditCardAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardCompanyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardExpiration" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreditCardNameOnCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFTPacCheckAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFTPacCheckBankABANumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFTPacCheckCheckReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EFTPacCheckDayOfMonthDue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EFTPacCheckFirstPaymentDueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentPlanBillingAccoutNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanBillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanDeposit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentPlanEstimatedTotalPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentPlanFinanceCompany" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanMailPolicyToCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanMailPolicyToIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanMethodCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanMethodIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanPayorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanPayorIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanPayorRequirePhysicalRecordCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanPlanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanPlanIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanPremiumFinancedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollDeductionEmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollDeductionEmployeeIs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollDeductionEmployeeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollDeductionEmployerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollDeductionNumberOfDeductions" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiumPaymentSupplement" nillable="true" type="tns:PremiumPaymentSupplement" />
+</xs:schema>

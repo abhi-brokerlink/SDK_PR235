@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_wiassignedrisk/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_wiassignedrisk/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd301" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_wiassignedrisk/_wpreviouscarrieritem/" />
+  <xs:complexType name="WINatureOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NatureOfBusiness" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WINatureOfBusiness" nillable="true" type="tns:WINatureOfBusiness" />
+  <xs:complexType name="WIPremiumComputation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnniversaryRatingDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CatastrophePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DepositPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimateAnnualPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpenseConstant" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExperienceModification" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncreasedLimits" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InterstateRiskID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinimumPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PremiumSubTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TerrorismPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalModifiedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WCPAPCredit" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WIPremiumComputation" nillable="true" type="tns:WIPremiumComputation" />
+  <xs:complexType name="WIPreviousCarrierItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WIPreviousCarrierItem" nillable="true" type="tns:WIPreviousCarrierItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WIPreviousCarrierItems" nillable="true" type="tns:WIPreviousCarrierItems" />
+  <xs:complexType name="WIPreviousCarrierItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_wiassignedrisk/_wpreviouscarrieritem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreviousCarrierID" type="xs:int" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WIPreviousCarrierItem" nillable="true" type="tns:WIPreviousCarrierItem" />
+</xs:schema>

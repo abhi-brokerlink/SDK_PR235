@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd110" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/_salestargetitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd111" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/_salesteamitem/" />
+  <xs:complexType name="SalesTargetItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesTargetItem" nillable="true" type="tns:SalesTargetItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTargetItems" nillable="true" type="tns:SalesTargetItems" />
+  <xs:complexType name="SalesTargetItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/_salestargetitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="NumberOfClientContracts" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPolicies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfRisks" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Revenue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SalesTargetID" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesTeamID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesTeamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesTargetTypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTargetItem" nillable="true" type="tns:SalesTargetItem" />
+  <xs:complexType name="SalesTeamItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SalesTeamItem" nillable="true" type="tns:SalesTeamItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTeamItems" nillable="true" type="tns:SalesTeamItems" />
+  <xs:complexType name="SalesTeamItem">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/_salesteamitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="SalesManagerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesTeamID" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesTeamName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SalesTeamItem" nillable="true" type="tns:SalesTeamItem" />
+</xs:schema>

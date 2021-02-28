@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd397" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenb/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd396" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_discountsurchargeitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd398" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_optionaladditionalcoverageitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd399" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenl/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd400" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclens/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd401" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclent/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd402" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenu/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd405" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleother/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd406" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd407" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleqc/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd408" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleyt/" />
+  <xs:complexType name="VehicleNB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenb/" minOccurs="0" name="LimitsValue" nillable="true" type="q1:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenb/" minOccurs="0" name="RatingValue" nillable="true" type="q2:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenb/" minOccurs="0" name="TrailerCommercialRatedValue" nillable="true" type="q3:TrailerCommercialRated" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenb/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q4:VehicleDescription" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q5:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleNB" nillable="true" type="tns:VehicleNB" />
+  <xs:complexType name="DiscountSurchargeItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiscountSurchargeItem" nillable="true" type="tns:DiscountSurchargeItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiscountSurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+  <xs:complexType name="DiscountSurchargeItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppliedToPremium" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountSurchargeID" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_discountsurchargeitem/" minOccurs="0" name="Flag" type="q6:Flags" />
+      <xs:element minOccurs="0" name="Occurrence" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiscountSurchargeItem" nillable="true" type="tns:DiscountSurchargeItem" />
+  <xs:complexType name="LimitItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoverageExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormEditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetChangePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Occurrence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentCoinsurance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YesNoIndicator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LimitItem" nillable="true" type="tns:LimitItem" />
+  <xs:complexType name="OptionalAdditionalCoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OptionalAdditionalCoverageItem" nillable="true" type="tns:OptionalAdditionalCoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+  <xs:complexType name="OptionalAdditionalCoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoverageExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_optionaladditionalcoverageitem/" minOccurs="0" name="Flag" type="q7:Flags" />
+      <xs:element minOccurs="0" name="FormEditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetChangePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Occurrence" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OptionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="PercentCoinsurance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YesNoIndicator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OptionalAdditionalCoverageItem" nillable="true" type="tns:OptionalAdditionalCoverageItem" />
+  <xs:complexType name="VehicleNL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenl/" minOccurs="0" name="LimitsValue" nillable="true" type="q8:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenl/" minOccurs="0" name="RatingValue" nillable="true" type="q9:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="TrailerCommercialRatedUnderwritingItems" nillable="true" type="q10:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenl/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q11:VehicleDescription" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q12:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleNL" nillable="true" type="tns:VehicleNL" />
+  <xs:complexType name="VehicleNS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclens/" minOccurs="0" name="LimitsValue" nillable="true" type="q13:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclens/" minOccurs="0" name="RatingValue" nillable="true" type="q14:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclens/" minOccurs="0" name="TrailerCommercialRatedValue" nillable="true" type="q15:TrailerCommercialRated" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclens/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q16:VehicleDescription" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q17:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleNS" nillable="true" type="tns:VehicleNS" />
+  <xs:complexType name="VehicleNT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclent/" minOccurs="0" name="LimitsValue" nillable="true" type="q18:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclent/" minOccurs="0" name="RatingValue" nillable="true" type="q19:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="TrailerCommercialRatedUnderwritingItems" nillable="true" type="q20:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclent/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q21:VehicleDescription" />
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q22:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleNT" nillable="true" type="tns:VehicleNT" />
+  <xs:complexType name="VehicleNU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenu/" minOccurs="0" name="LimitsValue" nillable="true" type="q23:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenu/" minOccurs="0" name="RatingValue" nillable="true" type="q24:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="TrailerCommercialRatedUnderwritingItems" nillable="true" type="q25:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenu/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q26:VehicleDescription" />
+      <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q27:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleNU" nillable="true" type="tns:VehicleNU" />
+  <xs:complexType name="VehicleOther">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q28="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleother/" minOccurs="0" name="LimitsValue" nillable="true" type="q28:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q29="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleother/" minOccurs="0" name="RatingValue" nillable="true" type="q29:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q30="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="TrailerCommercialRatedUnderwritingItems" nillable="true" type="q30:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q31="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleother/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q31:VehicleDescription" />
+      <xs:element xmlns:q32="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q32:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleOther" nillable="true" type="tns:VehicleOther" />
+  <xs:complexType name="VehiclePE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q33="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" minOccurs="0" name="LimitsValue" nillable="true" type="q33:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q34="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" minOccurs="0" name="RatingValue" nillable="true" type="q34:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q35="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" minOccurs="0" name="TrailerCommercialRatedValue" nillable="true" type="q35:TrailerCommercialRated" />
+      <xs:element xmlns:q36="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q36:VehicleDescription" />
+      <xs:element xmlns:q37="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q37:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehiclePE" nillable="true" type="tns:VehiclePE" />
+  <xs:complexType name="VehicleQC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q38="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleqc/" minOccurs="0" name="LimitsValue" nillable="true" type="q38:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q39="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleqc/" minOccurs="0" name="RatingValue" nillable="true" type="q39:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q40="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleqc/" minOccurs="0" name="TrailerCommercialRatedValue" nillable="true" type="q40:TrailerCommercialRated" />
+      <xs:element xmlns:q41="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleqc/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q41:VehicleDescription" />
+      <xs:element xmlns:q42="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q42:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleQC" nillable="true" type="tns:VehicleQC" />
+  <xs:complexType name="VehicleYT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q43="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleyt/" minOccurs="0" name="LimitsValue" nillable="true" type="q43:Limits" />
+      <xs:element minOccurs="0" name="OptionalAdditionalCoverageItems" nillable="true" type="tns:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q44="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleyt/" minOccurs="0" name="RatingValue" nillable="true" type="q44:Rating" />
+      <xs:element minOccurs="0" name="SurchargeItems" nillable="true" type="tns:DiscountSurchargeItems" />
+      <xs:element xmlns:q45="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="TrailerCommercialRatedUnderwritingItems" nillable="true" type="q45:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q46="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleyt/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q46:VehicleDescription" />
+      <xs:element xmlns:q47="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q47:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleYT" nillable="true" type="tns:VehicleYT" />
+</xs:schema>

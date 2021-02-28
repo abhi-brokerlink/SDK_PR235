@@ -1,0 +1,8 @@
+select cli.LookupCode, cli.NameOf,  pol.PolicyNumber, pol.DescriptionOf, pol.EffectiveDate, pol.ExpirationDate 
+,lne.UniqLine
+FROM [EpicBDE].[dbo].[Client] cli
+JOIN [EpicBDE].[dbo].[Policy] pol on pol.UniqEntity = cli.UniqEntity
+JOIN [EpicBDE].[dbo].[Line] lne on lne.UniqEntity = pol.UniqEntity
+where pol.ExpirationDate > GETDATE() and 
+--cli.LookupCode = 'TESTAFE001'
+lne.UniqLine = 6032539

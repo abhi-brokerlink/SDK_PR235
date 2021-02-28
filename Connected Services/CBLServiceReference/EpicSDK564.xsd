@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd352" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" />
+  <xs:complexType name="PersonalArticleItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalArticleItem" nillable="true" type="tns:PersonalArticleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalArticleItems" nillable="true" type="tns:PersonalArticleItems" />
+  <xs:complexType name="PersonalArticleItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="PersonalArticleID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" minOccurs="0" name="PropertySummaryValue" nillable="true" type="q2:PropertySummary" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" minOccurs="0" name="RemarkItems" nillable="true" type="q3:RemarkItems" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" minOccurs="0" name="ScheduledPersonalPropertyItems" nillable="true" type="q4:ScheduledPersonalPropertyItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalArticleItem" nillable="true" type="tns:PersonalArticleItem" />
+</xs:schema>

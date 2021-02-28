@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvspolicy/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvspolicy/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd431" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvspolicy/_nonownedvehicletraileritem/" />
+  <xs:complexType name="NonOwnedVehicleTrailerItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NonOwnedVehicleTrailerItem" nillable="true" type="tns:NonOwnedVehicleTrailerItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NonOwnedVehicleTrailerItems" nillable="true" type="tns:NonOwnedVehicleTrailerItems" />
+  <xs:complexType name="NonOwnedVehicleTrailerItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AverageNumberOfVehiclesAtOneTime" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AverageValue" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvspolicy/_nonownedvehicletraileritem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="MaximumNumberOfVehiclesAnnually" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MostExpensiveUnitValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VehicleTrailerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleTrailerTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleTrailerTypeIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NonOwnedVehicleTrailerItem" nillable="true" type="tns:NonOwnedVehicleTrailerItem" />
+</xs:schema>

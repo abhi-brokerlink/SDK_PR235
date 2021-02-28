@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd79" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd82" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_splitreceivable/" />
+  <xs:complexType name="Installments">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" minOccurs="0" name="InstallmentSummary" nillable="true" type="q1:InstallmentSummaryItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" minOccurs="0" name="ReviseInstallmentsBasedOn" type="q2:ReviseInstallmentsBasedOn" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" minOccurs="0" name="SplitReceivable" nillable="true" type="q3:SplitReceivableItems" />
+      <xs:element minOccurs="0" name="TotalInstallmentAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Installments" nillable="true" type="tns:Installments" />
+  <xs:complexType name="SplitReceivable">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_splitreceivable/" minOccurs="0" name="SendInvoiceTo" nillable="true" type="q4:SendInvoiceToItems" />
+      <xs:element minOccurs="0" name="TotalBillingSummaryAgencyIncome" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalBillingSummaryCompanyNetPremium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalBillingSummaryProducerBrokerExpense" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SplitReceivable" nillable="true" type="tns:SplitReceivable" />
+</xs:schema>

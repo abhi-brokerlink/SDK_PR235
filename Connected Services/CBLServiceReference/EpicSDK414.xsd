@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd56" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_detail/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd57" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_invoice/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd58" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/" />
+  <xs:complexType name="Billing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BillingModeOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GenerateInvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProductionMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLedgerAccount" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Billing" nillable="true" type="tns:Billing" />
+  <xs:complexType name="Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_detail/" minOccurs="0" name="DetailItemsValue" nillable="true" type="q2:DetailItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Detail" nillable="true" type="tns:Detail" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="SendInvoiceToOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_invoice/" minOccurs="0" name="SendInvoiceTos" nillable="true" type="q4:SendInvoiceToItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="Commissions">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/" minOccurs="0" name="RevenueDeferralSchedule" nillable="true" type="q5:RevenueScheduleItems" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/" minOccurs="0" name="Splits" nillable="true" type="q6:SplitItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Commissions" nillable="true" type="tns:Commissions" />
+  <xs:complexType name="InstallmentItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InstallmentItem" nillable="true" type="tns:InstallmentItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallmentItems" nillable="true" type="tns:InstallmentItems" />
+  <xs:complexType name="InstallmentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GenerateInvoice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GenerateInvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InstallmentNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="InstallmentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceGrouping" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceGroupingExistingInvoiceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductionMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transaction" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallmentItem" nillable="true" type="tns:InstallmentItem" />
+  <xs:complexType name="PaymentMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentOptionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethod" nillable="true" type="tns:PaymentMethod" />
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLedgerCleared" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLedgerReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProductionMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingAgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingBranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReversalVoidItemReversalNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReversalVoidReasonDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReversalVoidReasonID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReversalVoidReferNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+</xs:schema>

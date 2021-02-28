@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_client/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_client/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd13" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_client/_confidentialclientaccessitem/" />
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AddressDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberCallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="Structure" nillable="true" type="q2:AgencyStructureItems" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountEmailDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebsiteDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Account" nillable="true" type="tns:Account" />
+  <xs:complexType name="Billing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrokerLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceChargeFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InvoiceLayout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoicePageBreak" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatementLayout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatementPageBreak" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillBrokerNet" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Billing" nillable="true" type="tns:Billing" />
+  <xs:complexType name="CategoriesHistory">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="AgencyDefinedCategories" nillable="true" type="q3:AgencyDefinedCodeItems" />
+      <xs:element minOccurs="0" name="DateConverted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PriorAccountID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="Relationships" nillable="true" type="q4:RelationshipItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoriesHistory" nillable="true" type="tns:CategoriesHistory" />
+  <xs:complexType name="ConfidentialClientAccess">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ConfidentialClientAccessAllSelectedOption" nillable="true" type="q5:OptionType" />
+      <xs:element minOccurs="0" name="ConfidentialClientAccessItems" nillable="true" type="tns:ConfidentialClientAccessItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfidentialClientAccess" nillable="true" type="tns:ConfidentialClientAccess" />
+  <xs:complexType name="ConfidentialClientAccessItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConfidentialClientAccessItem" nillable="true" type="tns:ConfidentialClientAccessItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfidentialClientAccessItems" nillable="true" type="tns:ConfidentialClientAccessItems" />
+  <xs:complexType name="ConfidentialClientAccessItem">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_client/_confidentialclientaccessitem/" minOccurs="0" name="Flag" type="q6:Flags" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConfidentialClientAccessItem" nillable="true" type="tns:ConfidentialClientAccessItem" />
+</xs:schema>

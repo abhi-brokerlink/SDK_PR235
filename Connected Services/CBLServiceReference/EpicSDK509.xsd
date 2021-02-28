@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd474" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" />
+  <xs:complexType name="PlanInformationItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlanInformationItem" nillable="true" type="tns:PlanInformationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanInformationItems" nillable="true" type="tns:PlanInformationItems" />
+  <xs:complexType name="PlanInformationItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" minOccurs="0" name="CommentsValue" nillable="true" type="q1:Comment" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="PlanInformationID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" minOccurs="0" name="PlanValue" nillable="true" type="q3:Plan" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" minOccurs="0" name="RateInformationValue" nillable="true" type="q4:RateInformation" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" minOccurs="0" name="StopLossValue" nillable="true" type="q5:StopLoss" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" minOccurs="0" name="TPAServiceItems" nillable="true" type="q6:TPAServiceItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanInformationItem" nillable="true" type="tns:PlanInformationItem" />
+</xs:schema>

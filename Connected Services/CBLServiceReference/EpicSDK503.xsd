@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd493" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_applycreditstodebits/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd495" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" />
+  <xs:complexType name="ApplyCreditsToDebits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ApplyRemainingBalanceToOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="ApplyRemainingBalanceToPolicyClientLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplyRemainingBalanceToPolicyIncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ApplyRemainingBalanceToPolicyLineID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_applycreditstodebits/" minOccurs="0" name="Credits" nillable="true" type="q2:CreditItems" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_applycreditstodebits/" minOccurs="0" name="Debits" nillable="true" type="q3:DebitItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplyCreditsToDebits" nillable="true" type="tns:ApplyCreditsToDebits" />
+  <xs:simpleType name="Flags">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Flags" nillable="true" type="tns:Flags" />
+  <xs:complexType name="PayablesCommissions">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" minOccurs="0" name="CashOnAccountItemsValue" nillable="true" type="q4:CashOnAccountItems" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" minOccurs="0" name="PayItemsValue" nillable="true" type="q5:PayItems" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" minOccurs="0" name="PayStatementItemsValue" nillable="true" type="q6:PayStatementItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayablesCommissions" nillable="true" type="tns:PayablesCommissions" />
+  <xs:complexType name="PaidItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidItem" nillable="true" type="tns:PaidItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidItems" nillable="true" type="tns:PaidItems" />
+  <xs:complexType name="PaidItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmountDue" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AmountPaid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BilledFromAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivableBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidItem" nillable="true" type="tns:PaidItem" />
+  <xs:complexType name="PaidStatementItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidStatementItem" nillable="true" type="tns:PaidStatementItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidStatementItems" nillable="true" type="tns:PaidStatementItems" />
+  <xs:complexType name="PaidStatementItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DateClosed" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasterStatementNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MonthClosed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatementID" type="xs:int" />
+      <xs:element minOccurs="0" name="StatementNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="StatementType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidStatementItem" nillable="true" type="tns:PaidStatementItem" />
+</xs:schema>

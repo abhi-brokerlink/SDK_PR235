@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunity/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunity/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="OpportunitySortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CurrentPremiumAmount" />
+      <xs:enumeration value="CurrentRevenueAmount" />
+      <xs:enumeration value="Description" />
+      <xs:enumeration value="EnteredBy" />
+      <xs:enumeration value="EstimatedPremiumAmount" />
+      <xs:enumeration value="EstimatedRevenueAmount" />
+      <xs:enumeration value="Owner" />
+      <xs:enumeration value="SalesManager" />
+      <xs:enumeration value="SalesTeam" />
+      <xs:enumeration value="Stage" />
+      <xs:enumeration value="TargetCloseDate" />
+      <xs:enumeration value="StageGroup" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpportunitySortType" nillable="true" type="tns:OpportunitySortType" />
+</xs:schema>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd182" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd190" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd192" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_homeownerdwellingfireratingunderwriting/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd193" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_mobilehome/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd194" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_coverageslimitsofliability/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd179" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" />
+  <xs:simpleType name="GeneralInformationGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GeneralInformationGetType" nillable="true" type="tns:GeneralInformationGetType" />
+  <xs:complexType name="ArrayOfGeneralInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneralInformation" nillable="true" type="tns:ArrayOfGeneralInformation" />
+  <xs:complexType name="GeneralInformation">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" minOccurs="0" name="GeneralInformationValue" nillable="true" type="q1:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" minOccurs="0" name="RentersAndCondosOnlyValue" nillable="true" type="q2:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+  <xs:complexType name="InsuranceRequested">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateAgentLastInspected" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedAnnualPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FormNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceRequestedID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PayorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayorIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="YearsKnownApplicant" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsuranceRequested" nillable="true" type="tns:InsuranceRequested" />
+  <xs:complexType name="ArrayOfInsuranceRequested">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsuranceRequested" nillable="true" type="tns:InsuranceRequested" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsuranceRequested" nillable="true" type="tns:ArrayOfInsuranceRequested" />
+  <xs:complexType name="ArrayOfRatingUnderwriting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RatingUnderwriting" nillable="true" type="tns:RatingUnderwriting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRatingUnderwriting" nillable="true" type="tns:ArrayOfRatingUnderwriting" />
+  <xs:complexType name="RatingUnderwriting">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" minOccurs="0" name="GeneralConstructionSidingValue" nillable="true" type="q3:GeneralConstructionSiding" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" minOccurs="0" name="GeneralCreditsSquareFeetValue" nillable="true" type="q4:GeneralCreditsSquareFeet" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" minOccurs="0" name="ProtectionWiringElectricalHeatValue" nillable="true" type="q5:ProtectionWiringElectricalHeat" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_homeownerdwellingfireratingunderwriting/" minOccurs="0" name="ResidenceTypeLocationPoolRoofWindRenovationsPlumbingValue" nillable="true" type="q6:ResidenceTypeLocationPoolRoofWindRenovationsPlumbing" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingUnderwriting" nillable="true" type="tns:RatingUnderwriting" />
+  <xs:simpleType name="MobileHomeGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MobileHomeGetType" nillable="true" type="tns:MobileHomeGetType" />
+  <xs:complexType name="ArrayOfMobileHome">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MobileHome" nillable="true" type="tns:MobileHome" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMobileHome" nillable="true" type="tns:ArrayOfMobileHome" />
+  <xs:complexType name="MobileHome">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" minOccurs="0" name="GeneralInformationValue" nillable="true" type="q7:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" minOccurs="0" name="MobileHomeTieDownsValue" nillable="true" type="q8:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_mobilehome/" minOccurs="0" name="RatingUnderwritingValue" nillable="true" type="q9:RatingUnderwriting" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobileHome" nillable="true" type="tns:MobileHome" />
+  <xs:complexType name="ArrayOfCoveragesLimitsOfLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoveragesLimitsOfLiability" nillable="true" type="tns:CoveragesLimitsOfLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoveragesLimitsOfLiability" nillable="true" type="tns:ArrayOfCoveragesLimitsOfLiability" />
+  <xs:complexType name="CoveragesLimitsOfLiability">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_coverageslimitsofliability/" minOccurs="0" name="CoveragesLimits" nillable="true" type="q10:CoverageItems" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_coverageslimitsofliability/" minOccurs="0" name="Deductibles" nillable="true" type="q11:CoverageItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_coverageslimitsofliability/" minOccurs="0" name="OptionalCoveragesEndorsements" nillable="true" type="q12:CoverageItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoveragesLimitsOfLiability" nillable="true" type="tns:CoveragesLimitsOfLiability" />
+  <xs:simpleType name="CoveragesLimitsOfLiabilityOtherOptionalCoverageEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OtherOptionalCoverageEndorsementID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CoveragesLimitsOfLiabilityOtherOptionalCoverageEndorsementGetType" nillable="true" type="tns:CoveragesLimitsOfLiabilityOtherOptionalCoverageEndorsementGetType" />
+  <xs:complexType name="ArrayOfAdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalInterest" nillable="true" type="tns:ArrayOfAdditionalInterest" />
+  <xs:complexType name="AdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q13:Address" />
+      <xs:element minOccurs="0" name="Certificate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LienAmount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Policy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ReasonForInterest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceLoanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendBill" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+  <xs:complexType name="SolidFuelQuestionnaire">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" minOccurs="0" name="ChimneyValue" nillable="true" type="q14:Chimney" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" minOccurs="0" name="CleaningAttachmentsValue" nillable="true" type="q15:CleaningAttachments" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" minOccurs="0" name="ProtectiveMaterialFireProtectionValue" nillable="true" type="q16:ProtectiveMaterialFireProtection" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" minOccurs="0" name="SolidFuelDeviceValue" nillable="true" type="q17:SolidFuelDevice" />
+      <xs:element minOccurs="0" name="SolidFuelQuestionnaireID" type="xs:int" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" minOccurs="0" name="StovePipeValue" nillable="true" type="q18:StovePipe" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" minOccurs="0" name="UnitPipeClearancesValue" nillable="true" type="q19:UnitPipeClearances" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SolidFuelQuestionnaire" nillable="true" type="tns:SolidFuelQuestionnaire" />
+  <xs:complexType name="ArrayOfSolidFuelQuestionnaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SolidFuelQuestionnaire" nillable="true" type="tns:SolidFuelQuestionnaire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSolidFuelQuestionnaire" nillable="true" type="tns:ArrayOfSolidFuelQuestionnaire" />
+</xs:schema>

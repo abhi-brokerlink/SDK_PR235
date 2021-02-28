@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd480" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/_aggregateitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd481" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/_specificitem/" />
+  <xs:complexType name="StopLossAggregateItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StopLossAggregateItem" nillable="true" type="tns:StopLossAggregateItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLossAggregateItems" nillable="true" type="tns:StopLossAggregateItems" />
+  <xs:complexType name="StopLossAggregateItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AggregateItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/_aggregateitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLossAggregateItem" nillable="true" type="tns:StopLossAggregateItem" />
+  <xs:complexType name="StopLossSpecificItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StopLossSpecificItem" nillable="true" type="tns:StopLossSpecificItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLossSpecificItems" nillable="true" type="tns:StopLossSpecificItems" />
+  <xs:complexType name="StopLossSpecificItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/_specificitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecificItemID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLossSpecificItem" nillable="true" type="tns:StopLossSpecificItem" />
+</xs:schema>

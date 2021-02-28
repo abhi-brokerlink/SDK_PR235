@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_money/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_money/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="ComputerFraud">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="ComputerAudit" type="q1:YesNoOptions" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="ComputerRoomRestricted" type="q2:YesNoOptions" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="SecurityDuty" type="q3:YesNoOptions" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="TransactionsInvestigated" type="q4:YesNoOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComputerFraud" nillable="true" type="tns:ComputerFraud" />
+  <xs:complexType name="PurchasingReceiving">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DeptSupervised" type="q5:YesNoOptions" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DutiesSegregated" type="q6:YesNoOptions" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MultipleCheckers" type="q7:YesNoOptions" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="NumberedPurchaseOrder" type="q8:YesNoOptions" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="ReceiptVerified" type="q9:YesNoOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PurchasingReceiving" nillable="true" type="tns:PurchasingReceiving" />
+  <xs:complexType name="Securities">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChecksAccountPayable" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ChecksDeposit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Money" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MoneyOvernight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PayrollChecks" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Securities" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Securities" nillable="true" type="tns:Securities" />
+</xs:schema>

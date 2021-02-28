@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd230" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="ArrayOfApplicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Applicant" nillable="true" type="tns:Applicant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicant" nillable="true" type="tns:ArrayOfApplicant" />
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" minOccurs="0" name="AdditionalNamedInsureds" nillable="true" type="q1:AdditionalNamedInsureds" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" minOccurs="0" name="ApplicantValue" nillable="true" type="q2:Applicant" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" minOccurs="0" name="CoApplicantValue" nillable="true" type="q3:CoApplicant" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" minOccurs="0" name="CurrentAddressValue" nillable="true" type="q4:CurrentAddress" />
+      <xs:element minOccurs="0" name="DateAtResidence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InsuredName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MailingAddress" nillable="true" type="q5:Address" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="NewRenewalOption" nillable="true" type="q6:OptionType" />
+      <xs:element minOccurs="0" name="PersonalApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" minOccurs="0" name="PreviousAddressValue" nillable="true" type="q7:PreviousAddress" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" minOccurs="0" name="ProducerStatementValue" nillable="true" type="q8:ProducerStatement" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+</xs:schema>

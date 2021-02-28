@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd395" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:complexType name="Limits">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="AccidentBenefitsOccasionalDriverValue" nillable="true" type="q1:LimitItem" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="AccidentBenefitsPrincipalDriverValue" nillable="true" type="q2:LimitItem" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="AllPerilsOccasionalDriverValue" nillable="true" type="q3:LimitItem" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="AllPerilsPrincipalDriverValue" nillable="true" type="q4:LimitItem" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="CollisionOrUpsetOccasionalDriverValue" nillable="true" type="q5:LimitItem" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="CollisionOrUpsetPrincipalDriverValue" nillable="true" type="q6:LimitItem" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="ComprehensiveOccasionalDriverValue" nillable="true" type="q7:LimitItem" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="ComprehensivePrincipalDriverValue" nillable="true" type="q8:LimitItem" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="FamilyProtectionOccasionalDriverValue" nillable="true" type="q9:LimitItem" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="FamilyProtectionPrincipalDriverValue" nillable="true" type="q10:LimitItem" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="SpecifiedPerilsOccasionalDriverValue" nillable="true" type="q11:LimitItem" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="SpecifiedPerilsPrincipalDriverValue" nillable="true" type="q12:LimitItem" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="ThirdPartyLiabilityOccasionalDriverValue" nillable="true" type="q13:LimitItem" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="ThirdPartyLiabilityPrincipalDriverValue" nillable="true" type="q14:LimitItem" />
+      <xs:element minOccurs="0" name="TotalVehiclePremiumOccasionalDriver" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalVehiclePremiumPrincipalDriver" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="UninsuredAndUnidentifiedAutomobileOccasionalDriverValue" nillable="true" type="q15:LimitItem" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" minOccurs="0" name="UninsuredAndUnidentifiedAutomobilePrincipalDriverValue" nillable="true" type="q16:LimitItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Limits" nillable="true" type="tns:Limits" />
+  <xs:complexType name="Rating">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FacilityRefusalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityTierCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityTierDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingDrivingRecordColl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingDrivingRecordTPL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingRateGroupAB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingRateGroupCollAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingRateGroupCompSP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingRateGroupDCPD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverRatingTerritory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingDrivingRecordColl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingDrivingRecordTPL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingRateGroupAB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingRateGroupCollAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingRateGroupCompSP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingRateGroupDCPD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingSubClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingTerritory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingVehicleCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rating" nillable="true" type="tns:Rating" />
+  <xs:complexType name="TrailerCommercialRated">
+    <xs:sequence>
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="CommercialVehicleUseUnderwritingItems" nillable="true" type="q17:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="DescribeAnyTrailerNotAlreadyListed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatingRadiusGreaterThan40KilometersFromPlaceVehicleUsuallyKept" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VehicleWeightIsOver4500Kilograms" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrailerCommercialRated" nillable="true" type="tns:TrailerCommercialRated" />
+  <xs:complexType name="VehicleDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualDistanceInKilometers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BodyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessUsePercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CommuteDistanceOneWay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyVehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CubicCentimeters" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatePurchaseLease" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FuelTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrossVehicleWeightInKilograms" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LicensedProvinceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListPriceNew" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfCylinders" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccasionalDriverNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrincipalDriverNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PurchasePriceIncludingEquipment" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PurchaseTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleIdentificationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleUsedToCommuteYesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleDescription" nillable="true" type="tns:VehicleDescription" />
+</xs:schema>

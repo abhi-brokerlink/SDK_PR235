@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_applicant/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_applicant/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd412" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_applicant/_contactnumber/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd413" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_canadiancommercialauto/_applicant/_applicantother/" />
+  <xs:complexType name="ContactNumberItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactNumberItem" nillable="true" type="tns:ContactNumberItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactNumberItems" nillable="true" type="tns:ContactNumberItems" />
+  <xs:complexType name="ContactNumberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumberCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumberExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumberID" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactNumberType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_applicant/_contactnumber/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactNumberItem" nillable="true" type="tns:ContactNumberItem" />
+  <xs:complexType name="ApplicantOther">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="AdditionalInformationItems" nillable="true" type="q2:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ContactNumberItems" nillable="true" type="tns:ContactNumberItems" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Insured" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="LanguageOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MailingAddress" nillable="true" type="q4:Address" />
+      <xs:element minOccurs="0" name="PreviousAddressValue" nillable="true" type="tns:PreviousAddress" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalEntity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalEntityIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_canadiancommercialauto/_applicant/_applicantother/" minOccurs="0" name="AdditonalInformationApplicantCoApplicantInformationValue" nillable="true" type="q5:AdditonalInformationApplicantCoApplicantInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantOther" nillable="true" type="tns:ApplicantOther" />
+  <xs:complexType name="PreviousAddress">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q6:Address" />
+      <xs:element minOccurs="0" name="YearsAtAddress" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreviousAddress" nillable="true" type="tns:PreviousAddress" />
+</xs:schema>

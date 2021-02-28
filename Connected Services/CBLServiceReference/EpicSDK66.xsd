@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_businessowners/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_businessowners/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PolicyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleCreditsPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LiabilityPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MinimumPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OptionalCoveragesPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other1Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other2Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other3Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other3Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PersonalPropertyPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PolicyInformationID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleCreditsPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxesSurchargePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalEstimatedPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInformation" nillable="true" type="tns:PolicyInformation" />
+</xs:schema>

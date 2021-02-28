@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd499" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd514" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/" />
+  <xs:complexType name="Check">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastPaidDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Print" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Remittance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeCheckStubDetail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Routing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectDepositMethodID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Check" nillable="true" type="tns:Check" />
+  <xs:complexType name="Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddAsDefaultEntry" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_common/" minOccurs="0" name="DefaultEntryValue" nillable="true" type="q1:DefaultEntry" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/" minOccurs="0" name="DetailItemsValue" nillable="true" type="q2:DetailItems" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Detail" nillable="true" type="tns:Detail" />
+  <xs:complexType name="Discount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CalculateOn" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpiresOnDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Percentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidForDays" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Discount" nillable="true" type="tns:Discount" />
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd334" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_crossreferenceinformationitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd335" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/" />
+  <xs:complexType name="CrossReferenceInformationItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CrossReferenceInformationItem" nillable="true" type="tns:CrossReferenceInformationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrossReferenceInformationItems" nillable="true" type="tns:CrossReferenceInformationItems" />
+  <xs:complexType name="CrossReferenceInformationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CrossReferenceInformationID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_crossreferenceinformationitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LineOfBusinessCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrossReferenceInformationItem" nillable="true" type="tns:CrossReferenceInformationItem" />
+  <xs:complexType name="PolicyHistory">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/" minOccurs="0" name="CarrierItems" nillable="true" type="q2:CarrierItems" />
+      <xs:element minOccurs="0" name="DateApplicantHadInsurance" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstTimeInsured" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RefusedInsuranceYesNoCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyHistory" nillable="true" type="tns:PolicyHistory" />
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd416" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd425" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleon/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:complexType name="VehicleON">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="DiscountItems" nillable="true" type="q1:DiscountSurchargeItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleon/" minOccurs="0" name="LimitsValue" nillable="true" type="q2:Limits" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="OntarioPolicyChangeFormItems" nillable="true" type="q3:OptionalAdditionalCoverageItems" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleon/" minOccurs="0" name="RatingValue" nillable="true" type="q4:Rating" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" minOccurs="0" name="SurchargeItems" nillable="true" type="q5:DiscountSurchargeItems" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleon/" minOccurs="0" name="VehicleDescriptionValue" nillable="true" type="q6:VehicleDescription" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="VehicleInformationUnderwritingItems" nillable="true" type="q7:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleON" nillable="true" type="tns:VehicleON" />
+</xs:schema>

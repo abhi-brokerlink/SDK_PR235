@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd223" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/_buildingitem/" />
+  <xs:complexType name="BuildingItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuildingItem" nillable="true" type="tns:BuildingItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuildingItems" nillable="true" type="tns:BuildingItems" />
+  <xs:complexType name="BuildingItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualRevenues" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="AnyAreaReleaseToOthersCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingID" type="xs:int" />
+      <xs:element minOccurs="0" name="BuildingNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="DescriptionOfOperations" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/_buildingitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="InterestCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfFullTimeEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPartTimeEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OccupiedArea" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OpenToPublicArea" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalBuildingArea" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuildingItem" nillable="true" type="tns:BuildingItem" />
+</xs:schema>

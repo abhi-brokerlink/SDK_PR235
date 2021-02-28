@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd490" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd498" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd507" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd513" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" />
+  <xs:simpleType name="ReceiptGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ReceiptID" />
+      <xs:enumeration value="Filtered" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiptGetType" nillable="true" type="tns:ReceiptGetType" />
+  <xs:simpleType name="ReceiptGetLimitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="LastSixMonths" />
+      <xs:enumeration value="Search" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiptGetLimitType" nillable="true" type="tns:ReceiptGetLimitType" />
+  <xs:simpleType name="ReceiptFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AccountLookup" />
+      <xs:enumeration value="AccountingMonth" />
+      <xs:enumeration value="BankAccount" />
+      <xs:enumeration value="DateEntered" />
+      <xs:enumeration value="EffectiveDate" />
+      <xs:enumeration value="GeneralLedgerSchedule" />
+      <xs:enumeration value="PaymentID" />
+      <xs:enumeration value="ReferNumber" />
+      <xs:enumeration value="ExportBatchNumber" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiptFilterType" nillable="true" type="tns:ReceiptFilterType" />
+  <xs:simpleType name="ReceiptComparisonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="WithinRange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReceiptComparisonType" nillable="true" type="tns:ReceiptComparisonType" />
+  <xs:complexType name="ArrayOfReceipt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Receipt" nillable="true" type="tns:Receipt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReceipt" nillable="true" type="tns:ArrayOfReceipt" />
+  <xs:complexType name="Receipt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankSubAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/" minOccurs="0" name="DetailValue" nillable="true" type="q1:Detail" />
+      <xs:element minOccurs="0" name="FinalizedReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReceiptAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiptEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceiptID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReceiptReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuspendedReceipt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Receipt" nillable="true" type="tns:Receipt" />
+  <xs:complexType name="ArrayOfJournalEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JournalEntry" nillable="true" type="tns:JournalEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJournalEntry" nillable="true" type="tns:ArrayOfJournalEntry" />
+  <xs:complexType name="JournalEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociateToAccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssociateToAccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomaticallyReverse" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AutomaticallyReverseAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomaticallyReverseDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomaticallyReverseEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AutomaticallyReverseReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomaticallyReverseReferNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/" minOccurs="0" name="DetailValue" nillable="true" type="q2:Detail" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JournalEntryAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JournalEntryBackPost" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JournalEntryDefaultEntryID" type="xs:int" />
+      <xs:element minOccurs="0" name="JournalEntryDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JournalEntryEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JournalEntryID" type="xs:int" />
+      <xs:element minOccurs="0" name="JournalEntryRecurringEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JournalEntryReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JournalEntryReopenClosedYearsForBackPosting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VoidDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidVoided" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JournalEntry" nillable="true" type="tns:JournalEntry" />
+  <xs:simpleType name="DisbursementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DisbursementID" />
+      <xs:enumeration value="Filtered" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DisbursementGetType" nillable="true" type="tns:DisbursementGetType" />
+  <xs:simpleType name="DisbursementGetLimitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="LastSixMonths" />
+      <xs:enumeration value="Search" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DisbursementGetLimitType" nillable="true" type="tns:DisbursementGetLimitType" />
+  <xs:simpleType name="DisbursementFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AccountCode" />
+      <xs:enumeration value="AccountName" />
+      <xs:enumeration value="AccountingMonth" />
+      <xs:enumeration value="BankAccount" />
+      <xs:enumeration value="CheckNumber" />
+      <xs:enumeration value="DateEntered" />
+      <xs:enumeration value="EffectiveDate" />
+      <xs:enumeration value="GeneralLedgerSchedule" />
+      <xs:enumeration value="Payee" />
+      <xs:enumeration value="ReferNumber" />
+      <xs:enumeration value="SiteID" />
+      <xs:enumeration value="ExportBatchNumber" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DisbursementFilterType" nillable="true" type="tns:DisbursementFilterType" />
+  <xs:simpleType name="DisbursementComparisonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="Containing" />
+      <xs:enumeration value="WithinRange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DisbursementComparisonType" nillable="true" type="tns:DisbursementComparisonType" />
+  <xs:complexType name="ArrayOfDisbursement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Disbursement" nillable="true" type="tns:Disbursement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDisbursement" nillable="true" type="tns:ArrayOfDisbursement" />
+  <xs:complexType name="Disbursement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckLastPrintedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CheckMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CheckPreviousReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckPrint" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CheckRemittance" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/" minOccurs="0" name="DetailValue" nillable="true" type="q3:Detail" />
+      <xs:element minOccurs="0" name="DisbursementAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisbursementBankAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisbursementBankSubAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisbursementDefaultEntryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DisbursementDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisbursementEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisbursementID" type="xs:int" />
+      <xs:element minOccurs="0" name="DisbursementRecurringEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisbursementReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IgnoreDuplicatePayToTheOrderOfInvoiceNumber" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfAccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfAccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfInvoiceDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfInvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayToTheOrderOfMailingAddress" nillable="true" type="q4:Address" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfMailingAddressContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfMailingAddressContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfMailingAddressSiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfPayee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfPayeeContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VoidDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidVoided" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckIncludeCheckStubDetail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CheckRouting" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DirectDepositMethodID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Disbursement" nillable="true" type="tns:Disbursement" />
+  <xs:complexType name="Voucher">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" minOccurs="0" name="CheckValue" nillable="true" type="q5:Check" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" minOccurs="0" name="DetailValue" nillable="true" type="q6:Detail" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" minOccurs="0" name="DiscountValue" nillable="true" type="q7:Discount" />
+      <xs:element minOccurs="0" name="IgnoreDuplicatePayToTheOrderOfInvoiceNumber" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfAccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfAccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfInvoiceDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfInvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayToTheOrderOfMailingAddress" nillable="true" type="q8:Address" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfMailingAddressContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfMailingAddressContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfMailingAddressSiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfPayee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayToTheOrderOfPayeeContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VoidDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoidVoided" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherBankAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherBankSubAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherDefaultEntryID" type="xs:int" />
+      <xs:element minOccurs="0" name="VoucherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VoucherID" type="xs:int" />
+      <xs:element minOccurs="0" name="VoucherRecurringEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherReferNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoucherStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Voucher" nillable="true" type="tns:Voucher" />
+  <xs:simpleType name="VoucherGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VoucherID" />
+      <xs:enumeration value="Filtered" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VoucherGetType" nillable="true" type="tns:VoucherGetType" />
+  <xs:simpleType name="VoucherGetLimitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="LastSixMonths" />
+      <xs:enumeration value="Unpaid" />
+      <xs:enumeration value="Search" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VoucherGetLimitType" nillable="true" type="tns:VoucherGetLimitType" />
+  <xs:simpleType name="VoucherFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="AccountCode" />
+      <xs:enumeration value="AccountName" />
+      <xs:enumeration value="AccountingMonth" />
+      <xs:enumeration value="BankAccount" />
+      <xs:enumeration value="DateEntered" />
+      <xs:enumeration value="DueDate" />
+      <xs:enumeration value="GeneralLedgerSchedule" />
+      <xs:enumeration value="Payee" />
+      <xs:enumeration value="ReferNumber" />
+      <xs:enumeration value="SiteID" />
+      <xs:enumeration value="ExportBatchNumber" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VoucherFilterType" nillable="true" type="tns:VoucherFilterType" />
+  <xs:simpleType name="VoucherComparisonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="Containing" />
+      <xs:enumeration value="WithinRange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VoucherComparisonType" nillable="true" type="tns:VoucherComparisonType" />
+  <xs:complexType name="ArrayOfVoucher">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Voucher" nillable="true" type="tns:Voucher" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVoucher" nillable="true" type="tns:ArrayOfVoucher" />
+  <xs:simpleType name="ActivityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ActivityID" />
+      <xs:enumeration value="ReceiptID" />
+      <xs:enumeration value="DisbursementID" />
+      <xs:enumeration value="VoucherID" />
+      <xs:enumeration value="JournalEntryID" />
+      <xs:enumeration value="Filtered" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityGetType" nillable="true" type="tns:ActivityGetType" />
+  <xs:simpleType name="ActivityGetLimitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="LastSixMonths" />
+      <xs:enumeration value="Search" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityGetLimitType" nillable="true" type="tns:ActivityGetLimitType" />
+  <xs:simpleType name="ActivityGetFilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ClosedBy" />
+      <xs:enumeration value="ClosedOn" />
+      <xs:enumeration value="Code" />
+      <xs:enumeration value="Description" />
+      <xs:enumeration value="EndDate" />
+      <xs:enumeration value="EnteredBy" />
+      <xs:enumeration value="EnteredOn" />
+      <xs:enumeration value="FollowUpStart" />
+      <xs:enumeration value="WhoOwner" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityGetFilterType" nillable="true" type="tns:ActivityGetFilterType" />
+  <xs:simpleType name="ActivityComparisonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="Containing" />
+      <xs:enumeration value="WithinRange" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ActivityComparisonType" nillable="true" type="tns:ActivityComparisonType" />
+</xs:schema>

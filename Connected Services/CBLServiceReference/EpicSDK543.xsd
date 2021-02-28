@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_premiumbasedtieredcommission/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_premiumbasedtieredcommission/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd144" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_commission/_premiumbasedtieredcommission/_premiumbasedtieredcommissionitem/" />
+  <xs:complexType name="PremiumBasedTieredCommissionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PremiumBasedTieredCommissionItem" nillable="true" type="tns:PremiumBasedTieredCommissionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiumBasedTieredCommissionItems" nillable="true" type="tns:PremiumBasedTieredCommissionItems" />
+  <xs:complexType name="PremiumBasedTieredCommissionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionPercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_commission/_premiumbasedtieredcommission/_premiumbasedtieredcommissionitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="OpenRangeFrom" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpenRangeTo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PremiumBasedNumber" type="xs:short" />
+      <xs:element minOccurs="0" name="PremiumBasedTieredCommissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="RangeFrom" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RangeTo" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiumBasedTieredCommissionItem" nillable="true" type="tns:PremiumBasedTieredCommissionItem" />
+</xs:schema>

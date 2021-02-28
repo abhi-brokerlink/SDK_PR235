@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/_updatestagetosubmitted/_lineitem/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/_updatestagetosubmitted/_lineitem/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Flags">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Submit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Flags" nillable="true" type="tns:Flags" />
+</xs:schema>

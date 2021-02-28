@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd254" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/_coverages/" />
+  <xs:complexType name="ArrayOfCoverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Coverages" nillable="true" type="tns:Coverages" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoverages" nillable="true" type="tns:ArrayOfCoverages" />
+  <xs:complexType name="Coverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppliesToLocation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AppliesToOther" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AppliesToPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AppliesToProject" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BodilyInjuryDeductible" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ClaimsMadeOccurrenceOption" nillable="true" type="q1:OptionType" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/_coverages/" minOccurs="0" name="CoverageItemsValue" nillable="true" type="q2:CoverageItems" />
+      <xs:element minOccurs="0" name="DeductibleBasisCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCommercialGeneralLiability" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOther" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOwnerContractorProtective" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MedicalPaymentsCoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremisesOperationsFullPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductsOtherFullPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PropertyDamageDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalFullPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UIMCoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDeductibleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDamageToRentedPremisesIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEachOccuranceIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEmployeeBenefitsIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGeneralAggregateIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMedicalExpenseIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOtherIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPersonalAndAdvertisingInjuryIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsProductAndCompletedOperationsAggregateIncluded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coverages" nillable="true" type="tns:Coverages" />
+</xs:schema>

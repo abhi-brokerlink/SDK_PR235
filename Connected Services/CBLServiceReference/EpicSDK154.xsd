@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ComparisonType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EqualTo" />
+      <xs:enumeration value="Containing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ComparisonType" nillable="true" type="tns:ComparisonType" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:simpleType name="AssociatedToType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="TransactionID" />
+      <xs:enumeration value="ClaimID" />
+      <xs:enumeration value="ReceiptDetailItemID" />
+      <xs:enumeration value="MasterMarketingSubmissionID" />
+      <xs:enumeration value="ServiceID" />
+      <xs:enumeration value="OpportunityID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AssociatedToType" nillable="true" type="tns:AssociatedToType" />
+  <xs:simpleType name="SortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DefaultOrder" />
+      <xs:enumeration value="AccountLookupCode" />
+      <xs:enumeration value="ActivityCode" />
+      <xs:enumeration value="EnteredDate" />
+      <xs:enumeration value="FollowUpStartDate" />
+      <xs:enumeration value="WhoOwnerCode" />
+      <xs:enumeration value="ActivityStatus" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortType" nillable="true" type="tns:SortType" />
+</xs:schema>

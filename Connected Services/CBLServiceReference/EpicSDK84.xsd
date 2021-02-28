@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_lineofbusinesscriteria/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_lineofbusinesscriteria/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd142" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_commission/_lineofbusinesscriteria/_LineOfBusinessItem/" />
+  <xs:complexType name="LineOfBusinessItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineOfBusinessItem" nillable="true" type="tns:LineOfBusinessItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineOfBusinessItems" nillable="true" type="tns:LineOfBusinessItems" />
+  <xs:complexType name="LineOfBusinessItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_commission/_lineofbusinesscriteria/_LineOfBusinessItem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="TypeOfBusiness" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineOfBusinessItem" nillable="true" type="tns:LineOfBusinessItem" />
+</xs:schema>

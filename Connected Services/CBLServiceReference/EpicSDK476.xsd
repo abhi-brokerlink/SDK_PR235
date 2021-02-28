@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd235" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/_losshistoryitem/" />
+  <xs:complexType name="LossHistoryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LossHistoryItem" nillable="true" type="tns:LossHistoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistoryItems" nillable="true" type="tns:LossHistoryItems" />
+  <xs:complexType name="LossHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountPaid" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CatastropheNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DescriptionOf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnteredCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/_losshistoryitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="InDisputeYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LossHistoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistoryItem" nillable="true" type="tns:LossHistoryItem" />
+  <xs:complexType name="PriorCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BIOrCSLLimitPerAccidentIfApplicable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BIOrCSLLimitPerPersonIfApplicable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LineTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="PriorPolicyNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriorCoverage" nillable="true" type="tns:PriorCoverage" />
+</xs:schema>

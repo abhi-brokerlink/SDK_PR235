@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AdditionalFeatures">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirExchanger" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="AirHumidifier" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="BuiltInDryer" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="BuiltInOven" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="BuiltInWasher" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="CarbonMonoxideDetector" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="CeilingFan" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="CentralvacuumSystem" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="CountertopRange" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="Dishwasher" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="DomesticSolarHotWaterHeater" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="ElectronicAirFilter" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="Elevator" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="IntercomSystem" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="InteriorSprinklerSystem" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="NotJettedHotTub" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="RoofExhaustFan" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="Sauna" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="SecurityAndFireAlarms" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="Skylight" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="SolidFuelStove" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="TrashCompactor" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="WaterPurificationSystem" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="WaterSoftener" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="WetBar" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="OtherFeature1" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="OtherFeature1Item" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherFeature2" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="OtherFeature2Item" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherFeature3" nillable="true" type="tns:AdditionalFeatureItem" />
+      <xs:element minOccurs="0" name="OtherFeature3Item" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalFeatures" nillable="true" type="tns:AdditionalFeatures" />
+  <xs:complexType name="AdditionalFeatureItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemValue" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalFeatureItem" nillable="true" type="tns:AdditionalFeatureItem" />
+  <xs:complexType name="Attachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillOfSale" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherAttachment1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherAttachment2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photos" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachments" nillable="true" type="tns:Attachments" />
+  <xs:complexType name="ReplacementCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdditionTypeSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AdditionTypeValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AirconditioningCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AirconditioningIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AirconditioningValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BalconyDeckSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BalconyDeckValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BasementCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BasementRecRoomFinished" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BasementRecRoomSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BasementRecRoomValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BasementRecRoomWalkout" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BasementSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BasementValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BreezewayCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BreezewaySquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BreezewayValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ConstructionClassType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EvaluationMethodCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EvaluationMethodIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EvaluationSystemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EvaluationSystemIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorWallMaterialA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorWallMaterialB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraBathsFull" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtraBathsHalf" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtraBathsValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FinishedAtticSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FinishedAtticValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FinishedAtticYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireplaceValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GarageTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarageTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarageTypeNumberOfAutos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GarageTypeValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="GroundFloorAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LandImprovements" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LandImprovementsValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFireplaceChimneys" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFireplaceHearths" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFireplacePreFab" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfStories" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherValueInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherValueInformationValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PorchTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PorchTypeSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PorchTypeValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResidenceConditionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofTypeValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ScreenPatioEnclosureFoundation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScreenPatioEnclosureFoundationSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ScreenPatioEnclosureFoundationValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalBuiltIns" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalBuiltInsValue" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalLivingAreaInSquareFeet" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReplacementCost" nillable="true" type="tns:ReplacementCost" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadonly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+</xs:schema>

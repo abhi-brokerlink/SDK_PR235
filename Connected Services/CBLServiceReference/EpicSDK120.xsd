@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd189" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/_dataitem/" />
+  <xs:complexType name="SupplementalScreenCompanies">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreenCompany" nillable="true" type="tns:SupplementalScreenCompany" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenCompanies" nillable="true" type="tns:SupplementalScreenCompanies" />
+  <xs:complexType name="SupplementalScreenCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenCompany" nillable="true" type="tns:SupplementalScreenCompany" />
+  <xs:complexType name="SupplementalScreenDataItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreenDataItem" nillable="true" type="tns:SupplementalScreenDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenDataItems" nillable="true" type="tns:SupplementalScreenDataItems" />
+  <xs:complexType name="SupplementalScreenDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NonScheduledItemsValue" nillable="true" type="tns:SupplementalScreenNonScheduledDataItems" />
+      <xs:element minOccurs="0" name="PageID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduledScreensValue" nillable="true" type="tns:SupplementalScreenScheduledScreens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenDataItem" nillable="true" type="tns:SupplementalScreenDataItem" />
+  <xs:complexType name="SupplementalScreenNonScheduledDataItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreenNonScheduledDataItem" nillable="true" type="tns:SupplementalScreenNonScheduledDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenNonScheduledDataItems" nillable="true" type="tns:SupplementalScreenNonScheduledDataItems" />
+  <xs:complexType name="SupplementalScreenNonScheduledDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="FieldType" nillable="true" type="q1:OptionType" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/_dataitem/" minOccurs="0" name="Flag" type="q2:SupplementalScreenNonScheduledDataItemFlag" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenNonScheduledDataItem" nillable="true" type="tns:SupplementalScreenNonScheduledDataItem" />
+  <xs:complexType name="SupplementalScreenScheduledScreens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreenScheduledScreen" nillable="true" type="tns:SupplementalScreenScheduledScreen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenScheduledScreens" nillable="true" type="tns:SupplementalScreenScheduledScreens" />
+  <xs:complexType name="SupplementalScreenScheduledScreen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ScheduledDataItemsRowsValue" nillable="true" type="tns:SupplementalScreenScheduledDataItemsRows" />
+      <xs:element minOccurs="0" name="ScreenID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenScheduledScreen" nillable="true" type="tns:SupplementalScreenScheduledScreen" />
+  <xs:complexType name="SupplementalScreenScheduledDataItemsRows">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreenScheduledDataItemsRow" nillable="true" type="tns:SupplementalScreenScheduledDataItemsRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenScheduledDataItemsRows" nillable="true" type="tns:SupplementalScreenScheduledDataItemsRows" />
+  <xs:complexType name="SupplementalScreenScheduledDataItemsRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemsValue" nillable="true" type="tns:SupplementalScreenScheduledDataItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenScheduledDataItemsRow" nillable="true" type="tns:SupplementalScreenScheduledDataItemsRow" />
+  <xs:complexType name="SupplementalScreenScheduledDataItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreenScheduledDataItem" nillable="true" type="tns:SupplementalScreenScheduledDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenScheduledDataItems" nillable="true" type="tns:SupplementalScreenScheduledDataItems" />
+  <xs:complexType name="SupplementalScreenScheduledDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="FieldType" nillable="true" type="q3:OptionType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreenScheduledDataItem" nillable="true" type="tns:SupplementalScreenScheduledDataItem" />
+</xs:schema>

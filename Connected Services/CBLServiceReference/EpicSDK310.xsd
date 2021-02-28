@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd170" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/_opportunitycontactitem/" />
+  <xs:complexType name="OpportunityContactItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpportunityContactItem" nillable="true" type="tns:OpportunityContactItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityContactItems" nillable="true" type="tns:OpportunityContactItems" />
+  <xs:complexType name="OpportunityContactItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/_opportunitycontactitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryPhone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityContactItem" nillable="true" type="tns:OpportunityContactItem" />
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_mobilehome/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_mobilehome/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RatingUnderwriting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsecutiveMonthsOccupiedEachYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CookingLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateParkEstablished" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DoubleWideYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FoundationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FoundationIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileHomeParkName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfBedrooms" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPermanentSpacesInPark" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PermanentConnectionToElectricity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PermanentConnectionToSewer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PermanentConnectionToWater" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SkirtedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TieDownCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingUnderwriting" nillable="true" type="tns:RatingUnderwriting" />
+</xs:schema>

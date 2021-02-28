@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd566" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_employeesabroaditem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd567" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_foreigntripitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd568" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_losshistoryitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="Attachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefenseBaseAct" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KidnapAndExtortion" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeparateApplicationRequiredForProperty" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachments" nillable="true" type="tns:Attachments" />
+  <xs:complexType name="EmployeesAbroadItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeesAbroadItem" nillable="true" type="tns:EmployeesAbroadItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeesAbroadItems" nillable="true" type="tns:EmployeesAbroadItems" />
+  <xs:complexType name="EmployeesAbroadItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeesAbroadID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_employeesabroaditem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="JobFunctionPerformed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalNationalsNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalNationalsPayroll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ThirdCountryNationalsNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ThirdCountryNationalsPayroll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="USNationalsNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="USNationalsPayroll" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeesAbroadItem" nillable="true" type="tns:EmployeesAbroadItem" />
+  <xs:complexType name="ForeignTripItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ForeignTripItem" nillable="true" type="tns:ForeignTripItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ForeignTripItems" nillable="true" type="tns:ForeignTripItems" />
+  <xs:complexType name="ForeignTripItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DurationDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DurationValue" nillable="true" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_foreigntripitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="ForeignTripID" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfTrips" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TripPurpose" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ForeignTripItem" nillable="true" type="tns:ForeignTripItem" />
+  <xs:complexType name="LossHistoryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LossHistoryItem" nillable="true" type="tns:LossHistoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistoryItems" nillable="true" type="tns:LossHistoryItems" />
+  <xs:complexType name="LossHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountPaid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AmountReserved" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DateOfClaim" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfOccurrence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DescriptionOccurrenceClaim" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_losshistoryitem/" minOccurs="0" name="Flag" type="q3:Flags" />
+      <xs:element minOccurs="0" name="Line" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossHistoryID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="OpenClosedOption" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="TypeOfLoss" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistoryItem" nillable="true" type="tns:LossHistoryItem" />
+  <xs:complexType name="PriorInternationalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumberOfYearsWithCompany" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Producer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriorInternationalCoverage" nillable="true" type="tns:PriorInternationalCoverage" />
+</xs:schema>

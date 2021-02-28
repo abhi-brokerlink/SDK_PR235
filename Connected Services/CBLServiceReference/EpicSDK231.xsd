@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="FutureItems">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Exclude" />
+      <xs:enumeration value="Only" />
+      <xs:enumeration value="Include" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FutureItems" nillable="true" type="tns:FutureItems" />
+  <xs:simpleType name="TransactionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="BalanceForward" />
+      <xs:enumeration value="OpenItem" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionStatus" nillable="true" type="tns:TransactionStatus" />
+  <xs:simpleType name="Service">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Include" />
+      <xs:enumeration value="Only" />
+      <xs:enumeration value="Exclude" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Service" nillable="true" type="tns:Service" />
+</xs:schema>

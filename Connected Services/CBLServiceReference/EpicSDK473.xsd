@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd188" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:simpleType name="SupplementalScreenGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="SupplementalScreenAndLineID" />
+      <xs:enumeration value="MarketingLineID" />
+      <xs:enumeration value="SupplementalScreenIDAndMarketingLineID" />
+      <xs:enumeration value="MarketingLineIDAndCarrierSubmissionID" />
+      <xs:enumeration value="SupplementalScreenIDAndMarketingLineIDAndCarrierSubmissionID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SupplementalScreenGetType" nillable="true" type="tns:SupplementalScreenGetType" />
+  <xs:complexType name="ArrayOfSupplementalScreen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplementalScreen" nillable="true" type="tns:SupplementalScreen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupplementalScreen" nillable="true" type="tns:ArrayOfSupplementalScreen" />
+  <xs:complexType name="SupplementalScreen">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" minOccurs="0" name="CompaniesValue" nillable="true" type="q1:SupplementalScreenCompanies" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomFormFixedID" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomFormID" type="xs:int" />
+      <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" minOccurs="0" name="FormDataValue" nillable="true" type="q2:SupplementalScreenDataItems" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplementalScreen" nillable="true" type="tns:SupplementalScreen" />
+  <xs:simpleType name="AdditionalAttachmentsGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalAttachmentID" />
+      <xs:enumeration value="MarketingLineID" />
+      <xs:enumeration value="MarketingLineIDAndCarrierSubmissionID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalAttachmentsGetType" nillable="true" type="tns:AdditionalAttachmentsGetType" />
+  <xs:complexType name="ArrayOfAdditionalAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalAttachment" nillable="true" type="tns:AdditionalAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalAttachment" nillable="true" type="tns:ArrayOfAdditionalAttachment" />
+  <xs:complexType name="AdditionalAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalAttachmentID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentValue" nillable="true" type="q3:Attachment" />
+      <xs:element minOccurs="0" name="IncludeWithSubmission" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketingLineID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalAttachment" nillable="true" type="tns:AdditionalAttachment" />
+</xs:schema>

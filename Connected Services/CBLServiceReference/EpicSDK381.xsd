@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_businessowners/_liablity" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_businessowners/_liablity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LiabilityItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityItem" nillable="true" type="tns:LiabilityItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityItems" nillable="true" type="tns:LiabilityItems" />
+  <xs:complexType name="LiabilityItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppliesTo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="CoverageTypeOf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOf" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Options1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentCoins" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RetroDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityItem" nillable="true" type="tns:LiabilityItem" />
+  <xs:complexType name="ArrayOfAdditionalLiabilityCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalLiabilityCoverage" nillable="true" type="tns:AdditionalLiabilityCoverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalLiabilityCoverage" nillable="true" type="tns:ArrayOfAdditionalLiabilityCoverage" />
+  <xs:complexType name="AdditionalLiabilityCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppliesTo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliesTo3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="CoverageTypeOf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOf" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumericValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Options2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentCoins" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RetroDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="YesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoveragesScheduleAttached" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalLiabilityCoverage" nillable="true" type="tns:AdditionalLiabilityCoverage" />
+</xs:schema>

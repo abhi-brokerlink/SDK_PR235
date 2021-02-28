@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd150" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/_marketedpolicyfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd95" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd151" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" />
+  <xs:complexType name="MarketedPolicyFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastSubmittedDateBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastSubmittedDateEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OptionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/_marketedpolicyfilter/" minOccurs="0" name="SearchType" type="q1:SearchType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarketedPolicyFilter" nillable="true" type="tns:MarketedPolicyFilter" />
+  <xs:complexType name="MarketedPolicyGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" minOccurs="0" name="MarketedPolicies" nillable="true" type="q2:ArrayOfMarketedPolicy" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarketedPolicyGetResult" nillable="true" type="tns:MarketedPolicyGetResult" />
+  <xs:complexType name="CarrierSubmissionFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierSubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierSubmissionFilter" nillable="true" type="tns:CarrierSubmissionFilter" />
+  <xs:complexType name="CarrierSubmissionGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" minOccurs="0" name="CarrierSubmissions" nillable="true" type="q3:ArrayOfCarrierSubmission" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierSubmissionGetResult" nillable="true" type="tns:CarrierSubmissionGetResult" />
+</xs:schema>

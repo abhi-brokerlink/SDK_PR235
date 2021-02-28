@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_totalpremiumcalculation/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_totalpremiumcalculation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd287" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_totalpremiumcalculation/_remarkitem/" />
+  <xs:complexType name="Premium">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARAPFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ARAPFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AssignedRiskSurchargeFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AssignedRiskSurchargeFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CCPAPFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CCPAPFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DepositPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpenseConstantFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExperienceOrMeritModificationFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExperienceOrMeritModificationFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncreasedLimitsFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncreasedLimitsFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MinimumPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other1Factor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other1FactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other2Factor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other2FactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other3Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other3Factor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other3FactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other4Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other4Factor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Other4FactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PremiumDiscountFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PremiumDiscountFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ScheduleRatingFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ScheduleRatingFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StandardPremiumFactor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StandardPremiumFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxesAssessmentsFactoredPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalEstimatedAnnualPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalFactoredPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Premium" nillable="true" type="tns:Premium" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_totalpremiumcalculation/_remarkitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+</xs:schema>

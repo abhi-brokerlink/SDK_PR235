@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd353" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/_remarkitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd354" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/_scheduledpersonalpropertyitem/" />
+  <xs:simpleType name="Flags">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Flags" nillable="true" type="tns:Flags" />
+  <xs:complexType name="PropertySummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductiblePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PropertyClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyClassIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalNumberOfItems" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertySummary" nillable="true" type="tns:PropertySummary" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/_remarkitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+  <xs:complexType name="ScheduledPersonalPropertyItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduledPersonalPropertyItem" nillable="true" type="tns:ScheduledPersonalPropertyItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduledPersonalPropertyItems" nillable="true" type="tns:ScheduledPersonalPropertyItems" />
+  <xs:complexType name="ScheduledPersonalPropertyItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppraisalDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CompanyNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductiblePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExhibitedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/_scheduledpersonalpropertyitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PhotoAttachedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfessionalUseYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScheduledPersonalPropertyID" type="xs:int" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduledPersonalPropertyItem" nillable="true" type="tns:ScheduledPersonalPropertyItem" />
+</xs:schema>

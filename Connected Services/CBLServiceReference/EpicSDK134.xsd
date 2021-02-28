@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd116" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" />
+  <xs:complexType name="EmployeeCommissionGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="EmployeeCommissions" nillable="true" type="q1:ArrayOfEmployeeCommission" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeeCommissionGetResult" nillable="true" type="tns:EmployeeCommissionGetResult" />
+  <xs:complexType name="BrokerCommissionGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="BrokerCommissions" nillable="true" type="q2:ArrayOfBrokerCommission" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrokerCommissionGetResult" nillable="true" type="tns:BrokerCommissionGetResult" />
+  <xs:complexType name="CompanyCommissionGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" minOccurs="0" name="CompanyCommissions" nillable="true" type="q3:ArrayOfCompanyCommission" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyCommissionGetResult" nillable="true" type="tns:CompanyCommissionGetResult" />
+</xs:schema>

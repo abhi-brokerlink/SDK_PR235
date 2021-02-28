@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd30" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/" />
+  <xs:complexType name="BusinessInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBureauIDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBureauNameCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBureauOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DUNS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateBusinessStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAICS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfBusinessCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfBusinessOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberManagersMembers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessIDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialInsuranceNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessInformation" nillable="true" type="tns:BusinessInformation" />
+  <xs:complexType name="ContactInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingContactMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketingContactMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1CallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1NumberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2CallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2NumberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone3CallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone3Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone3Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone3Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone3NumberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone4CallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone4Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone4Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone4Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone4NumberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone5CallPermission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone5Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone5Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone5Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone5NumberType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicingContactMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebsiteDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone3CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone4CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone5CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketingOptInEmail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketingOptInFax" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketingOptInMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketingOptInPhone" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketingOptInSMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phone1SMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phone2SMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phone3SMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phone4SMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phone5SMS" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketingOptInThirdParty" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactInformation" nillable="true" type="tns:ContactInformation" />
+  <xs:complexType name="Driver">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccidentPreventionCourseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CommercialExperienceBeganDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateLicensed" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateLicensedMA" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriverTraining" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriversLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GoodStudent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateLicensed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudentOver100MilesFlag" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Driver" nillable="true" type="tns:Driver" />
+  <xs:complexType name="Employer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateHired" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="EmployerAddress" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="EmployerAddressDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployerAddressFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmployerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearsWithPriorEmployer" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employer" nillable="true" type="tns:Employer" />
+  <xs:complexType name="PersonalClassifications">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/" minOccurs="0" name="Classifications" nillable="true" type="q2:ClassificationItems" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialInsuranceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalInsuranceNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalClassifications" nillable="true" type="tns:PersonalClassifications" />
+</xs:schema>

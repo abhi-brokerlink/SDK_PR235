@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd86" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:complexType name="Summary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyClaimNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Chargeable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClaimID" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyClaimNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfLoss" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateReported" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimateAmount" nillable="true" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/" minOccurs="0" name="Policies" nillable="true" type="q1:PolicyItems" />
+      <xs:element minOccurs="0" name="PreviouslyReported" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReportedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportedTo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/" minOccurs="0" name="ReportingHistoryValue" nillable="true" type="q2:ReportingHistory" />
+      <xs:element minOccurs="0" name="Subrogation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Suitpending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TimeOfLoss" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeReported" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CannotBeDetermined" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CSIODateReportedToCompany" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CSIOReportedToCompanyBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CSIOTimeReportedToCompany" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateAgencyBroker" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeAgencyBroker" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CatastropheCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Summary" nillable="true" type="tns:Summary" />
+  <xs:complexType name="ArrayOfSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Summary" nillable="true" type="tns:Summary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummary" nillable="true" type="tns:ArrayOfSummary" />
+  <xs:simpleType name="AdditionalPartyGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdditionalPartyID" />
+      <xs:enumeration value="ClaimID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalPartyGetType" nillable="true" type="tns:AdditionalPartyGetType" />
+  <xs:complexType name="ArrayOfAdditionalParty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalParty" nillable="true" type="tns:AdditionalParty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalParty" nillable="true" type="tns:ArrayOfAdditionalParty" />
+  <xs:complexType name="AdditionalParty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalPartyID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q3:Address" />
+      <xs:element minOccurs="0" name="BusinessExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimID" type="xs:int" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Involvement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WhenToContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhereToContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalParty" nillable="true" type="tns:AdditionalParty" />
+  <xs:simpleType name="AdjustorGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdjustorID" />
+      <xs:enumeration value="ClaimID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdjustorGetType" nillable="true" type="tns:AdjustorGetType" />
+  <xs:complexType name="ArrayOfAdjustor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Adjustor" nillable="true" type="tns:Adjustor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdjustor" nillable="true" type="tns:ArrayOfAdjustor" />
+  <xs:complexType name="Adjustor">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q4:Address" />
+      <xs:element minOccurs="0" name="AdjustorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdjustorID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssignedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Business" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimID" type="xs:int" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BusinessPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultAdjustorID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResidentialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidentialPhoneCountryCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Adjustor" nillable="true" type="tns:Adjustor" />
+  <xs:complexType name="ArrayOfLitigation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Litigation" nillable="true" type="tns:Litigation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLitigation" nillable="true" type="tns:ArrayOfLitigation" />
+  <xs:complexType name="Litigation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimID" type="xs:int" />
+      <xs:element minOccurs="0" name="Court" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateAnswered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateServed" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DefenseAddress" nillable="true" type="q5:Address" />
+      <xs:element minOccurs="0" name="DefenseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefensePhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefensePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefenseRemarks" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PlaintiffAddress" nillable="true" type="q6:Address" />
+      <xs:element minOccurs="0" name="PlaintiffName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaintiffPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaintiffPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaintiffRemarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Venue" nillable="true" type="q7:Address" />
+      <xs:element minOccurs="0" name="DefensePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaintiffPhoneCountryCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Litigation" nillable="true" type="tns:Litigation" />
+  <xs:simpleType name="PaymentExpenseGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PaymentExpenseID" />
+      <xs:enumeration value="ClaimID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentExpenseGetType" nillable="true" type="tns:PaymentExpenseGetType" />
+  <xs:complexType name="ArrayOfPaymentExpense">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentExpense" nillable="true" type="tns:PaymentExpense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentExpense" nillable="true" type="tns:ArrayOfPaymentExpense" />
+  <xs:complexType name="PaymentExpense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpensesPaid" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpensesReserved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IndemnityPaid" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IndemnityReserved" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayeeAddress" nillable="true" type="q8:Address" />
+      <xs:element minOccurs="0" name="PayeeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayeeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PaymentExpenseID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivedAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SalvageRecoveryPaid" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SentAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PayeeSiteID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentExpense" nillable="true" type="tns:PaymentExpense" />
+  <xs:complexType name="ArrayOfServicingContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServicingContacts" nillable="true" type="tns:ServicingContacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServicingContacts" nillable="true" type="tns:ArrayOfServicingContacts" />
+  <xs:complexType name="ServicingContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaimID" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="ServicingRolesValue" nillable="true" type="q9:ServicingRolesItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServicingContacts" nillable="true" type="tns:ServicingContacts" />
+</xs:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd113" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_common/_contractstructureitem/" />
+  <xs:simpleType name="BrokerPayableContractGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BrokerAndPayableContractID" />
+      <xs:enumeration value="BrokerID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BrokerPayableContractGetType" nillable="true" type="tns:BrokerPayableContractGetType" />
+  <xs:complexType name="ArrayOfPayableContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PayableContract" nillable="true" type="tns:PayableContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayableContract" nillable="true" type="tns:ArrayOfPayableContract" />
+  <xs:complexType name="PayableContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="ContractStructuresValue" nillable="true" type="tns:ContractStructureItems" />
+      <xs:element minOccurs="0" name="ContractType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayableContractID" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentContactID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentDueDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentDueDateAddSubtract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentDueDateDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentStatementOn" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TermEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TermEndOpen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TermStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TermStartOpen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayableContract" nillable="true" type="tns:PayableContract" />
+  <xs:complexType name="ContractStructureItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractStructureItem" nillable="true" type="tns:ContractStructureItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractStructureItems" nillable="true" type="tns:ContractStructureItems" />
+  <xs:complexType name="ContractStructureItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_common/_contractstructureitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractStructureItem" nillable="true" type="tns:ContractStructureItem" />
+  <xs:simpleType name="CompanyPayableContractGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CompanyAndPayableContractID" />
+      <xs:enumeration value="CompanyID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CompanyPayableContractGetType" nillable="true" type="tns:CompanyPayableContractGetType" />
+  <xs:simpleType name="EmployeePayableContractGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EmployeeAndPayableContractID" />
+      <xs:enumeration value="EmployeeID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmployeePayableContractGetType" nillable="true" type="tns:EmployeePayableContractGetType" />
+</xs:schema>

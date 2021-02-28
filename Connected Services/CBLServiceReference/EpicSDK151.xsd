@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd538" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/_identificationnumberitem/" />
+  <xs:complexType name="BusinessInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessTypeOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBureauIDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBureauNameCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBureauOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DUNS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateBusinessStarted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ELTOEmployerReferenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ELTOEmployerTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ELTOExemptStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAICS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfBusinessCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfBusinessOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberManagersMembers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SIC" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessInformation" nillable="true" type="tns:BusinessInformation" />
+  <xs:complexType name="IdentificationNumberItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdentificationNumberItem" nillable="true" type="tns:IdentificationNumberItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentificationNumberItems" nillable="true" type="tns:IdentificationNumberItems" />
+  <xs:complexType name="IdentificationNumberItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/_identificationnumberitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IdentificationNumberItem" nillable="true" type="tns:IdentificationNumberItem" />
+</xs:schema>

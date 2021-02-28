@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd169" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/" />
+  <xs:complexType name="ClosedDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClosedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClosedStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonIfLost" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClosedDetail" nillable="true" type="tns:ClosedDetail" />
+  <xs:complexType name="Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentRevenue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumberOfClientContracts" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPolicies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfRisks" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Revenue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SalesTeam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalesTeamID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SalesTeamManager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StageWeight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StageGroup" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Detail" nillable="true" type="tns:Detail" />
+  <xs:simpleType name="OpportunityOpenClosedStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpportunityOpenClosedStatus" nillable="true" type="tns:OpportunityOpenClosedStatus" />
+  <xs:simpleType name="OpportunityAttachmentsGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OpportunityID" />
+      <xs:enumeration value="OpportunityAttachmentIDAndOpportunityID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpportunityAttachmentsGetType" nillable="true" type="tns:OpportunityAttachmentsGetType" />
+  <xs:complexType name="ArrayOfOpportunityAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpportunityAttachment" nillable="true" type="tns:OpportunityAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpportunityAttachment" nillable="true" type="tns:ArrayOfOpportunityAttachment" />
+  <xs:complexType name="OpportunityAttachment">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentValue" nillable="true" type="q1:Attachment" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpportunityAttachmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityAttachment" nillable="true" type="tns:OpportunityAttachment" />
+  <xs:complexType name="ArrayOfOpportunityContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OpportunityContact" nillable="true" type="tns:OpportunityContact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpportunityContact" nillable="true" type="tns:ArrayOfOpportunityContact" />
+  <xs:complexType name="OpportunityContact">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/" minOccurs="0" name="ContactItems" nillable="true" type="q2:OpportunityContactItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OpportunityContact" nillable="true" type="tns:OpportunityContact" />
+  <xs:simpleType name="OpportunityAssociatedItemGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OpportunityID" />
+      <xs:enumeration value="OpportunityIDAndAssociatedItemID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpportunityAssociatedItemGetType" nillable="true" type="tns:OpportunityAssociatedItemGetType" />
+  <xs:complexType name="ArrayOfAssociatedItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssociatedItem" nillable="true" type="tns:AssociatedItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssociatedItem" nillable="true" type="tns:ArrayOfAssociatedItem" />
+  <xs:complexType name="AssociatedItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedEntityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssociatedEntityDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssociatedEntityID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedEntityType" type="tns:OpportunityAssociatedEntityType" />
+      <xs:element minOccurs="0" name="AssociatedItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssociatedItem" nillable="true" type="tns:AssociatedItem" />
+  <xs:simpleType name="OpportunityAssociatedEntityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MasterMarketingSubmission" />
+      <xs:enumeration value="Policy" />
+      <xs:enumeration value="Service" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpportunityAssociatedEntityType" nillable="true" type="tns:OpportunityAssociatedEntityType" />
+</xs:schema>

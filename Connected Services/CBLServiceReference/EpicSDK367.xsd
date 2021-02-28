@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd31" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/_classificationitem/" />
+  <xs:complexType name="ClassificationItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassificationItem" nillable="true" type="tns:ClassificationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassificationItems" nillable="true" type="tns:ClassificationItems" />
+  <xs:complexType name="ClassificationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassificationType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/_classificationitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassificationItem" nillable="true" type="tns:ClassificationItem" />
+</xs:schema>

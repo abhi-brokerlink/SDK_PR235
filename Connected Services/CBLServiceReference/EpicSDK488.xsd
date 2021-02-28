@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_personalumbrella/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_personalumbrella/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="ArrayOfUmbrellaInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UmbrellaInformation" nillable="true" type="tns:UmbrellaInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUmbrellaInformation" nillable="true" type="tns:ArrayOfUmbrellaInformation" />
+  <xs:complexType name="UmbrellaInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutomobilesCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobilesPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BasicCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BasicPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Deposit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedTotalPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCalculations2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverage2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLimit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PolicyAmountLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehiclesCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehiclesPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResidencesCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidencesPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RetentionLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UnderInsuredMotoristCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnderInsuredMotoristLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnderInsuredMotoristPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UninsuredMotoristCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UninsuredMotoristLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UninsuredMotoristPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WatercraftCalculations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UmbrellaInformation" nillable="true" type="tns:UmbrellaInformation" />
+  <xs:complexType name="ArrayOfPrimaryPolicyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrimaryPolicyInformation" nillable="true" type="tns:PrimaryPolicyInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrimaryPolicyInformation" nillable="true" type="tns:ArrayOfPrimaryPolicyInformation" />
+  <xs:complexType name="PrimaryPolicyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutomobileCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobileLiabilityEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobileLiabilityEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobilePDEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobilePolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobilePolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AutomobilePolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AutomobilePolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobileReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AutomobileUninsuredMotoristEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobileUninsuredMotoristEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomobileUninsuredMotoristPDEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingFireCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingFirePersLiabEaOcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingFirePolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingFirePolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DwellingFirePolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DwellingFirePolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingFireReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployersLiabilityCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployersLiabilityEaOcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployersLiabilityPolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployersLiabilityPolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmployersLiabilityPolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmployersLiabilityPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployersLiabilityReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HomeCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePersonalLiabilityEaOcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HomePolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HomePolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherEaOcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherPDEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherPolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherPolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OtherPolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OtherPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RecreationalVehicleCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehicleLiabEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehicleLiabEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehiclePDEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehiclePolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehiclePolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RecreationalVehiclePolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RecreationalVehiclePolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehicleReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RecreationalVehicleUninsuredMotoristEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehicleUninsuredMotoristEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehicleUninsuredMotoristPDEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WatercraftCarrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftLiabilityEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftLiabilityEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftPD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftPolicy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftPolicyEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WatercraftPolicyExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WatercraftPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftReferencedLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WatercraftUninsuredBoatersEaAcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftUninsuredBoatersEaPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftUninsuredBoatersPDEaAcc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrimaryPolicyInformation" nillable="true" type="tns:PrimaryPolicyInformation" />
+  <xs:simpleType name="PropertyGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="PropertyID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PropertyGetType" nillable="true" type="tns:PropertyGetType" />
+  <xs:complexType name="ArrayOfProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Property" nillable="true" type="tns:Property" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProperty" nillable="true" type="tns:ArrayOfProperty" />
+  <xs:complexType name="Property">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescriptionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Interest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Occupancy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupancyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropertyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Usage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearBuilt" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Property" nillable="true" type="tns:Property" />
+  <xs:simpleType name="AutomobileGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AutomobileID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AutomobileGetType" nillable="true" type="tns:AutomobileGetType" />
+  <xs:complexType name="ArrayOfAutomobile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Automobile" nillable="true" type="tns:Automobile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAutomobile" nillable="true" type="tns:ArrayOfAutomobile" />
+  <xs:complexType name="Automobile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutomobileID" type="xs:int" />
+      <xs:element minOccurs="0" name="BodyOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyVehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleMake" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleYear" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Automobile" nillable="true" type="tns:Automobile" />
+  <xs:simpleType name="RecreationalVehicleGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="RecreationalVehicleID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RecreationalVehicleGetType" nillable="true" type="tns:RecreationalVehicleGetType" />
+  <xs:complexType name="ArrayOfRecreationalVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecreationalVehicle" nillable="true" type="tns:RecreationalVehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecreationalVehicle" nillable="true" type="tns:ArrayOfRecreationalVehicle" />
+  <xs:complexType name="RecreationalVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyVehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="RecreationalVehicleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleMake" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleYear" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecreationalVehicle" nillable="true" type="tns:RecreationalVehicle" />
+  <xs:simpleType name="WatercraftGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="WatercraftID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WatercraftGetType" nillable="true" type="tns:WatercraftGetType" />
+  <xs:complexType name="ArrayOfWatercraft">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Watercraft" nillable="true" type="tns:Watercraft" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWatercraft" nillable="true" type="tns:ArrayOfWatercraft" />
+  <xs:complexType name="Watercraft">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyWatercraftNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Horsepower" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxSpeed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotorType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotorTypeOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WatercraftID" type="xs:int" />
+      <xs:element minOccurs="0" name="WatercraftNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="WatersNavigated" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatersNavigatedOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Watercraft" nillable="true" type="tns:Watercraft" />
+  <xs:simpleType name="OperatorGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="OperatorID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperatorGetType" nillable="true" type="tns:OperatorGetType" />
+  <xs:complexType name="ArrayOfOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operator" nillable="true" type="tns:Operator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperator" nillable="true" type="tns:ArrayOfOperator" />
+  <xs:complexType name="Operator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyOperatorNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DateLicensed" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriversLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatorID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperatorNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurtyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateLicensed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehiclePercentUse" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WatercraftNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WatercraftPercentUse" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operator" nillable="true" type="tns:Operator" />
+  <xs:simpleType name="AdditionalCoverageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalCoverageID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalCoverageGetType" nillable="true" type="tns:AdditionalCoverageGetType" />
+  <xs:complexType name="ArrayOfAdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalCoverage" nillable="true" type="tns:ArrayOfAdditionalCoverage" />
+  <xs:complexType name="AdditionalCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverage" nillable="true" type="tns:AdditionalCoverage" />
+  <xs:complexType name="ArrayOfAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachmentsType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentsType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Other1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateSupplements" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+</xs:schema>

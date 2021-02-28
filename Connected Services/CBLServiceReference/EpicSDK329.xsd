@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_losshistory/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_losshistory/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd364" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_losshistory/_losshistoryitem/" />
+  <xs:complexType name="LossHistoryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LossHistoryItem" nillable="true" type="tns:LossHistoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistoryItems" nillable="true" type="tns:LossHistoryItems" />
+  <xs:complexType name="LossHistoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfDamage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DescriptionOfLoss" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_losshistory/_losshistoryitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LossDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LossHistoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PaidAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PreventativeMeasures" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistoryItem" nillable="true" type="tns:LossHistoryItem" />
+</xs:schema>

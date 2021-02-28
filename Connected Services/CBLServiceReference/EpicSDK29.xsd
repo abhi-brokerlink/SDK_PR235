@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_offpremisepowerdependentproperty/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_offpremisepowerdependentproperty/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd206" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_offpremisepowerdependentproperty/_nameandaddressitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="NameAndAddressItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameAndAddressItem" nillable="true" type="tns:NameAndAddressItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameAndAddressItems" nillable="true" type="tns:NameAndAddressItems" />
+  <xs:complexType name="NameAndAddressItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_offpremisepowerdependentproperty/_nameandaddressitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="NameAndAddressForOption" nillable="true" type="q3:OptionType" />
+      <xs:element minOccurs="0" name="NameAndAddressID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameAndAddressItem" nillable="true" type="tns:NameAndAddressItem" />
+</xs:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd535" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_line/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd25" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/" />
+  <xs:complexType name="ArrayOfLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Line" nillable="true" type="tns:Line" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLine" nillable="true" type="tns:ArrayOfLine" />
+  <xs:complexType name="Line">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionPercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="AgencyDefinedCategoryItems" nillable="true" type="q1:AgencyDefinedCodeItems" />
+      <xs:element minOccurs="0" name="AgreementID" type="xs:int" />
+      <xs:element minOccurs="0" name="AnnualizedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AnnualizedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BilledCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BilledPremium" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BillingModeOption" nillable="true" type="q2:OptionType" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_line/" minOccurs="0" name="BillingValue" nillable="true" type="q3:Billing" />
+      <xs:element minOccurs="0" name="DefaultCommissionAgreement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Downloaded" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyPremiumAsOfDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/" minOccurs="0" name="HistoryValue" nillable="true" type="q4:History" />
+      <xs:element minOccurs="0" name="IssuingCompanyLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuingLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LineInformationLineID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineTypeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayableContractID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiumPayableLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/" minOccurs="0" name="ProducerBrokerCommissionsValue" nillable="true" type="q5:ProducerBrokerCommissions" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RisksInsured" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RisksInsuredDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/" minOccurs="0" name="ServiceSummaries" nillable="true" type="q6:ServiceSummaryItems" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="ServicingContacts" nillable="true" type="q7:ServicingRolesItems" />
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalEligible" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalEligibleDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Line" nillable="true" type="tns:Line" />
+</xs:schema>

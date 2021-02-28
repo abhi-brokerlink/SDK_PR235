@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd473" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd483" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_applicant/" />
+  <xs:simpleType name="PolicyInformationGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="MasterMarketingSubmissionID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PolicyInformationGetType" nillable="true" type="tns:PolicyInformationGetType" />
+  <xs:complexType name="ArrayOfPlanRateInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlanRateInformation" nillable="true" type="tns:PlanRateInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlanRateInformation" nillable="true" type="tns:ArrayOfPlanRateInformation" />
+  <xs:complexType name="PlanRateInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierResponseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="CobraAdministration" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Form5500RequiredYesNo" type="q1:YesNoOptions" />
+      <xs:element minOccurs="0" name="FullTimeEquivalent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FullTimeEquivalentAsOfDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="HIPAASelectedYesNo" type="q2:YesNoOptions" />
+      <xs:element minOccurs="0" name="HIPAASignedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MasterMarketingSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberEligible" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberEligibleAsOfDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumberOfEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfEmployeesAsOfDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumberOfRetirees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfRetireesAsOfDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/" minOccurs="0" name="PlanInformationItems" nillable="true" type="q3:PlanInformationItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyInformationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlanRateInformation" nillable="true" type="tns:PlanRateInformation" />
+  <xs:complexType name="ArrayOfApplicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Applicant" nillable="true" type="tns:Applicant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicant" nillable="true" type="tns:ArrayOfApplicant" />
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrokerOfRecordDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BusinessStartedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyPayroll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyPayrollCycle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyRevenue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_applicant/" minOccurs="0" name="LocationItems" nillable="true" type="q4:LocationItems" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="MailingAddress" nillable="true" type="q5:Address" />
+      <xs:element minOccurs="0" name="MarketSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasterMarketingSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAICSCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfBusiness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyInformationID" type="xs:int" />
+      <xs:element minOccurs="0" name="SICCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+  <xs:complexType name="ArrayOfEmployeeClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeClass" nillable="true" type="tns:EmployeeClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeClass" nillable="true" type="tns:ArrayOfEmployeeClass" />
+  <xs:complexType name="EmployeeClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="Eligibility" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeClassID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MasterMarketingSubmissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="PayrollCycle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyInformationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeWorked" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeWorkedPer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalAsOfDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmployeeClass" nillable="true" type="tns:EmployeeClass" />
+</xs:schema>

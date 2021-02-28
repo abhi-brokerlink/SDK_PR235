@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd361" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/_remarkitem/" />
+  <xs:complexType name="Chimney">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChimneyInstalledDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChimneyInstalledLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChimneyInstalledLocationIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChimneyInstalledShareAChimneyFlueYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChimneyLiningTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChimneyLiningTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CleaningByWhomCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CleaningByWhomIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CleaningDateOfLast" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CleaningTimesPerYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ConstructionBuiltFromCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasonryChimneyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MasonryChimneyTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="MetalChimneyClearanceInchesCentimetersOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="MetalChimneyClearanceToNearestCombustibles" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MetalChimneyInstalledBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyLabelledCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyLabelledIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyManufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyRatedForContinuousFlueGasTemperatureYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyWETTCertifiedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyWETTNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetalChimneyYear" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chimney" nillable="true" type="tns:Chimney" />
+  <xs:complexType name="Clearances">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirSpaceYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BackwallConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BackwallConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CanadianHabitationalMeasurementInchesCentimetresOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="CeilingConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonCombustiblePadYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonCombustibleWallSpacersYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfElbowsInStovePipe" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SheetMetalPermanentYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShieldDistanceBottomOfStoveToFloorActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceBottomOfStoveToFloorRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceHeatShieldToFloorActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceHeatShieldToFloorRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceTopOfStoveToTopOfShieldActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceTopOfStoveToTopOfShieldRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceWallToShieldActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldDistanceWallToShieldRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShieldingTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShieldingTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadBackActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadBackRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadFrontActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadFrontRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadLeftActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadLeftRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadRightActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceFromHeatingUnitToEdgeOfFloorPadRightRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStovePipeToBackwallActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStovePipeToBackwallRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStovePipeToCeilingActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStovePipeToCeilingRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStovePipeToSidewallActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStovePipeToSidewallRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToBackwallActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToBackwallRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToCeilingActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToCeilingRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToCornerActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToCornerRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToSidewallActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfStoveToSidewallRequired" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortestDistanceOfUnitToFurniture" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SidewallConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SidewallConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StovePipeConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StovePipeConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StovePipeThroughConcealedSpaceWallDescribe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StovePipeThroughConcealedSpaceWallYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThimbleWhereThePipePassesThroughWallYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalLengthStovePipe" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Clearances" nillable="true" type="tns:Clearances" />
+  <xs:complexType name="HeatingUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificationLabelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificationLabelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifiedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaceCord" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FuelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingUnitInstalledBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingUnitLocatedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingUnitLocatedIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="HeatingUnitPrimaryAuxiliaryOption" nillable="true" type="q3:OptionType" />
+      <xs:element minOccurs="0" name="IfNotWoodAmountBurnedAnnuallyInKilograms" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InstallerWETTCertifiedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstallerWETTNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfDaysUsedPerYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfHoursUsedPerDay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PhotoRequiredYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StandardBushCord" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitApprovedForMobileHomeYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeatingUnit" nillable="true" type="tns:HeatingUnit" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/_remarkitem/" minOccurs="0" name="Flag" type="q4:Flags" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+</xs:schema>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_applicant/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_applicant/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd279" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_applicant/_additionalnamedinsureditem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="AdditionalNamedInsuredItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalNamedInsuredItem" nillable="true" type="tns:AdditionalNamedInsuredItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalNamedInsuredItems" nillable="true" type="tns:AdditionalNamedInsuredItems" />
+  <xs:complexType name="AdditionalNamedInsuredItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNamedInsuredID" type="xs:int" />
+      <xs:element minOccurs="0" name="FEIN" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_applicant/_additionalnamedinsureditem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalNamedInsuredItem" nillable="true" type="tns:AdditionalNamedInsuredItem" />
+  <xs:complexType name="ContactInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingRecordsContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactMobileCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactMobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactMobileCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactMobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactMobileCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactMobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactInformation" nillable="true" type="tns:ContactInformation" />
+  <xs:complexType name="PaymentPlanPolicyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuditCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Billing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CSRepresentative" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NormalAnniversaryRatingDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ParticipatingNonParticipatingOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="PaymentPlanCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentPlanIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentDown" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RetroPlan" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentPlanPolicyInformation" nillable="true" type="tns:PaymentPlanPolicyInformation" />
+  <xs:complexType name="FLAdditionalNamedInsuredsContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingRecordsContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingRecordsContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdditionalNamedInsuredsValue" nillable="true" type="tns:AdditionalNamedInsuredItems" />
+      <xs:element minOccurs="0" name="ClaimInformationContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimInformationContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionContactPhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLAdditionalNamedInsuredsContacts" nillable="true" type="tns:FLAdditionalNamedInsuredsContacts" />
+</xs:schema>

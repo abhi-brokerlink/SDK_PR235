@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd191" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" />
+  <xs:complexType name="GeneralConstructionSiding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConstructionTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="ConstructionTypeFrame" nillable="true" type="q1:GeneralConstructionSidingType" />
+      <xs:element minOccurs="0" name="ConstructionTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="ConstructionTypeMasonry" nillable="true" type="q2:GeneralConstructionSidingType" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="ConstructionTypeMasonryVeneer" nillable="true" type="q3:GeneralConstructionSidingType" />
+      <xs:element minOccurs="0" name="ConstructionTypePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CourseOfConstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistanceToTidalWater" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DistanceToTidalWaterUnitsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorLockCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorLockIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HousekeepingConditionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupancyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupancyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupiedDailyYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherSidingType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherSidingTypePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PurchaseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PurchasePrice" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="SidingTypeAluminumSiding" nillable="true" type="q4:GeneralConstructionSidingType" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="SidingTypeCedarWoodShingle" nillable="true" type="q5:GeneralConstructionSidingType" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="SidingTypeEIFSCBOnCinderBlock" nillable="true" type="q6:GeneralConstructionSidingType" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="SidingTypeEIFSSOnStuds" nillable="true" type="q7:GeneralConstructionSidingType" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="SidingTypeStucco" nillable="true" type="q8:GeneralConstructionSidingType" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" minOccurs="0" name="SidingTypeVinylSidingPlastic" nillable="true" type="q9:GeneralConstructionSidingType" />
+      <xs:element minOccurs="0" name="SprinklerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VisibleFromRoadYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VisibleToNeighborsYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearEIFSInstalled" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralConstructionSiding" nillable="true" type="tns:GeneralConstructionSiding" />
+  <xs:complexType name="GeneralCreditsSquareFeet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasementAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BreezewayAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BuildingCodeGrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FoundationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelStorageLineLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelStorageNone" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FuelStorageTankLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarageAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InspectedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LightningProtectionRatingCredit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MannedSecurityRatingCredit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarketValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NonSmokerRatingCredit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumberOfApartments" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfChimneys" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFamilies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfHearths" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfHouseholdResidents" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPreFab" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfRooms" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumberOfWeeksRented" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfWoodStoveInsert" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OffPremiseTheftExclusionRatingCredit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OtherRatingCredit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherRatingCredit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RatingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacementCost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalLivingAreaInSquareFeet" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearBuilt" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralCreditsSquareFeet" nillable="true" type="tns:GeneralCreditsSquareFeet" />
+  <xs:complexType name="ProtectionWiringElectricalHeat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BurglarProtectionDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CircuitBreakersYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistanceToFireStation" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistanceToHydrant" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FireDistrictCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FireDistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireExtinguisherYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FusesYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastHeatingServicedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastWiringInspectedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumberOfAmps" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFireDivisions" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfUnitsInFireDivisions" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonalLiabilityTerritory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryHeatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryHeatIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProtectionClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryHeatCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondaryHeatIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SmokeProtectionDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TemperatureFireProtectionDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WiringCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProtectionWiringElectricalHeat" nillable="true" type="tns:ProtectionWiringElectricalHeat" />
+</xs:schema>

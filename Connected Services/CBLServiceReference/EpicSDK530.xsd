@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd247" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd250" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_remarks/" />
+  <xs:simpleType name="PremiseCoverageGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="PremiseCoverageID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PremiseCoverageGetType" nillable="true" type="tns:PremiseCoverageGetType" />
+  <xs:complexType name="ArrayOfPremiseCoverage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PremiseCoverage" nillable="true" type="tns:PremiseCoverage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPremiseCoverage" nillable="true" type="tns:ArrayOfPremiseCoverage" />
+  <xs:complexType name="PremiseCoverage">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="AdditionalCoverageItems" nillable="true" type="q1:CoverageItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="ApartmentsAndCondominiumsValue" nillable="true" type="q2:ApartmentsAndCondominiums" />
+      <xs:element minOccurs="0" name="CommercialAPBuildingID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommercialAPLocationID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="ConstructionFireValue" nillable="true" type="q3:ConstructionFire" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="CrimeValue" nillable="true" type="q4:Crime" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="ExposureOccupanciesValue" nillable="true" type="q5:ExposureOccupancies" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="GlassValue" nillable="true" type="q6:Glass" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="ImprovementsValue" nillable="true" type="q7:Improvements" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="OtherAdditionalCoverageValue" nillable="true" type="q8:OtherAdditionalCoverages" />
+      <xs:element minOccurs="0" name="PremiseCoverageID" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="PremiseGeneralInformationUnderwritingItems" nillable="true" type="q9:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" minOccurs="0" name="PropertyValue" nillable="true" type="q10:Property" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_remarks/" minOccurs="0" name="RemarkItems" nillable="true" type="q11:RemarkItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiseCoverage" nillable="true" type="tns:PremiseCoverage" />
+</xs:schema>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd3" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_clientfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd28" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd90" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_claimsummaryfilter/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd85" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/" />
+  <xs:complexType name="ClientFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsAdditionalPartiesInvolvement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsAdditionalPartiesName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimsAdditionalPartiesPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_clientfilter/" minOccurs="0" name="ClientStatus" type="q1:Status" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_clientfilter/" minOccurs="0" name="ClientType" type="q2:Type" />
+      <xs:element minOccurs="0" name="CompanyClaimNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfLossBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfLossEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorAccountID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicingRoleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicingRoleEmployeeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateProvinceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmissionID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ZipPostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyDefinedCategory" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientFilter" nillable="true" type="tns:ClientFilter" />
+  <xs:complexType name="ClientGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="Clients" nillable="true" type="q3:ArrayOfClient" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientGetResult" nillable="true" type="tns:ClientGetResult" />
+  <xs:complexType name="ContactFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DateOfBirthBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfBirthEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" minOccurs="0" name="CityComparisonType" type="q4:ComparisonType" />
+      <xs:element minOccurs="0" name="Classification" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" minOccurs="0" name="ClassificationComparisonType" type="q5:ComparisonType" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" minOccurs="0" name="DescriptionComparisonType" type="q6:ComparisonType" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" minOccurs="0" name="EmailAddressComparisontype" type="q7:ComparisonType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" minOccurs="0" name="NameComparisonType" type="q8:ComparisonType" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" minOccurs="0" name="PhoneComparisonType" type="q9:ComparisonType" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactFilter" nillable="true" type="tns:ContactFilter" />
+  <xs:complexType name="ContactGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="Contacts" nillable="true" type="q10:ArrayOfContact" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactGetResult" nillable="true" type="tns:ContactGetResult" />
+  <xs:complexType name="ClaimSummaryFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyClaimNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ClaimID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_claimsummaryfilter/" minOccurs="0" name="ClaimStatus" type="q11:Status" />
+      <xs:element minOccurs="0" name="ClientID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyClaimNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_claimsummaryfilter/" minOccurs="0" name="CompanyClaimNumberComparisonType" type="q12:ComparisonType" />
+      <xs:element minOccurs="0" name="DateOfLossBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfLossEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateReportedBegins" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateReportedEnds" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_claimsummaryfilter/" minOccurs="0" name="DescriptionComparisonType" type="q13:ComparisonType" />
+      <xs:element minOccurs="0" name="LossType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_claimsummaryfilter/" minOccurs="0" name="PolicyNumberComparisonType" type="q14:ComparisonType" />
+      <xs:element minOccurs="0" name="ServicingRoleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicingRoleEmployeeLookupCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClaimSummaryFilter" nillable="true" type="tns:ClaimSummaryFilter" />
+  <xs:complexType name="ClaimSummaryGetResult">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/" minOccurs="0" name="ClaimSummaries" nillable="true" type="q15:ArrayOfSummary" />
+      <xs:element minOccurs="0" name="TotalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClaimSummaryGetResult" nillable="true" type="tns:ClaimSummaryGetResult" />
+</xs:schema>

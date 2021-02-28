@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd524" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/_recorddetailitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="RecordDetailItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecordDetailItem" nillable="true" type="tns:RecordDetailItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecordDetailItems" nillable="true" type="tns:RecordDetailItems" />
+  <xs:complexType name="RecordDetailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCommissionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionPercentage" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AgencyCommissionTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeleteReversesTheTransaction" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/_recorddetailitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MultiCommissionLineID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="PolicyLineOption" nillable="true" type="q2:OptionType" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/_recorddetailitem/" minOccurs="0" name="ProducerBrokerCommissionItems" nillable="true" type="q3:ProducerBrokerCommissionItems" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/_recorddetailitem/" minOccurs="0" name="RecordRisksValue" nillable="true" type="q4:RecordRisks" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element minOccurs="0" name="IgnoreAgencyCommissionLessThanProducerBroker" type="xs:boolean" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CommissionPremiumOption" nillable="true" type="q5:OptionType" />
+      <xs:element minOccurs="0" name="IgnoreFlatCommissionRate" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecordDetailItem" nillable="true" type="tns:RecordDetailItem" />
+</xs:schema>

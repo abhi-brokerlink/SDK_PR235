@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd351" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd355" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd360" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd362" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/" />
+  <xs:simpleType name="LocationGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LocationGetType" nillable="true" type="tns:LocationGetType" />
+  <xs:simpleType name="LossHistoryGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LossHistoryID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LossHistoryGetType" nillable="true" type="tns:LossHistoryGetType" />
+  <xs:simpleType name="AdditionalInterestGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AdditionalInterestID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalInterestGetType" nillable="true" type="tns:AdditionalInterestGetType" />
+  <xs:complexType name="ArrayOfAdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalInterest" nillable="true" type="tns:ArrayOfAdditionalInterest" />
+  <xs:complexType name="AdditionalInterest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AvailiableOtherInterestLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Certificate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Policy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendBill" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInterest" nillable="true" type="tns:AdditionalInterest" />
+  <xs:simpleType name="FormAndEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="FormAndEndorsementID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormAndEndorsementGetType" nillable="true" type="tns:FormAndEndorsementGetType" />
+  <xs:complexType name="ArrayOfFormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormAndEndorsement" nillable="true" type="tns:ArrayOfFormAndEndorsement" />
+  <xs:complexType name="FormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyrightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyrightTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+  <xs:simpleType name="WatercraftTrailerOperatorGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="WatercraftOperatorID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WatercraftTrailerOperatorGetType" nillable="true" type="tns:WatercraftTrailerOperatorGetType" />
+  <xs:complexType name="ArrayOfWatercraftTrailerOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WatercraftTrailerOperator" nillable="true" type="tns:WatercraftTrailerOperator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWatercraftTrailerOperator" nillable="true" type="tns:ArrayOfWatercraftTrailerOperator" />
+  <xs:complexType name="WatercraftTrailerOperator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CYAYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanadianCoastGuardYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertificateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriversLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPrimaryOperator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseProvinceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="MVRDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OperatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatorNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PowerSquadronYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WatercraftOperatorID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WatercraftTrailerOperator" nillable="true" type="tns:WatercraftTrailerOperator" />
+  <xs:complexType name="ArrayOfPersonalArticle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalArticle" nillable="true" type="tns:PersonalArticle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonalArticle" nillable="true" type="tns:ArrayOfPersonalArticle" />
+  <xs:complexType name="PersonalArticle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/" minOccurs="0" name="PersonalArticleItems" nillable="true" type="q2:PersonalArticleItems" />
+      <xs:element minOccurs="0" name="PremiumForSection" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalArticle" nillable="true" type="tns:PersonalArticle" />
+  <xs:simpleType name="AttachmentGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="AttachmentID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttachmentGetType" nillable="true" type="tns:AttachmentGetType" />
+  <xs:complexType name="ArrayOfAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AttachmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+  <xs:simpleType name="WatercraftTrailerGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="WatercraftTrailerID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WatercraftTrailerGetType" nillable="true" type="tns:WatercraftTrailerGetType" />
+  <xs:complexType name="ArrayOfWatercraftTrailer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WatercraftTrailer" nillable="true" type="tns:WatercraftTrailer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWatercraftTrailer" nillable="true" type="tns:ArrayOfWatercraftTrailer" />
+  <xs:complexType name="WatercraftTrailer">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="AdditionalCoveragesValue" nillable="true" type="q3:AdditionalCoverages" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="AdditionalInterestItems" nillable="true" type="q4:AdditionalInterestItems" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="CoverageItems" nillable="true" type="q5:CoverageItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="RemarkItems" nillable="true" type="q6:RemarkItems" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="StorageUseValue" nillable="true" type="q7:StorageUse" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="VacationTrailerValue" nillable="true" type="q8:VacationTrailer" />
+      <xs:element minOccurs="0" name="WatercraftTrailerID" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="WatercraftTrailerValue" nillable="true" type="q9:WatercraftTrailer" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" minOccurs="0" name="WatercraftValue" nillable="true" type="q10:Watercraft" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WatercraftTrailer" nillable="true" type="tns:WatercraftTrailer" />
+  <xs:complexType name="ArrayOfBrokerAgentQuestionnaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BrokerAgentQuestionnaire" nillable="true" type="tns:BrokerAgentQuestionnaire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBrokerAgentQuestionnaire" nillable="true" type="tns:ArrayOfBrokerAgentQuestionnaire" />
+  <xs:complexType name="BrokerAgentQuestionnaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationSignedByCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="BrokerAgentUnderwritingItems" nillable="true" type="q11:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="ContractNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateSigned" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubContractNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AmountPaidWithApplication" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AmountStillDue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumberOfRemainingPayments" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BrokerAgentQuestionnaire" nillable="true" type="tns:BrokerAgentQuestionnaire" />
+  <xs:simpleType name="SolidFuelQuestionnaireGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="SolidFuelQuestionnaireID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SolidFuelQuestionnaireGetType" nillable="true" type="tns:SolidFuelQuestionnaireGetType" />
+  <xs:complexType name="ArrayOfSolidFuelQuestionnaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SolidFuelQuestionnaire" nillable="true" type="tns:SolidFuelQuestionnaire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSolidFuelQuestionnaire" nillable="true" type="tns:ArrayOfSolidFuelQuestionnaire" />
+  <xs:complexType name="SolidFuelQuestionnaire">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" minOccurs="0" name="ChimneyValue" nillable="true" type="q12:Chimney" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" minOccurs="0" name="ClearancesValue" nillable="true" type="q13:Clearances" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" minOccurs="0" name="HeatingUnitValue" nillable="true" type="q14:HeatingUnit" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="LossPreventionUnderwritingItems" nillable="true" type="q15:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" minOccurs="0" name="RemarkItems" nillable="true" type="q16:RemarkItems" />
+      <xs:element minOccurs="0" name="SolidFuelID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SolidFuelQuestionnaire" nillable="true" type="tns:SolidFuelQuestionnaire" />
+  <xs:simpleType name="SewerBackupQuestionnaireGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SewerBackupQuestionnaireGetType" nillable="true" type="tns:SewerBackupQuestionnaireGetType" />
+  <xs:complexType name="ArrayOfSewerBackupQuestionnaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SewerBackupQuestionnaire" nillable="true" type="tns:SewerBackupQuestionnaire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSewerBackupQuestionnaire" nillable="true" type="tns:ArrayOfSewerBackupQuestionnaire" />
+  <xs:complexType name="SewerBackupQuestionnaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/" minOccurs="0" name="LossHistoryValue" nillable="true" type="q17:LossHistory" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/" minOccurs="0" name="RemarkItems" nillable="true" type="q18:RemarkItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/" minOccurs="0" name="UnderwritingRatingValue" nillable="true" type="q19:UnderwritingRating" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SewerBackupQuestionnaire" nillable="true" type="tns:SewerBackupQuestionnaire" />
+</xs:schema>

@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="FileTransferServiceBinding_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/Imports">
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd571" namespace="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd4" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd14" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd0" namespace="http://webservices.appliedsystems.com/epic/sdk/2013/03/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd2" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd3" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_clientfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd6" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_client/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd9" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_agencystructureitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd10" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_agencydefinedcodeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd11" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_relationshipitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd13" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_client/_confidentialclientaccessitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd15" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd16" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd17" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd18" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/_noteitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd19" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_taskitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd20" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/01/_common/_activity/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd21" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd22" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_activityfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd23" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_linefilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd24" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd25" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd26" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/_producerbrokercommissions/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd27" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_line/_producerbrokercommissions/_commissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd28" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_get/_contactfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd29" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd30" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd31" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/_personalclassifications/_classificationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd32" namespace="http://webservices.appliedsystems.com/epic/sdk/2016/01/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd33" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policyfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd34" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd35" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd36" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd37" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_cancel/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd38" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_changepolicyeffectiveexpirationdates/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd39" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_endorsereviseaddlinemidterm/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd40" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd41" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuenotissueendorsement/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd42" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuenotissuepolicy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd43" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_issuecancellation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd44" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_reinstate/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd45" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_reinstate/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd46" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_renew/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd47" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/_renew/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd48" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd49" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/_updatestagetosubmitted/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd50" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/_updatestagetosubmitted/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd51" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_action/_cancel/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd52" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd53" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_transactionfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd54" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_transactionfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd55" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd56" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_detail/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd57" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_invoice/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd58" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd59" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissions/_splititem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd60" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd61" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/_producerbrokercommissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd62" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd63" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd64" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd65" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/_credititem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd66" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd67" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/_transactionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd68" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_moveto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd69" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_moveto/_transactionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd70" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_move/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd71" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_move/_transactionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd72" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd73" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/_transactionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd74" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_unapplycreditstodebits/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd75" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_adjustcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd76" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_adjustcommission/_commissionsplititem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd77" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_adjustcommission/_commissionsplititem/_producerbrokercommissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd78" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd79" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd80" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/_summaryitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd81" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/_splitreceivableitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd82" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_splitreceivable/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd83" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_generatetaxfee/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd84" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_generatetaxfee/_generatetaxfeeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd85" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd86" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd87" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_policyitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd88" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_reportinghistory/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd89" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_claim/_summary/_reportinghistory/_claimcodeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd90" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_get/_claimsummaryfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd91" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_claim/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd92" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_claim/_insuredcontact/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd93" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_attachment/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd94" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_attachment/_attachedtoitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd95" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd96" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_attachment/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd97" namespace="http://webservices.appliedsystems.com/epic/sdk/2011/01/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd98" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd99" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_policy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd100" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_multicarrierschedule/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd101" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_multicarrierschedule/_producerbrokercommissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd102" namespace="http://webservices.appliedsystems.com/epic/sdk/2014/11/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd103" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd104" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd105" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_broker/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd106" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/_accountstructureitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd107" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd108" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_common/_identificationnumberitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd109" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd110" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/_salestargetitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd111" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_common/_salesteamitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd112" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd113" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_common/_contractstructureitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd114" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd115" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_company/_companystatecodeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd116" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd117" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd118" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd119" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/_authorizedsignatureuseritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd120" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_sharerevenue/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd121" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_sharerevenue/_sharerevenuestructureitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd122" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_viewotheremployeeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd123" namespace="http://webservices.appliedsystems.com/epic/sdk/2011/12/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd124" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd125" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd126" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd127" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilitygeneralliability/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd129" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/_underwritingquestionansweritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd130" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/_underwritingquestionansweritem/_additionalfielditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd131" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_holder/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd132" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd133" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/_holder/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd134" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_propertyholder/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd135" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_intermodalholder/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd136" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd137" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd138" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd139" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_commoncriteria/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd140" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_commoncriteria/_selecteditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd141" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_lineofbusinesscriteria/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd142" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_commission/_lineofbusinesscriteria/_LineOfBusinessItem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd143" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_commission/_premiumbasedtieredcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd144" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_commission/_premiumbasedtieredcommission/_premiumbasedtieredcommissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd145" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_commission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd146" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_commission/_riskbasedtieredcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd147" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_commission/_riskbasedtieredcommission/_riskbasedtieredcommissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd148" namespace="http://webservices.appliedsystems.com/epic/sdk/2013/11/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd149" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd150" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/_marketedpolicyfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd151" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd152" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_attachmentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd153" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd154" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_carriersubmission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd155" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_carriersubmission/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd156" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd157" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_updatemarketingattachment/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd158" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarrierresponse/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd159" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarrierresponse/_attachmentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd160" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_createcarriersubmission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd161" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd162" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd163" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_remarket" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd164" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_remarket/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd165" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunityfilter/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd166" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_opportunity/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd167" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd168" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd169" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd170" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/_opportunitycontact/_opportunitycontactitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd171" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_get/_service/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd172" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd173" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd174" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_associateditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd175" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_itemizationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd176" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd177" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_common/_producerbrokercommissionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd178" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd179" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd180" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd181" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd182" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd183" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/_underwritingquestionansweritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd184" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/_underwritingquestionansweritem/_additionalfielditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd185" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd186" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_residential/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd187" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd188" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd189" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/_dataitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd190" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd191" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_ratingunderwriting/_generalconstructionsiding/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd192" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_homeownerdwellingfireratingunderwriting/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd193" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_mobilehome/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd194" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_coverageslimitsofliability/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd195" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd196" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_solidfuelquestionnaire/_protectivematerialfireprotection/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd197" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd198" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd199" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_premise/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd200" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_premise/_rating/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd201" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_subjectofinsurance/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd202" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_property/_subjectofinsurance/_causeoflossitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd203" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd204" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd205" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_offpremisepowerdependentproperty/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd206" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_businessincomeextraexpenserentalvalue/_offpremisepowerdependentproperty/_nameandaddressitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd207" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_property/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd208" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_property/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd209" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_property/_statementofvalues/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd210" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_statementofvalues/_formandendorsementitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd211" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_property/_statementofvalues/_statementofvaluescheduleitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd212" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd213" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_businessauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd214" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_businessauto/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd215" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_businessauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd216" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd217" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd218" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd219" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd220" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_applicant/_contact/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd221" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd222" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd223" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_premise/_buildingitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd224" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/_generalinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd225" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/_generalinformation/_underwritingquestionansweritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd226" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialapplication/_generalinformation/_underwritingquestionansweritem/_additionalfielditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd227" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_priorcarrier/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd228" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_commercialapplication/_losshistory/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd229" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd230" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd231" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalapplication/_applicant/_additionalnamedinsured/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd232" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd233" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd234" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd235" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_priorcoverageandlosshistory/_losshistoryitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd236" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_generalinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd237" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_generalinformation/_underwritingquestionansweritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd238" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalapplication/_generalinformation/_underwritingquestionansweritem/_additionalfielditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd239" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_personalapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd240" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_businessowners/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd241" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_businessowners/_liablity" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd242" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_businessowners/_policylevelliablity" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd243" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_businessowners/_policylevelpropertycoverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd244" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_businessowners/_policyleveladditionalcoverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd245" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_businessowners/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd246" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd247" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd248" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd249" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_otheradditionalcoverages/_coverageitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd250" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_remarks/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd251" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessowners/_premisecoverage/_remarks/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd252" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_businessowners/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd253" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd254" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_generalliability/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd255" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_generalliability/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd256" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_generalliability/_productsandcompletedoperations/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd257" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_generalliability/_productsandcompletedoperations/_productitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd258" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_generalliability/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd259" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd260" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_personalauto/_policyinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd261" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd262" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd263" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_vehiclecommon/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd264" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_mavehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd265" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_prvehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd266" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_personalauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd267" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_customform/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd268" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_commercialumbrella/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd269" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_commercialumbrella/_policyinformationandemployeebenefits/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd270" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd271" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_primarylocationandsubsidiary/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd272" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_underlyinginsurance/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd273" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd274" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_common/_underwritingquestionansweritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd275" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_common/_underwritingquestionansweritem/_additionalfielditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd276" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_commercialumbrella/_vehicles/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd277" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd278" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd279" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_applicant/_additionalnamedinsureditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd280" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_location/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd281" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_location/_ratinginformationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd282" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd283" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_fllocation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd284" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_location/_flratinginformationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd285" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_policyinformationtotalestimatedannualpremiumallstates/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd286" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_totalpremiumcalculation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd287" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_totalpremiumcalculation/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd288" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_priorcarrier/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd289" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_priorcarrier/_priorcarrierLossHistoryitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd290" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd291" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/_Driveritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd292" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/_terminalitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd293" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_miassignedrisk/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd294" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/_LocationOtherThanItem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd295" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_miassignedrisk/_mipreviouscarrieritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd296" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_mtassignedrisk/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd297" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd298" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/_njpreviouscarrieritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd299" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/_njprojectedclassificationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd300" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_wiassignedrisk/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd301" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_wiassignedrisk/_wpreviouscarrieritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd302" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_tnassignedrisk/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd303" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd304" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd305" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd306" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_boat/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd307" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_engine/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd308" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_trailer/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd309" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_operator/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd310" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_suretyreport/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd311" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_suretyreport/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd312" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_equipmentfloater/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd313" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd314" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_coverage/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd315" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_garageanddealers/_physicaldamage/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd316" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_garageanddealers/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd317" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_garageanddealers/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd318" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_garageanddealers/_vehicle/_vehiclecoverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd319" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd320" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd321" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_classificationhiring/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd322" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_controlsandauditprocedures/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd323" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_money/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd324" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd325" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd326" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_messengerprotectionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd327" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd328" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_safe/_safevaultitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd329" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_employee/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd330" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_crime/_employee/_employeeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd331" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_personalumbrella/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd332" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd333" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd334" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_crossreferenceinformationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd335" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd336" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/_carrieritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd337" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd338" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/_addresshistory/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd339" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/_addresshistory/_previousaddressitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd340" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd341" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/_contactnumberitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd342" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd343" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd344" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/_additionalcoverageitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd345" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/_discountsurchargeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd346" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/_liabilityextensionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd347" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/_ratingdetachedoutbuildingitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd348" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd349" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd350" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_canada/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd351" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd352" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd353" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd354" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_personalarticle/_personalarticleitem/_scheduledpersonalpropertyitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd355" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd356" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_additionalcoverageitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd357" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_additionalinterestitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd358" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_coverageitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd359" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd360" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd361" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_solidfuelquestionnaire/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd362" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd363" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_losshistory/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd364" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_losshistory/_losshistoryitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd365" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_sewerbackupquestionnaire/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd366" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianpersonalauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd367" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianpersonalauto/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd368" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianpersonalauto/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd369" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianpersonalauto/_applicant/_contactnumber/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd370" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd371" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_policyinfo/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd372" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd373" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernb/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd374" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernb/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd375" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverconvictionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd376" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernl/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd377" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernl/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd378" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverns/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd379" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverns/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd380" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd381" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernt/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd382" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernwt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd383" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernu/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd384" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_drivernu/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd385" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driveron/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd386" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driveron/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd387" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverother/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd388" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverother/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd389" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverpe/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd390" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverpe/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd391" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverqc/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd392" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driverqc/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd393" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driveryt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd394" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_driver/_driveryt/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd395" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd396" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_discountsurchargeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd397" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenb/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd398" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_optionaladditionalcoverageitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd399" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenl/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd400" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclens/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd401" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclent/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd402" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclenu/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd403" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianpersonalauto/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd404" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleon/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd405" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleother/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd406" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehiclepe/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd407" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleqc/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd408" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_vehicle/_vehicleyt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd409" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd410" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd411" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd412" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_applicant/_contactnumber/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd413" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_canadiancommercialauto/_applicant/_applicantother/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd414" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd415" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_policyinfo/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd416" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd417" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_discountsurchargeitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd418" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehiclenb/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd419" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_optionaladditionalcoverageitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd420" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehiclenl/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd421" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehiclens/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd422" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehiclent/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd423" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehiclenu/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd424" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd425" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleon/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd426" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleother/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd427" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehiclepe/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd428" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleqc/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd429" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_vehicle/_vehicleyt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd430" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvspolicy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd431" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvspolicy/_nonownedvehicletraileritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd432" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd433" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd434" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadiancommercialauto/_cvsvehicle/_vehiclefilingitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd435" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd436" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernb/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd437" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernb/_driveraccidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd438" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverconvictionitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd439" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernl/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd440" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernl/_driveraccidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd441" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverns/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd442" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverns/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd443" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd444" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/_driveraccidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd445" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernwt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd446" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernu/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd447" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernu/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd448" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveron/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd449" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveron/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd450" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverother/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd451" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverother/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd452" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverpe/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd453" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverpe/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd454" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverqc/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd455" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driverqc/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd456" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveryt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd457" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_driveryt/_accidentitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd458" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd459" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_premise/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd460" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_premise/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd461" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_statementofvalues/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd462" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_statementofvalues/_formandendorsementitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd463" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_statementofvalues/_statementofvaluesitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd464" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd465" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd466" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd467" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_electronicdataprocessing/_premise/_subjectsofinsurance/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd468" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_transportation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd469" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_transportation/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd470" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_transportation/_vehicle/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd471" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_transportation/_vehicle/_coverages/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd472" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd473" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd474" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd475" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd476" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_plan/_associatedemployeeclassitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd477" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd478" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_rateinformation/_ratepremiumitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd479" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd480" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/_aggregateitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd481" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_stoploss/_specificitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd482" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_planrateinformation/_planinformationitem/_tpaserviceitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd483" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_applicant/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd484" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_policyinformation/_applicant/_locationitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd485" namespace="http://webservices.appliedsystems.com/epic/sdk/2009/07/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd486" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/_lookup/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd487" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/_optiontype/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd488" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd489" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd490" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd491" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd492" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd493" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_applycreditstodebits/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd494" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_applycreditstodebits/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd495" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd496" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd497" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/_journalentry/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd498" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd499" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd500" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/_detail/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd501" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/_detail/_detailitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd502" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_journalentry/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd503" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd504" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/_eligiblevouchers/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd505" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_action/_payvouchers/_eligiblevouchers/_eligiblevoucheritem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd506" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd507" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd508" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_detail/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd509" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_detail/_detailitem/_paiditems/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd510" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_detail/_detailitem/_paiditems/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd511" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_disbursement/_detail/_detailitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd512" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd513" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd514" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd515" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd516" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd517" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd518" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/reconciliation/_directbillcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd519" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_reconciliation/_directbillcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd520" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_reconciliation/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd521" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_reconciliation/_directbillcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd522" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_reconciliation/_directbillcommission/_summary/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd523" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd524" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_generalledger/_reconciliation/_directbillcommission/_recorddetailitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd525" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_activity/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd526" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_policy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd527" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd528" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd529" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_configure/_salesteam/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd530" namespace="http://webservices.appliedsystems.com/epic/sdk/2017/01/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd531" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/01/_account/_policy/_suretyreport/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd532" namespace="http://webservices.appliedsystems.com/epic/sdk/2017/02/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd533" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_get/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd534" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd535" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_line/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd536" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd537" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd538" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/_identificationnumberitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd539" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd540" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/_paymentmethoditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd541" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd542" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_action/_endorsereviseaddlinemidterm/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd543" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/_receivable/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd544" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/_receivable/_receivableitem" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd545" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd546" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/_paymentexpense/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd547" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_claim/_paymentExpenseItem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd548" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd549" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/_viewothersopportunityitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd550" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd551" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd552" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/_lineitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd553" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_commercialapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd554" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_policy/_canadianhabitational/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd555" namespace="http://webservices.appliedsystems.com/epic/sdk/2018/01/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd556" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_client/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd557" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd558" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_splitreceivabletemplate/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd559" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_splitreceivabletemplate/_splitreceivableitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd560" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_marketedpolicy/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd561" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_marketedpolicy/_carrierresponse/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd562" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_shared/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd563" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_commercialapplication/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd564" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd565" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd566" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_employeesabroaditem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd567" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_foreigntripitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd568" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_generalliability/_internationalliabilityexposuresupplement/_losshistoryitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd569" namespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_policy/_shared/_remarkitem/" />
+      <xsd:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd570" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_InputMessage">
+    <wsdl:part name="parameters" element="tns:Upload_Attachment_File" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_InputMessage_Headers">
+    <wsdl:part xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/" name="MessageHeader" element="q1:MessageHeader" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Upload_Attachment_FileResponse" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_MethodCallFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q2:MethodCallFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_InputValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q3:InputValidationFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_ConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q4:ConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Upload_Attachment_File_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q5:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_InputMessage">
+    <wsdl:part name="parameters" element="tns:Download_Attachment_File" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_InputMessage_Headers">
+    <wsdl:part xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/" name="MessageHeader" element="q6:MessageHeader" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Download_Attachment_FileResponse" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_MethodCallFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q7:MethodCallFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_InputValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q8:InputValidationFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_ConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q9:ConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="EpicSDKFileTransfer_Download_Attachment_File_AuthenticationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_fault/" name="detail" element="q10:AuthenticationFault" />
+  </wsdl:message>
+  <wsdl:portType name="EpicSDKFileTransfer">
+    <wsdl:operation name="Upload_Attachment_File">
+      <wsdl:input wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_File" message="tns:EpicSDKFileTransfer_Upload_Attachment_File_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_FileResponse" message="tns:EpicSDKFileTransfer_Upload_Attachment_File_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_FileMethodCallFaultFault" name="MethodCallFaultFault" message="tns:EpicSDKFileTransfer_Upload_Attachment_File_MethodCallFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_FileInputValidationFaultFault" name="InputValidationFaultFault" message="tns:EpicSDKFileTransfer_Upload_Attachment_File_InputValidationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_FileConcurrencyFaultFault" name="ConcurrencyFaultFault" message="tns:EpicSDKFileTransfer_Upload_Attachment_File_ConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_FileAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:EpicSDKFileTransfer_Upload_Attachment_File_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Download_Attachment_File">
+      <wsdl:input wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_File" message="tns:EpicSDKFileTransfer_Download_Attachment_File_InputMessage" />
+      <wsdl:output wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_FileResponse" message="tns:EpicSDKFileTransfer_Download_Attachment_File_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_FileMethodCallFaultFault" name="MethodCallFaultFault" message="tns:EpicSDKFileTransfer_Download_Attachment_File_MethodCallFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_FileInputValidationFaultFault" name="InputValidationFaultFault" message="tns:EpicSDKFileTransfer_Download_Attachment_File_InputValidationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_FileConcurrencyFaultFault" name="ConcurrencyFaultFault" message="tns:EpicSDKFileTransfer_Download_Attachment_File_ConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_FileAuthenticationFaultFault" name="AuthenticationFaultFault" message="tns:EpicSDKFileTransfer_Download_Attachment_File_AuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileTransferServiceBinding" type="tns:EpicSDKFileTransfer">
+    <wsp:PolicyReference URI="#FileTransferServiceBinding_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Upload_Attachment_File">
+      <soap:operation soapAction="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Upload_Attachment_File" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:EpicSDKFileTransfer_Upload_Attachment_File_InputMessage_Headers" part="MessageHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MethodCallFaultFault">
+        <soap:fault use="literal" name="MethodCallFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputValidationFaultFault">
+        <soap:fault use="literal" name="InputValidationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ConcurrencyFaultFault">
+        <soap:fault use="literal" name="ConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault use="literal" name="AuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Download_Attachment_File">
+      <soap:operation soapAction="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/IAttachmentTransfer/Download_Attachment_File" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:EpicSDKFileTransfer_Download_Attachment_File_InputMessage_Headers" part="MessageHeader" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="MethodCallFaultFault">
+        <soap:fault use="literal" name="MethodCallFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InputValidationFaultFault">
+        <soap:fault use="literal" name="InputValidationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ConcurrencyFaultFault">
+        <soap:fault use="literal" name="ConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFaultFault">
+        <soap:fault use="literal" name="AuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

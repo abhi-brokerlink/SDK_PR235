@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd444" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/_driveraccidentitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="AccidentItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccidentItem" nillable="true" type="tns:AccidentItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccidentItems" nillable="true" type="tns:AccidentItems" />
+  <xs:complexType name="AccidentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccidentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccidentID" type="xs:int" />
+      <xs:element minOccurs="0" name="AmountPaidOrEstimate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ClaimAmountRepaidToInsurer" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadiancommercialauto/_driver/_drivernt/_driveraccidentitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="TypeOfClaimCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccidentItem" nillable="true" type="tns:AccidentItem" />
+  <xs:complexType name="DriverResident">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AddressOfEmployer" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="CompanyDriverNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContinuousInsuredDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateClass2" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCurrentClassObtained" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFirstLicensed" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHired" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfCurrentClass" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfMVR" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriverNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverTrainingCertificateAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DriverTrainingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverTrainingDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriversLicenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceClass1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceClass1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceClass2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceClass2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonLicensedResident" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Occupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherClassObtainedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OtherLicenceClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLicenceClassDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnsAVehicle" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RelationToApplicantCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationToApplicantIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetireeDiscount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="YearsContinuallyInsured" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearsLicensed" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverResident" nillable="true" type="tns:DriverResident" />
+</xs:schema>

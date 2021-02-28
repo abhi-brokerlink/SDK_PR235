@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_policyinfo/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_canadianpersonalauto/_policyinfo/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="PolicyInfoNB">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinimumRetainedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoNB" nillable="true" type="tns:PolicyInfoNB" />
+  <xs:complexType name="PolicyInfoNL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinimumRetainedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoNL" nillable="true" type="tns:PolicyInfoNL" />
+  <xs:complexType name="PolicyInfoNS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinimumRetainedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoNS" nillable="true" type="tns:PolicyInfoNS" />
+  <xs:complexType name="PolicyInfoON">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="BillingAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LessorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinimumRetainedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoON" nillable="true" type="tns:PolicyInfoON" />
+  <xs:complexType name="PolicyInfoOther">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinimumRetainedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoOther" nillable="true" type="tns:PolicyInfoOther" />
+  <xs:complexType name="PolicyInfoPE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MinimumRetainedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoPE" nillable="true" type="tns:PolicyInfoPE" />
+  <xs:complexType name="PolicyInfoQC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MostRecentExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MostRecentInsurerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentInsurerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MostRecentPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacingPolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInfoQC" nillable="true" type="tns:PolicyInfoQC" />
+</xs:schema>

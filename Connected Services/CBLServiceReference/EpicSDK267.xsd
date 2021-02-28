@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd549" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/_viewothersopportunityitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="PersonalContacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstEmergencyContactNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondEmergencyContactNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalContacts" nillable="true" type="tns:PersonalContacts" />
+  <xs:complexType name="ServiceProducer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowOnNewBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowOnRenewalBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AutomaticPostToGL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BatchPaymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommissionableProducer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GLSubAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receives1099" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reconcile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequirePayableContracts" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="ServicingRoles" nillable="true" type="q1:ServicingRolesItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceProducer" nillable="true" type="tns:ServiceProducer" />
+  <xs:complexType name="ViewOthersOpportunityItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewOthersOpportunityItem" nillable="true" type="tns:ViewOthersOpportunityItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewOthersOpportunityItems" nillable="true" type="tns:ViewOthersOpportunityItems" />
+  <xs:complexType name="ViewOthersOpportunityItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/_viewothersopportunityitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="SalesTeamID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ViewOthersOpportunityType" nillable="true" type="q3:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewOthersOpportunityItem" nillable="true" type="tns:ViewOthersOpportunityItem" />
+</xs:schema>

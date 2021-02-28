@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd151" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" />
+  <xs:simpleType name="AttachmentAssociationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AccountID" />
+      <xs:enumeration value="ActivityID" />
+      <xs:enumeration value="ClaimID" />
+      <xs:enumeration value="PolicyID" />
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="CertificateID" />
+      <xs:enumeration value="BinderID" />
+      <xs:enumeration value="EvidenceID" />
+      <xs:enumeration value="MarketedPolicyID" />
+      <xs:enumeration value="CarrierSubmissionID" />
+      <xs:enumeration value="I207ID" />
+      <xs:enumeration value="ServiceID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttachmentAssociationType" nillable="true" type="tns:AttachmentAssociationType" />
+  <xs:complexType name="ArrayOfMarketedPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MarketedPolicy" nillable="true" type="tns:MarketedPolicy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMarketedPolicy" nillable="true" type="tns:ArrayOfMarketedPolicy" />
+  <xs:complexType name="MarketedPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" minOccurs="0" name="AttachmentItems" nillable="true" type="q1:AttachmentItems" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientID" type="xs:int" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" minOccurs="0" name="MarketingLineItems" nillable="true" type="q2:LineItems" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfBusiness" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MarketedPolicy" nillable="true" type="tns:MarketedPolicy" />
+</xs:schema>

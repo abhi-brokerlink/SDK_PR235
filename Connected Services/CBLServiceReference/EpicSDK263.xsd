@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd80" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/_summaryitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd81" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/_splitreceivableitem/" />
+  <xs:complexType name="InstallmentSummaryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InstallmentSummaryItem" nillable="true" type="tns:InstallmentSummaryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallmentSummaryItems" nillable="true" type="tns:InstallmentSummaryItems" />
+  <xs:complexType name="InstallmentSummaryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/_summaryitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="GenerateInvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OriginalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PlanSequenceNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="RevisedAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InstallmentSummaryItem" nillable="true" type="tns:InstallmentSummaryItem" />
+  <xs:simpleType name="ReviseInstallmentsBasedOn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Summary" />
+      <xs:enumeration value="SplitReceivable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReviseInstallmentsBasedOn" nillable="true" type="tns:ReviseInstallmentsBasedOn" />
+  <xs:complexType name="SplitReceivableItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SplitReceivableItem" nillable="true" type="tns:SplitReceivableItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SplitReceivableItems" nillable="true" type="tns:SplitReceivableItems" />
+  <xs:complexType name="SplitReceivableItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AccountLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/_installments/_splitreceivableitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="GenerateInvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OriginalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ParentReceivable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PlanSequenceNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ReceivableIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="RevisedAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SplitReceivableItem" nillable="true" type="tns:SplitReceivableItem" />
+</xs:schema>

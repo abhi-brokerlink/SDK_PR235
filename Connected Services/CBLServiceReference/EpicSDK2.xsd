@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="HolderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInsuredOnAutomobileLiablity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdditionalInsuredOnExcessUmbrellaLiablity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdditionalInsuredOnGeneralLiability" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdditionalInsuredOnOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AdditionalInsuredOnOther2" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="CertificateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientOutputCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InactivateHolderForCertificate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InactivationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JobCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RevisionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubrogationWaivedOnAutomobileLiablity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubrogationWaivedOnExcessUmbrellaLiablity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubrogationWaivedOnGeneralLiability" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubrogationWaivedOnOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubrogationWaivedOnOther2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubrogationWaivedOnWorkersCompensationEmployeeLiability" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HolderDetails" nillable="true" type="tns:HolderDetails" />
+  <xs:complexType name="Template">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="AutomobileLiabilityID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DistributeVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExcessUmbrellaLiabilityID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLiabilityID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other1ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Other2ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkersCompensationEmployeeLiabilityID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IncludeACORD855NY" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Template" nillable="true" type="tns:Template" />
+  <xs:complexType name="ACORD855NY">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="ACORD855NYUnderwritingItems" nillable="true" type="q3:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IfNoAreThereAnyOtherOptionsAvailableWithThisInsurer" type="q4:YesNoOptions" />
+      <xs:element minOccurs="0" name="IsThisPolicyPrimaryAndNonContributoryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyFormIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="PolicyFormIsISOOtherOption" nillable="true" type="q5:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACORD855NY" nillable="true" type="tns:ACORD855NY" />
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/_journalentry/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_get/_generalledger/_journalentry/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="AssociationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Broker" />
+      <xs:enumeration value="Client" />
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Employee" />
+      <xs:enumeration value="FinanceCompany" />
+      <xs:enumeration value="OtherInterest" />
+      <xs:enumeration value="Vendor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AssociationType" nillable="true" type="tns:AssociationType" />
+</xs:schema>

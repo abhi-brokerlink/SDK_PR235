@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/_receivable/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/_receivable/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd544" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/_receivable/_receivableitem" />
+  <xs:complexType name="ReceivableBalanceItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceivableBalanceItem" nillable="true" type="tns:ReceivableBalanceItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceivableBalanceItems" nillable="true" type="tns:ReceivableBalanceItems" />
+  <xs:complexType name="ReceivableBalanceItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceivableBalanceItem" nillable="true" type="tns:ReceivableBalanceItem" />
+  <xs:complexType name="ReceivableItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceivableItem" nillable="true" type="tns:ReceivableItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceivableItems" nillable="true" type="tns:ReceivableItems" />
+  <xs:complexType name="ReceivableItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_transaction/_receivable/_receivableitem" minOccurs="0" name="ReceivableColumnItems" nillable="true" type="q1:ReceivableColumnItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReceivableItem" nillable="true" type="tns:ReceivableItem" />
+</xs:schema>

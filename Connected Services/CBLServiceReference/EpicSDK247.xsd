@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd127" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilitygeneralliability/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd131" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_holder/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd132" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd133" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/_holder/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd134" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_propertyholder/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd135" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_intermodalholder/" />
+  <xs:simpleType name="OtherGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OtherID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OtherGetType" nillable="true" type="tns:OtherGetType" />
+  <xs:complexType name="ArrayOfOther">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Other" nillable="true" type="tns:Other" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOther" nillable="true" type="tns:ArrayOfOther" />
+  <xs:complexType name="Other">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Other" nillable="true" type="tns:Other" />
+  <xs:simpleType name="RemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RemarkID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RemarkGetType" nillable="true" type="tns:RemarkGetType" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+  <xs:simpleType name="GeneralLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GeneralLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GeneralLiabilityGetType" nillable="true" type="tns:GeneralLiabilityGetType" />
+  <xs:complexType name="ArrayOfLiabilityGeneralLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityGeneralLiability" nillable="true" type="tns:LiabilityGeneralLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiabilityGeneralLiability" nillable="true" type="tns:ArrayOfLiabilityGeneralLiability" />
+  <xs:complexType name="LiabilityGeneralLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ClaimsMadeOccurrenceOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="CommercialGeneralLiability" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CoverageType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLiabilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerLocation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerProject" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsDamageToRentedPremises" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsDamageToRentedPremisesIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEachOccurrence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEachOccurrenceIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsGeneralAggregate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsGeneralAggregateIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsMedicalExpense" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsMedicalExpenseIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOtherIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsPersonalAndAdvertisingInjury" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsPersonalAndAdvertisingInjuryIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsProductsCompletedOperationsAggregate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsProductsCompletedOperationsAggregateIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LimitAppliesPerOther" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerOtherDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilitygeneralliability/" minOccurs="0" name="ACORD855NYValue" nillable="true" type="q2:ACORD855NY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityGeneralLiability" nillable="true" type="tns:LiabilityGeneralLiability" />
+  <xs:simpleType name="AutomobileLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AutomobileLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AutomobileLiabilityGetType" nillable="true" type="tns:AutomobileLiabilityGetType" />
+  <xs:complexType name="ArrayOfLiabilityAutomobileLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityAutomobileLiability" nillable="true" type="tns:LiabilityAutomobileLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiabilityAutomobileLiability" nillable="true" type="tns:ArrayOfLiabilityAutomobileLiability" />
+  <xs:complexType name="LiabilityAutomobileLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllOwnedAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyAuto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AutomobileLiabilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HiredAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsBodilyInjuryPerAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsBodilyInjuryPerPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsCombinedSingleLimitEachAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsPropertyDamagePerAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonOwnedAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ScheduledAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceOther1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceOther2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityAutomobileLiability" nillable="true" type="tns:LiabilityAutomobileLiability" />
+  <xs:simpleType name="ExcessUmbrellaLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ExcessUmbrellaLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExcessUmbrellaLiabilityGetType" nillable="true" type="tns:ExcessUmbrellaLiabilityGetType" />
+  <xs:complexType name="ArrayOfLiabilityExcessUmbrellaLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityExcessUmbrellaLiability" nillable="true" type="tns:LiabilityExcessUmbrellaLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiabilityExcessUmbrellaLiability" nillable="true" type="tns:ArrayOfLiabilityExcessUmbrellaLiability" />
+  <xs:complexType name="LiabilityExcessUmbrellaLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ClaimsMadeOccurrenceOption" nillable="true" type="q3:OptionType" />
+      <xs:element minOccurs="0" name="DeductibleRetention" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="DeductibleRetentionOption" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExcessUmbrellaLiabilityID" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ExcessUmbrellaLiabilityOption" nillable="true" type="q5:OptionType" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsAggregate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEachOccurrence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IfNoAreThereAnyOtherOptionsAvailableWithThisInsurer" type="q6:YesNoOptions" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsTheInsurerAdmittedOrAuthorizedInNY" type="q7:YesNoOptions" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsTheInsurerLicensedAsASpecialRiskFreeTradeZone" type="q8:YesNoOptions" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsTheInsurerOnTheStampingListOfApprovedUnauthorizedInsurers" type="q9:YesNoOptions" />
+      <xs:element minOccurs="0" name="IsThisPolicyPrimaryAndNonContributoryCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityExcessUmbrellaLiability" nillable="true" type="tns:LiabilityExcessUmbrellaLiability" />
+  <xs:simpleType name="WorkersCompensationEmployersLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WorkersCompensationEmployersLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkersCompensationEmployersLiabilityGetType" nillable="true" type="tns:WorkersCompensationEmployersLiabilityGetType" />
+  <xs:complexType name="ArrayOfLiabilityWorkersCompensationEmployersLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityWorkersCompensationEmployersLiability" nillable="true" type="tns:LiabilityWorkersCompensationEmployersLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiabilityWorkersCompensationEmployersLiability" nillable="true" type="tns:ArrayOfLiabilityWorkersCompensationEmployersLiability" />
+  <xs:complexType name="LiabilityWorkersCompensationEmployersLiability">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AnyProprietorPartnerExecutiveOfficerMemberExcludedOption" nillable="true" type="q10:OptionType" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsEmployersLiabilityDiseaseEachEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEmployersLiabilityDiseasePolicyLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEmployersLiabilityEachAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WorkersCompensationEmployersLiabilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkersCompensationStatutoryLimits" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityWorkersCompensationEmployersLiability" nillable="true" type="tns:LiabilityWorkersCompensationEmployersLiability" />
+  <xs:simpleType name="HolderGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HolderID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HolderGetType" nillable="true" type="tns:HolderGetType" />
+  <xs:complexType name="ArrayOfLiabilityHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityHolder" nillable="true" type="tns:LiabilityHolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiabilityHolder" nillable="true" type="tns:ArrayOfLiabilityHolder" />
+  <xs:complexType name="LiabilityHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_holder/" minOccurs="0" name="DescriptionOfOperationsValue" nillable="true" type="q11:DescriptionOf" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" minOccurs="0" name="HolderDetailsValue" nillable="true" type="q12:HolderDetails" />
+      <xs:element minOccurs="0" name="HolderID" type="xs:int" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" minOccurs="0" name="TemplateValue" nillable="true" type="q13:Template" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/_holder/" minOccurs="0" name="AttachmentsValue" nillable="true" type="q14:HolderAttachments" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_liabilityholder/" minOccurs="0" name="ACORD855NYValue" nillable="true" type="q15:ACORD855NY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityHolder" nillable="true" type="tns:LiabilityHolder" />
+  <xs:complexType name="ArrayOfLiabilityDescriptionOfOperations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiabilityDescriptionOfOperations" nillable="true" type="tns:LiabilityDescriptionOfOperations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiabilityDescriptionOfOperations" nillable="true" type="tns:ArrayOfLiabilityDescriptionOfOperations" />
+  <xs:complexType name="LiabilityDescriptionOfOperations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DescriptionOfOperations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndorsementListOfProvidersIsAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiabilityDescriptionOfOperations" nillable="true" type="tns:LiabilityDescriptionOfOperations" />
+  <xs:simpleType name="PropertyGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TemplateID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PropertyGetType" nillable="true" type="tns:PropertyGetType" />
+  <xs:complexType name="ArrayOfPropertyProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyProperty" nillable="true" type="tns:PropertyProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyProperty" nillable="true" type="tns:ArrayOfPropertyProperty" />
+  <xs:complexType name="PropertyProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:PropertyPropertyLocations" />
+      <xs:element minOccurs="0" name="PropertyTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceLimitsValue" nillable="true" type="tns:PropertyPropertyTypeOfInsuranceLimits" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyProperty" nillable="true" type="tns:PropertyProperty" />
+  <xs:complexType name="PropertyPropertyLocations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyPropertyLocation" nillable="true" type="tns:PropertyPropertyLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyPropertyLocations" nillable="true" type="tns:PropertyPropertyLocations" />
+  <xs:complexType name="PropertyPropertyLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyPropertyLocation" nillable="true" type="tns:PropertyPropertyLocation" />
+  <xs:complexType name="PropertyPropertyTypeOfInsuranceLimits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlanketBuildingLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlanketBuildingPersonalPropertyLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlanketPersonalPropertyLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessIncomeLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CauseOfLossBasic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CauseOfLossBroad" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CauseOfLossEarthquake" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CauseOfLossFlood" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CauseOfLossSpecial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CauseOfLossWind" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContentsDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EarthquakeDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraExpenseLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FloodDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherDeductible1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDeductible2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLimit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLimit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLimitDescription1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherLimitDescription2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherTypeOfInsurance1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherTypeOfInsurance2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonalPropertyLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RentalValueLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WindDeductible" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyPropertyTypeOfInsuranceLimits" nillable="true" type="tns:PropertyPropertyTypeOfInsuranceLimits" />
+  <xs:simpleType name="PropertyCrimeGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TemplateID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PropertyCrimeGetType" nillable="true" type="tns:PropertyCrimeGetType" />
+  <xs:complexType name="ArrayOfPropertyCrime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyCrime" nillable="true" type="tns:PropertyCrime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyCrime" nillable="true" type="tns:ArrayOfPropertyCrime" />
+  <xs:complexType name="PropertyCrime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CrimeTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfPolicy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyCrime" nillable="true" type="tns:PropertyCrime" />
+  <xs:simpleType name="PropertyBoilerAndMachineryGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TemplateID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PropertyBoilerAndMachineryGetType" nillable="true" type="tns:PropertyBoilerAndMachineryGetType" />
+  <xs:complexType name="ArrayOfPropertyBoilerAndMachinery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyBoilerAndMachinery" nillable="true" type="tns:PropertyBoilerAndMachinery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyBoilerAndMachinery" nillable="true" type="tns:ArrayOfPropertyBoilerAndMachinery" />
+  <xs:complexType name="PropertyBoilerAndMachinery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoilerAndMachineryTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyBoilerAndMachinery" nillable="true" type="tns:PropertyBoilerAndMachinery" />
+  <xs:simpleType name="PropertyInlandMarineGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TemplateID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PropertyInlandMarineGetType" nillable="true" type="tns:PropertyInlandMarineGetType" />
+  <xs:complexType name="ArrayOfPropertyInlandMarine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyInlandMarine" nillable="true" type="tns:PropertyInlandMarine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyInlandMarine" nillable="true" type="tns:ArrayOfPropertyInlandMarine" />
+  <xs:complexType name="PropertyInlandMarine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="Classes" nillable="true" type="tns:PropertyInlandMarineClasses" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InlandMarineTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:PropertyInlandMarineItems" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduledItems" nillable="true" type="tns:PropertyInlandMarineScheduledItems" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceLimitsValue" nillable="true" type="tns:PropertyInlandMarineTypeOfInsuranceLimits" />
+      <xs:element minOccurs="0" name="UnscheduledItems" nillable="true" type="tns:PropertyInlandMarineUnscheduledItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarine" nillable="true" type="tns:PropertyInlandMarine" />
+  <xs:complexType name="PropertyInlandMarineClasses">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyInlandMarineClass" nillable="true" type="tns:PropertyInlandMarineClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineClasses" nillable="true" type="tns:PropertyInlandMarineClasses" />
+  <xs:complexType name="PropertyInlandMarineClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineClass" nillable="true" type="tns:PropertyInlandMarineClass" />
+  <xs:complexType name="PropertyInlandMarineItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyInlandMarineItem" nillable="true" type="tns:PropertyInlandMarineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineItems" nillable="true" type="tns:PropertyInlandMarineItems" />
+  <xs:complexType name="PropertyInlandMarineItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineItem" nillable="true" type="tns:PropertyInlandMarineItem" />
+  <xs:complexType name="PropertyInlandMarineScheduledItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyInlandMarineScheduledItem" nillable="true" type="tns:PropertyInlandMarineScheduledItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineScheduledItems" nillable="true" type="tns:PropertyInlandMarineScheduledItems" />
+  <xs:complexType name="PropertyInlandMarineScheduledItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduledItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineScheduledItem" nillable="true" type="tns:PropertyInlandMarineScheduledItem" />
+  <xs:complexType name="PropertyInlandMarineTypeOfInsuranceLimits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CauseOfLossNamedPerils" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CauseOfLossOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfPolicy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineTypeOfInsuranceLimits" nillable="true" type="tns:PropertyInlandMarineTypeOfInsuranceLimits" />
+  <xs:complexType name="PropertyInlandMarineUnscheduledItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyInlandMarineUnscheduledItem" nillable="true" type="tns:PropertyInlandMarineUnscheduledItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineUnscheduledItems" nillable="true" type="tns:PropertyInlandMarineUnscheduledItems" />
+  <xs:complexType name="PropertyInlandMarineUnscheduledItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coinsurance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UnscheduledItemID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyInlandMarineUnscheduledItem" nillable="true" type="tns:PropertyInlandMarineUnscheduledItem" />
+  <xs:complexType name="ArrayOfPropertyLocationOfPremisesDescriptionOfProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyLocationOfPremisesDescriptionOfProperty" nillable="true" type="tns:PropertyLocationOfPremisesDescriptionOfProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyLocationOfPremisesDescriptionOfProperty" nillable="true" type="tns:ArrayOfPropertyLocationOfPremisesDescriptionOfProperty" />
+  <xs:complexType name="PropertyLocationOfPremisesDescriptionOfProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationOfPremisesDescriptionOfProperty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyLocationOfPremisesDescriptionOfProperty" nillable="true" type="tns:PropertyLocationOfPremisesDescriptionOfProperty" />
+  <xs:complexType name="ArrayOfPropertySpecialCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertySpecialCondition" nillable="true" type="tns:PropertySpecialCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertySpecialCondition" nillable="true" type="tns:ArrayOfPropertySpecialCondition" />
+  <xs:complexType name="PropertySpecialCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecialConditions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertySpecialCondition" nillable="true" type="tns:PropertySpecialCondition" />
+  <xs:complexType name="ArrayOfPropertyHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyHolder" nillable="true" type="tns:PropertyHolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyHolder" nillable="true" type="tns:ArrayOfPropertyHolder" />
+  <xs:complexType name="PropertyHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_propertyholder/" minOccurs="0" name="HolderDetailsValue" nillable="true" type="q16:HolderDetails" />
+      <xs:element minOccurs="0" name="HolderID" type="xs:int" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_holder/" minOccurs="0" name="LocationOfPremisesDescriptionOfPropertyValue" nillable="true" type="q17:DescriptionOf" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_propertyholder/" minOccurs="0" name="SpecialConditionsOtherCoveragesValue" nillable="true" type="q18:SpecialConditionsOtherCoverages" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_propertyholder/" minOccurs="0" name="TemplateValue" nillable="true" type="q19:Template" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/_holder/" minOccurs="0" name="AttachmentsValue" nillable="true" type="q20:HolderAttachments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyHolder" nillable="true" type="tns:PropertyHolder" />
+  <xs:simpleType name="IntermodalGeneralLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GeneralLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalGeneralLiabilityGetType" nillable="true" type="tns:IntermodalGeneralLiabilityGetType" />
+  <xs:complexType name="ArrayOfIntermodalGeneralLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalGeneralLiability" nillable="true" type="tns:IntermodalGeneralLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalGeneralLiability" nillable="true" type="tns:ArrayOfIntermodalGeneralLiability" />
+  <xs:complexType name="IntermodalGeneralLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ClaimsMadeOccurrenceOption" nillable="true" type="q21:OptionType" />
+      <xs:element minOccurs="0" name="CommercialGeneralLiability" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CoverageType1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageType2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLiabilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerLocation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerPolicy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerProject" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsDamageToRentedPremises" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsDamageToRentedPremisesIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEachOccurrence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEachOccurrenceIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsGeneralAggregate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsGeneralAggregateIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsMedicalExpense" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsMedicalExpenseIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOtherIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsPersonalAndAdvertisingInjury" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsPersonalAndAdvertisingInjuryIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsProductsCompletedOperationsAggregate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsProductsCompletedOperationsAggregateIncludedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LimitAppliesPerOther" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAppliesPerOtherDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalGeneralLiability" nillable="true" type="tns:IntermodalGeneralLiability" />
+  <xs:simpleType name="IntermodalAutomobileLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AutomobileLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalAutomobileLiabilityGetType" nillable="true" type="tns:IntermodalAutomobileLiabilityGetType" />
+  <xs:complexType name="ArrayOfIntermodalAutomobileLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalAutomobileLiability" nillable="true" type="tns:IntermodalAutomobileLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalAutomobileLiability" nillable="true" type="tns:ArrayOfIntermodalAutomobileLiability" />
+  <xs:complexType name="IntermodalAutomobileLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllOwnedAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyAuto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AutomobileLiabilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HiredAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsBodilyInjuryPerAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsBodilyInjuryPerPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsCombinedSingleLimitEachAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsPropertyDamagePerAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NonOwnedAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ScheduledAutos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceOther1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfInsuranceOther2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalAutomobileLiability" nillable="true" type="tns:IntermodalAutomobileLiability" />
+  <xs:simpleType name="IntermodalCargoGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CargoID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalCargoGetType" nillable="true" type="tns:IntermodalCargoGetType" />
+  <xs:complexType name="ArrayOfIntermodalCargo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalCargo" nillable="true" type="tns:IntermodalCargo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalCargo" nillable="true" type="tns:ArrayOfIntermodalCargo" />
+  <xs:complexType name="IntermodalCargo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CargoTemplateID" type="xs:int" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitPerVehicle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PerVehicleDed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalCargo" nillable="true" type="tns:IntermodalCargo" />
+  <xs:simpleType name="IntermodalTrailerInterchangeGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TrailerInterchangeID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalTrailerInterchangeGetType" nillable="true" type="tns:IntermodalTrailerInterchangeGetType" />
+  <xs:complexType name="ArrayOfIntermodalTrailerInterchange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalTrailerInterchange" nillable="true" type="tns:IntermodalTrailerInterchange" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalTrailerInterchange" nillable="true" type="tns:ArrayOfIntermodalTrailerInterchange" />
+  <xs:complexType name="IntermodalTrailerInterchange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitPerTrailer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PerTrailerDed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TrailerInterchangeTemplateID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalTrailerInterchange" nillable="true" type="tns:IntermodalTrailerInterchange" />
+  <xs:simpleType name="IntermodalExcessUmbrellaLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ExcessUmbrellaLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalExcessUmbrellaLiabilityGetType" nillable="true" type="tns:IntermodalExcessUmbrellaLiabilityGetType" />
+  <xs:complexType name="ArrayOfIntermodalExcessUmbrellaLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalExcessUmbrellaLiability" nillable="true" type="tns:IntermodalExcessUmbrellaLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalExcessUmbrellaLiability" nillable="true" type="tns:ArrayOfIntermodalExcessUmbrellaLiability" />
+  <xs:complexType name="IntermodalExcessUmbrellaLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ClaimsMadeOccurrenceOption" nillable="true" type="q22:OptionType" />
+      <xs:element minOccurs="0" name="DeductibleRetention" nillable="true" type="xs:string" />
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="DeductibleRetentionOption" nillable="true" type="q23:OptionType" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExcessUmbrellaLiabilityID" type="xs:int" />
+      <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ExcessUmbrellaLiabilityOption" nillable="true" type="q24:OptionType" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsAggregate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEachOccurrence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther1Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsOther2Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalExcessUmbrellaLiability" nillable="true" type="tns:IntermodalExcessUmbrellaLiability" />
+  <xs:simpleType name="IntermodalWorkersCompensationEmployersLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WorkersCompensationEmployersLiabilityID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalWorkersCompensationEmployersLiabilityGetType" nillable="true" type="tns:IntermodalWorkersCompensationEmployersLiabilityGetType" />
+  <xs:complexType name="ArrayOfIntermodalWorkersCompensationEmployersLiability">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalWorkersCompensationEmployersLiability" nillable="true" type="tns:IntermodalWorkersCompensationEmployersLiability" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalWorkersCompensationEmployersLiability" nillable="true" type="tns:ArrayOfIntermodalWorkersCompensationEmployersLiability" />
+  <xs:complexType name="IntermodalWorkersCompensationEmployersLiability">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AnyProprietorPartnerExecutiveOfficerMemberExcludedOption" nillable="true" type="q25:OptionType" />
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultTemplate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncludeAllLinesOfBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitsEmployersLiabilityDiseaseEachEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEmployersLiabilityDiseasePolicyLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LimitsEmployersLiabilityEachAccident" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineOfBusinessID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Other" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WorkersCompensationEmployersLiabilityID" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkersCompensationStatutoryLimits" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalWorkersCompensationEmployersLiability" nillable="true" type="tns:IntermodalWorkersCompensationEmployersLiability" />
+  <xs:simpleType name="IntermodalHolderGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HolderID" />
+      <xs:enumeration value="CertificateID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="IntermodalHolderGetType" nillable="true" type="tns:IntermodalHolderGetType" />
+  <xs:complexType name="ArrayOfIntermodalHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalHolder" nillable="true" type="tns:IntermodalHolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalHolder" nillable="true" type="tns:ArrayOfIntermodalHolder" />
+  <xs:complexType name="IntermodalHolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_intermodalholder/" minOccurs="0" name="HolderDetailsValue" nillable="true" type="q26:HolderDetails" />
+      <xs:element minOccurs="0" name="IntermodalHolderTemplateID" type="xs:int" />
+      <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_proofofinsurance/_certificate/_intermodalholder/" minOccurs="0" name="TemplateValue" nillable="true" type="q27:Template" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalHolder" nillable="true" type="tns:IntermodalHolder" />
+  <xs:complexType name="ArrayOfIntermodalDescriptionOfOperations">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IntermodalDescriptionOfOperations" nillable="true" type="tns:IntermodalDescriptionOfOperations" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIntermodalDescriptionOfOperations" nillable="true" type="tns:ArrayOfIntermodalDescriptionOfOperations" />
+  <xs:complexType name="IntermodalDescriptionOfOperations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificateID" type="xs:int" />
+      <xs:element minOccurs="0" name="DescriptionOfOperations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndorsementListOfProvidersIsAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntermodalDescriptionOfOperations" nillable="true" type="tns:IntermodalDescriptionOfOperations" />
+</xs:schema>

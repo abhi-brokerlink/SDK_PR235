@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_homeownerdwellingfireratingunderwriting/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_residential/_homeownerdwellingfireratingunderwriting/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ResidenceTypeLocationPoolRoofWindRenovationsPlumbing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConditionOfRoofCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DwellingLocationIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorPaintRenovationYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HeatingRenovationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingRenovationYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HurricaneResistiveGlassYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlumbingAnyKnownLeaksYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlumbingConditionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlumbingRenovationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlumbingRenovationYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResidenceTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResidenceTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofMaterialCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofMaterialIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofRenovationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoofRenovationYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StormShuttersCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StormShuttersIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolApprovedFenceYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolDivingBoardYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolIsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolIsIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolSlideYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WindClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WindClassIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WiringRenovationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WiringRenovationYear" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResidenceTypeLocationPoolRoofWindRenovationsPlumbing" nillable="true" type="tns:ResidenceTypeLocationPoolRoofWindRenovationsPlumbing" />
+</xs:schema>

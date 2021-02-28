@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/_vehicle/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_businessauto/_vehicle/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+  <xs:complexType name="CoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BenefitCode1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitCode2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitCode3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageApplies" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageEffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoverageExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiscellaneousOptionCode1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiscellaneousOptionCode2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetChangePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OptionCode1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionCode2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptionCode3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+  <xs:complexType name="Rating">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CollisionSymbolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompOTCSymbolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CostNew" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DatePurchased" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DaysDrivenPerWeek" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="FactorLiability" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FactorPhysicalDamage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FactorSecondary" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FarthestTerminalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrossVehicleWeightOrGrossCombinationWeight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncludedInFleetYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeasedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensedStateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchasedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadiusInMiles" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RateClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatingCapacity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecialIndustryClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecialUseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SymbolAgeGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerritoryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleTypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rating" nillable="true" type="tns:Rating" />
+</xs:schema>

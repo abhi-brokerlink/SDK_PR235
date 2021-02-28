@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd64" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd66" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd68" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_moveto/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd70" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_move/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd72" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd74" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_unapplycreditstodebits/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd78" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd83" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_generatetaxfee/" />
+  <xs:complexType name="AccountsReceivableWriteOff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountsReceivableWriteOff" nillable="true" type="tns:AccountsReceivableWriteOff" />
+  <xs:complexType name="ApplyCreditsToDebits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/" minOccurs="0" name="Credits" nillable="true" type="q1:CreditItems" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_applycreditstodebits/" minOccurs="0" name="Debits" nillable="true" type="q2:DebitItems" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="MonthOption" nillable="true" type="q3:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplyCreditsToDebits" nillable="true" type="tns:ApplyCreditsToDebits" />
+  <xs:complexType name="ArrayOfApplyCreditsToDebits">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplyCreditsToDebits" nillable="true" type="tns:ApplyCreditsToDebits" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplyCreditsToDebits" nillable="true" type="tns:ArrayOfApplyCreditsToDebits" />
+  <xs:complexType name="FinanceTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_financetransaction/" minOccurs="0" name="TransactionItemsValue" nillable="true" type="q4:TransactionItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FinanceTransaction" nillable="true" type="tns:FinanceTransaction" />
+  <xs:complexType name="MoveTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IgnoreDifferentDueMonths" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MoveNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="MoveToNumber" nillable="true" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_moveto/" minOccurs="0" name="MoveToTransactionItems" nillable="true" type="q5:TransactionItems" />
+      <xs:element minOccurs="0" name="MoveToType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_movetransaction/_move/" minOccurs="0" name="MoveTransactionItems" nillable="true" type="q6:TransactionItems" />
+      <xs:element minOccurs="0" name="MoveType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MoveTransaction" nillable="true" type="tns:MoveTransaction" />
+  <xs:complexType name="ArrayOfMoveTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MoveTransaction" nillable="true" type="tns:MoveTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMoveTransaction" nillable="true" type="tns:ArrayOfMoveTransaction" />
+  <xs:complexType name="ArrayOfReverseTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReverseTransaction" nillable="true" type="tns:ReverseTransaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReverseTransaction" nillable="true" type="tns:ArrayOfReverseTransaction" />
+  <xs:complexType name="ReverseTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_reversetransaction/" minOccurs="0" name="ItemsToReverse" nillable="true" type="q7:TransactionItems" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReverseTransaction" nillable="true" type="tns:ReverseTransaction" />
+  <xs:complexType name="UnapplyCreditsToDebits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionDetailNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_unapplycreditstodebits/" minOccurs="0" name="TransactionItemsValue" nillable="true" type="q8:TransactionItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnapplyCreditsToDebits" nillable="true" type="tns:UnapplyCreditsToDebits" />
+  <xs:complexType name="ArrayOfUnapplyCreditsToDebits">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnapplyCreditsToDebits" nillable="true" type="tns:UnapplyCreditsToDebits" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnapplyCreditsToDebits" nillable="true" type="tns:ArrayOfUnapplyCreditsToDebits" />
+  <xs:complexType name="VoidPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailChargeNSFFee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DetailDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionAgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NSFTransactionBranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionDepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionGenerateInvoice" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NSFTransactionInvoiceGrouping" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionInvoiceGroupingExistingInvoiceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NSFTransactionInvoiceMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="NSFTransactionSendInvoiceToAddress" nillable="true" type="q9:Address" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToContactID" type="xs:int" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToDeliveryMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToFaxCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToFaxExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NSFTransactionSendInvoiceToFaxNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VoidPayment" nillable="true" type="tns:VoidPayment" />
+  <xs:complexType name="ArrayOfRevisePremium">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RevisePremium" nillable="true" type="tns:RevisePremium" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRevisePremium" nillable="true" type="tns:ArrayOfRevisePremium" />
+  <xs:complexType name="RevisePremium">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedAccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedAccountTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutomaticallyReverseSplitReceivablesInstallments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DetailARDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DetailAccountingMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailGenerateInvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DetailProductionMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IgnoreFlatCommission" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IgnorePayableContractPayableDueDate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IgnorePayableDueDate" type="xs:boolean" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="InstallmentsOption" nillable="true" type="q10:OptionType" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/" minOccurs="0" name="InstallmentsValue" nillable="true" type="q11:Installments" />
+      <xs:element minOccurs="0" name="IsInstallment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSplitReceivable" type="xs:boolean" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_revisepremium/" minOccurs="0" name="SplitReceivableValue" nillable="true" type="q12:SplitReceivable" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="TransactionReallocateOption" nillable="true" type="q13:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RevisePremium" nillable="true" type="tns:RevisePremium" />
+  <xs:complexType name="ArrayOfGenerateTaxFee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenerateTaxFee" nillable="true" type="tns:GenerateTaxFee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenerateTaxFee" nillable="true" type="tns:ArrayOfGenerateTaxFee" />
+  <xs:complexType name="GenerateTaxFee">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_action/_generatetaxfee/" minOccurs="0" name="GenerateTaxFeeItems" nillable="true" type="q14:GenerateTaxFeeItems" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenerateTaxFee" nillable="true" type="tns:GenerateTaxFee" />
+</xs:schema>

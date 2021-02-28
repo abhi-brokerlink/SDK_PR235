@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd17" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd19" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_taskitem/" />
+  <xs:complexType name="CloseDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualCost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ActualTimeHours" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ActualTimeMinutes" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ClosedReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClosedStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IgnoreOpenTasks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AverageCost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AverageTimeHours" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="AverageTimeMinutes" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CloseDetail" nillable="true" type="tns:CloseDetail" />
+  <xs:complexType name="Detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactNumberEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FollowUpEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowUpEndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowUpStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FollowUpStartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssuingCompanyLookupCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/" minOccurs="0" name="Notes" nillable="true" type="q1:NoteItems" />
+      <xs:element minOccurs="0" name="PremiumPayableLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReminderDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReminderTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AmountQualifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Update" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Detail" nillable="true" type="tns:Detail" />
+  <xs:complexType name="TaskItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskItem" nillable="true" type="tns:TaskItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskItems" nillable="true" type="tns:TaskItems" />
+  <xs:complexType name="TaskItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DueTime" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_taskitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2011/01/_common/_activity/_common/" minOccurs="0" name="TaskNotes" nillable="true" type="q3:NoteItems" />
+      <xs:element minOccurs="0" name="OrderNumber" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskItem" nillable="true" type="tns:TaskItem" />
+</xs:schema>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd181" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd182" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd195" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" />
+  <xs:simpleType name="ResidenceBasedBusinessGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResidenceBasedBusinessGetType" nillable="true" type="tns:ResidenceBasedBusinessGetType" />
+  <xs:complexType name="ArrayOfResidenceBasedBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResidenceBasedBusiness" nillable="true" type="tns:ResidenceBasedBusiness" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResidenceBasedBusiness" nillable="true" type="tns:ArrayOfResidenceBasedBusiness" />
+  <xs:complexType name="ResidenceBasedBusiness">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" minOccurs="0" name="ApplicantValue" nillable="true" type="q1:Applicant" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" minOccurs="0" name="DeductiblesValue" nillable="true" type="q2:Deductibles" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_generalinformation/" minOccurs="0" name="GeneralInformationValue" nillable="true" type="q3:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" minOccurs="0" name="LiabilityCoverages" nillable="true" type="q4:LiabilityCoverageItems" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" minOccurs="0" name="NatureOfBusinessValue" nillable="true" type="q5:NatureOfBusiness" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_residencebasedbusiness/" minOccurs="0" name="PropertyCoverages" nillable="true" type="q6:PropertyCoverageItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResidenceBasedBusiness" nillable="true" type="tns:ResidenceBasedBusiness" />
+  <xs:simpleType name="ResidenceBasedBusinessRemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineAndLocationID" />
+      <xs:enumeration value="RemarkID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResidenceBasedBusinessRemarkGetType" nillable="true" type="tns:ResidenceBasedBusinessRemarkGetType" />
+  <xs:simpleType name="InsuranceRequestedGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="InsuranceRequestedID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InsuranceRequestedGetType" nillable="true" type="tns:InsuranceRequestedGetType" />
+  <xs:simpleType name="RatingUnderwritingGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RatingUnderwritingGetType" nillable="true" type="tns:RatingUnderwritingGetType" />
+  <xs:simpleType name="CoveragesLimitsOfLiabilityGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CoveragesLimitsOfLiabilityGetType" nillable="true" type="tns:CoveragesLimitsOfLiabilityGetType" />
+  <xs:simpleType name="ReplacementCostGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReplacementCostGetType" nillable="true" type="tns:ReplacementCostGetType" />
+  <xs:complexType name="ArrayOfReplacementCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReplacementCost" nillable="true" type="tns:ReplacementCost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReplacementCost" nillable="true" type="tns:ArrayOfReplacementCost" />
+  <xs:complexType name="ReplacementCost">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" minOccurs="0" name="AdditionalFeaturesValue" nillable="true" type="q7:AdditionalFeatures" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" minOccurs="0" name="AttachmentsValue" nillable="true" type="q8:Attachments" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_residential/_replacementcost/" minOccurs="0" name="ReplacementCostValue" nillable="true" type="q9:ReplacementCost" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReplacementCost" nillable="true" type="tns:ReplacementCost" />
+  <xs:simpleType name="ReplacementCostRemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LineAndLocationID" />
+      <xs:enumeration value="RemarkID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReplacementCostRemarkGetType" nillable="true" type="tns:ReplacementCostRemarkGetType" />
+  <xs:simpleType name="RecreationalVehicleGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RecreationalVehicleID" />
+      <xs:enumeration value="LineID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RecreationalVehicleGetType" nillable="true" type="tns:RecreationalVehicleGetType" />
+  <xs:complexType name="ArrayOfRecreationalVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecreationalVehicle" nillable="true" type="tns:RecreationalVehicle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecreationalVehicle" nillable="true" type="tns:ArrayOfRecreationalVehicle" />
+  <xs:complexType name="RecreationalVehicle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyVehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecreationalVehicleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecreationalVehicle" nillable="true" type="tns:RecreationalVehicle" />
+  <xs:simpleType name="AdditionalInterestGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AdditionalInterestID" />
+      <xs:enumeration value="LineID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdditionalInterestGetType" nillable="true" type="tns:AdditionalInterestGetType" />
+  <xs:simpleType name="FormAndEndorsementGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FormAndEndorsementID" />
+      <xs:enumeration value="LineID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormAndEndorsementGetType" nillable="true" type="tns:FormAndEndorsementGetType" />
+  <xs:complexType name="ArrayOfFormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormAndEndorsement" nillable="true" type="tns:ArrayOfFormAndEndorsement" />
+  <xs:complexType name="FormAndEndorsement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CopyrightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyrightType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormAndEndorsement" nillable="true" type="tns:FormAndEndorsement" />
+  <xs:simpleType name="RemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RemarkID" />
+      <xs:enumeration value="LineAndLocationID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RemarkGetType" nillable="true" type="tns:RemarkGetType" />
+  <xs:complexType name="ArrayOfRemark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Remark" nillable="true" type="tns:Remark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemark" nillable="true" type="tns:ArrayOfRemark" />
+  <xs:complexType name="Remark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Remark" nillable="true" type="tns:Remark" />
+  <xs:simpleType name="SolidFuelQuestionnaireGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SolidFuelQuestionnaireID" />
+      <xs:enumeration value="LineID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SolidFuelQuestionnaireGetType" nillable="true" type="tns:SolidFuelQuestionnaireGetType" />
+  <xs:simpleType name="SolidFuelQuestionnaireRemarkGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RemarkID" />
+      <xs:enumeration value="SolidFuelQuestionnaireID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SolidFuelQuestionnaireRemarkGetType" nillable="true" type="tns:SolidFuelQuestionnaireRemarkGetType" />
+</xs:schema>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_multicarrierschedule/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_multicarrierschedule/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd101" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_multicarrierschedule/_producerbrokercommissionitem/" />
+  <xs:complexType name="PremiumCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualizedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AnnualizedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BilledCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BilledPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstimatedMonthlyPremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PremiumCommission" nillable="true" type="tns:PremiumCommission" />
+  <xs:complexType name="ProducerBrokerCommissionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProducerBrokerCommissionItem" nillable="true" type="tns:ProducerBrokerCommissionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProducerBrokerCommissionItems" nillable="true" type="tns:ProducerBrokerCommissionItems" />
+  <xs:complexType name="ProducerBrokerCommissionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommissionPercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_multicarrierschedule/_producerbrokercommissionitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ProducerBrokerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductionCredit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContractID" type="xs:int" />
+      <xs:element minOccurs="0" name="ContractName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueAgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueAgencyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueAgencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueBranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueBranchID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueDepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueDepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueDepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenuePercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShareRevenueProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueProfitCenterID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueProfitCenterName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProducerBrokerCommissionItem" nillable="true" type="tns:ProducerBrokerCommissionItem" />
+</xs:schema>

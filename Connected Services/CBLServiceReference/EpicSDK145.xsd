@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd338" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/_addresshistory/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd340" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/" />
+  <xs:complexType name="AddressHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateAtCurrentAddress" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/_addresshistory/" minOccurs="0" name="PreviousAddressItems" nillable="true" type="q1:PreviousAddressItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressHistory" nillable="true" type="tns:AddressHistory" />
+  <xs:complexType name="ContactNumbers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_applicant/" minOccurs="0" name="ContactNumberItems" nillable="true" type="q2:ContactNumberItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactNumbers" nillable="true" type="tns:ContactNumbers" />
+  <xs:complexType name="InsuredCoInsured">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoInsuredDateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CoInsuredEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoInsuredName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoInsuredOccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoInsuredYearsContinuouslyEmployed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InsuredDateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InsuredEmployer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuredName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuredOccupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuredYearsContinuouslyEmployed" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsuredCoInsured" nillable="true" type="tns:InsuredCoInsured" />
+</xs:schema>

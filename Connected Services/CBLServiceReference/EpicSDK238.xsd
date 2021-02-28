@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_prvehicle/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_personalauto/_prvehicle/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="Description">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirbagDriverBoth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnualMileage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AntiLockBrakes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AntiTheftDevicesCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CarpoolApplies" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClassDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollisionSymbolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyVehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ComprehensiveOtherThanCollisionSymbolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CostNew" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Credits" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateLeased" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatePurchased" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="GaragedAddress" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="GaragedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GaragingLocationID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HorsePowerCC" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MilesOneWay" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MultiCarCreditCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="NewUsedVehicleOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="NumberDaysPerWeek" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="NumberWeeksPerMonth" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="OdometerReading" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PassiveSeatBelt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PerformanceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegisteredStateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationPlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalvageTitleNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surcharges" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SymbolAgeGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerritoryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="TotalVehiclePremium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Description" nillable="true" type="tns:Description" />
+</xs:schema>

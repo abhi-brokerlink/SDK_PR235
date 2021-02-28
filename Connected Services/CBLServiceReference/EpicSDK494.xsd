@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_receipt/_detail/_detailitem/_payablescommissions/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="CashOnAccountItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CashOnAccountItem" nillable="true" type="tns:CashOnAccountItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CashOnAccountItems" nillable="true" type="tns:CashOnAccountItems" />
+  <xs:complexType name="CashOnAccountItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApplyTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="DebitCreditOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLedgerAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralLedgerSubAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CashOnAccountItem" nillable="true" type="tns:CashOnAccountItem" />
+  <xs:complexType name="PayItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PayItem" nillable="true" type="tns:PayItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayItems" nillable="true" type="tns:PayItems" />
+  <xs:complexType name="PayItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountToPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="WriteOff" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WriteOffDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayItem" nillable="true" type="tns:PayItem" />
+  <xs:complexType name="PayStatementItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PayStatementItem" nillable="true" type="tns:PayStatementItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayStatementItems" nillable="true" type="tns:PayStatementItems" />
+  <xs:complexType name="PayStatementItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatementID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PayStatementItem" nillable="true" type="tns:PayStatementItem" />
+</xs:schema>

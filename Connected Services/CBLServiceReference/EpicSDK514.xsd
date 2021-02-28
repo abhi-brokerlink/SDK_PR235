@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd298" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/_njpreviouscarrieritem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd299" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/_njprojectedclassificationitem/" />
+  <xs:complexType name="NJBooksRecords">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AuditInformationContactAddress" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AuditInformationContactName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditInformationContactPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditInformationContactPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayrollServiceAddress" nillable="true" type="q2:Address" />
+      <xs:element minOccurs="0" name="PayrollServiceIfUsed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollServicePhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayrollServicePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordsMaintained" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJBooksRecords" nillable="true" type="tns:NJBooksRecords" />
+  <xs:complexType name="NJInsuranceRecordGeneralInformation">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AnyPreviousNewJerseyWorkersInsuranceCoverageYesNoCode" type="q3:YesNoOptions" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="GeneralInformationUnderwritingItems" nillable="true" type="q4:UnderwritingQuestionAnswerItems" />
+      <xs:element minOccurs="0" name="IfNoNewBusiness" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IfNoOfficerIncludedInPremiumCalculationExplain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IfNoSelfInsured" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IfYesWasCoverageThroughPlan" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IfYesWasCoverageThroughVoluntary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonForFilingApplication" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJInsuranceRecordGeneralInformation" nillable="true" type="tns:NJInsuranceRecordGeneralInformation" />
+  <xs:complexType name="NJNatureOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NatureOfBusiness" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJNatureOfBusiness" nillable="true" type="tns:NJNatureOfBusiness" />
+  <xs:complexType name="NJOfferedRefused">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Carrier1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Carrier2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Carrier3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepresentativeName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepresentativeName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepresentativeName3" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJOfferedRefused" nillable="true" type="tns:NJOfferedRefused" />
+  <xs:complexType name="NJPremiumComputation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachedCheckFor" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CatastrophePremiumChargePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DepositPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExpenseConstantPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtherPremiumChargesPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PlanPremiumAdjustmentPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PlanPremiumAdjustmentTotalWages" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumModifiedToReflectExperienceModificationPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PremiumModifiedToReflectExperienceModificationTotalWages" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondInjuryFundSurchargePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SecondInjuryFundSurchargeTotalWages" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerrorismPremiumChargePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalEstimatedCostPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalEstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalEstimatedStandardPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalPremiumExcludingMODPPAPSurchargesPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalPremiumSubjectToExperienceModificationPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UninsuredEmployersFundSurchargePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UninsuredEmployersFundSurchargeTotalWages" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJPremiumComputation" nillable="true" type="tns:NJPremiumComputation" />
+  <xs:complexType name="NJPreviousCarrierItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NJPreviousCarrierItem" nillable="true" type="tns:NJPreviousCarrierItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJPreviousCarrierItems" nillable="true" type="tns:NJPreviousCarrierItems" />
+  <xs:complexType name="NJPreviousCarrierItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnualPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AuditedPayroll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/_njpreviouscarrieritem/" minOccurs="0" name="Flag" type="q5:Flags" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GoverningClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreviousCarrierID" type="xs:int" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJPreviousCarrierItem" nillable="true" type="tns:NJPreviousCarrierItem" />
+  <xs:complexType name="NJProjectedClassificationItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NJProjectedClassificationItem" nillable="true" type="tns:NJProjectedClassificationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJProjectedClassificationItems" nillable="true" type="tns:NJProjectedClassificationItems" />
+  <xs:complexType name="NJProjectedClassificationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Classification" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/_njassignedrisk/_njprojectedclassificationitem/" minOccurs="0" name="Flag" type="q6:Flags" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProjectedClassificationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalNumberOfEmployees" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalWages" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NJProjectedClassificationItem" nillable="true" type="tns:NJProjectedClassificationItem" />
+</xs:schema>

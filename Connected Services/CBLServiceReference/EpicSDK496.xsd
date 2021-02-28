@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd356" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_additionalcoverageitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd357" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_additionalinterestitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd358" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_coverageitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd359" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_remarkitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:complexType name="AdditionalCoverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCoverageItems" nillable="true" type="tns:AdditionalCoverageItems" />
+      <xs:element minOccurs="0" name="PremiumForThisSection" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverages" nillable="true" type="tns:AdditionalCoverages" />
+  <xs:complexType name="AdditionalCoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalCoverageItem" nillable="true" type="tns:AdditionalCoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverageItems" nillable="true" type="tns:AdditionalCoverageItems" />
+  <xs:complexType name="AdditionalCoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalCoveragesID" type="xs:int" />
+      <xs:element minOccurs="0" name="AmountOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppliedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoinsurancePercent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeductibleAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductiblePercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_additionalcoverageitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetChangePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NumberOf" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OccurrenceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Percent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeOf1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf3Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf4Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf5" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalCoverageItem" nillable="true" type="tns:AdditionalCoverageItem" />
+  <xs:complexType name="AdditionalInterestItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInterestItem" nillable="true" type="tns:AdditionalInterestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInterestItems" nillable="true" type="tns:AdditionalInterestItems" />
+  <xs:complexType name="AdditionalInterestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInterestID" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_additionalinterestitem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="InterestAddress" nillable="true" type="q3:Address" />
+      <xs:element minOccurs="0" name="InterestCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InterestIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookUpCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Policy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendBill" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInterestItem" nillable="true" type="tns:AdditionalInterestItem" />
+  <xs:complexType name="CoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+  <xs:complexType name="CoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BasisOfSettlementCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="DeductibleAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductiblePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductibleTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditionDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_coverageitem/" minOccurs="0" name="Flag" type="q4:Flags" />
+      <xs:element minOccurs="0" name="FormNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPremiumAndAmountOfInsurance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NetChangePremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PremiumAndAmountOfInsuranceItemNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Rate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeOf2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOf3Code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+  <xs:complexType name="RemarkItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItems" nillable="true" type="tns:RemarkItems" />
+  <xs:complexType name="RemarkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEntered" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_watercrafttrailer/_remarkitem/" minOccurs="0" name="Flag" type="q5:Flags" />
+      <xs:element minOccurs="0" name="PrintOnForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarkItem" nillable="true" type="tns:RemarkItem" />
+  <xs:complexType name="StorageUse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MooringDetailsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MooringDetailsIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MooringPostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StorageDetailsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StorageDetailsIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoragePostalCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StorageUse" nillable="true" type="tns:StorageUse" />
+  <xs:complexType name="VacationTrailer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DaysInUSA" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LicensedProvinceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberWeeksRentedToOthers" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerOccupiedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParkName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermanentlyParkedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoadLicensedCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="TrailerLocation" nillable="true" type="q6:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VacationTrailer" nillable="true" type="tns:VacationTrailer" />
+  <xs:complexType name="WatercraftTrailer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSAYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ConstructionIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatePurchased" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDSerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Make" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhotoAttachedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchasePrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReplacementValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueOfContents" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WatercraftTrailerClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftTrailerConstructionCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="WatercraftTrailerLengthFeetMetersOption" nillable="true" type="q7:OptionType" />
+      <xs:element minOccurs="0" name="WatercraftTrailerNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WatercraftTrailerStyleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftTrailerTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatercraftTrailerUseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WatercraftTrailer" nillable="true" type="tns:WatercraftTrailer" />
+  <xs:complexType name="Watercraft">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Displacement" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HorsePower" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxSpeed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NavigationPeriodFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NavigationPeriodTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperatorNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WaterSkiingYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatersNavigatedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatersNavigatedIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Watercraft" nillable="true" type="tns:Watercraft" />
+</xs:schema>

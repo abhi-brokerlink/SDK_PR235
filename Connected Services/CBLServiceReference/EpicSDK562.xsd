@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd336" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/_carrieritem/" />
+  <xs:complexType name="CarrierItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarrierItem" nillable="true" type="tns:CarrierItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierItems" nillable="true" type="tns:CarrierItems" />
+  <xs:complexType name="CarrierItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarrierID" type="xs:int" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/_policyhistory/_carrieritem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="InsuranceCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceCompanyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReasonForEndingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminatedReasonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminatedReasonIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarrierItem" nillable="true" type="tns:CarrierItem" />
+</xs:schema>

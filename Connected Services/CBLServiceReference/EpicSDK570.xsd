@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd552" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/_lineitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd162" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/_lineitem/" />
+  <xs:complexType name="LineItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LineItem" nillable="true" type="tns:LineItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineItems" nillable="true" type="tns:LineItems" />
+  <xs:complexType name="LineItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="ActionToBeTakenOption" nillable="true" type="q1:OptionType" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="AgencyDefinedCategoryItems" nillable="true" type="q2:AgencyDefinedCodeItems" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BillingOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/_lineitem/" minOccurs="0" name="BillingValue" nillable="true" type="q4:Billing" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommissionAgreementID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CommissionAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionPercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultCommissionAgreement" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuingCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuingLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineEstimatedCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineEstimatedPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketedLineID" type="xs:int" />
+      <xs:element minOccurs="0" name="PayableContractID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PremiumPayableLookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremiumPayableTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/_movemarketedlinestocurrentpolicy/_lineitem/" minOccurs="0" name="ProducerBrokerCommissionItems" nillable="true" type="q5:ProducerBrokerCommissionItems" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceSummaryID" nillable="true" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="ServicingContactsValue" nillable="true" type="q6:ServicingRolesItems" />
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LineItem" nillable="true" type="tns:LineItem" />
+</xs:schema>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd537" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd29" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd539" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd117" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd107" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd548" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" />
+  <xs:complexType name="ArrayOfContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContact" nillable="true" type="tns:ArrayOfContact" />
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountAddressFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AccountID" type="xs:int" />
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Address" nillable="true" type="q1:Address" />
+      <xs:element minOccurs="0" name="AddressDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingFlag" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BusinessIndividualOption" nillable="true" type="q2:OptionType" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/" minOccurs="0" name="BusinessInfo" nillable="true" type="q3:BusinessInformation" />
+      <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CategoryOption" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" minOccurs="0" name="ContactInfo" nillable="true" type="q5:ContactInformation" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" minOccurs="0" name="DriverValue" nillable="true" type="q6:Driver" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" minOccurs="0" name="EmployerValue" nillable="true" type="q7:Employer" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormalHeading" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_contact/" minOccurs="0" name="IdentificationNumberItems" nillable="true" type="q8:IdentificationNumberItems" />
+      <xs:element minOccurs="0" name="InFormalHeading" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MailingFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MainBusinessContact" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_contact/" minOccurs="0" name="PersonalClassificationsValue" nillable="true" type="q9:PersonalClassifications" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryContact" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/" minOccurs="0" name="PaymentMethodItems" nillable="true" type="q10:PaymentMethodItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="ArrayOfEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="AccountValue" nillable="true" type="q11:Account" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="CategoriesHistoryValue" nillable="true" type="q12:CategoriesHistory" />
+      <xs:element minOccurs="0" name="EmployeeFirst" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeLast" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeMiddle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeNamePrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeNameSuffix" nillable="true" type="xs:string" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2014/11/_common/" minOccurs="0" name="IdentificationNumberItems" nillable="true" type="q13:IdentificationNumberItems" />
+      <xs:element minOccurs="0" name="InactivateReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" minOccurs="0" name="PersonalContactsValue" nillable="true" type="q14:PersonalContacts" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="PersonnelValue" nillable="true" type="q15:Personnel" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="SalesValue" nillable="true" type="q16:Sales" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" minOccurs="0" name="ServiceProducerValue" nillable="true" type="q17:ServiceProducer" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="ShareRevenueValue" nillable="true" type="q18:ShareRevenue" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/" minOccurs="0" name="ViewOtherEmployeeItems" nillable="true" type="q19:ViewOtherEmployeeItems" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2017/02/_account/_employee/" minOccurs="0" name="ViewOthersOpportunityItems" nillable="true" type="q20:ViewOthersOpportunityItems" />
+      <xs:element minOccurs="0" name="DoNotPurge" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+</xs:schema>

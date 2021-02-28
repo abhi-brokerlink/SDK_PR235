@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd333" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd337" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd343" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd348" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" />
+  <xs:complexType name="ArrayOfPolicyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PolicyInformation" nillable="true" type="tns:PolicyInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPolicyInformation" nillable="true" type="tns:ArrayOfPolicyInformation" />
+  <xs:complexType name="PolicyInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BillingAccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BinderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyClientID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/" minOccurs="0" name="CrossReferenceInformationItems" nillable="true" type="q1:CrossReferenceInformationItems" />
+      <xs:element minOccurs="0" name="EffectiveTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupProgramName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="PayorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayorIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_policyinformation/" minOccurs="0" name="PolicyHistoryValue" nillable="true" type="q2:PolicyHistory" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WhoSendsDocumentsCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyInformation" nillable="true" type="tns:PolicyInformation" />
+  <xs:complexType name="ArrayOfApplicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Applicant" nillable="true" type="tns:Applicant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicant" nillable="true" type="tns:ArrayOfApplicant" />
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" minOccurs="0" name="AddressHistoryValue" nillable="true" type="q3:AddressHistory" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AnyoneInHouseholdHasCriminalRecord" type="q4:YesNoOptions" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" minOccurs="0" name="ContactNumbersValue" nillable="true" type="q5:ContactNumbers" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_applicant/" minOccurs="0" name="InsuredCoInsuredValue" nillable="true" type="q6:InsuredCoInsured" />
+      <xs:element minOccurs="0" name="InsuredName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFirstTimeBuyer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LegalEntity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalEntityIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PostalAddress" nillable="true" type="q7:Address" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="PreferredLanguageOption" nillable="true" type="q8:OptionType" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WebAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="AdditionalCoveragesValue" nillable="true" type="q9:AdditionalCoverages" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="CoveragesDeductiblesValue" nillable="true" type="q10:CoveragesDeductibles" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="DiscountsSurchargesValue" nillable="true" type="q11:DiscountsSurcharges" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="LiabilityExposuresUnderwritingItems" nillable="true" type="q12:UnderwritingQuestionAnswerItems" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="LiabilityExtensionsValue" nillable="true" type="q13:LiabilityExtensions" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="LocationValue" nillable="true" type="q14:Location" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingDetachedOutbuildingItems" nillable="true" type="q15:RatingDetachedOutbuildingItems" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingHeatOilValue" nillable="true" type="q16:RatingHeatOil" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingInteriorDetailsKitchensBathroomsValue" nillable="true" type="q17:RatingInteriorDetailsKitchensBathrooms" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingMainWaterValveFireProtectionPlumbingTypeValue" nillable="true" type="q18:RatingMainWaterValveFireProtectionPlumbingType" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingSecurityUpgradesValue" nillable="true" type="q19:RatingSecurityUpdates" />
+      <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingValue" nillable="true" type="q20:Rating" />
+      <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RatingWaterHeaterMitigationTypeValue" nillable="true" type="q21:RatingWaterHeaterMitigationType" />
+      <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_canadianhabitational/_location/" minOccurs="0" name="RemarkItems" nillable="true" type="q22:RemarkItems" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="ArrayOfLossHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LossHistory" nillable="true" type="tns:LossHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLossHistory" nillable="true" type="tns:ArrayOfLossHistory" />
+  <xs:complexType name="LossHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountPaid" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CauseIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CauseOfLossCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaimHistoryReportDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOfLoss" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DoesApplicantHaveInformationWhichMightLeadToAClaim" type="q23:YesNoOptions" />
+      <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="HaveThereBeenAnyLossesOrClaimsByTheApplicantInThePast5Years" type="q24:YesNoOptions" />
+      <xs:element minOccurs="0" name="InsuranceCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceCompanyIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="LossHistoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="StatusOption" nillable="true" type="q25:OptionType" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LossHistory" nillable="true" type="tns:LossHistory" />
+</xs:schema>

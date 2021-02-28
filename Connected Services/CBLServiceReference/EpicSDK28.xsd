@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd49" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/_updatestagetosubmitted/" />
+  <xs:complexType name="ArrayOfUpdateStageToSubmitted">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UpdateStageToSubmitted" nillable="true" type="tns:UpdateStageToSubmitted" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUpdateStageToSubmitted" nillable="true" type="tns:ArrayOfUpdateStageToSubmitted" />
+  <xs:complexType name="UpdateStageToSubmitted">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_action/_updatestagetosubmitted/" minOccurs="0" name="LineItems" nillable="true" type="q1:LineItems" />
+      <xs:element minOccurs="0" name="PolicyID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateStageToSubmitted" nillable="true" type="tns:UpdateStageToSubmitted" />
+</xs:schema>

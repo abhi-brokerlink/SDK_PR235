@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/_holder/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_proofofinsurance/_certificate/_holder/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:complexType name="HolderAttachments">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HolderAttachment" nillable="true" type="tns:HolderAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HolderAttachments" nillable="true" type="tns:HolderAttachments" />
+  <xs:complexType name="HolderAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachmentID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentValue" nillable="true" type="q1:Attachment" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flag" type="tns:HolderAttachmentFlag" />
+      <xs:element minOccurs="0" name="HolderID" type="xs:int" />
+      <xs:element minOccurs="0" name="SortOrderNumber" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HolderAttachment" nillable="true" type="tns:HolderAttachment" />
+  <xs:simpleType name="HolderAttachmentFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HolderAttachmentFlag" nillable="true" type="tns:HolderAttachmentFlag" />
+</xs:schema>

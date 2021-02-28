@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd61" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/_producerbrokercommissionitem/" />
+  <xs:complexType name="ProducerBrokerCommissionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProducerBrokerCommissionItem" nillable="true" type="tns:ProducerBrokerCommissionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProducerBrokerCommissionItems" nillable="true" type="tns:ProducerBrokerCommissionItems" />
+  <xs:complexType name="ProducerBrokerCommissionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommissionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionID" type="xs:int" />
+      <xs:element minOccurs="0" name="CommissionPercentage" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CommissionTypeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_transaction/_commissionsplititem/_producerbrokercommissionitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="LookupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ProducerBrokerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductionCredit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContractID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayableDueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShareRevenueAgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueAgencyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueAgencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShareRevenueBranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueBranchID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueDepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueDepartmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueDepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenuePercent" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShareRevenueProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShareRevenueProfitCenterID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShareRevenueProfitCenterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultProducerBrokerCommissionID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProducerBrokerCommissionItem" nillable="true" type="tns:ProducerBrokerCommissionItem" />
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_client/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2018/01/_account/_client/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SplitReceivableTemplateGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SplitReceivableTemplateID" />
+      <xs:enumeration value="ClientID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SplitReceivableTemplateGetType" nillable="true" type="tns:SplitReceivableTemplateGetType" />
+</xs:schema>

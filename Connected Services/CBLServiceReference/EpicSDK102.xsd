@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_boat/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_watercraft/_boat/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="BerthLocationLayup">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="DryAfloatOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="LayupPeriodEndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LayupPeriodStartDate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PrimaryBerthLocation" nillable="true" type="q2:Address" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="PrimarySummerWinterOption" nillable="true" type="q3:OptionType" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="SecondaryBerthLocation" nillable="true" type="q4:Address" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="SecondarySummerWinterOption" nillable="true" type="q5:OptionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BerthLocationLayup" nillable="true" type="tns:BerthLocationLayup" />
+  <xs:complexType name="CoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+  <xs:complexType name="CoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItem" nillable="true" type="tns:CoverageItem" />
+  <xs:complexType name="Credits">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Credits" nillable="true" type="tns:Credits" />
+  <xs:complexType name="BoatHull">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyHullNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CostNew" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CountryOfRegistration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfLastSurvey" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatePurchased" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FuelTankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HullDesignCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HullDesignIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HullIDNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HullMaterialCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HullNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ManufacturerModel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxSpeed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NameOfBeneficialOwner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PowerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PowerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PresentValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RegistrationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SparMaterialCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SparMaterialIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Territory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfHullCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeOfHullIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WatersNavigatedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoatHull" nillable="true" type="tns:BoatHull" />
+  <xs:complexType name="OtherCoverageItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherCoverageItem" nillable="true" type="tns:OtherCoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherCoverageItems" nillable="true" type="tns:OtherCoverageItems" />
+  <xs:complexType name="OtherCoverageItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductibleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flag" type="tns:OtherCoverageFlags" />
+      <xs:element minOccurs="0" name="Limit1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Limit2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverageID" type="xs:int" />
+      <xs:element minOccurs="0" name="Premium" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherCoverageItem" nillable="true" type="tns:OtherCoverageItem" />
+  <xs:simpleType name="OtherCoverageFlags">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OtherCoverageFlags" nillable="true" type="tns:OtherCoverageFlags" />
+  <xs:complexType name="PortableAccessoryItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PortableAccessoryItem" nillable="true" type="tns:PortableAccessoryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortableAccessoryItems" nillable="true" type="tns:PortableAccessoryItems" />
+  <xs:complexType name="PortableAccessoryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EquipmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flag" type="tns:PortableAccessoryFlags" />
+      <xs:element minOccurs="0" name="Limit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PortableAccessoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortableAccessoryItem" nillable="true" type="tns:PortableAccessoryItem" />
+  <xs:simpleType name="PortableAccessoryFlags">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="View" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PortableAccessoryFlags" nillable="true" type="tns:PortableAccessoryFlags" />
+  <xs:complexType name="RatingUnderwriting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AntiTheftDeviceExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AntiTheftDeviceYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilgePumpExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilgePumpYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CO2ChemicalSystemExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CO2ChemicalSystemYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CookingStoveExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CookingStoveYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepthSounderExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepthSounderYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireExtinguisherExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireExtinguisherYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FumeDetectorExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FumeDetectorYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatingYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadarExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadarYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadioDirectionFinderExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadioDirectionFinderYesNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipToShoreRadioExplanation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipToShoreRadioYesNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingUnderwriting" nillable="true" type="tns:RatingUnderwriting" />
+</xs:schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_controlsandauditprocedures/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_crime/_controlsandauditprocedures/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="ControlsAudit">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AllLocationsAudited" type="q1:YesNoOptions" />
+      <xs:element minOccurs="0" name="AuditCashDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AuditDiscrepancies" type="q2:YesNoOptions" />
+      <xs:element minOccurs="0" name="AuditFrequencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditFrequencyOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AuditIncludeInventory" type="q3:YesNoOptions" />
+      <xs:element minOccurs="0" name="AuditInventoryDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AuditMadeToStandards" type="q4:YesNoOptions" />
+      <xs:element minOccurs="0" name="AuditPerformedByCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditPerformedByOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditReportRenderedToCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditReportRenderedToOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AuditorAddress" nillable="true" type="q5:Address" />
+      <xs:element minOccurs="0" name="AuditorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompleteInventory" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="CompleteInventoryMade" type="q6:YesNoOptions" />
+      <xs:element minOccurs="0" name="FinancialFormatCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="GhostEmployeeProgram" type="q7:YesNoOptions" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="NewHiresReferencesChecked" type="q8:YesNoOptions" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="NoCustodyControl" type="q9:YesNoOptions" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="PayrollAuditedAnnualy" type="q10:YesNoOptions" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="RequisitionOrderRequired" type="q11:YesNoOptions" />
+      <xs:element minOccurs="0" name="ScopeOfAudit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompleteInventoryHowOftenCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ControlsAudit" nillable="true" type="tns:ControlsAudit" />
+  <xs:complexType name="ContolsBankingOther">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="AnnualVacation" type="q12:YesNoOptions" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Authenticity" type="q13:YesNoOptions" />
+      <xs:element minOccurs="0" name="Countersignature" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="CountersignatureRequired" type="q14:YesNoOptions" />
+      <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="DepositRecord" type="q15:YesNoOptions" />
+      <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="EFTS" type="q16:YesNoOptions" />
+      <xs:element minOccurs="0" name="FrequencyDepositCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="HardCopy" type="q17:YesNoOptions" />
+      <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="JointControl" type="q18:YesNoOptions" />
+      <xs:element minOccurs="0" name="LargestTransfer" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="Reconciled" type="q19:YesNoOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContolsBankingOther" nillable="true" type="tns:ContolsBankingOther" />
+</xs:schema>

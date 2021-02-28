@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_attachment/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_attachment/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd94" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_attachment/_attachedtoitem/" />
+  <xs:complexType name="AgencyStructureItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AgencyStructureItem" nillable="true" type="tns:AgencyStructureItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgencyStructureItems" nillable="true" type="tns:AgencyStructureItems" />
+  <xs:complexType name="AgencyStructureItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgencyStructureItem" nillable="true" type="tns:AgencyStructureItem" />
+  <xs:complexType name="AttachedToItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttachedToItem" nillable="true" type="tns:AttachedToItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachedToItems" nillable="true" type="tns:AttachedToItems" />
+  <xs:complexType name="AttachedToItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachedToID" type="xs:int" />
+      <xs:element minOccurs="0" name="AttachedToType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_attachment/_attachedtoitem/" minOccurs="0" name="Flag" type="q1:Flags" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachedToItem" nillable="true" type="tns:AttachedToItem" />
+  <xs:complexType name="FileDetailItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileDetailItem" nillable="true" type="tns:FileDetailItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileDetailItems" nillable="true" type="tns:FileDetailItems" />
+  <xs:complexType name="FileDetailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Extension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" type="xs:int" />
+      <xs:element minOccurs="0" name="TicketName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileDetailItem" nillable="true" type="tns:FileDetailItem" />
+</xs:schema>

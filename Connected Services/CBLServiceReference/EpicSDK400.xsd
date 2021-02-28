@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd8" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd168" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" />
+  <xs:complexType name="ArrayOfOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Opportunity" nillable="true" type="tns:Opportunity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOpportunity" nillable="true" type="tns:ArrayOfOpportunity" />
+  <xs:complexType name="Opportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_common/" minOccurs="0" name="AgencyDefinedCategoryItems" nillable="true" type="q1:AgencyDefinedCodeItems" />
+      <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="BusinessTypeOption" nillable="true" type="q2:OptionType" />
+      <xs:element minOccurs="0" name="ClientID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="ClosedDetailValue" nillable="true" type="q3:ClosedDetail" />
+      <xs:element minOccurs="0" name="DepartmentCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="DetailValue" nillable="true" type="q4:Detail" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpportunityID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfitCenterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SICCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_opportunity/" minOccurs="0" name="Status" type="q5:OpportunityOpenClosedStatus" />
+      <xs:element minOccurs="0" name="TargetedCloseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Opportunity" nillable="true" type="tns:Opportunity" />
+</xs:schema>

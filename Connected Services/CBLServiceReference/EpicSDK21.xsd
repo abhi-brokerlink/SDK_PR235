@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd119" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/_authorizedsignatureuseritem/" />
+  <xs:complexType name="AuthorizedSignatureUserItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorizedSignatureUserItem" nillable="true" type="tns:AuthorizedSignatureUserItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorizedSignatureUserItems" nillable="true" type="tns:AuthorizedSignatureUserItems" />
+  <xs:complexType name="AuthorizedSignatureUserItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthorizedSignatureUserID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_employee/_personnel/_authorizedsignatureuseritem/" minOccurs="0" name="Flag" type="q1:Flags" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorizedSignatureUserItem" nillable="true" type="tns:AuthorizedSignatureUserItem" />
+</xs:schema>

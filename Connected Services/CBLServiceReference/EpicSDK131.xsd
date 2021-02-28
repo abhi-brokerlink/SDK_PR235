@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_premise/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_premise/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd460" namespace="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_premise/_coverages/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd128" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" />
+  <xs:complexType name="ConditionalOptionalCoverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessIncomeAnnualAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BusinessIncomeCoinsurancePercentage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BusinessIncomeReportDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DiagnosticEquipment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherConditionalOrOptionalCoverageDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherConditionalOrOptionalCoverageLimit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConditionalOptionalCoverages" nillable="true" type="tns:ConditionalOptionalCoverages" />
+  <xs:complexType name="CoverageLimitations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmmoniaContaminationLimitOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsequentialLossLimitOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HazardousSubstanceLimitOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverageDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverageLimitOfInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterDamageLimitOfInsurance" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageLimitations" nillable="true" type="tns:CoverageLimitations" />
+  <xs:complexType name="Coverages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+      <xs:element minOccurs="0" name="OtherCoverageDeductible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverageDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherCoverageFullPremium" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtherCoverageLimitOfInsurance" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coverages" nillable="true" type="tns:Coverages" />
+  <xs:complexType name="CoverageItems">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2014/11/_account/_policy/_boilerandmachinery/_premise/_coverages/" minOccurs="0" maxOccurs="unbounded" name="CoverageItem" nillable="true" type="q1:CoverageItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverageItems" nillable="true" type="tns:CoverageItems" />
+  <xs:complexType name="GeneralInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgeOfOldestMachineryAndEquipment" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/_generalinformation/" minOccurs="0" name="UnderwritingItems" nillable="true" type="q2:UnderwritingQuestionAnswerItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneralInformation" nillable="true" type="tns:GeneralInformation" />
+</xs:schema>

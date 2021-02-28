@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_configure/_transaction/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TransactionCodeGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TransactionCodeID" />
+      <xs:enumeration value="TransactionCode" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionCodeGetType" nillable="true" type="tns:TransactionCodeGetType" />
+  <xs:complexType name="ArrayOfTransactionCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionCode" nillable="true" type="tns:TransactionCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTransactionCode" nillable="true" type="tns:ArrayOfTransactionCode" />
+  <xs:complexType name="TransactionCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bill" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GLAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GLSubAccountNumberCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ARDueDateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ARDueDateDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ARDueDatePlusMinusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgencyCommissionable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AmountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnualizedCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilledCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrokerCommissionable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyEstimatedPremium" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProducerCommissionable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceFee" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionCode" nillable="true" type="tns:TransactionCode" />
+</xs:schema>

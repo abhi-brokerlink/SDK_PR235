@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd174" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_associateditem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd175" namespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_itemizationitem/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd5" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" />
+  <xs:complexType name="AssociatedItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssociatedItem" nillable="true" type="tns:AssociatedItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssociatedItems" nillable="true" type="tns:AssociatedItems" />
+  <xs:complexType name="AssociatedItem">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="AssociationType" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_associateditem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="IncludeHistory" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyOrLineID" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssociatedItem" nillable="true" type="tns:AssociatedItem" />
+  <xs:complexType name="Comments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommentsText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comments" nillable="true" type="tns:Comments" />
+  <xs:complexType name="ItemizationItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemizationItem" nillable="true" type="tns:ItemizationItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemizationItems" nillable="true" type="tns:ItemizationItems" />
+  <xs:complexType name="ItemizationItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_clientcontract/_service/_itemizationitem/" minOccurs="0" name="Flag" type="q3:Flags" />
+      <xs:element minOccurs="0" name="HourlyRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Hours" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ItemizationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ItemizationID" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="MilesKilometersOption" nillable="true" type="q4:OptionType" />
+      <xs:element minOccurs="0" name="ServiceProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemizationItem" nillable="true" type="tns:ItemizationItem" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open" />
+      <xs:enumeration value="Closed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:simpleType name="ServiceAttachmentsGetType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ServiceID" />
+      <xs:enumeration value="ServiceAttachmentIDAndServiceID" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceAttachmentsGetType" nillable="true" type="tns:ServiceAttachmentsGetType" />
+  <xs:complexType name="ArrayOfServiceAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceAttachment" nillable="true" type="tns:ServiceAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceAttachment" nillable="true" type="tns:ArrayOfServiceAttachment" />
+  <xs:complexType name="ServiceAttachment">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/" minOccurs="0" name="AttachmentValue" nillable="true" type="q5:Attachment" />
+      <xs:element minOccurs="0" name="IsReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ServiceAttachmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceAttachment" nillable="true" type="tns:ServiceAttachment" />
+</xs:schema>

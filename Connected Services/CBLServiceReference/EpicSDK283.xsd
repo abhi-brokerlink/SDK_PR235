@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_generalledger/_voucher/_detail/_detailitem/_paiditems/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PaidTransactionItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaidTransactionItem" nillable="true" type="tns:PaidTransactionItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidTransactionItems" nillable="true" type="tns:PaidTransactionItems" />
+  <xs:complexType name="PaidTransactionItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AmountVouchered" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BilledOrReserved" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionEffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaidTransactionItem" nillable="true" type="tns:PaidTransactionItem" />
+</xs:schema>

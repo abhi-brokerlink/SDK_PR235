@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://webservices.appliedsystems.com/epic/sdk/2009/07/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://webservices.appliedsystems.com/epic/sdk/2018/01/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EpicSDK" targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2009/07/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://webservices.appliedsystems.com/epic/sdk/2018/01/" location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?wsdl=wsdl1" />
+  <wsdl:import namespace="http://webservices.appliedsystems.com/epic/sdk/2009/11/filetransfer/" location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?wsdl=wsdl4" />
+  <wsdl:types />
+  <wsdl:service name="EpicSDK">
+    <wsdl:port name="ServiceBinding_2016_01" binding="i0:ServiceBinding_2016_01">
+      <soap:address location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc/v2016_01" />
+    </wsdl:port>
+    <wsdl:port name="ServiceBinding_2017_01" binding="i0:ServiceBinding_2017_01">
+      <soap:address location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc/v2017_01" />
+    </wsdl:port>
+    <wsdl:port name="ServiceBinding_2017_02" binding="i0:ServiceBinding_2017_02">
+      <soap:address location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc/v2017_02" />
+    </wsdl:port>
+    <wsdl:port name="ServiceBinding_2018_01" binding="i0:ServiceBinding_2018_01">
+      <soap:address location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc/v2018_01" />
+    </wsdl:port>
+    <wsdl:port name="FileTransferServiceBinding" binding="i1:FileTransferServiceBinding">
+      <soap:address location="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc/Attachments" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

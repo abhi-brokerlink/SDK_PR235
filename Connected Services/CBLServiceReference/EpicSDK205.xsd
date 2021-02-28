@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2016/01/_account/_policy/_canadianhabitational/_location/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd7" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" />
+  <xs:complexType name="RatingHeatOil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuxiliaryApparatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryApparatusIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryFuelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryFuelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryLocationIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="FaceCordsTypePrimaryAuxiliaryOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="FuelOilTankQuestionnaireAttached" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsAuxiliaryHeatingApprovedByULCCSAOrWH" type="q2:YesNoOptions" />
+      <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsAuxiliaryHeatingProfessionallyInstalled" type="q3:YesNoOptions" />
+      <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsPrimaryHeatingApprovedByULCCSAOrWH" type="q4:YesNoOptions" />
+      <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsPrimaryHeatingProfessionallyInstalled" type="q5:YesNoOptions" />
+      <xs:element minOccurs="0" name="NumberOfFaceCordsPerYear" nillable="true" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="OilTankIsUsedWithPrimaryAuxiliaryHeatingOption" nillable="true" type="q6:OptionType" />
+      <xs:element minOccurs="0" name="OilTankLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OilTankYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrimaryApparatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryApparatusIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryFuelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryFuelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLocationIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadiantHeatArea" nillable="true" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="RadiantHeatAreaSquareFeetMetersOption" nillable="true" type="q7:OptionType" />
+      <xs:element minOccurs="0" name="RadiantHeatMake" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RadiantHeatYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SolidFuelHeatingQuestionnaireAttached" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingHeatOil" nillable="true" type="tns:RatingHeatOil" />
+  <xs:complexType name="RatingInteriorDetailsKitchensBathrooms">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CeilingConstructionType1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionType1IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionType1Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CeilingConstructionType2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionType2IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionType2Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CeilingConstructionType3Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionType3IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CeilingConstructionType3Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType1IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType1Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType2IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType2Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType3Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType3IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorFloorFinishType3Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType1Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType1IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType1Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType2Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType2IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType2Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType3Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType3IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InteriorWallConstructionType3Percent" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Kitchen1IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kitchen1QualityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kitchen2IfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kitchen2QualityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfFullBathrooms" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfHalfBathrooms" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfKitchens" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WallHeight1" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="WallHeight1FootMeterOption" nillable="true" type="q8:OptionType" />
+      <xs:element minOccurs="0" name="WallHeight2" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="WallHeight2FootMeterOption" nillable="true" type="q9:OptionType" />
+      <xs:element minOccurs="0" name="WallHeight3" nillable="true" type="xs:decimal" />
+      <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="WallHeight3FootMeterOption" nillable="true" type="q10:OptionType" />
+      <xs:element minOccurs="0" name="WallHeightPercent1" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WallHeightPercent2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WallHeightPercent3" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingInteriorDetailsKitchensBathrooms" nillable="true" type="tns:RatingInteriorDetailsKitchensBathrooms" />
+  <xs:complexType name="RatingMainWaterValveFireProtectionPlumbingType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DistanceToHydrantCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistanceToRespondingFireHallCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FireHallName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HydrantTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainWaterValveShutOffTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfMainWaterValveShutOffSensors" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypeABSPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypeCopperPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypeGalvanizedPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlumbingTypeLeadPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypeOtherPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypePEXPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypePOLYBPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypePVCPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlumbingTypePlasticPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SewerBackupQuestionnaireAttached" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingMainWaterValveFireProtectionPlumbingType" nillable="true" type="tns:RatingMainWaterValveFireProtectionPlumbingType" />
+  <xs:complexType name="RatingSecurityUpdates">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PremisesAccessSecurityTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PremisesAccessSecurityTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityAlarmCertificateAttached" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SecurityBurglarDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityFireDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecurityMonitoredBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecuritySmokeDetectorTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecuritySmokeDetectorTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecuritySmokeDetectorTypeNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SecuritySmokeDetectorsDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecuritySprinkler" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesElectricalFullYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesElectricalPanel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesElectricalPanelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesElectricalPartialYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesElectricalWiring" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesElectricalWiringIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesHeatingFullYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesHeatingPartialYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesPlumbingFullYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesPlumbingPartialYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesRoofFullYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesRoofPartialYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UpgradesRoofTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesServiceAmpsCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesServiceAmpsIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpgradesRoofIfOther" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingSecurityUpdates" nillable="true" type="tns:RatingSecurityUpdates" />
+  <xs:complexType name="Rating">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthdateOfEldestOccupant" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateEvaluationCompleted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EvaluatorProductCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EvaluatorProductIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorWallFinishTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorWallFinishTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorWallFramingTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExteriorWallFramingTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishedBasementPercentage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FoundationTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FoundationTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarageCarportTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GarageCarportTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspectionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InspectionSourceReportCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfCars" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfFamilies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfStoreysCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfStoreysIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfUnits" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OccupancyTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupancyTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupantRelationToApplicantCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccupantRelationToApplicantIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhotoYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplacementCost" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SmokersYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StructureTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StructureTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolFencedYesNoCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SwimmingPoolYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalLivingArea" nillable="true" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="TotalLivingAreaSqFtSqMtOption" nillable="true" type="q11:OptionType" />
+      <xs:element minOccurs="0" name="YearBuilt" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Rating" nillable="true" type="tns:Rating" />
+  <xs:complexType name="RatingWaterHeaterMitigationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreWaterMitigationMeasuresInPlace" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AuxiliaryWaterMitigationAuxiliaryPowerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryWaterMitigationAuxiliaryPowerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryWaterMitigationBackUpValveCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryWaterMitigationBackUpValveIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryWaterMitigationSumpPumpTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuxiliaryWaterMitigationSumpPumpTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsTheWaterHeaterApprovedByULCCSAOrWH" type="q12:YesNoOptions" />
+      <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2009/07/_shared/" minOccurs="0" name="IsTheWaterHeaterProfessionallyInstalled" type="q13:YesNoOptions" />
+      <xs:element minOccurs="0" name="PrimaryWaterMitigationAuxiliaryPowerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryWaterMitigationAuxiliaryPowerIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryWaterMitigationBackUpValveCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryWaterMitigationBackUpValveIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryWaterMitigationSumpPumpTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryWaterMitigationSumpPumpTypeIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterHeaterApparatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterHeaterApparatusIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterHeaterFuelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterHeaterFuelIfOther" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterHeaterYear" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RatingWaterHeaterMitigationType" nillable="true" type="tns:RatingWaterHeaterMitigationType" />
+</xs:schema>

@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.appliedsystems.com/epic/sdk/2013/11/" elementFormDefault="qualified" targetNamespace="http://webservices.appliedsystems.com/epic/sdk/2013/11/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd149" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd95" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd151" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd156" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd35" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd277" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd282" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd212" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd290" namespace="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd187" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd188" namespace="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" />
+  <xs:element name="Get_MarketedPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" minOccurs="0" name="MarketedPolicyFilterObject" nillable="true" type="q1:MarketedPolicyFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" minOccurs="0" name="Get_MarketedPolicyResult" nillable="true" type="q2:MarketedPolicyGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_MarketedPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" minOccurs="0" name="MarketedPolicyObject" nillable="true" type="q3:MarketedPolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_MarketedPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_MarketedPolicyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_MarketedPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/" minOccurs="0" name="PolicyObject" nillable="true" type="q4:MarketedPolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_MarketedPolicyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MarketedPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MarketedPolicyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_CarrierSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" minOccurs="0" name="CarrierSubmissionFilterObject" nillable="true" type="q5:CarrierSubmissionFilter" />
+        <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_CarrierSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.appliedsystems.com/epic/sdk/2013/11/_get/" minOccurs="0" name="Get_MarketedPolicy_CarrierSubmissionResult" nillable="true" type="q6:CarrierSubmissionGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_MarketedPolicy_CarrierSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/" minOccurs="0" name="CarrierSubmissionObject" nillable="true" type="q7:CarrierSubmission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_MarketedPolicy_CarrierSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MarketedPolicy_CarrierSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_MarketedPolicy_CarrierSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_ChangeLineIssuingLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="ChangeLineIssuingLocationObject" nillable="true" type="q8:ChangeLineIssuingLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_ChangeLineIssuingLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_UpdateStageToEnteredSubmitted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_UpdateStageToEnteredSubmittedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_DeleteServiceSummaryRow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_DeleteServiceSummaryRowResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionUpdateMarketingAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+        <xs:element minOccurs="0" name="ExistingAttachmentID" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionUpdateMarketingAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="Get_MarketedPolicy_DefaultActionUpdateMarketingAttachmentResult" nillable="true" type="q9:ArrayOfUpdateMarketingAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_UpdateMarketingAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="UpdateMarketingAttachmentObject" nillable="true" type="q10:UpdateMarketingAttachment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_UpdateMarketingAttachmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_MarketedPolicy_UpdateMarketingAttachmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_ChangeServiceSummaryDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.appliedsystems.com/epic/sdk/2011/01/_account/_policy/_action/" minOccurs="0" name="ChangeServiceSummaryDescriptionObject" nillable="true" type="q11:ChangeServiceSummaryDescription" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_ChangeServiceSummaryDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_MoveMarketingSubmissionToHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_MoveMarketingSubmissionToHistoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionCreateCarrierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionCreateCarrierResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="Get_MarketedPolicy_DefaultActionCreateCarrierResponseResult" nillable="true" type="q12:ArrayOfCreateCarrierResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_CreateCarrierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="CreateCarrierResponseObject" nillable="true" type="q13:CreateCarrierResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_CreateCarrierResponseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_UpdateCarrierSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="UpdateCarrierSubmissionObject" nillable="true" type="q14:UpdateCarrierSubmission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_UpdateCarrierSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionCreateCarrierSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionCreateCarrierSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="Get_MarketedPolicy_DefaultActionCreateCarrierSubmissionResult" nillable="true" type="q15:ArrayOfCreateCarrierSubmission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_CreateCarrierSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="CreateCarrierSubmissionObject" nillable="true" type="q16:CreateCarrierSubmission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_CreateCarrierSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_MarketedPolicy_CreateCarrierSubmissionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionMoveMarketedLinesToCurrentPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CarrierSubmissionID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionMoveMarketedLinesToCurrentPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="Get_MarketedPolicy_DefaultActionMoveMarketedLinesToCurrentPolicyResult" nillable="true" type="q17:ArrayOfMoveMarketedLinesToCurrentPolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_MoveMarketedLinesToCurrentPolicy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="MoveMarketedLinesToCurrentPolicyObject" nillable="true" type="q18:MoveMarketedLinesToCurrentPolicy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_MoveMarketedLinesToCurrentPolicyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Action_MarketedPolicy_MoveMarketedLinesToCurrentPolicyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionRemarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketedPolicyID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_MarketedPolicy_DefaultActionRemarketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="Get_MarketedPolicy_DefaultActionRemarketResult" nillable="true" type="q19:ArrayOfRemarket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_Remarket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_marketedpolicy/_action/" minOccurs="0" name="RemarketObject" nillable="true" type="q20:Remarket" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action_MarketedPolicy_RemarketResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_Applicant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_ApplicantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_ApplicantResult" nillable="true" type="q21:ArrayOfApplicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_Applicant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="ApplicantObject" nillable="true" type="q22:Applicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_ApplicantResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLApplicant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLApplicantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLApplicantResult" nillable="true" type="q23:ArrayOfFLApplicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLApplicant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="ApplicantObject" nillable="true" type="q24:FLApplicant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLApplicantResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q25:LocationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_LocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_LocationResult" nillable="true" type="q26:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="LocationObject" nillable="true" type="q27:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_LocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_LocationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="LocationObject" nillable="true" type="q28:Location" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_LocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_Location">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_LocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q29="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q29:FLLocationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLLocationResult" nillable="true" type="q30:ArrayOfFLLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="LocationObject" nillable="true" type="q31:FLLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_FLLocationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="LocationObject" nillable="true" type="q32:FLLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_PolicyInformationTotalEstimatedAnnualPremiumAllStates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_PolicyInformationTotalEstimatedAnnualPremiumAllStatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_PolicyInformationTotalEstimatedAnnualPremiumAllStatesResult" nillable="true" type="q33:ArrayOfPolicyInformationTotalEstimatedAnnualPremiumAllStates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_PolicyInformationTotalEstimatedAnnualPremiumAllStates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="PolicyInformationTotalEstimatedAnnualPremiumAllStatesObject" nillable="true" type="q34:PolicyInformationTotalEstimatedAnnualPremiumAllStates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_PolicyInformationTotalEstimatedAnnualPremiumAllStatesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_TotalPremiumCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q35="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q35:TotalPremiumCalculationGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_TotalPremiumCalculationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_TotalPremiumCalculationResult" nillable="true" type="q36:ArrayOfTotalPremiumCalculation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_TotalPremiumCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="TotalPremiumCalculationObject" nillable="true" type="q37:TotalPremiumCalculation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_TotalPremiumCalculationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_TotalPremiumCalculationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_TotalPremiumCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="TotalPremiumCalculationObject" nillable="true" type="q38:TotalPremiumCalculation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_TotalPremiumCalculationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_TotalPremiumCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TotalPremiumCalculationID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_TotalPremiumCalculationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLTotalPremiumCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLTotalPremiumCalculationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLTotalPremiumCalculationResult" nillable="true" type="q39:ArrayOfFLTotalPremiumCalculation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLTotalPremiumCalculation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="TotalPremiumCalculationObject" nillable="true" type="q40:FLTotalPremiumCalculation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLTotalPremiumCalculationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q41="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q41:AdditionalCoverageGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_AdditionalCoverageResult" nillable="true" type="q42:ArrayOfAdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="AdditionalCoverageObject" nillable="true" type="q43:AdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_AdditionalCoverageResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="AdditionalCoverageObject" nillable="true" type="q44:AdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_AdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_AdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLAdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q45="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q45:FLAdditionalCoverageGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLAdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLAdditionalCoverageResult" nillable="true" type="q46:ArrayOfFLAdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLAdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="AdditionalCoverageObject" nillable="true" type="q47:FLAdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLAdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_FLAdditionalCoverageResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLAdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="AdditionalCoverageObject" nillable="true" type="q48:FLAdditionalCoverage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLAdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLAdditionalCoverage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdditionalCoverageID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLAdditionalCoverageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_Individual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q49="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q49:IndividualGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_IndividualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_IndividualResult" nillable="true" type="q50:ArrayOfIndividual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_Individual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IndividualObject" nillable="true" type="q51:Individual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_IndividualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_IndividualResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_Individual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IndividualObject" nillable="true" type="q52:Individual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_IndividualResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_Individual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IndividualID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_IndividualResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLIndividual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q53="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q53:IndividualGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLIndividualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLIndividualResult" nillable="true" type="q54:ArrayOfFLIndividual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLIndividual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IndividualObject" nillable="true" type="q55:FLIndividual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLIndividualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_FLIndividualResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLIndividual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IndividualObject" nillable="true" type="q56:FLIndividual" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLIndividualResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLIndividual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IndividualID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLIndividualResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_PriorCarrier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_PriorCarrierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_PriorCarrierResult" nillable="true" type="q57:ArrayOfPriorCarrier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_PriorCarrier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="PriorCarrierObject" nillable="true" type="q58:PriorCarrier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_PriorCarrierResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_GeneralInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_GeneralInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="Get_WorkersCompensation_GeneralInformationResult" nillable="true" type="q59:ArrayOfGeneralInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_GeneralInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="GeneralInformationObject" nillable="true" type="q60:GeneralInformation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_GeneralInformationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_AssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_AssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_AssignedRiskResult" nillable="true" type="q61:ArrayOfAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_AssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="AssignedRiskObject" nillable="true" type="q62:AssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_AssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLAssignedRiskResult" nillable="true" type="q63:ArrayOfFLAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FLAssignedRiskObject" nillable="true" type="q64:FLAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_MIAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_MIAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_MIAssignedRiskResult" nillable="true" type="q65:ArrayOfMIAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_MIAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="MIAssignedRiskObject" nillable="true" type="q66:MIAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_MIAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_MTAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_MTAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_MTAssignedRiskResult" nillable="true" type="q67:ArrayOfMTAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_MTAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="MTAssignedRiskObject" nillable="true" type="q68:MTAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_MTAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_NJAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_NJAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_NJAssignedRiskResult" nillable="true" type="q69:ArrayOfNJAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_NJAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="NJAssignedRiskObject" nillable="true" type="q70:NJAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_NJAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_WIAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_WIAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_WIAssignedRiskResult" nillable="true" type="q71:ArrayOfWIAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_WIAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.appliedsystems.com/epic/sdk/2013/11/_account/_policy/_workerscompensation/" minOccurs="0" name="WIAssignedRiskObject" nillable="true" type="q72:WIAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_WIAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_TNAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_TNAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_TNAssignedRiskResult" nillable="true" type="q73:ArrayOfTNAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_TNAssignedRisk">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="TNAssignedRiskObject" nillable="true" type="q74:TNAssignedRisk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_TNAssignedRiskResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_AssignedRiskRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q75="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/" minOccurs="0" name="IDType" type="q75:RemarkGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_AssignedRiskRemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/" minOccurs="0" name="Get_WorkersCompensation_AssignedRiskRemarkResult" nillable="true" type="q76:ArrayOfRemark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_AssignedRiskRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/" minOccurs="0" name="RemarkObject" nillable="true" type="q77:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_AssignedRiskRemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_AssignedRiskRemarkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_AssignedRiskRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/_assignedrisk/" minOccurs="0" name="RemarkObject" nillable="true" type="q78:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_AssignedRiskRemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_AssignedRiskRemark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_AssignedRiskRemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q79="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q79:FormAndEndorsementGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FormAndEndorsementResult" nillable="true" type="q80:ArrayOfFormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q81:FormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_FormAndEndorsementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q82:FormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLFormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q83="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q83:FormAndEndorsementGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLFormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLFormAndEndorsementResult" nillable="true" type="q84:ArrayOfFLFormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLFormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q85:FLFormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLFormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_FLFormAndEndorsementResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLFormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FormAndEndorsementObject" nillable="true" type="q86:FLFormAndEndorsement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLFormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLFormAndEndorsement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FormAndEndorsementID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLFormAndEndorsementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element xmlns:q87="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="IDType" type="q87:RemarkGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="Get_WorkersCompensation_RemarkResult" nillable="true" type="q88:ArrayOfRemark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="RemarkObject" nillable="true" type="q89:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_RemarkResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarkID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_Remark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.appliedsystems.com/epic/sdk/2009/07/_account/_policy/_shared/" minOccurs="0" name="RemarkObject" nillable="true" type="q90:Remark" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_RemarkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLFormerNamesAndOwners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLFormerNamesAndOwnersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLFormerNamesAndOwnersResult" nillable="true" type="q91:ArrayOfFLFormerNamesAndOwners" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLFormerNamesAndOwners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FormerNamesAndOwnersObject" nillable="true" type="q92:FLFormerNamesAndOwners" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLFormerNamesAndOwnersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element xmlns:q93="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="IDType" type="q93:FLEmployeeGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLEmployeeResult" nillable="true" type="q94:ArrayOfFLEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="EmployeeObject" nillable="true" type="q95:FLEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_FLEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_FLEmployeeResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="EmployeeObject" nillable="true" type="q96:FLEmployee" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLEmployee">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_FLEmployeeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLCoverages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_FLCoveragesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="Get_WorkersCompensation_FLCoveragesResult" nillable="true" type="q97:ArrayOfFLCoverages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLCoverages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.appliedsystems.com/epic/sdk/2011/12/_account/_policy/_workerscompensation/" minOccurs="0" name="FLCoveragesObject" nillable="true" type="q98:FLCoverages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_FLCoveragesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+        <xs:element xmlns:q99="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="IDType" type="q99:SupplementalScreenGetType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="Get_WorkersCompensation_SupplementalScreenResult" nillable="true" type="q100:ArrayOfSupplementalScreen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_SupplementalScreen_BlankScheduledItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+        <xs:element minOccurs="0" name="ScheduleID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Get_WorkersCompensation_SupplementalScreen_BlankScheduledItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/_supplementalscreen/" minOccurs="0" name="Get_WorkersCompensation_SupplementalScreen_BlankScheduledItemResult" nillable="true" type="q101:SupplementalScreenScheduledDataItemsRow" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.appliedsystems.com/epic/sdk/2013/03/_account/_policy/_shared/" minOccurs="0" name="SupplementalScreensObject" nillable="true" type="q102:SupplementalScreen" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update_WorkersCompensation_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="AvailableAdditionalScreenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_WorkersCompensation_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_WorkersCompensation_SupplementalScreenResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_SupplementalScreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LineID" type="xs:int" />
+        <xs:element minOccurs="0" name="SupplementalScreenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_WorkersCompensation_SupplementalScreenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

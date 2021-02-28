@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/" elementFormDefault="qualified" targetNamespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd12" namespace="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" />
+  <xs:import schemaLocation="https://psiepc1sdk002.pshosting.intranet/EpicSDK/EpicSDK.svc?xsd=xsd540" namespace="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/_paymentmethoditem/" />
+  <xs:complexType name="PaymentMethodItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodItem" nillable="true" type="tns:PaymentMethodItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethodItems" nillable="true" type="tns:PaymentMethodItems" />
+  <xs:complexType name="PaymentMethodItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorizationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AuthorizationStatusCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.appliedsystems.com/epic/sdk/2009/07/_common/" minOccurs="0" name="CheckingSavingsOption" nillable="true" type="q1:OptionType" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryOfOperationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.appliedsystems.com/epic/sdk/2017/02/_common/_paymentmethoditem/" minOccurs="0" name="Flag" type="q2:Flags" />
+      <xs:element minOccurs="0" name="IgnoreDuplicatePaymentMethods" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InstitutionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstitutionPhoneCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstitutionPhoneExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstitutionPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MethodCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameOfInstitution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentMethodID" type="xs:int" />
+      <xs:element minOccurs="0" name="Primary" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoutingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransitNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateProcessedTransmittedItems" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethodItem" nillable="true" type="tns:PaymentMethodItem" />
+</xs:schema>
