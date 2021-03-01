@@ -30,7 +30,7 @@ namespace EpicIntegrator
         // Switches (1/0) and vars
         public string IBCCodePath = @"C:\Users\Abhishek\Documents\Abhi _ IMP\Sep29\IBC_Codes.csv"; //final check
         public string DBtable = "[CBL_Reporting].[dbo].[PR235Status]";
-        public string NewPolExtn = "_Feb26";
+        public string NewPolExtn = "_Mar1";
 
         public int CreatePolicySQLSwitch = 1;
         public int SDKCreatePolicySwitch = 1;
@@ -4764,11 +4764,16 @@ namespace EpicIntegrator
                             //1-100
                             // Read row 1 of old policy SF
                             string Row1Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[108].Value;
+                            string Row1Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
                             if (SFRowValues.Contains(Row1Val))
                             {
                                 (int, int, int, int, int, int) SFRow1Tuple = SFPropertyMapping(Row1Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[175].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
+                                if (Row1Valuation == "RC" || Row1Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item2].FieldValue = Row1Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[203].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[177].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[118].Value;
@@ -4780,7 +4785,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow1Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item1].FieldValue = SFPropertyDesc(Row1Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[175].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
+                                if (Row1Valuation == "RC" || Row1Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item3].FieldValue = Row1Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[203].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[177].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[118].Value;
@@ -4788,11 +4797,16 @@ namespace EpicIntegrator
                             }
                             
                             string Row2Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[107].Value;
+                            string Row2Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[174].Value; 
                             if (SFRowValues.Contains(Row2Val))
                             {
                                 (int, int, int, int, int, int) SFRow2Tuple = SFPropertyMapping(Row2Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[106].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[174].Value;
+                                if (Row2Valuation == "RC" || Row2Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item2].FieldValue = Row2Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[174].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[73].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[157].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[113].Value;
@@ -4804,7 +4818,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow2Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item1].FieldValue = SFPropertyDesc(Row2Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[106].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[174].Value;
+                                if (Row2Valuation == "RC" || Row2Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item3].FieldValue = Row2Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[174].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[73].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[157].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow2Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[113].Value;
@@ -4812,11 +4830,16 @@ namespace EpicIntegrator
                             }
                                                         
                             string Row3Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[105].Value;
+                            string Row3Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[96].Value;
                             if (SFRowValues.Contains(Row3Val))
                             {
                                 (int, int, int, int, int, int) SFRow3Tuple = SFPropertyMapping(Row3Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[87].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[96].Value;
+                                if (Row3Valuation == "RC" || Row3Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item2].FieldValue = Row3Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[96].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[182].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[117].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[187].Value;
@@ -4828,7 +4851,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow3Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item1].FieldValue = SFPropertyDesc(Row3Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[87].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[96].Value;
+                                if (Row3Valuation == "RC" || Row3Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item3].FieldValue = Row3Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[96].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[182].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[117].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow3Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[187].Value;
@@ -4836,11 +4863,16 @@ namespace EpicIntegrator
                             }
 
                             string Row4Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[186].Value;
+                            string Row4Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[146].Value;
                             if (SFRowValues.Contains(Row4Val))
                             {
                                 (int, int, int, int, int, int) SFRow4Tuple = SFPropertyMapping(Row4Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[169].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[146].Value;
+                                if (Row4Valuation == "RC" || Row4Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item2].FieldValue = Row4Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[146].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[72].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[196].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[112].Value;
@@ -4852,7 +4884,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow4Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item1].FieldValue = SFPropertyDesc(Row4Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[169].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[146].Value;
+                                if (Row4Valuation == "RC" || Row4Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item3].FieldValue = Row4Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[146].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[72].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[196].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow4Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[112].Value;
@@ -4861,11 +4897,16 @@ namespace EpicIntegrator
 
 
                             string Row5Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[104].Value;
+                            string Row5Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[95].Value;
                             if (SFRowValues.Contains(Row5Val))
                             {
                                 (int, int, int, int, int, int) SFRow5Tuple = SFPropertyMapping(Row5Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[86].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[95].Value;
+                                if (Row5Valuation == "RC" || Row5Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item2].FieldValue = Row5Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[95].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[134].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[116].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[154].Value;
@@ -4877,7 +4918,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow5Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item1].FieldValue = SFPropertyDesc(Row5Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[86].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[95].Value;
+                                if (Row5Valuation == "RC" || Row5Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item3].FieldValue = Row5Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[95].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[134].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[116].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow5Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[154].Value;
@@ -4886,11 +4931,16 @@ namespace EpicIntegrator
 
 
                             string Row6Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[150].Value;
+                            string Row6Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[171].Value;
                             if (SFRowValues.Contains(Row6Val))
                             {
                                 (int, int, int, int, int, int) SFRow6Tuple = SFPropertyMapping(Row6Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[141].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[171].Value;
+                                if (Row6Valuation == "RC" || Row6Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item2].FieldValue = Row6Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[171].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[71].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[156].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[111].Value;
@@ -4902,7 +4952,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow6Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item1].FieldValue = SFPropertyDesc(Row6Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[141].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[171].Value;
+                                if (Row6Valuation == "RC" || Row6Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item3].FieldValue = Row6Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[171].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[71].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[156].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow6Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[111].Value;
@@ -4911,11 +4965,16 @@ namespace EpicIntegrator
 
 
                             string Row7Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[103].Value;
+                            string Row7Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[94].Value;
                             if (SFRowValues.Contains(Row7Val))
                             {
                                 (int, int, int, int, int, int) SFRow7Tuple = SFPropertyMapping(Row7Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[85].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[94].Value;
+                                if (Row7Valuation == "RC" || Row7Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item2].FieldValue = Row7Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[94].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[165].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[115].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[110].Value;
@@ -4927,7 +4986,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow7Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item1].FieldValue = SFPropertyDesc(Row7Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[85].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[94].Value;
+                                if (Row7Valuation == "RC" || Row7Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item3].FieldValue = Row7Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[94].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[165].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[115].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow7Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[110].Value;
@@ -4937,11 +5000,16 @@ namespace EpicIntegrator
 
 
                             string Row8Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[173].Value;
+                            string Row8Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[145].Value;
                             if (SFRowValues.Contains(Row8Val))
                             {
                                 (int, int, int, int, int, int) SFRow8Tuple = SFPropertyMapping(Row8Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[197].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[145].Value;
+                                if (Row8Valuation == "RC" || Row8Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item2].FieldValue = Row8Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[145].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[70].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[176].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[153].Value;
@@ -4953,7 +5021,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow8Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item1].FieldValue = SFPropertyDesc(Row8Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[197].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[145].Value;
+                                if (Row8Valuation == "RC" || Row8Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item3].FieldValue = Row8Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[145].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[70].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[176].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow8Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[153].Value;
@@ -4963,11 +5035,16 @@ namespace EpicIntegrator
 
 
                             string Row9Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[102].Value;
+                            string Row9Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[93].Value;
                             if (SFRowValues.Contains(Row9Val))
                             {
                                 (int, int, int, int, int, int) SFRow9Tuple = SFPropertyMapping(Row9Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[84].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[93].Value;
+                                if (Row9Valuation == "RC" || Row9Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item2].FieldValue = Row9Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[93].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[133].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[114].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[109].Value;
@@ -4979,7 +5056,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow9Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item1].FieldValue = SFPropertyDesc(Row9Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[84].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[93].Value;
+                                if (Row9Valuation == "RC" || Row9Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item3].FieldValue = Row9Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[93].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[133].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[114].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow9Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[109].Value;
@@ -4988,11 +5069,16 @@ namespace EpicIntegrator
 
 
                             string Row10Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[149].Value;
+                            string Row10Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[191].Value;
                             if (SFRowValues.Contains(Row10Val))
                             {
                                 (int, int, int, int, int, int) SFRow10Tuple = SFPropertyMapping(Row10Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[140].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[191].Value;
+                                if (Row10Valuation == "RC" || Row10Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item2].FieldValue = Row10Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[191].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[69].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[155].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[152].Value;
@@ -5004,7 +5090,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow10Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item1].FieldValue = SFPropertyDesc(Row10Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[140].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[191].Value;
+                                if (Row10Valuation == "RC" || Row10Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item3].FieldValue = Row10Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[191].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[69].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[155].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow10Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[152].Value;
@@ -5012,11 +5102,16 @@ namespace EpicIntegrator
                             }
 
                             string Row11Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[101].Value;
+                            string Row11Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[92].Value;
                             if (SFRowValues.Contains(Row11Val))
                             {
                                 (int, int, int, int, int, int) SFRow11Tuple = SFPropertyMapping(Row11Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[83].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[92].Value;
+                                if (Row11Valuation == "RC" || Row11Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item2].FieldValue = Row11Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[92].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[193].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[78].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[130].Value;
@@ -5028,7 +5123,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow11Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item1].FieldValue = SFPropertyDesc(Row11Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[83].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[92].Value;
+                                if (Row11Valuation == "RC" || Row11Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item3].FieldValue = Row11Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[92].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[193].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[78].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow11Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[130].Value;
@@ -5038,11 +5137,16 @@ namespace EpicIntegrator
 
 
                             string Row12Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[194].Value;
+                            string Row12Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[144].Value;
                             if (SFRowValues.Contains(Row12Val))
                             {
                                 (int, int, int, int, int, int) SFRow12Tuple = SFPropertyMapping(Row12Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[168].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[144].Value;
+                                if (Row12Valuation == "RC" || Row12Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item2].FieldValue = Row12Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[144].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[68].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[137].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[63].Value;
@@ -5054,7 +5158,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow12Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item1].FieldValue = SFPropertyDesc(Row12Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[168].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[144].Value;
+                                if (Row12Valuation == "RC" || Row12Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item3].FieldValue = Row12Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[144].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[68].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[137].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow12Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[63].Value;
@@ -5063,11 +5171,16 @@ namespace EpicIntegrator
 
 
                             string Row13Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[100].Value;
+                            string Row13Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[91].Value;
                             if (SFRowValues.Contains(Row13Val))
                             {
                                 (int, int, int, int, int, int) SFRow13Tuple = SFPropertyMapping(Row13Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[82].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[91].Value;
+                                if (Row13Valuation == "RC" || Row13Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item2].FieldValue = Row13Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[91].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[132].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[77].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[163].Value;
@@ -5079,7 +5192,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow13Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item1].FieldValue = SFPropertyDesc(Row13Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[82].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[91].Value;
+                                if (Row13Valuation == "RC" || Row13Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item3].FieldValue = Row13Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[91].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[132].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[77].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow13Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[163].Value;
@@ -5088,11 +5205,16 @@ namespace EpicIntegrator
 
 
                             string Row14Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[148].Value;
+                            string Row14Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[170].Value;
                             if (SFRowValues.Contains(Row14Val))
                             {
                                 (int, int, int, int, int, int) SFRow14Tuple = SFPropertyMapping(Row14Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[139].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[170].Value;
+                                if (Row14Valuation == "RC" || Row14Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item2].FieldValue = Row14Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[170].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[67].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[190].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[62].Value;
@@ -5104,7 +5226,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow14Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item1].FieldValue = SFPropertyDesc(Row14Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[139].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[170].Value;
+                                if (Row14Valuation == "RC" || Row14Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item3].FieldValue = Row14Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[170].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[67].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[190].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow14Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[62].Value;
@@ -5113,11 +5239,16 @@ namespace EpicIntegrator
 
 
                             string Row15Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[99].Value;
+                            string Row15Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
                             if (SFRowValues.Contains(Row15Val))
                             {
                                 (int, int, int, int, int, int) SFRow15Tuple = SFPropertyMapping(Row15Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[81].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
+                                if (Row15Valuation == "RC" || Row15Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item2].FieldValue = Row15Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[164].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[76].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[129].Value;
@@ -5129,7 +5260,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow15Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item1].FieldValue = SFPropertyDesc(Row15Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[81].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
+                                if (Row15Valuation == "RC" || Row15Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item3].FieldValue = Row15Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[164].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[76].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow15Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[129].Value;
@@ -5139,11 +5274,16 @@ namespace EpicIntegrator
 
 
                             string Row16Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[172].Value;
+                            string Row16Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[143].Value;
                             if (SFRowValues.Contains(Row16Val))
                             {
                                 (int, int, int, int, int, int) SFRow16Tuple = SFPropertyMapping(Row16Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[183].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[143].Value;
+                                if (Row16Valuation == "RC" || Row16Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item2].FieldValue = Row16Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[143].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[66].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[136].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[61].Value;
@@ -5155,7 +5295,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow16Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item1].FieldValue = SFPropertyDesc(Row16Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[183].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[143].Value;
+                                if (Row16Valuation == "RC" || Row16Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item3].FieldValue = Row16Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[143].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[66].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[136].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow16Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[61].Value;
@@ -5165,11 +5309,16 @@ namespace EpicIntegrator
 
 
                             string Row17Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[98].Value;
+                            string Row17Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[89].Value;
                             if (SFRowValues.Contains(Row17Val))
                             {
                                 (int, int, int, int, int, int) SFRow17Tuple = SFPropertyMapping(Row17Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[80].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[89].Value;
+                                if (Row17Valuation == "RC" || Row17Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item2].FieldValue = Row17Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[89].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[131].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[75].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[189].Value;
@@ -5181,7 +5330,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow17Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item1].FieldValue = SFPropertyDesc(Row17Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[80].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[89].Value;
+                                if (Row17Valuation == "RC" || Row17Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item3].FieldValue = Row17Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[89].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[131].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[75].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow17Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[189].Value;
@@ -5191,11 +5344,16 @@ namespace EpicIntegrator
 
 
                             string Row18Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[147].Value;
+                            string Row18Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[184].Value;
                             if (SFRowValues.Contains(Row18Val))
                             {
                                 (int, int, int, int, int, int) SFRow18Tuple = SFPropertyMapping(Row18Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[138].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[184].Value;
+                                if (Row18Valuation == "RC" || Row18Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item2].FieldValue = Row18Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[184].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[65].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[166].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[60].Value;
@@ -5207,7 +5365,11 @@ namespace EpicIntegrator
                                 (int, int, int, int, int, int, int) SFRow18Tuple1 = SFFreeFormMapping(SFPropertyFFCounter);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item1].FieldValue = SFPropertyDesc(Row18Val);
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[138].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[184].Value;
+                                if (Row18Valuation == "RC" || Row18Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item3].FieldValue = Row18Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[184].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[65].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[166].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[60].Value;
@@ -5224,53 +5386,73 @@ namespace EpicIntegrator
 
                             // 4 freeforms from old
                             int SFPropertyFFCounter2 = 0;
+
+                            string SFFreeForm1Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[88].Value;
                             if (oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[39].Value != "" && SFPropertyFFCounter2 < 4)
                             {
                                 SFPropertyFFCounter2++;
                                 (int, int, int, int, int, int, int) SFRowFFTuple1 = SFFreeFormMapping(SFPropertyFFCounter2);
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[39].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[79].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[88].Value;
+                                if (SFFreeForm1Valuation == "RC" || SFFreeForm1Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item3].FieldValue = SFFreeForm1Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[88].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[181].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[74].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[128].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple1.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[158].Value;
                             }
 
+                            string SFFreeForm2Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[142].Value;
                             if (oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[38].Value != "" && SFPropertyFFCounter2 < 4)
                             {
                                 SFPropertyFFCounter2++;
                                 (int, int, int, int, int, int, int) SFRowFFTuple2 = SFFreeFormMapping(SFPropertyFFCounter2);
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[38].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[167].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[142].Value;
+                                if (SFFreeForm2Valuation == "RC" || SFFreeForm2Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item3].FieldValue = SFFreeForm2Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[142].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[64].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[135].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[59].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple2.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[42].Value;
                             }
 
+                            string SFFreeForm3Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[180].Value;
                             if (oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[127].Value != "" && SFPropertyFFCounter2 < 4)
                             {
                                 SFPropertyFFCounter2++;
                                 (int, int, int, int, int, int, int) SFRowFFTuple3 = SFFreeFormMapping(SFPropertyFFCounter2);
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[127].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[56].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[180].Value;
+                                if (SFFreeForm3Valuation == "RC" || SFFreeForm3Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item3].FieldValue = SFFreeForm3Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[180].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[55].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[126].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[161].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple3.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[119].Value;
                             }
 
-
+                            string SFFreeForm4Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[54].Value;
                             if (oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[57].Value != "" && SFPropertyFFCounter2 < 4)
                             {
                                 SFPropertyFFCounter2++;
                                 (int, int, int, int, int, int, int) SFRowFFTuple4 = SFFreeFormMapping(SFPropertyFFCounter2);
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item1].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[57].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[125].Value;
-                                nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[54].Value;
+                                if (SFFreeForm4Valuation == "RC" || SFFreeForm4Valuation == "ACV")
+                                {
+                                    nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item3].FieldValue = SFFreeForm4Valuation;
+                                }
+                                //nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[54].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[195].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[53].Value;
                                 nCFR.ScheduledScreens[1].Items[i][SFRowFFTuple4.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[52].Value;

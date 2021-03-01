@@ -29,7 +29,7 @@ namespace EpicIntegrator
     {
         static void Main(string[] args)
         {
-            RunConversion();
+            //RunConversion();
 
             //For Testing Purposes:
             //PartTesting(5985829, 5985860);
@@ -50,7 +50,7 @@ namespace EpicIntegrator
 
         static void DeletePolicy ()
         {
-            List<int> PoliciesToDelete = new List<int>() { 5986198 };
+            List<int> PoliciesToDelete = new List<int>() { 5986217 };
             
             EpicIntegrator.ConversionService cs = new EpicIntegrator.ConversionService();
             foreach (int pol in PoliciesToDelete) { cs.DeletePolicy(pol); }
