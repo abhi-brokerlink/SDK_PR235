@@ -32,27 +32,27 @@ namespace EpicIntegrator
         public string DBtable = "[CBL_Reporting].[dbo].[PR235Status]";
         public string NewPolExtn = "_Mar1";
 
-        public int CreatePolicySQLSwitch = 1;
+        public int CreatePolicySQLSwitch = 0;
         public int SDKCreatePolicySwitch = 1;
         public int SDKUpdatePolicySwitch = 1;
         public int SDKReadMCSSwitch = 1;
-        public int MCSSQLUpdateSwitch = 1;
+        public int MCSSQLUpdateSwitch = 0;
         public int SDKUpdatePRBR = 1;
         public int SDKUpdateLine = 1;
-        public int SQLUpdateLineSwitch = 1;
+        public int SQLUpdateLineSwitch = 0;
         public int SDKPolInfoAppLocation = 1;
-        public int SQLPolInfoAppLocation = 1;
+        public int SQLPolInfoAppLocation = 0;
         public int SDKOtherLFDet1 = 1;
         public int SDKOtherLFDet2 = 1;
         public int SDKOtherLFDet3 = 1;
         public int LongFormUpdateSwitch = 1;
-        public int SQLLongFormUpdate = 1;
+        public int SQLLongFormUpdate = 0;
         public int ShortFormUpdateSwitch = 1;
-        public int SQLShortFormUpdate = 1;
+        public int SQLShortFormUpdate = 0;
         public int BSCAUpdateSwitch = 1;
-        public int SQLBSCAUpdate = 1;
-        public int SQLPolInfoUpdatedSwitch = 1;
-        public int FinalYesSQLSwitch = 1;
+        public int SQLBSCAUpdate = 0;
+        public int SQLPolInfoUpdatedSwitch = 0;
+        public int FinalYesSQLSwitch = 0;
 
         public ConversionService()
         {
@@ -68,6 +68,7 @@ namespace EpicIntegrator
 
         public List<Tuple<int , int>> GetPolicyList()
         {
+            
             //SqlConnection conn = new SqlConnection(ConnectionString); //Used as a public connection
             List<Tuple<int, int>> pols = new List<Tuple<int, int>>();
 
@@ -102,7 +103,7 @@ namespace EpicIntegrator
 
 
 
-        public Tuple<int, bool> CreatePolicy(int OldPolicyID)
+        public Tuple<int, bool, string, string, int> CreatePolicy(int OldPolicyID)
         {
             CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
             CBLServiceReference.PolicyGetResult oPolicyResult = new CBLServiceReference.PolicyGetResult();
@@ -121,18 +122,18 @@ namespace EpicIntegrator
 
             
 
-            
-                conn.Open();
-                using (SqlCommand commandOne = conn.CreateCommand())
-                {
+                // SQL-Commented out
+                //conn.Open();
+                //using (SqlCommand commandOne = conn.CreateCommand())
+                //{
 
-                    string sqltwo = string.Format("update {0} set StartTime = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                    commandOne.CommandText = sqltwo;
+                //    string sqltwo = string.Format("update {0} set StartTime = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+                //    commandOne.CommandText = sqltwo;
                     
-                    commandOne.Parameters.AddWithValue("@OldPolID", OldPolicyID);
-                    commandOne.ExecuteNonQuery();
-                }
-                conn.Close();
+                //    commandOne.Parameters.AddWithValue("@OldPolID", OldPolicyID);
+                //    commandOne.ExecuteNonQuery();
+                //}
+                //conn.Close();
             
             
 
@@ -179,25 +180,26 @@ namespace EpicIntegrator
             
             
 
-            var PolicyResult = Tuple.Create<int, bool>(NewPolicyIDx, MCSExists);
+            var PolicyResult = Tuple.Create<int, bool, string, string, int>(NewPolicyIDx, MCSExists, nPol.PolicyTypeCode, nPol.PolicyNumber, OldPolicyID);
 
-            if (CreatePolicySQLSwitch == 1)
-            {
-                conn.Open();
-                using (SqlCommand commandTwo = conn.CreateCommand())
-                {
-                    string sqlnine = string.Format("update {0} set NewPolID = @NewPolID, HasMCS = @hasMCS, NewPolLineTypeCode = @NewPolLineTypeCode, NewPolNum = @NewPolNum, NewPolicyInserted = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                    commandTwo.CommandText = sqlnine;
+            //SQL-Commented out
+            //if (CreatePolicySQLSwitch == 1)
+            //{
+            //    conn.Open();
+            //    using (SqlCommand commandTwo = conn.CreateCommand())
+            //    {
+            //        string sqlnine = string.Format("update {0} set NewPolID = @NewPolID, HasMCS = @hasMCS, NewPolLineTypeCode = @NewPolLineTypeCode, NewPolNum = @NewPolNum, NewPolicyInserted = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+            //        commandTwo.CommandText = sqlnine;
                     
-                    commandTwo.Parameters.AddWithValue("@NewPolID", NewPolicyIDx);
-                    commandTwo.Parameters.AddWithValue("@hasMCS", MCSExists);
-                    commandTwo.Parameters.AddWithValue("@NewPolLineTypeCode", nPol.PolicyTypeCode);
-                    commandTwo.Parameters.AddWithValue("@NewPolNum", nPol.PolicyNumber);
-                    commandTwo.Parameters.AddWithValue("@OldPolID", OldPolicyID);
-                    commandTwo.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
+            //        commandTwo.Parameters.AddWithValue("@NewPolID", NewPolicyIDx);
+            //        commandTwo.Parameters.AddWithValue("@hasMCS", MCSExists);
+            //        commandTwo.Parameters.AddWithValue("@NewPolLineTypeCode", nPol.PolicyTypeCode);
+            //        commandTwo.Parameters.AddWithValue("@NewPolNum", nPol.PolicyNumber);
+            //        commandTwo.Parameters.AddWithValue("@OldPolID", OldPolicyID);
+            //        commandTwo.ExecuteNonQuery();
+            //    }
+            //    conn.Close();
+            //}
             
 
 
@@ -226,6 +228,8 @@ namespace EpicIntegrator
             return pol;
         }
 
+
+        // we don't need this menthod as all the params are copied over in CreatePolicy
         public bool UpdatePolicy(int OldPolicyID, int NewPolicyID)
         {
             CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
@@ -258,22 +262,23 @@ namespace EpicIntegrator
                 EpicSDKClient.Update_Policy(oMessageHeader, nPol);
             }
 
-            
-            if (SQLPolInfoUpdatedSwitch == 1)
-            {
-                conn.Open();
-                using (SqlCommand commandMCS = conn.CreateCommand())
-                {
-                    string sqlten = string.Format("update {0} set HasMCS = @hasMCS, PolicyInfoUpdated= GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                    commandMCS.CommandText = sqlten;
+            //SQL-Commented out
+
+            //if (SQLPolInfoUpdatedSwitch == 1)
+            //{
+            //    conn.Open();
+            //    using (SqlCommand commandMCS = conn.CreateCommand())
+            //    {
+            //        string sqlten = string.Format("update {0} set HasMCS = @hasMCS, PolicyInfoUpdated= GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+            //        commandMCS.CommandText = sqlten;
 
 
-                    commandMCS.Parameters.AddWithValue("@hasMCS", MCSExists);
-                    commandMCS.Parameters.AddWithValue("@OldPolID", OldPolicyID);
-                    commandMCS.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
+            //        commandMCS.Parameters.AddWithValue("@hasMCS", MCSExists);
+            //        commandMCS.Parameters.AddWithValue("@OldPolID", OldPolicyID);
+            //        commandMCS.ExecuteNonQuery();
+            //    }
+            //    conn.Close();
+            //}
             
            
 
@@ -371,19 +376,20 @@ namespace EpicIntegrator
                     }
                 }
             }
-            if (MCSSQLUpdateSwitch == 1)
-            {
-                conn.Open();
-                using (SqlCommand commandMCSupdate = conn.CreateCommand())
-                {
-                    string sqlthree = string.Format("update {0} set MCSUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                    commandMCSupdate.CommandText = sqlthree;
+            //SQL-Commented out
+            //if (MCSSQLUpdateSwitch == 1)
+            //{
+            //    conn.Open();
+            //    using (SqlCommand commandMCSupdate = conn.CreateCommand())
+            //    {
+            //        string sqlthree = string.Format("update {0} set MCSUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+            //        commandMCSupdate.CommandText = sqlthree;
                     
-                    commandMCSupdate.Parameters.AddWithValue("@OldPolID", OldPolicyID);
-                    commandMCSupdate.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
+            //        commandMCSupdate.Parameters.AddWithValue("@OldPolID", OldPolicyID);
+            //        commandMCSupdate.ExecuteNonQuery();
+            //    }
+            //    conn.Close();
+            //}
             
             Console.WriteLine("MCS Read");
         }
@@ -628,20 +634,22 @@ namespace EpicIntegrator
                     EpicSDKClient.Update_Line(oMessageHeader, nlne);
                     LineUpdated = 1;
                 }
-                
-                if (SQLUpdateLineSwitch == 1)
-                {
-                    conn.Open();
-                    using (SqlCommand commandUpdateLine = conn.CreateCommand())
-                    {
-                        string sqlfour = string.Format("update {0} set LineInfoUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                        commandUpdateLine.CommandText = sqlfour;
+
+
+                //SQL-Commented out
+                //if (SQLUpdateLineSwitch == 1)
+                //{
+                //    conn.Open();
+                //    using (SqlCommand commandUpdateLine = conn.CreateCommand())
+                //    {
+                //        string sqlfour = string.Format("update {0} set LineInfoUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+                //        commandUpdateLine.CommandText = sqlfour;
                         
-                        commandUpdateLine.Parameters.AddWithValue("@OldPolID", OldPolicyID);
-                        commandUpdateLine.ExecuteNonQuery();
-                    }
-                    conn.Close();
-                }
+                //        commandUpdateLine.Parameters.AddWithValue("@OldPolID", OldPolicyID);
+                //        commandUpdateLine.ExecuteNonQuery();
+                //    }
+                //    conn.Close();
+                //}
 
 
 
@@ -722,20 +730,21 @@ namespace EpicIntegrator
             {
                 EpicSDKClient.Update_PolicyInformation_ApplicantLocations(oMessageHeader, nApplicant);
             }
-            
-            if (SQLPolInfoAppLocation == 1)
-            {
-                conn.Open();
-                using (SqlCommand commandAppLoc = conn.CreateCommand())
-                {
-                    string sqlfive = string.Format("update {0} set PolAppLocUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                    commandAppLoc.CommandText = sqlfive;
+
+            //SQL-Commented out
+            //if (SQLPolInfoAppLocation == 1)
+            //{
+            //    conn.Open();
+            //    using (SqlCommand commandAppLoc = conn.CreateCommand())
+            //    {
+            //        string sqlfive = string.Format("update {0} set PolAppLocUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+            //        commandAppLoc.CommandText = sqlfive;
                     
-                    commandAppLoc.Parameters.AddWithValue("@OldPolID", OldPolicyID);
-                    commandAppLoc.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
+            //        commandAppLoc.Parameters.AddWithValue("@OldPolID", OldPolicyID);
+            //        commandAppLoc.ExecuteNonQuery();
+            //    }
+            //    conn.Close();
+            //}
             
 
 
@@ -2164,7 +2173,7 @@ namespace EpicIntegrator
 
 
             
-        public void LongShortFormUpdate(int oPolId, int nPolId)
+        public bool LongShortFormUpdate(int oPolId, int nPolId)
         {
             CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
             CBLServiceReference.PolicyFilter oPolicyFilter = new CBLServiceReference.PolicyFilter();
@@ -2180,7 +2189,7 @@ namespace EpicIntegrator
             oLineResult = EpicSDKClient.Get_Line(oMessageHeader, oLineFilter, 0);
             olne = oLineResult.Lines[0];
             int oLineID = olne.LineID;
-
+            bool InitialLSFormStatus = false;
             
 
             CBLServiceReference.PolicyFilter nPolicyFilter = new CBLServiceReference.PolicyFilter();
@@ -4315,23 +4324,24 @@ namespace EpicIntegrator
                 {
                     EpicSDKClient.Update_CustomForm(oMessageHeader, nCFR); //final check
                     CformUpdated = 1;
+                    InitialLSFormStatus = true;
                 }
 
                 Console.WriteLine("Long Form Updated");
-
-                if (SQLLongFormUpdate == 1)
-                {
-                    conn.Open();
-                    using (SqlCommand commandLongFormUpdate = conn.CreateCommand())
-                    {
-                        string sqlsix = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                        commandLongFormUpdate.CommandText = sqlsix;
+                //SQL-Commented out
+                //if (SQLLongFormUpdate == 1)
+                //{
+                //    conn.Open();
+                //    using (SqlCommand commandLongFormUpdate = conn.CreateCommand())
+                //    {
+                //        string sqlsix = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+                //        commandLongFormUpdate.CommandText = sqlsix;
                         
-                        commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", oPolId);
-                        commandLongFormUpdate.ExecuteNonQuery();
-                    }
-                    conn.Close();
-                }
+                //        commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", oPolId);
+                //        commandLongFormUpdate.ExecuteNonQuery();
+                //    }
+                //    conn.Close();
+                //}
 
 
             }
@@ -6584,25 +6594,28 @@ namespace EpicIntegrator
                         {
                             EpicSDKClient.Update_CustomForm(oMessageHeader, nCFR);
                             CformUpdated = 1;
+                            InitialLSFormStatus = true;
                         }
-                        if (SQLShortFormUpdate == 1)
-                        {
-                            conn.Open();
-                            using (SqlCommand commandLongFormUpdate = conn.CreateCommand())
-                            {
-                                string sqlseven = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                                commandLongFormUpdate.CommandText = sqlseven;
 
-                                commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", oPolId);
-                                commandLongFormUpdate.ExecuteNonQuery();
-                            }
-                            conn.Close();
-                        }
+                        //SQL-Commented out
+                        //if (SQLShortFormUpdate == 1)
+                        //{
+                        //    conn.Open();
+                        //    using (SqlCommand commandLongFormUpdate = conn.CreateCommand())
+                        //    {
+                        //        string sqlseven = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+                        //        commandLongFormUpdate.CommandText = sqlseven;
+
+                        //        commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", oPolId);
+                        //        commandLongFormUpdate.ExecuteNonQuery();
+                        //    }
+                        //    conn.Close();
+                        //}
 
                     }
                 }
 
-
+                // Cheching if it's BSCA1.0
                 else if (oSupScr.Name == "BrokerLink Standard Commercial Application")
                 {
                     string BSCALiabOccr = oSupScr.FormDataValue[4].NonScheduledItemsValue[60].Value;
@@ -8103,21 +8116,23 @@ namespace EpicIntegrator
                         {
                             EpicSDKClient.Update_CustomForm(oMessageHeader, nCFR);
                             CformUpdated = 1;
+                            InitialLSFormStatus = true;
                         }
 
-                        if (SQLBSCAUpdate == 1)
-                        {
-                            conn.Open();
-                            using (SqlCommand commandLongFormUpdate = conn.CreateCommand())
-                            {
-                                string sqleight = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
-                                commandLongFormUpdate.CommandText = sqleight;
+                        //SQL-Commented out
+                        //if (SQLBSCAUpdate == 1)
+                        //{
+                        //    conn.Open();
+                        //    using (SqlCommand commandLongFormUpdate = conn.CreateCommand())
+                        //    {
+                        //        string sqleight = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtable);
+                        //        commandLongFormUpdate.CommandText = sqleight;
 
-                                commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", oPolId);
-                                commandLongFormUpdate.ExecuteNonQuery();
-                            }
-                            conn.Close();
-                        }
+                        //        commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", oPolId);
+                        //        commandLongFormUpdate.ExecuteNonQuery();
+                        //    }
+                        //    conn.Close();
+                        //}
                     }
                 }
             }
@@ -8237,48 +8252,50 @@ namespace EpicIntegrator
 
             //Console.WriteLine("*-*-Long Form Update DONE-*-*");
             //Console.ReadKey();
+
+            return InitialLSFormStatus;
         }
 
-        public void CFYesFinalUpdate(int oPolId)
-        {
-            if (PolicyCreated == 1 && LineUpdated == 1 && CformUpdated == 1)
-            {
-                if (FinalYesSQLSwitch == 1)
-                {
-                    conn.Open();
-                    using (SqlCommand commandOne = conn.CreateCommand())
-                    {
+        //public void CFYesFinalUpdate(int oPolId)
+        //{
+        //    if (PolicyCreated == 1 && LineUpdated == 1 && CformUpdated == 1)
+        //    {
+        //        if (FinalYesSQLSwitch == 1)
+        //        {
+        //            conn.Open();
+        //            using (SqlCommand commandOne = conn.CreateCommand())
+        //            {
 
-                        string sql11 = string.Format("update {0} set EndTime = GETDATE(), ConversionSuccessful = 1 WHERE OldPolID = @OldPolID;", DBtable);
-                        commandOne.CommandText = sql11;
+        //                string sql11 = string.Format("update {0} set EndTime = GETDATE(), ConversionSuccessful = 1 WHERE OldPolID = @OldPolID;", DBtable);
+        //                commandOne.CommandText = sql11;
 
-                        commandOne.Parameters.AddWithValue("@OldPolID", oPolId);
-                        commandOne.ExecuteNonQuery();
-                    }
-                    conn.Close();
-                }
-            }
-        }
-        public void CFNoFinalUpdate(int oPolId)
-        {
-            if (PolicyCreated == 1 && LineUpdated == 1 )
-            {
-                if (FinalYesSQLSwitch == 1)
-                {
-                    conn.Open();
-                    using (SqlCommand commandOne = conn.CreateCommand())
-                    {
+        //                commandOne.Parameters.AddWithValue("@OldPolID", oPolId);
+        //                commandOne.ExecuteNonQuery();
+        //            }
+        //            conn.Close();
+        //        }
+        //    }
+        //}
+        //public void CFNoFinalUpdate(int oPolId)
+        //{
+        //    if (PolicyCreated == 1 && LineUpdated == 1 )
+        //    {
+        //        if (FinalYesSQLSwitch == 1)
+        //        {
+        //            conn.Open();
+        //            using (SqlCommand commandOne = conn.CreateCommand())
+        //            {
 
-                        string sql22 = string.Format("update {0} set EndTime = GETDATE(), ConversionSuccessful = 1 WHERE OldPolID = @OldPolID;", DBtable);
-                        commandOne.CommandText = sql22;
+        //                string sql22 = string.Format("update {0} set EndTime = GETDATE(), ConversionSuccessful = 1 WHERE OldPolID = @OldPolID;", DBtable);
+        //                commandOne.CommandText = sql22;
 
-                        commandOne.Parameters.AddWithValue("@OldPolID", oPolId);
-                        commandOne.ExecuteNonQuery();
-                    }
-                    conn.Close();
-                }
-            }
-        }
+        //                commandOne.Parameters.AddWithValue("@OldPolID", oPolId);
+        //                commandOne.ExecuteNonQuery();
+        //            }
+        //            conn.Close();
+        //        }
+        //    }
+        //}
 
 
 
