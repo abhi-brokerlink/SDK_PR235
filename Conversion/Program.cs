@@ -37,7 +37,7 @@ namespace EpicIntegrator
             RunConversion();
 
             //For Testing Purposes:
-            //PartTesting(5985847, 5985860);
+            //PartTesting(5986044, 5997566);
             //DeletePolicy();
 
         }
@@ -55,7 +55,7 @@ namespace EpicIntegrator
 
         static void DeletePolicy ()
         {
-            List<int> PoliciesToDelete = new List<int>() { };
+            List<int> PoliciesToDelete = new List<int>() { 5993650, 5993651, 5993652 };
             
             EpicIntegrator.ConversionService cs = new EpicIntegrator.ConversionService();
             foreach (int pol in PoliciesToDelete)
@@ -108,7 +108,7 @@ namespace EpicIntegrator
 
             //}
 
-
+            Console.WriteLine("*--*-DONE*-*-*-*");
             Console.ReadKey();
         }
 
@@ -172,6 +172,8 @@ namespace EpicIntegrator
             {
                 PolzCounter++;
                 Console.WriteLine("*-*-*- READING POL "+PolzCounter+" OF "+PolzCount+ "*-*-*");
+                string ErrorString3 = "";
+
                 int OldPolID = poli.Item1;
                 int CFormExists = poli.Item2;
 
@@ -189,184 +191,203 @@ namespace EpicIntegrator
                     commandOne.ExecuteNonQuery();
                 }
 
+                //Check if Policy and Line TypeCodes are valid
+                bool CheckValidLineType = cs.CheckValidTypeCode(OldPolID);
 
-
-                // Create a new policy
-                Tuple<int, bool, string, string, int> NewPolicyResult = cs.CreatePolicy(OldPolID); //finalcheck
-                int NewPolId = NewPolicyResult.Item1;
-                Console.WriteLine("New Pol ID: " + NewPolId);
-                bool HasMCS = NewPolicyResult.Item2;
-                // wait 3 seconds for new policy data to commit to DB
-                System.Threading.Thread.Sleep(2000);
-                
-                
-                
-
-                if (NewPolId.ToString().Length > 1)
+                if (CheckValidLineType == true)
                 {
-                    //Update table with new Policy Number 
-                    using (SqlCommand commandTwo = conns.CreateCommand())
-                    {
-                        string sqlnine = string.Format("update {0} set NewPolID = @NewPolID, HasMCS = @hasMCS, NewPolLineTypeCode = @NewPolLineTypeCode, NewPolNum = @NewPolNum, NewPolicyInserted = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
-                        commandTwo.CommandText = sqlnine;
 
-                        commandTwo.Parameters.AddWithValue("@NewPolID", NewPolicyResult.Item1);
-                        commandTwo.Parameters.AddWithValue("@hasMCS", NewPolicyResult.Item2);
-                        commandTwo.Parameters.AddWithValue("@NewPolLineTypeCode", NewPolicyResult.Item3);
-                        commandTwo.Parameters.AddWithValue("@NewPolNum", NewPolicyResult.Item4);
-                        commandTwo.Parameters.AddWithValue("@OldPolID", NewPolicyResult.Item5);
-                        commandTwo.ExecuteNonQuery();
-                    }
-
-                    //Update line
-                    bool LineUpdateSuccess = false;
-                    
                     try
                     {
-                        cs.UpdateLine(OldPolID, NewPolId);
-                        LineUpdateSuccess = true;
-                        using (SqlCommand commandUpdateLine = conns.CreateCommand())
-                        {
-                            string sqlfour = string.Format("update {0} set LineInfoUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
-                            commandUpdateLine.CommandText = sqlfour;
 
-                            commandUpdateLine.Parameters.AddWithValue("@OldPolID", OldPolID);
-                            commandUpdateLine.ExecuteNonQuery();
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        string e31 = OldPolID + " | Line Update failed | " + e;
-                        ErrorString2 = ErrorString2 + e31 + System.Environment.NewLine;
-                        Console.WriteLine(e31);
-                    }
-                    finally
-                    {
-                        if (LineUpdateSuccess == true)
+                    
+                        // Create a new policy
+                        Tuple<int, bool, string, string, int> NewPolicyResult = cs.CreatePolicy(OldPolID); //finalcheck
+                        int NewPolId = NewPolicyResult.Item1;
+                        Console.WriteLine("New Pol ID: " + NewPolId);
+                        bool HasMCS = NewPolicyResult.Item2;
+                        // wait 3 seconds for new policy data to commit to DB
+                        System.Threading.Thread.Sleep(2000);
+                
+
+                        if (NewPolId.ToString().Length > 1)
                         {
-                            // Try updating line PRBR
+                            //Update table with new Policy Number 
+                            using (SqlCommand commandTwo = conns.CreateCommand())
+                            {
+                                string sqlnine = string.Format("update {0} set NewPolID = @NewPolID, HasMCS = @hasMCS, NewPolLineTypeCode = @NewPolLineTypeCode, NewPolNum = @NewPolNum, NewPolicyInserted = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
+                                commandTwo.CommandText = sqlnine;
+
+                                commandTwo.Parameters.AddWithValue("@NewPolID", NewPolicyResult.Item1);
+                                commandTwo.Parameters.AddWithValue("@hasMCS", NewPolicyResult.Item2);
+                                commandTwo.Parameters.AddWithValue("@NewPolLineTypeCode", NewPolicyResult.Item3);
+                                commandTwo.Parameters.AddWithValue("@NewPolNum", NewPolicyResult.Item4);
+                                commandTwo.Parameters.AddWithValue("@OldPolID", NewPolicyResult.Item5);
+                                commandTwo.ExecuteNonQuery();
+                            }
+
+                            //Update line
+                            bool LineUpdateSuccess = false;
+                    
                             try
                             {
-                                cs.UpdateLinePRBR(OldPolID, NewPolId);                                
+                                cs.UpdateLine(OldPolID, NewPolId);
+                                LineUpdateSuccess = true;
+                                using (SqlCommand commandUpdateLine = conns.CreateCommand())
+                                {
+                                    string sqlfour = string.Format("update {0} set LineInfoUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
+                                    commandUpdateLine.CommandText = sqlfour;
+
+                                    commandUpdateLine.Parameters.AddWithValue("@OldPolID", OldPolID);
+                                    commandUpdateLine.ExecuteNonQuery();
+                                }
                             }
                             catch (Exception e)
                             {
-                                string e32 = OldPolID + " | Line PR/BR failed | " + e;
-                                ErrorString2 = ErrorString2 + e32 + System.Environment.NewLine;
-                                Console.WriteLine(e32);
+                                string e31 = OldPolID + " | Line Update failed | " + e;
+                                //ErrorString2 = ErrorString2 + e31 + System.Environment.NewLine;
+                                ErrorString3 = ErrorString3 + e31 + System.Environment.NewLine;
+                                Console.WriteLine(e31);
                             }
-                        }
-                    }
-
-
-                    // Update MCS
-                    if (HasMCS == true)
-                    {
-                        try
-                        {
-                            cs.ReadMCS(OldPolID, NewPolId);
-                            using (SqlCommand commandMCSupdate = conns.CreateCommand())
+                            finally
                             {
-                                string sqlthree = string.Format("update {0} set MCSUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
-                                commandMCSupdate.CommandText = sqlthree;
-
-                                commandMCSupdate.Parameters.AddWithValue("@OldPolID", OldPolID);
-                                commandMCSupdate.ExecuteNonQuery();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            string e33 = OldPolID + " | MCS Update failed | " + e;
-                            ErrorString2 = ErrorString2 + e33 + System.Environment.NewLine;
-                            Console.WriteLine(e33);
-                        }
-                    }
-
-                    // Updating Custom Forms
-                    if (CFormExists == 1)
-                    {
-                        //Update Policy Info
-                        try
-                        {
-                            cs.UpdatePolicyInfoApplicatLocation(OldPolID, NewPolId);
-                            using (SqlCommand commandAppLoc = conns.CreateCommand())
-                            {
-                                string sqlfive = string.Format("update {0} set PolAppLocUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
-                                commandAppLoc.CommandText = sqlfive;
-
-                                commandAppLoc.Parameters.AddWithValue("@OldPolID", OldPolID);
-                                commandAppLoc.ExecuteNonQuery();
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            string e34 = OldPolID + " | Policy Info Applicant Location failed | " + e;
-                            ErrorString2 = ErrorString2 + e34 + System.Environment.NewLine;
-                            Console.WriteLine(e34);
-                        }
-
-                        // Update Other Long Form Details
-                        try
-                        {
-                            cs.UpdateOtherLongFormDetails(OldPolID, NewPolId);
-                        }
-                        catch (Exception e)
-                        {
-                            string e35 = OldPolID + " | Other Long Form Details failed | " + e;
-                            ErrorString2 = ErrorString2 + e35 + System.Environment.NewLine;
-                            Console.WriteLine(e35);
-                        }
-
-
-                        // Update Long Form / Short Form / BSCA1
-                        try
-                        {
-                            bool LSformUpdate = cs.LongShortFormUpdate(OldPolID, NewPolId);
-                            if (LSformUpdate == true)
-                            {
-                                using (SqlCommand commandLongFormUpdate = conns.CreateCommand())
+                                if (LineUpdateSuccess == true)
                                 {
-                                    string sqlsix = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
-                                    commandLongFormUpdate.CommandText = sqlsix;
-
-                                    commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", OldPolID);
-                                    commandLongFormUpdate.ExecuteNonQuery();
+                                    // Try updating line PRBR
+                                    try
+                                    {
+                                        cs.UpdateLinePRBR(OldPolID, NewPolId);                                
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        string e32 = OldPolID + " | Line PR/BR failed | " + e;
+                                        //ErrorString2 = ErrorString2 + e32 + System.Environment.NewLine;
+                                        ErrorString3 = ErrorString3 + e32 + System.Environment.NewLine;
+                                        Console.WriteLine(e32);
+                                    }
                                 }
                             }
-                        }
-                        catch (Exception e)
-                        {
-                            string e36 = OldPolID + " - Long/Short/BSCA Form failed -#: " + e;
-                            ErrorString2 = ErrorString2 + e36 + System.Environment.NewLine;
-                            Console.WriteLine(e36);
-                        }
+
+
+                            // Update MCS
+                            if (HasMCS == true)
+                            {
+                                try
+                                {
+                                    cs.ReadMCS(OldPolID, NewPolId);
+                                    using (SqlCommand commandMCSupdate = conns.CreateCommand())
+                                    {
+                                        string sqlthree = string.Format("update {0} set MCSUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
+                                        commandMCSupdate.CommandText = sqlthree;
+
+                                        commandMCSupdate.Parameters.AddWithValue("@OldPolID", OldPolID);
+                                        commandMCSupdate.ExecuteNonQuery();
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    string e33 = OldPolID + " | MCS Update failed | " + e;
+                                    //ErrorString2 = ErrorString2 + e33 + System.Environment.NewLine;
+                                    ErrorString3 = ErrorString3 + e33 + System.Environment.NewLine;
+                                    Console.WriteLine(e33);
+                                }
+                            }
+
+                            // Updating Custom Forms
+                            if (CFormExists == 1)
+                            {
+                                //Update Policy Info
+                                try
+                                {
+                                    cs.UpdatePolicyInfoApplicatLocation(OldPolID, NewPolId);
+                                    using (SqlCommand commandAppLoc = conns.CreateCommand())
+                                    {
+                                        string sqlfive = string.Format("update {0} set PolAppLocUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
+                                        commandAppLoc.CommandText = sqlfive;
+
+                                        commandAppLoc.Parameters.AddWithValue("@OldPolID", OldPolID);
+                                        commandAppLoc.ExecuteNonQuery();
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    string e34 = OldPolID + " | Policy Info Applicant Location failed | " + e;
+                                    //ErrorString2 = ErrorString2 + e34 + System.Environment.NewLine;
+                                    ErrorString3 = ErrorString3 + e34 + System.Environment.NewLine;
+                                    Console.WriteLine(e34);
+                                }
+
+                                // Update Other Long Form Details
+                                try
+                                {
+                                    cs.UpdateOtherLongFormDetails(OldPolID, NewPolId);
+                                }
+                                catch (Exception e)
+                                {
+                                    string e35 = OldPolID + " | Other Long Form Details failed | " + e;
+                                    //ErrorString2 = ErrorString2 + e35 + System.Environment.NewLine;
+                                    ErrorString3 = ErrorString3 + e35 + System.Environment.NewLine;
+                                    Console.WriteLine(e35);
+                                }
+
+
+                                // Update Long Form / Short Form / BSCA1
+                                try
+                                {
+                                    bool LSformUpdate = cs.LongShortFormUpdate(OldPolID, NewPolId);
+                                    if (LSformUpdate == true)
+                                    {
+                                        using (SqlCommand commandLongFormUpdate = conns.CreateCommand())
+                                        {
+                                            string sqlsix = string.Format("update {0} set CFormUpdated = GETDATE() WHERE OldPolID = @OldPolID;", DBtables);
+                                            commandLongFormUpdate.CommandText = sqlsix;
+
+                                            commandLongFormUpdate.Parameters.AddWithValue("@OldPolID", OldPolID);
+                                            commandLongFormUpdate.ExecuteNonQuery();
+                                        }
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    string e36 = OldPolID + " - Long/Short/BSCA Form failed -#: " + e;
+                                    //ErrorString2 = ErrorString2 + e36 + System.Environment.NewLine;
+                                    ErrorString3 = ErrorString3 + e36 + System.Environment.NewLine;
+                                    Console.WriteLine(e36);
+                                }
                                                 
-                    }
+                            }
 
-                    try
-                    {
-                        using (SqlCommand commandOne = conns.CreateCommand())
-                        {
+                            try
+                            {
+                                using (SqlCommand commandOne = conns.CreateCommand())
+                                {
 
-                            string sql11 = string.Format("update {0} set EndTime = GETDATE(), ConversionSuccessful = 1 WHERE OldPolID = @OldPolID;", DBtables);
-                            commandOne.CommandText = sql11;
+                                    string sql11 = string.Format("update {0} set EndTime = GETDATE(), ConversionSuccessful = 1, Error = @Error WHERE OldPolID = @OldPolID;", DBtables);
+                                    commandOne.CommandText = sql11;
 
-                            commandOne.Parameters.AddWithValue("@OldPolID", OldPolID);
-                            commandOne.ExecuteNonQuery();
+                                    commandOne.Parameters.AddWithValue("@OldPolID", OldPolID);
+                                    commandOne.Parameters.AddWithValue("@Error", ErrorString3);
+                                    commandOne.ExecuteNonQuery();
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                string e37 = OldPolID + " | Policy update failed | " + e;
+                                //ErrorString2 = ErrorString2 + e37 + System.Environment.NewLine;
+                                Console.WriteLine(e37);
+                            }
+
+
+
+
                         }
                     }
                     catch (Exception e)
                     {
-                        string e37 = OldPolID + " | Policy update failed | " + e;
-                        ErrorString2 = ErrorString2 + e37 + System.Environment.NewLine;
-                        Console.WriteLine(e37);
+                        string e51 = OldPolID + " | Policy has Line Type Code issue | " + e;
+                        ErrorString2 = ErrorString2 + e51 + System.Environment.NewLine;
+                        Console.WriteLine(e51);
                     }
-
-
-
-
-
-                
 
                 }
 
@@ -419,9 +440,9 @@ namespace EpicIntegrator
 
             Tuple<string, string> ErrorCarry = cs.CatchErrors();
             ErrorString2 = ErrorString2 + ErrorCarry.Item1;
-            string [] ErrorString3 = new string[] { ErrorString2 };
-            string ErrorPathFull = ErrorCarry.Item2 + DateTime.Now.ToString("yyyyMMddHHmmss")+".txt";
-            File.WriteAllLines(ErrorPathFull, ErrorString3);
+            string[] ErrorString33 = new string[] { ErrorString2 };
+            string ErrorPathFull = ErrorCarry.Item2 + DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
+            File.WriteAllLines(ErrorPathFull, ErrorString33);
 
 
             conns.Close();

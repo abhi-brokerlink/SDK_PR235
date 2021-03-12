@@ -30,7 +30,7 @@ namespace EpicIntegrator
         // Switches (1/0) and vars
         public string IBCCodePath = @"C:\Users\Abhishek\Documents\Abhi _ IMP\Sep29\IBC_Codes.csv"; //final check
         public string DBtable = "[CBL_Reporting].[dbo].[PR235Status]";
-        public string NewPolExtn = "_M8";
+        public string NewPolExtn = "_ABHI12";
         public string ErrorString = "";
         public string ErrorFilePath = @"C:\Users\Abhishek\Documents\abc\SDKErrorLog_";
 
@@ -55,6 +55,8 @@ namespace EpicIntegrator
         public int SQLBSCAUpdate = 0;
         public int SQLPolInfoUpdatedSwitch = 0;
         public int FinalYesSQLSwitch = 0;
+
+        public List<string> LTClist = new List<string>() { "CACC", "CTRI", "CAVI", "CBBP", "CBOD", "CBOF", "CBOA", "CBON", "CBUI", "CBUW", "CEQF", "CBOC", "CCRM", "CCYB", "CDEO", "CDOL", "CBOI", "CENV", "CLEL", "CEOL", "CEMP", "CFGS", "CFPF", "CFPS", "CLEG", "CCGL", "CLEO", "CPAL", "CPRZ", "CSEL", "CSHR", "CSPO", "CWCB", "CMAB", "CMAL", "CMOR", "CNOA", "COCA", "CCON", "CHBB", "CPAC", "CVAB", "CMUP", "CPRO", "CVAT", "CCAR", "COMT", "CEXL", "CUMB", "CMAP", "CWAT", "CWUL" };
 
         public ConversionService()
         {
@@ -104,6 +106,39 @@ namespace EpicIntegrator
         }
 
 
+        public bool CheckValidTypeCode ( int OldPolicyID)
+        {
+
+            CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
+            CBLServiceReference.PolicyGetResult oPolicyResult = new CBLServiceReference.PolicyGetResult();
+            CBLServiceReference.PolicyFilter oPolicyFilter = new CBLServiceReference.PolicyFilter();
+            CBLServiceReference.Policy oPol = new CBLServiceReference.Policy();
+            oPolicyFilter.PolicyID = OldPolicyID;
+            oPolicyResult = EpicSDKClient.Get_Policy(oMessageHeader, oPolicyFilter, 0);
+            oPol = oPolicyResult.Policies[0];
+
+            CBLServiceReference.LineGetResult1 oLineResult = new CBLServiceReference.LineGetResult1();
+            CBLServiceReference.LineFilter oLineFilter = new CBLServiceReference.LineFilter();
+            CBLServiceReference.Line1 lne = new CBLServiceReference.Line1();
+            oLineFilter.PolicyID = OldPolicyID;
+            oLineResult = EpicSDKClient.Get_Line(oMessageHeader, oLineFilter, 0);
+            lne = oLineResult.Lines[0];
+            bool IsValidType = false;
+
+            string LTC = lne.LineTypeCode;
+            if (LTClist.Contains(LTC))
+            {
+                IsValidType = true;
+            }
+
+            return IsValidType;
+
+        }
+
+
+
+
+
 
         public Tuple<int, bool, string, string, int> CreatePolicy(int OldPolicyID)
         {
@@ -121,6 +156,8 @@ namespace EpicIntegrator
             oLineFilter.PolicyID = OldPolicyID;
             oLineResult = EpicSDKClient.Get_Line(oMessageHeader, oLineFilter, 0);
             lne = oLineResult.Lines[0];
+
+
 
             
 
@@ -163,7 +200,7 @@ namespace EpicIntegrator
             nPol.EstimatedPremium = oPol.EstimatedPremium;
             nPol.IssuingCompanyLookupCode = oPol.IssuingCompanyLookupCode;
             nPol.IssuingLocationCode = lne.IssuingLocationCode;
-            Console.WriteLine(lne.LineTypeCode);
+            //Console.WriteLine(lne.LineTypeCode);
             // TO DO
             nPol.LineTypeCode = NewPolLineType(lne.LineTypeCode);
             //nPol.LineTypeCode = NewPolLineType(oPol.PolicyTypeCode);
@@ -2048,7 +2085,7 @@ namespace EpicIntegrator
                     MCCoverageCode = "200";
                     MCded = "192";
                     MClimit = "184";
-                    MCprem = "212";
+                    MCprem = "210";
                     break;
                 case 7:
                     MCCoverageCode = "172";
@@ -2212,7 +2249,15 @@ namespace EpicIntegrator
             olne = oLineResult.Lines[0];
             int oLineID = olne.LineID;
             bool InitialLSFormStatus = false;
-            
+
+            //Console.WriteLine(oPol.PolicyNumber);
+            //Console.WriteLine(oPol.PolicyID);
+            //Console.WriteLine(EpicSDKClient.Get_CustomForm_SupplementalScreen(oMessageHeader, oLineID, 0, CBLServiceReference.SupplementalScreenGetType.LineID)[0].Name);
+
+
+
+
+
 
             CBLServiceReference.PolicyFilter nPolicyFilter = new CBLServiceReference.PolicyFilter();
             CBLServiceReference.PolicyGetResult nPolicyResult = new CBLServiceReference.PolicyGetResult();
@@ -2227,6 +2272,11 @@ namespace EpicIntegrator
             nLineResult = EpicSDKClient.Get_Line(oMessageHeader, nLineFilter, 0);
             nlne = nLineResult.Lines[0];
             int nLineID = nlne.LineID;
+
+
+
+            //Console.WriteLine(nPol.PolicyNumber);
+            //Console.WriteLine(nPol.PolicyID);
 
             CBLServiceReference.Get_CustomFormResponse oCFormResponse = new CBLServiceReference.Get_CustomFormResponse();
             oCFormResponse.Get_CustomFormResult = EpicSDKClient.Get_CustomForm(oMessageHeader, oLineID);
@@ -5002,7 +5052,7 @@ namespace EpicIntegrator
                                             nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item2].FieldValue = Row1Valuation;
                                         }
                                         //nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item2].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
-                                        nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[203].Value;
+                                        nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[151].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[177].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[118].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[124].Value;
@@ -5018,12 +5068,14 @@ namespace EpicIntegrator
                                             nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item3].FieldValue = Row1Valuation;
                                         }
                                         //nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[192].Value;
-                                        nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[203].Value;
+                                        nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[151].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[177].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[118].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow1Tuple1.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[124].Value;
                                     }
-                            
+
+                                    
+
                                     string Row2Val = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[107].Value;
                                     string Row2Valuation = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[174].Value; 
                                     if (SFRowValues.Contains(Row2Val))
@@ -5585,7 +5637,7 @@ namespace EpicIntegrator
                                         nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item3].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[65].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[166].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[60].Value;
-                                        nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[227].Value;
+                                        nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[43].Value;
                                     }
                                     else if (SFFreeFormVals.Contains(Row18Val) && SFPropertyFFCounter < 9)
                                     {
@@ -5601,15 +5653,26 @@ namespace EpicIntegrator
                                         nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[65].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[166].Value;
                                         nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[60].Value;
-                                        nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[227].Value;
+                                        nCFR.ScheduledScreens[1].Items[i][SFRow18Tuple1.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[43].Value;
                                     }
 
 
 
                                     // Adding tenant TLI
-                                    if (nCFR.ScheduledScreens[1].Items[i][191].FieldValue != "" && nCFR.ScheduledScreens[1].Items[i][107].FieldValue != "" && nCFR.ScheduledScreens[1].Items[i][56].FieldValue != "")
+                                    if (nCFR.ScheduledScreens[1].Items[i][107].FieldValue != "")
                                     {
                                         nCFR.ScheduledScreens[1].Items[i][95].FieldValue = "TLI";
+
+                                        // Testing feedback done - adding other fields into the IF statement
+                                    }
+                                    else
+                                    {
+                                        nCFR.ScheduledScreens[1].Items[i][191].FieldValue = "";
+                                        nCFR.ScheduledScreens[1].Items[i][171].FieldValue = "";
+                                        nCFR.ScheduledScreens[1].Items[i][149].FieldValue = "";
+                                        nCFR.ScheduledScreens[1].Items[i][128].FieldValue = "";
+                                        nCFR.ScheduledScreens[1].Items[i][107].FieldValue = "";
+                                        nCFR.ScheduledScreens[1].Items[i][56].FieldValue = "";
                                     }
 
                                     // 4 freeforms from old
@@ -6526,7 +6589,7 @@ namespace EpicIntegrator
                                     nCFR.NonScheduledScreens[1].Fields[SFConEqTuple18.Item4].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[166].Value;
                                     nCFR.NonScheduledScreens[1].Fields[SFConEqTuple18.Item5].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[65].Value;
                                     nCFR.NonScheduledScreens[1].Fields[SFConEqTuple18.Item6].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[60].Value;
-                                    nCFR.NonScheduledScreens[1].Fields[SFConEqTuple18.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[227].Value;
+                                    nCFR.NonScheduledScreens[1].Fields[SFConEqTuple18.Item7].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[43].Value;
                                 }
                                 else if (SFConEqp18 == "17")
                                 {
@@ -7388,7 +7451,7 @@ namespace EpicIntegrator
                                     //84
                                     nCFR.ScheduledScreens[1].Items[i][70].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[139].Value;
                                     //85
-                                    nCFR.ScheduledScreens[1].Items[i][69].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[112].Value;
+                                    nCFR.ScheduledScreens[1].Items[i][68].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[112].Value;
                                     //86
                                     nCFR.ScheduledScreens[1].Items[i][66].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[128].Value;
                                     //87
@@ -7576,7 +7639,7 @@ namespace EpicIntegrator
                                     //191
                                     nCFR.ScheduledScreens[1].Items[i][41].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[88].Value;
                                     //192
-                                    nCFR.ScheduledScreens[1].Items[i][90].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
+                                    nCFR.ScheduledScreens[1].Items[i][92].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[90].Value;
                                     //193
                                     nCFR.ScheduledScreens[1].Items[i][91].FieldValue = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[i].ItemsValue[92].Value;
                                     //194
@@ -8605,10 +8668,10 @@ namespace EpicIntegrator
             //    Console.WriteLine("Old-# " + i + ":" + oSupScr.FormDataValue[4].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[i].FieldDescription + ":" + oSupScr.FormDataValue[4].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[i].Value);
             //}
 
-            //int BSCA1COPECount = oSupScr.FormDataValue[3].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue.Count;
+            //int BSCA1COPECount = oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue.Count;
             //for (int i = 0; i < BSCA1COPECount; i++)
             //{
-            //    Console.WriteLine("Old-# " + i + ":" + oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[i].FieldDescription + ":" + oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[i].Value);
+            //    Console.WriteLine("# " + i + ":" + oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[i].FieldDescription + ":" + oSupScr.FormDataValue[2].ScheduledScreensValue[0].ScheduledDataItemsRowsValue[0].ItemsValue[i].Value);
             //}
 
 
