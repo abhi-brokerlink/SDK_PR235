@@ -29,8 +29,8 @@ namespace EpicIntegrator
 
         // Switches (1/0) and vars
         public string IBCCodePath = @"C:\Users\Abhishek\Documents\Abhi _ IMP\Sep29\IBC_Codes.csv"; //final check
-        public string DBtable = "[CBL_Reporting].[dbo].[PR235Status]";
-        public string NewPolExtn = "_ABHI12";
+        public string DBtable = "[CBL_Reporting].[dbo].[PR235_MainTable]";
+        public string NewPolExtn = "_P235";
         public string ErrorString = "";
         public string ErrorFilePath = @"C:\Users\Abhishek\Documents\abc\SDKErrorLog_";
 

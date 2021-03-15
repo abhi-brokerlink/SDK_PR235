@@ -29,7 +29,7 @@ namespace EpicIntegrator
     {
         static string ConnectionStrings = ConfigurationManager.ConnectionStrings["CBLReporting"].ConnectionString;
         public static SqlConnection conns = new SqlConnection(ConnectionStrings);
-        public static string DBtables = "[CBL_Reporting].[dbo].[PR235Status]";
+        public static string DBtables = "[CBL_Reporting].[dbo].[PR235_MainTable]";
         
 
         static void Main(string[] args)
@@ -55,7 +55,7 @@ namespace EpicIntegrator
 
         static void DeletePolicy ()
         {
-            List<int> PoliciesToDelete = new List<int>() { 5993650, 5993651, 5993652 };
+            List<int> PoliciesToDelete = new List<int>() { 6030771, 6030772 };
             
             EpicIntegrator.ConversionService cs = new EpicIntegrator.ConversionService();
             foreach (int pol in PoliciesToDelete)
@@ -349,7 +349,7 @@ namespace EpicIntegrator
                                 }
                                 catch (Exception e)
                                 {
-                                    string e36 = OldPolID + " - Long/Short/BSCA Form failed -#: " + e;
+                                    string e36 = OldPolID + " | Long/Short/BSCA Form failed | " + e;
                                     //ErrorString2 = ErrorString2 + e36 + System.Environment.NewLine;
                                     ErrorString3 = ErrorString3 + e36 + System.Environment.NewLine;
                                     Console.WriteLine(e36);
