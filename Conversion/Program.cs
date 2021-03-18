@@ -29,7 +29,7 @@ namespace EpicIntegrator
     {
         static string ConnectionStrings = ConfigurationManager.ConnectionStrings["CBLReporting"].ConnectionString;
         public static SqlConnection conns = new SqlConnection(ConnectionStrings);
-        public static string DBtables = "[CBL_Reporting].[dbo].[PR235_MainTable]";
+        public static string DBtables = "[CBL_Reporting].[dbo].[PR235Status]";
         
 
         static void Main(string[] args)
@@ -39,6 +39,7 @@ namespace EpicIntegrator
             //For Testing Purposes:
             //PartTesting(5986044, 5997566);
             //DeletePolicy();
+            //TestPol(5919412);
 
         }
 
@@ -55,9 +56,24 @@ namespace EpicIntegrator
 
         static void DeletePolicy ()
         {
-            List<int> PoliciesToDelete = new List<int>() { 6030771, 6030772 };
+            //List<int> PoliciesToDelete = new List<int>() { 6036970, 6036971, 6036972, 6036973, 6036974 };
+            List<int> PoliciesToDelete = new List<int>();
+
+            string PolDelPath = @"C:\Users\Abhishek\Documents\abc\SDK_PR235Conversion\PoliciesToDelete.csv"; //Final Check
+            var PolDelreader = new StreamReader(File.OpenRead(PolDelPath));
             
+            while (!PolDelreader.EndOfStream)
+            {
+                var line = PolDelreader.ReadLine();
+                var values = line.Split(';');
+
+                PoliciesToDelete.Add(int.Parse(values[0]));
+            }
+
+
             EpicIntegrator.ConversionService cs = new EpicIntegrator.ConversionService();
+            var DelStart = DateTime.Now;
+            Console.WriteLine("Deletion Started: "+ DelStart);
             foreach (int pol in PoliciesToDelete)
             {
                 try
@@ -69,8 +85,21 @@ namespace EpicIntegrator
                     Console.WriteLine(" Policy Delete failed -#: " + e);
                 }
             }
+            var DelEnd = DateTime.Now;
+            Console.WriteLine("Deletion Ended: " + DelEnd);
+            
+
             Console.ReadKey();
         }
+
+        static void TestPol(int OldPolID)
+        {
+            EpicIntegrator.PolicyService ps = new EpicIntegrator.PolicyService();
+            ps.TestPolicyConnect(OldPolID);
+            Console.WriteLine("*--*-DONE*-*-*-*");
+            Console.ReadKey();
+        }
+
 
         static void PartTesting(int oPolId, int nPolId)
         //static void PartTesting()
@@ -147,7 +176,12 @@ namespace EpicIntegrator
             CBLServiceReference.EmployeeClass emp = new CBLServiceReference.EmployeeClass();
             string ErrorString2 = "";
 
-        // Get all policies
+            // Get all policies
+
+            
+
+
+
             polList = cs.GetPolicyList();
             if (polList == null)
             {
@@ -158,17 +192,17 @@ namespace EpicIntegrator
             //Reading all policies one at a time
             int PolzCount = polList.Count;
             int PolzCounter = 0;
+
             Console.WriteLine("CONNS STATE " + conns.State);
-            if (conns.State != ConnectionState.Closed)
+            if (conns.State == ConnectionState.Closed)
             {
-                conns.Close();
+                conns.Open();
             }
             Console.WriteLine("CONNS STATE NEW " + conns.State);
 
-            conns.Open();
             System.Threading.Thread.Sleep(2000);
             foreach (Tuple<int, int> poli in polList)
-                //Parallel.ForEach(polList, poli =>
+            //Parallel.ForEach(polList, poli =>
             {
                 PolzCounter++;
                 Console.WriteLine("*-*-*- READING POL "+PolzCounter+" OF "+PolzCount+ "*-*-*");
@@ -179,7 +213,12 @@ namespace EpicIntegrator
 
                 Console.WriteLine("*-*-*-*-*");
                 Console.WriteLine("Old Policy ID: " + OldPolID);
+                //if (conns.State == ConnectionState.Closed) //For Parallel Processing
+                //{
+                //    conns.Open();
+                //}
 
+                
                 // SQL Start Time
                 using (SqlCommand commandOne = conns.CreateCommand())
                 {
@@ -392,7 +431,7 @@ namespace EpicIntegrator
                 }
 
 
-
+                //conns.Close();
 
                 // Fred's Pre Policy insert SSR adjustments come here
 
@@ -445,9 +484,9 @@ namespace EpicIntegrator
             File.WriteAllLines(ErrorPathFull, ErrorString33);
 
 
-            conns.Close();
+            
             Console.WriteLine("*-*-*-DONE*-*-*");
-
+            conns.Close();
 
             Console.ReadKey();
         }

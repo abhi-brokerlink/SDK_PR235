@@ -29,8 +29,8 @@ namespace EpicIntegrator
 
         // Switches (1/0) and vars
         public string IBCCodePath = @"C:\Users\Abhishek\Documents\Abhi _ IMP\Sep29\IBC_Codes.csv"; //final check
-        public string DBtable = "[CBL_Reporting].[dbo].[PR235_MainTable]";
-        public string NewPolExtn = "_P235";
+        public string DBtable = "[CBL_Reporting].[dbo].[PR235Status]";
+        public string NewPolExtn = "_A99";
         public string ErrorString = "";
         public string ErrorFilePath = @"C:\Users\Abhishek\Documents\abc\SDKErrorLog_";
 
@@ -198,7 +198,11 @@ namespace EpicIntegrator
             nPol.ExpirationDate = oPol.ExpirationDate;
             nPol.EstimatedCommission = oPol.EstimatedCommission;
             nPol.EstimatedPremium = oPol.EstimatedPremium;
-            nPol.IssuingCompanyLookupCode = oPol.IssuingCompanyLookupCode;
+            if (oPol.IssuingCompanyLookupCode != "ZZMSC1")
+            {
+                nPol.IssuingCompanyLookupCode = oPol.IssuingCompanyLookupCode;
+            }
+            
             nPol.IssuingLocationCode = lne.IssuingLocationCode;
             //Console.WriteLine(lne.LineTypeCode);
             // TO DO
@@ -382,7 +386,12 @@ namespace EpicIntegrator
                             nMCS.PolicyID = NewPolicyID;
                             nMCS.Active = true;
 
-                            nMCS.IssuingCompanyLookupCode = oMCS.IssuingCompanyLookupCode;
+                            if (oMCS.IssuingCompanyLookupCode != "ZZMSC1")
+                            {
+                                nMCS.IssuingCompanyLookupCode = oMCS.IssuingCompanyLookupCode;
+                            }
+
+                            
                             nMCS.PremiumPayableLookupCode = oMCS.PremiumPayableLookupCode;
                             nMCS.PremiumPayableTypeCode = oMCS.PremiumPayableTypeCode;
                             nMCS.PremiumPayableContractID = oMCS.PremiumPayableContractID;
@@ -543,15 +552,19 @@ namespace EpicIntegrator
             nlne.PremiumPayableLookupCode = olne.PremiumPayableLookupCode;
             nlne.BilledPremium = olne.BilledPremium;
             nlne.BilledCommission = olne.BilledCommission;
-            nlne.IssuingCompanyLookupCode = olne.IssuingCompanyLookupCode;
+            if (olne.IssuingCompanyLookupCode != "ZZMSC1")
+            {
+                nlne.IssuingCompanyLookupCode = olne.IssuingCompanyLookupCode;
+            }
+
 
             //Console.WriteLine("Aggreement ID " + nlne.AgreementID);
             //Console.WriteLine("DefaultComm Agg " + nlne.DefaultCommissionAgreement);
 
             try
             {
-                
-                //nlne.DefaultCommissionAgreement = olne.DefaultCommissionAgreement; //Default Commission Agreement checkbox commented out a per Erich's email
+
+                //nlne.DefaultCommissionAgreement = olne.DefaultCommissionAgreement; //Default Commission Agreement checkbox commented out as per Erich's email
                 //nlne.AgreementID = olne.AgreementID;
                 nlne.AgencyCommissionType = olne.AgencyCommissionType;
                 nlne.AgencyCommissionPercent = olne.AgencyCommissionPercent;
@@ -561,7 +574,7 @@ namespace EpicIntegrator
                 {
                     nlne.AgreementID = olne.AgreementID;
                 }
-                
+
 
 
             }
@@ -579,7 +592,59 @@ namespace EpicIntegrator
                 nlne.EstimatedCommission = olne.EstimatedCommission;
                 nlne.AnnualizedPremium = olne.AnnualizedPremium;
                 nlne.AnnualizedCommission = olne.AnnualizedCommission;
-                nlne.BillingValue.BillingPlan = olne.BillingValue.BillingPlan;
+                string BilP = olne.BillingValue.BillingPlan;
+                Console.WriteLine("Billing Plan: "+BilP); //Todo
+                // Billing Plan feedback incorporated
+                if (BilP == "3 equal payments" || BilP == "3 Pay" || BilP == "3 pay equal/33.3%" || BilP == "3 Pay Plan" || BilP == "30-30-30" || BilP == "3-Pay" || BilP == "three pay" || BilP == "Three pay - post date" || BilP == "Three Pay Plan")
+                {
+                    nlne.BillingValue.BillingPlan = "3 Pay";
+                }
+                else if (BilP == "ACH" || BilP == "Automatic Chkg Acct Deduction")
+                {
+                    nlne.BillingValue.BillingPlan = "ACH";
+                }
+                else if (BilP == "1 Pay" || BilP == "1 Pay Plan (Full Pay)" || BilP == "Annually" || BilP == "Annual" || BilP == "Annual - 12 Month Policy Term" || BilP == "NO TERM ONE TIME BILLING" || BilP == "One Pay" || BilP == "One Pay Direct Bill" || BilP == "Payment in Full")
+                {
+                    nlne.BillingValue.BillingPlan = "Annually";
+                }
+                else if (BilP == "Automatic Credit Card Auth" || BilP == "Credit Card")
+                {
+                    nlne.BillingValue.BillingPlan = "Credit Card";
+                }
+                else if (BilP == "EFT")
+                {
+                    nlne.BillingValue.BillingPlan = "EFT";
+                }
+                else if (BilP == "Monthly" || BilP == "Monthly Payment Plan" || BilP == "12 Monthly payment plan")
+                {
+                    nlne.BillingValue.BillingPlan = "Monthly";
+                }
+                else if (BilP == "Payroll Deduction")
+                {
+                    nlne.BillingValue.BillingPlan = "Payroll Deduction";
+                }
+                else if (BilP == "Four pay plan" || BilP == "4 Pay" || BilP == "4 Payments (Equal) - 25%" || BilP == "25-25-25-25" || BilP == "Quarterly" || BilP == "Quarterly - 3 Month Policy Term")
+                {
+                    nlne.BillingValue.BillingPlan = "Quarterly";
+                }
+                else if (BilP == "Bi-Annual" || BilP == "2 Pay" || BilP == "2 Payments (Equal) - 50%" || BilP == "50-50" || BilP == "Semi annual" || BilP == "Semi Annual - 6 Month Policy Term" || BilP == "Semi-Annual" || BilP == "Semi-annually" || BilP == "TWO PAY" || BilP == "Two pay - post date")
+                {
+                    nlne.BillingValue.BillingPlan = "Semi-annually";
+                }
+                else if (BilP == "Down Pay/10 pay" || BilP == "Ten Pay")
+                {
+                    nlne.BillingValue.BillingPlan = "Ten Pay";
+                }
+                else
+                {
+                    string e501 = OldPolicyID + " | BillingValue.BillingPlan not found: " + BilP;
+                    ErrorString = ErrorString + e501 + System.Environment.NewLine;
+                    Console.WriteLine(e501);
+                }
+
+
+
+
                 nlne.BillingValue.TaxOptionCode = olne.BillingValue.TaxOptionCode;
                 nlne.BillingValue.InvoiceToType = olne.BillingValue.InvoiceToType;
                 if (olne.BillingValue.InvoiceToType == "Broker")
@@ -753,6 +818,7 @@ namespace EpicIntegrator
 
 
             nApplicant.Name = oApplicant.Name;
+            //Console.WriteLine("applicant add: " + oApplicant.MailingAddress.ZipOrPostalCode);
             nApplicant.MailingAddress = oApplicant.MailingAddress;
             nApplicant.Website = oApplicant.Website;
             nApplicant.PhoneNumber = oApplicant.PhoneNumber;
@@ -778,6 +844,7 @@ namespace EpicIntegrator
                     nApplicant.LocationItems.Add(LocItem);
                     nApplicant.LocationItems[i].LocationID = oApplicant.LocationItems[i].LocationID;
                     nApplicant.LocationItems[i].LocationNumber = oApplicant.LocationItems[i].LocationNumber;
+                    //Console.WriteLine("Location add: " + oApplicant.LocationItems[i].Address.ZipOrPostalCode);
                     nApplicant.LocationItems[i].Address = oApplicant.LocationItems[i].Address;
                     nApplicant.LocationItems[i].Type = oApplicant.LocationItems[i].Type;
                     nApplicant.LocationItems[i].PayrollCycle = oApplicant.LocationItems[i].PayrollCycle;
@@ -866,6 +933,7 @@ namespace EpicIntegrator
                 nAddIntItem.RiskNumber = oAddIntItem.RiskNumber;
                 nAddIntItem.LookupCode = oAddIntItem.LookupCode;
                 nAddIntItem.Name = oAddIntItem.Name;
+                //Console.WriteLine("Add Interest add: "+ oAddIntItem.Address.ZipOrPostalCode);
                 nAddIntItem.Address = oAddIntItem.Address;
                 nAddIntItem.PhoneNumber = oAddIntItem.PhoneNumber;
                 nAddIntItem.Rank = oAddIntItem.Rank;

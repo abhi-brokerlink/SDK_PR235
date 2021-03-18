@@ -8,7 +8,8 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Data;
 using System.IO;
-
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace EpicIntegrator
 {
@@ -36,7 +37,27 @@ namespace EpicIntegrator
 
         //}
 
+        public void TestPolicyConnect (int OldPolID)
+        {
+            CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
+            CBLServiceReference.PolicyGetResult oPolicyResult = new CBLServiceReference.PolicyGetResult();
+            CBLServiceReference.PolicyFilter oPolicyFilter = new CBLServiceReference.PolicyFilter();
+            CBLServiceReference.Policy oPol = new CBLServiceReference.Policy();
+            oPolicyFilter.PolicyID = OldPolID;
+            oPolicyResult = EpicSDKClient.Get_Policy(oMessageHeader, oPolicyFilter, 0);
+            oPol = oPolicyResult.Policies[0];
 
+            Console.WriteLine(oPol.PolicyID);
+            Console.WriteLine(oPol.PolicyNumber);
+
+            Console.WriteLine(oPol.Description);
+            //string newDesc = oPol.Description + "_x";
+
+            oPol.Description = "Commercial General Liability";
+            Console.WriteLine(oPol.Description);
+            EpicSDKClient.Update_Policy(oMessageHeader, oPol);
+
+        }
 
 
         public List<EpicIntegrator.Policy> GetPolicySQL(string polNum)
