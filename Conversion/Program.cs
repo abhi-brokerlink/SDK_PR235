@@ -29,7 +29,7 @@ namespace EpicIntegrator
     {
         static string ConnectionStrings = ConfigurationManager.ConnectionStrings["CBLReporting"].ConnectionString;
         public static SqlConnection conns = new SqlConnection(ConnectionStrings);
-        public static string DBtables = "[CBL_Reporting].[dbo].[PR235Status]";
+        public static string DBtables = "[CBL_Reporting].[dbo].[PR235_MT1]";
         
 
         static void Main(string[] args)

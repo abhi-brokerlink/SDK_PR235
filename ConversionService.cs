@@ -29,7 +29,7 @@ namespace EpicIntegrator
 
         // Switches (1/0) and vars
         public string IBCCodePath = @"C:\Users\Abhishek\Documents\Abhi _ IMP\Sep29\IBC_Codes.csv"; //final check
-        public string DBtable = "[CBL_Reporting].[dbo].[PR235Status]";
+        public string DBtable = "[CBL_Reporting].[dbo].[PR235_MT1]";
         public string NewPolExtn = "_A99";
         public string ErrorString = "";
         public string ErrorFilePath = @"C:\Users\Abhishek\Documents\abc\SDKErrorLog_";
@@ -109,27 +109,40 @@ namespace EpicIntegrator
         public bool CheckValidTypeCode ( int OldPolicyID)
         {
 
-            CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
-            CBLServiceReference.PolicyGetResult oPolicyResult = new CBLServiceReference.PolicyGetResult();
-            CBLServiceReference.PolicyFilter oPolicyFilter = new CBLServiceReference.PolicyFilter();
-            CBLServiceReference.Policy oPol = new CBLServiceReference.Policy();
-            oPolicyFilter.PolicyID = OldPolicyID;
-            oPolicyResult = EpicSDKClient.Get_Policy(oMessageHeader, oPolicyFilter, 0);
-            oPol = oPolicyResult.Policies[0];
-
-            CBLServiceReference.LineGetResult1 oLineResult = new CBLServiceReference.LineGetResult1();
-            CBLServiceReference.LineFilter oLineFilter = new CBLServiceReference.LineFilter();
-            CBLServiceReference.Line1 lne = new CBLServiceReference.Line1();
-            oLineFilter.PolicyID = OldPolicyID;
-            oLineResult = EpicSDKClient.Get_Line(oMessageHeader, oLineFilter, 0);
-            lne = oLineResult.Lines[0];
             bool IsValidType = false;
-
-            string LTC = lne.LineTypeCode;
-            if (LTClist.Contains(LTC))
+            try
             {
-                IsValidType = true;
+                CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
+                CBLServiceReference.PolicyGetResult oPolicyResult = new CBLServiceReference.PolicyGetResult();
+                CBLServiceReference.PolicyFilter oPolicyFilter = new CBLServiceReference.PolicyFilter();
+                CBLServiceReference.Policy oPol = new CBLServiceReference.Policy();
+                oPolicyFilter.PolicyID = OldPolicyID;
+                oPolicyResult = EpicSDKClient.Get_Policy(oMessageHeader, oPolicyFilter, 0);
+                oPol = oPolicyResult.Policies[0];
+
+                CBLServiceReference.LineGetResult1 oLineResult = new CBLServiceReference.LineGetResult1();
+                CBLServiceReference.LineFilter oLineFilter = new CBLServiceReference.LineFilter();
+                CBLServiceReference.Line1 lne = new CBLServiceReference.Line1();
+                oLineFilter.PolicyID = OldPolicyID;
+                oLineResult = EpicSDKClient.Get_Line(oMessageHeader, oLineFilter, 0);
+                lne = oLineResult.Lines[0];
+
+
+
+
+                string LTC = lne.LineTypeCode;
+                if (LTClist.Contains(LTC))
+                {
+                    IsValidType = true;
+                }
             }
+            catch (Exception e)
+            {
+                string e981 = OldPolicyID + " | Policy ID Error | " + e;
+                ErrorString = ErrorString + e981 + System.Environment.NewLine;
+                Console.WriteLine(e981);
+            }
+
 
             return IsValidType;
 
@@ -593,9 +606,9 @@ namespace EpicIntegrator
                 nlne.AnnualizedPremium = olne.AnnualizedPremium;
                 nlne.AnnualizedCommission = olne.AnnualizedCommission;
                 string BilP = olne.BillingValue.BillingPlan;
-                Console.WriteLine("Billing Plan: "+BilP); //Todo
+                //Console.WriteLine("Billing Plan: "+BilP); //Todo
                 // Billing Plan feedback incorporated
-                if (BilP == "3 equal payments" || BilP == "3 Pay" || BilP == "3 pay equal/33.3%" || BilP == "3 Pay Plan" || BilP == "30-30-30" || BilP == "3-Pay" || BilP == "three pay" || BilP == "Three pay - post date" || BilP == "Three Pay Plan")
+                if (BilP == "3 equal payments" || BilP == "3 Pay" || BilP == "3 pay equal/33.3%" || BilP == "3 Pay Plan" || BilP == "30-30-30" || BilP == "3-Pay" || BilP == "3-pay" || BilP == "three pay" || BilP == "Three pay - post date" || BilP == "Three Pay Plan")
                 {
                     nlne.BillingValue.BillingPlan = "3 Pay";
                 }
@@ -603,7 +616,7 @@ namespace EpicIntegrator
                 {
                     nlne.BillingValue.BillingPlan = "ACH";
                 }
-                else if (BilP == "1 Pay" || BilP == "1 Pay Plan (Full Pay)" || BilP == "Annually" || BilP == "Annual" || BilP == "Annual - 12 Month Policy Term" || BilP == "NO TERM ONE TIME BILLING" || BilP == "One Pay" || BilP == "One Pay Direct Bill" || BilP == "Payment in Full")
+                else if (BilP == "1 Pay" || BilP == "1 Pay Plan (Full Pay)" || BilP == "Annually" || BilP == "Annual" || BilP == "Annual - 12 Month Policy Term" || BilP == "NO TERM ONE TIME BILLING" || BilP == "One Pay" || BilP == "one pay" || BilP == "One Pay Direct Bill" || BilP == "Payment in Full")
                 {
                     nlne.BillingValue.BillingPlan = "Annually";
                 }
@@ -671,7 +684,7 @@ namespace EpicIntegrator
                                 if (olne.ProducerBrokerCommissionsValue.Commissions[i].LookupCode != ExistingBrokerLookupCode)
                                 {
 
-                                    // Importnant: Code assumes that the default broker code is at Order number 0 in both source and destination policies
+                                    // Important: Code assumes that the default broker code is at Order number 0 in both source and destination policies
                                     //Console.WriteLine(olne.ProducerBrokerCommissionsValue.Commissions[i].LookupCode + " - code NOT matches");
                                     CBLServiceReference.CommissionItem ci = new CBLServiceReference.CommissionItem();
                                     nlne.ProducerBrokerCommissionsValue.Commissions.Add(ci);
@@ -682,6 +695,7 @@ namespace EpicIntegrator
                                     //Testing Feedback Done
                                     nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID;
                                     nlne.ProducerBrokerCommissionsValue.Commissions[i].OrderNumber = olne.ProducerBrokerCommissionsValue.Commissions[i].OrderNumber;
+                                    
                                     nlne.ProducerBrokerCommissionsValue.Commissions[i].Flag = CBLServiceReference.Flags6.Insert;
                                 }
 
