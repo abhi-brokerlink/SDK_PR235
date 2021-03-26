@@ -222,14 +222,15 @@ namespace EpicIntegrator
             nPol.LineTypeCode = NewPolLineType(lne.LineTypeCode);
             //nPol.LineTypeCode = NewPolLineType(oPol.PolicyTypeCode);
             int PolNumLength = oPol.PolicyNumber.Length;
-            if (PolNumLength > 18)
+            if (PolNumLength > 25)
             {
-                nPol.PolicyNumber = oPol.PolicyNumber.Substring(0, 18) + NewPolExtn;
+                nPol.PolicyNumber = oPol.PolicyNumber.Substring(0, 25);
+                //nPol.PolicyNumber = oPol.PolicyNumber.Substring(0, 18) + NewPolExtn;
             }
-            else if (PolNumLength < 19)
-            {
-                nPol.PolicyNumber = oPol.PolicyNumber + NewPolExtn;
-            }
+            //else if (PolNumLength < 19)
+            //{
+            //    nPol.PolicyNumber = oPol.PolicyNumber + NewPolExtn;
+            //}
 
             //nPol.PolicyTypeCode = NewPolLineType(oPol.PolicyTypeCode);
             nPol.PolicyTypeCode = NewPolLineType(lne.LineTypeCode);
