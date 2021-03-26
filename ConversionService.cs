@@ -227,6 +227,10 @@ namespace EpicIntegrator
                 nPol.PolicyNumber = oPol.PolicyNumber.Substring(0, 25);
                 //nPol.PolicyNumber = oPol.PolicyNumber.Substring(0, 18) + NewPolExtn;
             }
+            else
+            {
+                nPol.PolicyNumber = oPol.PolicyNumber;
+            }
             //else if (PolNumLength < 19)
             //{
             //    nPol.PolicyNumber = oPol.PolicyNumber + NewPolExtn;
