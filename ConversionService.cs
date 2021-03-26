@@ -30,7 +30,7 @@ namespace EpicIntegrator
         // Switches (1/0) and vars
         public string IBCCodePath = @"C:\Users\Abhishek\Documents\Abhi _ IMP\Sep29\IBC_Codes.csv"; //final check
         public string DBtable = "[CBL_Reporting].[dbo].[PR235_MT1]";
-        public string NewPolExtn = "_A99";
+        public string NewPolExtn = "_EB99";
         public string ErrorString = "";
         public string ErrorFilePath = @"C:\Users\Abhishek\Documents\abc\SDKErrorLog_";
 
@@ -361,8 +361,11 @@ namespace EpicIntegrator
         {
             CBLServiceReference.EpicSDK_2017_02Client EpicSDKClient = new CBLServiceReference.EpicSDK_2017_02Client();
             CBLServiceReference.MultiCarrierScheduleGetResult oMCSResult = new CBLServiceReference.MultiCarrierScheduleGetResult();
+            CBLServiceReference.MultiCarrierScheduleGetResult nMCSResultTwo = new CBLServiceReference.MultiCarrierScheduleGetResult();
             CBLServiceReference.MultiCarrierScheduleGetType MCStype = new CBLServiceReference.MultiCarrierScheduleGetType();
             MCStype = CBLServiceReference.MultiCarrierScheduleGetType.PolicyID;
+            CBLServiceReference.MultiCarrierScheduleGetType MCStypeTwo = new CBLServiceReference.MultiCarrierScheduleGetType();
+            MCStypeTwo = CBLServiceReference.MultiCarrierScheduleGetType.MultiCarrierScheduleID;
             CBLServiceReference.MultiCarrierSchedule oMCS = new CBLServiceReference.MultiCarrierSchedule();
             CBLServiceReference.PolicyFilter nPolicyFilter = new CBLServiceReference.PolicyFilter();
             CBLServiceReference.PolicyGetResult nPolicyResult = new CBLServiceReference.PolicyGetResult();
@@ -385,7 +388,7 @@ namespace EpicIntegrator
                 {
 
                     int MCSCount = oMCSResult.MultiCarrierSchedules.Count();
-                    //Console.WriteLine("MCS Count " + MCSCount);
+                    Console.WriteLine("MCS Count " + MCSCount);
                     if (MCSCount > 0)
                     {
                         for (int i = 0; i < MCSCount; i++)
@@ -412,43 +415,87 @@ namespace EpicIntegrator
                             nMCS.PolicyNumber = oMCS.PolicyNumber;
                             nMCS.AgencyCommissionTypeCode = oMCS.AgencyCommissionTypeCode;
                             nMCS.AgencyCommissionPercentage = oMCS.AgencyCommissionPercentage;
-
-                        
-
+                            //nMCS.PolicyLineOption = oMCS.PolicyLineOption;
 
 
-                        
-                            // Testing feedback done -  inserting PR/BR commission schedules inside MCS schedules
+
+
+
+                            //EpicSDKClient.Insert_Policy_MultiCarrierSchedule(oMessageHeader, nMCS);
+                            //if (SDKReadMCSSwitch == 1)
+                            //{
+                            //    int nMCSID = EpicSDKClient.Insert_Policy_MultiCarrierSchedule(oMessageHeader, nMCS);
+                            //    Console.WriteLine("New MCS ID: " + nMCSID);
+                            //}
+
+                            // Adding PR/BR into MCS
+
+                            int nMCSID = EpicSDKClient.Insert_Policy_MultiCarrierSchedule(oMessageHeader, nMCS);
+                            //Console.WriteLine("New MCS ID: " + nMCSID);
+                            System.Threading.Thread.Sleep(1000);
+
+
+                            nMCSResultTwo = EpicSDKClient.Get_Policy_MultiCarrierSchedule(oMessageHeader, nMCSID, false, MCStypeTwo, 0);
+                            CBLServiceReference.MultiCarrierSchedule nMCSTwo = new CBLServiceReference.MultiCarrierSchedule();
+                            nMCSTwo = nMCSResultTwo.MultiCarrierSchedules[0];
 
                             int MCSPRBRCommCount = oMCS.ProducerBrokerCommissions.Count;
+                            //Console.WriteLine(oMCS.PremiumPayableLookupCode + " - MCS PR/BRCount " + MCSPRBRCommCount);
                             if (MCSPRBRCommCount > 0)
                             {
+                                int MCSCommsCounter = 0;
+                                CBLServiceReference.ProducerBrokerCommissionItems2 MCSPBC = new CBLServiceReference.ProducerBrokerCommissionItems2();
                                 for (int m = 0; m < MCSPRBRCommCount; m++)
                                 {
-                                    CBLServiceReference.ProducerBrokerCommissionItems2 MCSPBC = new CBLServiceReference.ProducerBrokerCommissionItems2();
+                                    //CBLServiceReference.ProducerBrokerCommissionItems2 MCSPBC = new CBLServiceReference.ProducerBrokerCommissionItems2();
                                     CBLServiceReference.ProducerBrokerCommissionItem2 MCSPBI = new CBLServiceReference.ProducerBrokerCommissionItem2();
-                                    nMCS.ProducerBrokerCommissions = MCSPBC;
+                                    nMCSTwo.ProducerBrokerCommissions = MCSPBC;
                                     MCSPBC.Add(MCSPBI);
-
+                                    //Console.WriteLine(oMCS.ProducerBrokerCommissions[m].ProducerBrokerCode + " - MCSPBC -" + MCSPBC.Count);
                                     MCSPBI.ContractID = oMCS.ProducerBrokerCommissions[m].ContractID;
                                     MCSPBI.ProducerBrokerCode = oMCS.ProducerBrokerCommissions[m].ProducerBrokerCode;
                                     MCSPBI.LookupCode = oMCS.ProducerBrokerCommissions[m].LookupCode;
+                                    //if (MCSCommsCounter == 0)
+                                    //{
+                                    //    MCSPBI.ProductionCredit = 100;
+                                    //}
+                                    //else
+                                    //{
+                                    //    MCSPBI.ProductionCredit = 0;
+                                    //}
+
                                     MCSPBI.ProductionCredit = oMCS.ProducerBrokerCommissions[m].ProductionCredit;
                                     MCSPBI.OrderNumber = oMCS.ProducerBrokerCommissions[m].OrderNumber;
+                                    //Console.WriteLine("Prod Credit - " + oMCS.ProducerBrokerCommissions[m].ProductionCredit);
                                     MCSPBI.Flag = CBLServiceReference.Flags22.Insert;
+                                    //Console.WriteLine("Comm ID " + MCSPBI.CommissionID);
+                                    MCSCommsCounter++;
+
+                                    
+
+
+
                                 }
+                                EpicSDKClient.Update_Policy_MultiCarrierSchedule(oMessageHeader, nMCSTwo);
+
+
                             }
-                            
-                        
-                            if (SDKReadMCSSwitch == 1)
-                            {
-                                EpicSDKClient.Insert_Policy_MultiCarrierSchedule(oMessageHeader, nMCS);
-                            }
-                            
+
+
+
 
 
 
                         }
+
+
+
+                        
+
+
+
+
+
                     }
                 }
             }
@@ -506,6 +553,19 @@ namespace EpicIntegrator
                             {
                                 nlne.ProducerBrokerCommissionsValue.Commissions[k].ProductionCredit = olne.ProducerBrokerCommissionsValue.Commissions[j].ProductionCredit;
                                 nlne.ProducerBrokerCommissionsValue.Commissions[k].CommissionAgreementID = olne.ProducerBrokerCommissionsValue.Commissions[j].CommissionAgreementID;
+
+                                //Post staging Feedback
+                                //Console.WriteLine("PR/BR - BR - Producer/Broker Code: " + olne.ProducerBrokerCommissionsValue.Commissions[j].ProducerBrokerCode);
+                                //Console.WriteLine("PR/BR - BR - Contract ID: " + olne.ProducerBrokerCommissionsValue.Commissions[j].ContractID);
+                                if (olne.ProducerBrokerCommissionsValue.Commissions[j].ProducerBrokerCode == "BPAY")
+                                {
+                                    nlne.ProducerBrokerCommissionsValue.Commissions[k].ContractID = olne.ProducerBrokerCommissionsValue.Commissions[j].ContractID;
+                                    nlne.ProducerBrokerCommissionsValue.Commissions[k].CommissionPercent = olne.ProducerBrokerCommissionsValue.Commissions[j].CommissionPercent;
+                                    nlne.ProducerBrokerCommissionsValue.Commissions[k].CommissionType = olne.ProducerBrokerCommissionsValue.Commissions[j].CommissionType;
+                                }
+
+
+
                                 nlne.ProducerBrokerCommissionsValue.Commissions[k].Flag = CBLServiceReference.Flags6.Update;
 
                             }
@@ -670,7 +730,9 @@ namespace EpicIntegrator
 
 
                     // adjust existing producer
-                    string ExistingBrokerLookupCode = nlne.ProducerBrokerCommissionsValue.Commissions[0].LookupCode;
+                    Console.WriteLine(nlne.ProducerBrokerCommissionsValue.Commissions.Count);
+                    //string ExistingBrokerLookupCode = nlne.ProducerBrokerCommissionsValue.Commissions[0].LookupCode; // March 24 testing
+
                     int PRBRCount = olne.ProducerBrokerCommissionsValue.Commissions.Count;
 
                     if (PRBRCount > 0)
@@ -681,9 +743,8 @@ namespace EpicIntegrator
                             for (int i = 0; i < PRBRCount; i++)
                             {
 
-                                if (olne.ProducerBrokerCommissionsValue.Commissions[i].LookupCode != ExistingBrokerLookupCode)
-                                {
-
+                                //if (olne.ProducerBrokerCommissionsValue.Commissions[i].LookupCode != ExistingBrokerLookupCode) {} // March 24 testing
+                                
                                     // Important: Code assumes that the default broker code is at Order number 0 in both source and destination policies
                                     //Console.WriteLine(olne.ProducerBrokerCommissionsValue.Commissions[i].LookupCode + " - code NOT matches");
                                     CBLServiceReference.CommissionItem ci = new CBLServiceReference.CommissionItem();
@@ -695,9 +756,20 @@ namespace EpicIntegrator
                                     //Testing Feedback Done
                                     nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID;
                                     nlne.ProducerBrokerCommissionsValue.Commissions[i].OrderNumber = olne.ProducerBrokerCommissionsValue.Commissions[i].OrderNumber;
-                                    
+                                    Console.WriteLine(olne.ProducerBrokerCommissionsValue.Commissions[i].ProductionCredit);
+
+                                    //Post staging Feedback
+                                    //Console.WriteLine("Line - BR - Producer/Broker Code: "+ olne.ProducerBrokerCommissionsValue.Commissions[i].ProducerBrokerCode);
+                                    //Console.WriteLine("Line - BR - Contract ID: " + olne.ProducerBrokerCommissionsValue.Commissions[i].ContractID);
+                                    if (olne.ProducerBrokerCommissionsValue.Commissions[i].ProducerBrokerCode == "BPAY")
+                                    {
+                                        nlne.ProducerBrokerCommissionsValue.Commissions[i].ContractID = olne.ProducerBrokerCommissionsValue.Commissions[i].ContractID;
+                                        nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionPercent = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionPercent;
+                                        nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionType = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionType;
+                                    }
+
                                     nlne.ProducerBrokerCommissionsValue.Commissions[i].Flag = CBLServiceReference.Flags6.Insert;
-                                }
+                                
 
                             }
 
@@ -730,8 +802,19 @@ namespace EpicIntegrator
                                 nlne.ProducerBrokerCommissionsValue.Commissions[i].ProductionCredit = olne.ProducerBrokerCommissionsValue.Commissions[i].ProductionCredit;
                                 //Testing Feedback Done
                                 nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID;
-                                //Console.WriteLine(olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionAgreementID);
+                                Console.WriteLine(olne.ProducerBrokerCommissionsValue.Commissions[i].ProductionCredit);
                                 nlne.ProducerBrokerCommissionsValue.Commissions[i].OrderNumber = olne.ProducerBrokerCommissionsValue.Commissions[i].OrderNumber;
+
+                                //Post staging Feedback
+                                //Console.WriteLine("Line - CL - Producer/Broker Code: " + olne.ProducerBrokerCommissionsValue.Commissions[i].ProducerBrokerCode);
+                                //Console.WriteLine("Line - CL - Contract ID: " + olne.ProducerBrokerCommissionsValue.Commissions[i].ContractID);
+                                if (olne.ProducerBrokerCommissionsValue.Commissions[i].ProducerBrokerCode == "BPAY")
+                                {
+                                    nlne.ProducerBrokerCommissionsValue.Commissions[i].ContractID = olne.ProducerBrokerCommissionsValue.Commissions[i].ContractID;
+                                    nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionPercent = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionPercent;
+                                    nlne.ProducerBrokerCommissionsValue.Commissions[i].CommissionType = olne.ProducerBrokerCommissionsValue.Commissions[i].CommissionType;
+                                }
+
                                 nlne.ProducerBrokerCommissionsValue.Commissions[i].Flag = CBLServiceReference.Flags6.Insert;
                                 //Console.WriteLine("eeee" + olne.ProducerBrokerCommissionsValue.Commissions[i].ProducerBrokerCode);
                             }

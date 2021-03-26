@@ -34,10 +34,10 @@ namespace EpicIntegrator
 
         static void Main(string[] args)
         {
-            RunConversion();
+            //RunConversion();
 
             //For Testing Purposes:
-            //PartTesting(5986044, 5997566);
+            //PartTesting(5985847, 5995117);
             //DeletePolicy();
             //TestPol(5919412);
 
@@ -59,8 +59,9 @@ namespace EpicIntegrator
             //List<int> PoliciesToDelete = new List<int>() { 6036970, 6036971, 6036972, 6036973, 6036974 };
             List<int> PoliciesToDelete = new List<int>();
 
-            string PolDelPath = @"C:\Users\Abhishek\Documents\abc\SDK_PR235Conversion\PoliciesToDelete.csv"; //Final Check
-            var PolDelreader = new StreamReader(File.OpenRead(PolDelPath));
+            string PolDelPath = @"C:\Users\Abhishek\Documents\abc\SDK_PR235Conversion\"; //Final Check
+            string PolDelFilePath = PolDelPath + "PoliciesToDelete.csv";
+            var PolDelreader = new StreamReader(File.OpenRead(PolDelFilePath));
             
             while (!PolDelreader.EndOfStream)
             {
@@ -74,11 +75,14 @@ namespace EpicIntegrator
             EpicIntegrator.ConversionService cs = new EpicIntegrator.ConversionService();
             var DelStart = DateTime.Now;
             Console.WriteLine("Deletion Started: "+ DelStart);
+            int PolDelCounter = 0;
+
             foreach (int pol in PoliciesToDelete)
             {
                 try
                 {
                     cs.DeletePolicy(pol);
+                    PolDelCounter ++;
                 }
                 catch (Exception e)
                 {
@@ -87,7 +91,14 @@ namespace EpicIntegrator
             }
             var DelEnd = DateTime.Now;
             Console.WriteLine("Deletion Ended: " + DelEnd);
-            
+            string DelDetails = "Policy Deletion Started: "+ DelStart.ToString("dddd, dd MMMM yyyy HH:mm:ss")+ System.Environment.NewLine;
+            DelDetails = DelDetails + "Policies Deleted: "+ PolDelCounter + System.Environment.NewLine;
+            DelDetails = DelDetails + "Policy Deletion Ended: " + DelEnd.ToString("dddd, dd MMMM yyyy HH:mm:ss") + System.Environment.NewLine;
+
+            string DelDetailsPathFull = PolDelPath + "_PoliciesDeleted_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
+            File.WriteAllText(DelDetailsPathFull, DelDetails);
+
+
 
             Console.ReadKey();
         }
@@ -105,11 +116,24 @@ namespace EpicIntegrator
         //static void PartTesting()
         {
             EpicIntegrator.ConversionService cs = new EpicIntegrator.ConversionService();
+            Console.WriteLine("_____________START___________");
+
+            //Tuple<int, bool, string, string, int> NewPolicyResult = cs.CreatePolicy(oPolId); //finalcheck
+            //Console.WriteLine(NewPolicyResult.Item1);
+            //Console.WriteLine(NewPolicyResult.Item2);
+            //Console.WriteLine(NewPolicyResult.Item3);
+            //Console.WriteLine(NewPolicyResult.Item4);
+            //Console.WriteLine(NewPolicyResult.Item5);
             //List<Tuple<int, int>> polList = new List<Tuple<int, int>>();
 
             // polList = cs.GetPolicyList();
-            cs.LongShortFormUpdate(oPolId, nPolId);
-            //cs.UpdateLine(oPolId, nPolId);
+            //cs.LongShortFormUpdate(oPolId, nPolId);
+            cs.UpdateLine(oPolId, nPolId);
+            Console.WriteLine("_____________LINE UPDATED___________");
+            cs.UpdateLinePRBR(oPolId, nPolId);
+            Console.WriteLine("_____________PR/BR UPDATED___________");
+            cs.ReadMCS(oPolId, nPolId);
+            Console.WriteLine("_____________MCS UPDATED___________");
             //cs.ReadMCS(oPolId, nPolId);
             //cs.CustomFormOrSupplimentalScreen(oPolId);
             //foreach (Tuple<int, int> poli in polList)
