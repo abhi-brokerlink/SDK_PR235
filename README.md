@@ -2,7 +2,7 @@
 ## This code was used to convert policies using EPIC SDK for Project PR235
 ### The full code was developed by Abhishek Chhibber and Fend Liao. This is Abhishek Chhibber's part
 
-* Documentation of the code can be found on [Code's Wiki](https://github.com/BrokerLink-Application-Development/SDK_PR235/wiki)
+* Documentation of the code can be found on [Code's Wiki](https://github.com/BrokerLink-Application-Development/SDK_PR235/wiki).
 
 * Documentation of EPIC SDK can be [found here](https://github.com/BrokerLink-Application-Development/SDK_PR235/blob/master/Applied%20Epic%20SDK%202013r2.pdf).
 
